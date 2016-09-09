@@ -13,3 +13,11 @@ FlowRouter.route('/dashboard', {
         BlazeLayout.render("AppLayout", {main: "Dashboard"});
     }
 });
+
+// Characters
+FlowRouter.route('/characters', {
+    name: 'characters',
+    action() {
+      BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    }
+});
