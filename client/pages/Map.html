@@ -1,8 +1,9 @@
+
 <template name="Map">
   <h1 class="page-title">Map of Kroilon</h1>
-  <div id="image_map" position="relative">
-  
-  
+
+  <div id="image_map">
+  <img class="map-center" src="0 mapa_nomes_v2.png" alt="map" usemap="#mapbadges">
   <map name="mapbadges">
   <area shape="circle" coords="395,186,15" href="#openModalBoat" title="BOAT UNLOCK SPOT">
   <area shape="circle" coords="620,87,15" href="#openModalBoat" title="BOAT UNLOCK SPOT">
@@ -17,46 +18,55 @@
 <area shape="circle" coords="601,251,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
 <area shape="circle" coords="749,141,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
   </map>
-  <img class="map-center" src="0 mapa_nomes_v2.png" alt="map" usemap="#mapbadges">
   </div>
 
-<div id="openModalBoat" class="modalDialog" position="relative">
+
+<div id="openModalBoat" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<p>BOAT UNLOCK SPOT</p>
-		<p>desc.</p>
+		<p>Allows team to use underground water channels.</p>
 	</div>
 </div>
 
-<div id="openModalMystery" class="modalDialog" position="relative">
+<div id="openModalMystery" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<p>MYSTERY SPOT</p>
-		<p>desc.</p>
+		<p>Mystery badge... take your chances and... pray.</p>
 	</div>
 </div>
 
-<div id="openModalFood" class="modalDialog" position="relative">
+<div id="openModalFood" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<p>FOOD SPOT</p>
-		<p>desc.</p>
+		<p>Energy level (food) starts with 5 and uses 1 badge per day.</p>
 	</div>
 </div>
 
-<div id="openModalDoublePoints" class="modalDialog" position="relative">
+<div id="openModalDoublePoints" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<p>DOUBLE POINTS SPOT</p>
-		<p>desc.</p>
+		<p>Doubles the points earned in the room.</p>
 	</div>
 </div>
 
-<div id="openModalAttackers" class="modalDialog" position="relative">
+<div id="openModalAttackers" class="modalDialog">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<p>ATTACKERS UNLOCK SPOT</p>
-		<p>desc.</p>
+		<p>Unlock the sword badge to use the attacker's cards.</p>
 	</div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('map').imageMapResize();
+});
+</script>
+
+<script src="../../public/imageMapResizer.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </template>
