@@ -1,6 +1,6 @@
 <template name="Map">
   <h1 class="page-title">Map of Kroilon</h1>
-  <div id="image_map">
+  <div id="image_map" position="relative">
   
   
   <map name="mapbadges">
@@ -17,49 +17,46 @@
 <area shape="circle" coords="601,251,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
 <area shape="circle" coords="749,141,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
   </map>
-  
   <img class="map-center" src="0 mapa_nomes_v2.png" alt="map" usemap="#mapbadges">
   </div>
 
-<div id="openModalBoat" class="modalDialog">
+<div id="openModalBoat" class="modalDialog" position="relative">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
-		<h2>BOAT UNLOCK SPOT</h2>
+		<p>BOAT UNLOCK SPOT</p>
 		<p>desc.</p>
 	</div>
 </div>
 
-<div id="openModalMystery" class="modalDialog">
+<div id="openModalMystery" class="modalDialog" position="relative">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
-		<h2>MYSTERY SPOT</h2>
+		<p>MYSTERY SPOT</p>
 		<p>desc.</p>
 	</div>
 </div>
 
-<div id="openModalFood" class="modalDialog">
+<div id="openModalFood" class="modalDialog" position="relative">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
-		<h2>FOOD SPOT</h2>
+		<p>FOOD SPOT</p>
 		<p>desc.</p>
 	</div>
 </div>
 
-<div id="openModalDoublePoints" class="modalDialog">
+<div id="openModalDoublePoints" class="modalDialog" position="relative">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
-		<h2>DOUBLE POINTS SPOT</h2>
+		<p>DOUBLE POINTS SPOT</p>
 		<p>desc.</p>
 	</div>
 </div>
 
-<div id="openModalAttackers" class="modalDialog">
+<div id="openModalAttackers" class="modalDialog" position="relative">
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
-		<h2>ATTACKERS UNLOCK SPOT</h2>
+		<p>ATTACKERS UNLOCK SPOT</p>
 		<p>desc.</p>
 	</div>
 </div>
 </template>
-
-<!--  width e height retornadas por funcoes separadas -->
