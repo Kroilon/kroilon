@@ -1,32 +1,40 @@
-var users = [{
-				nb: "nb22477",
-				name:"Nuno Silva",
-				avatar: "nb22477.jpg",
-				score:[{
-						date: new Date(),
-						challenge: "kahoot",
-						category: "HP",
-						points: 20
-					}],
-				profile: "trainee",
-				skills:[{
-						people: 8,
-						communication: 6,
-						manegemment:7,
-						problemSolving: 7,
-						android:2,
-						arduino:0
-					}]
-			}];
-	
-Template.Leaderboard_tops.onRendered(
-	function() {
+import { Template } from 'meteor/templating';
+import { Academy } from '/imports/api/databasedriver.js';	
 
-		//debugger;
+Template.Leaderboard_tops.helpers({
+	userHealthScores() {
+		
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+		var users = latestAcademy.users;
 		
 		var total_points = 0;
 		
-		//var users [] =//db.academy.find();
+		$.each(users, function(index_users, value_users){
+			
+			var user_points = 0;
+			
+			$.each(value_users.score, function(index_score, value_score){
+				
+				if(value_score.category=="HP"){
+					user_points += value_score.points;
+				}
+				
+			});
+			
+			value_users.totalHealthScore = user_points;
+			total_points += user_points;
+		});
+		
+		sortArrOfObjectsByParam(users, "totalHealthScore", false);
+	
+		return users;
+	},
+	userKnowledgeScores() {
+		
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+		var users = latestAcademy.users;
+		
+		var total_points = 0;
 		
 		$.each(users, function(index_users, value_users){
 			
@@ -34,17 +42,26 @@ Template.Leaderboard_tops.onRendered(
 			
 			$.each(value_users.score, function(index_score, value_score){
 				
-				if(value_score.category == "HP"){
+				if(value_score.category=="KP"){
 					user_points += value_score.points;
 				}
 				
 			});
 			
-			var tr_ ="<tr><td><img src='" + value.avatar + "' style='width:226px;height:226px;'></td><td>" + value.name + "</td><td>" + user_points + "</td></tr>";
-			console.log( tr_);
-
-			$("#table_leaderboard_topHealth").append(tr_);
+			value_users.totalKnowledgeScore = user_points;
+			total_points += user_points;
 		});
+		
+		sortArrOfObjectsByParam(users, "totalKnowledgeScore", false);
+	
+		return users;
+	},
+	userExperienceScores() {
+		
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+		var users = latestAcademy.users;
+		
+		var total_points = 0;
 		
 		$.each(users, function(index_users, value_users){
 			
@@ -52,34 +69,35 @@ Template.Leaderboard_tops.onRendered(
 			
 			$.each(value_users.score, function(index_score, value_score){
 				
-				if(value_score.category == "XP"){
+				if(value_score.category=="XP"){
 					user_points += value_score.points;
 				}
 				
 			});
 			
-			var tr_ ="<tr><td><img src='" + value.avatar + "' style='width:226px;height:226px;'></td><td>" + value.name + "</td><td>" + user_points + "</td></tr>";
-			console.log( tr_);
-
-			$("#table_leaderboard_topKnowledge").append(tr_);
+			value_users.totalExperienceScore = user_points;
+			total_points += user_points;
 		});
 		
-		
-		$.each(users, function(index_users, value_users){
-			
-			var user_points = 0;
-			
-			$.each(value_users.score, function(index_score, value_score){
-				
-				if(value_score.category == "XP"){
-					user_points += value_score.points;
-				}
-				
-			});
-			
-			var tr_ ="<tr><td><img src='" + value.avatar + "' style='width:226px;height:226px;'></td><td>" + value.name + "</td><td>" + user_points + "</td></tr>";
-			console.log( tr_);
+		sortArrOfObjectsByParam(users, "totalExperienceScore", false);
+	
+		return users;
+	}
 
-			$("#table_leaderboard_top").append(tr_);
-		});
 });
+
+
+function sortArrOfObjectsByParam(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+    if(sortAscending == undefined) sortAscending = true;  // default to true
+    
+    if(sortAscending) {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+        });
+    }
+    else {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+        });
+    }
+}

@@ -7,39 +7,39 @@
 	</ul>
 	
 	<div>TOP HEALTH</div>	
-	{{#each userScores.users}}
+	{{#each userHealthScores}}
 		<div class="divTable">
 
 		  <div class="divRow">
-			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
 			  <div class="divCell">{{name}}</div>
-			  <div class="divCell">{{totalScore}}</div>
+			  <div class="divCell">{{totalHealthScore}}</div>
 		  </div>
 
 		</div>
 	{{/each}}
 	
 	<div>TOP KNOWLEDGE</div>
-	{{#each userScores.users}}
+	{{#each userKnowledgeScores}}
 		<div class="divTable">
 
 		  <div class="divRow">
-			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
 			  <div class="divCell">{{name}}</div>
-			  <div class="divCell">{{totalScore}}</div>
+			  <div class="divCell">{{totalKnowledgeScore}}</div>
 		  </div>
 
 		</div>
 	{{/each}}
 	
 	<div>TOP EXPERIENCE</div>
-	{{#each userScores.users}}
+	{{#each userExperienceScores}}
 		<div class="divTable">
 
 		  <div class="divRow">
-			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
 			  <div class="divCell">{{name}}</div>
-			  <div class="divCell">{{totalScore}}</div>
+			  <div class="divCell">{{totalExperienceScore}}</div>
 		  </div>
 
 		</div>
