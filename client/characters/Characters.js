@@ -14,7 +14,7 @@ Template.Characters.events({
 
 Template.Characters.helpers({
 	characters() {
-		var latestAcademy = Academy.findOne({$neq:{profile:"Admin"}}, {sort: {date: -1, limit: 1}});
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
 		return latestAcademy.users;
 	},
