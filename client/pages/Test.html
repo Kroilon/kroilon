@@ -5,7 +5,7 @@
 
 
 <div class="container body-content">
-            
+
     <div id="MainContent_pnlPoints" style="border-style:Ridge;">
 	<fieldset>
 		<legend>
@@ -28,12 +28,12 @@
 					</select>
 
 				</td>
-			
+
 				<td style="width:300px;">
                     <div><label for="MainContent_ddlSalas" id="MainContent_lblSalas">Rooms</label></div>
                     <select name="ctl00$MainContent$ddlSalas" id="MainContent_ddlSalas">
 
-	                	{{#each rooms}}
+                	{{#each rooms}}
 		                	<option>{{this}}</option>
 		            	{{/each}}
 
@@ -54,7 +54,7 @@
 					<option value="9">10 Quarta</option>
 					<option value="11">11 Quinta</option>
 					<option value="12">12 Sexta</option>
-				
+
 					</select>
 				</td>
 
@@ -141,7 +141,7 @@
         <div id="MainContent_divSkills" class="top-buffer">
             <span id="MainContent_lblSkills"></span>
         </div>
-    
+
 	</fieldset>
 </div>
 
@@ -424,10 +424,10 @@
                 </td><td style="width:600px;">
                      <div>
                         <label for="MainContent_txtSalas" id="MainContent_Label3" style="width:200px;">Days</label><label for="MainContent_txtPMinimo" id="MainContent_Label4" style="width:45px;">PIMn</label><label for="MainContent_txtPMaximo" id="MainContent_Label5" style="width:45px;">PIMx</label>
-                        
-                    </div>        
+
+                    </div>
                      <input name="ctl00$MainContent$txtDias" type="text" maxlength="200" id="MainContent_txtDias" style="width:200px;text-align:left" /><input name="ctl00$MainContent$txtPMinimo" type="text" maxlength="5" id="MainContent_txtPMinimo" onkeyup="keyUP(event.keyCode)" onkeydown="return isNumeric(event.keyCode);" onpaste="return false;" style="width:45px;text-align:right" /><input name="ctl00$MainContent$txtPMaximo" type="text" maxlength="5" id="MainContent_txtPMaximo" onkeyup="keyUP(event.keyCode)" onkeydown="return isNumeric(event.keyCode);" onpaste="return false;" style="width:45px;text-align:right" /><input type="submit" name="ctl00$MainContent$btnSubmitDias" value="Insert" id="MainContent_btnSubmitDias" /><input type="submit" name="ctl00$MainContent$btnUpdateDias" value="Update" id="MainContent_btnUpdateDias" />
-                
+
                     <div class="tabelas">
                         <table cellspacing="0" cellpadding="4" rules="all" border="1" id="MainContent_dgrDays" style="color:Black;border-collapse:collapse;">
 					<tr>
@@ -458,16 +458,16 @@
                 </td>
 			</tr>
 		</table>
-        
+
         <div id="MainContent_divConfigurations" class="top-buffer">
             <span id="MainContent_lblConfigurations"></span>
         </div>
-    
+
 	</fieldset>
 </div>
 
 
-	</div> 
+	</div>
 
 
 </body>
