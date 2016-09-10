@@ -166,11 +166,11 @@ Template.Management.events({
   'click #deleteCharacter' (event){
 
 		debugger;
-  
+
 		var playerId = $("#characterNB").val();
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		
+
         Meteor.call("deleteCharacter",latestAcademy._id, playerId);
 
   },
@@ -200,5 +200,14 @@ Template.Management.events({
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
     Meteor.call("terminateDay", latestAcademy);
+  },
+  'click #addCheese' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    var burgerCount = $('#burgerCount').val();
+
+    Meteor.call("addCheese", latestAcademy, burgerCount);
   }
+
 });
