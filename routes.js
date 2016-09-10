@@ -21,3 +21,10 @@ FlowRouter.route('/characters', {
       BlazeLayout.render("CharactersLayout", {main: "Characters"});
     }
 });
+// Map
+FlowRouter.route('/map', {
+    name: 'map',
+    action() {
+      BlazeLayout.render("MapLayout", {main: "Map"});
+    }
+});
