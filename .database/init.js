@@ -16,7 +16,7 @@ db.academy.insert({
 	date:new Date(),
 	energyLevel: [{
 		date: new Date(),
-		energy: 5		
+		energy: 5
 	}],
 	teamChallengeScore: [{
 		date: new Date(),
@@ -115,14 +115,32 @@ db.challenges.drop();
 db.createCollection("challenges");
 db.challenges.insert({
 	name: "kahoot",
-	technicalName:"CH_001",
-	nParticipants: "35",
-	room: [{name:"room1"}, {name:"room 2"}],
+	points: 100,
+	room: "masmorra",
 	date: new Date(),
-	badges: [{
-		name: "soneca",
-		avatar: "foto_badge",
-		score: "-100",
-		category: "XP"
-		}]
+	badges: "soneca"
+});
+
+//Badges
+db.badges.drop();
+db.createCollection("badges");
+db.badges.insert({
+	name: "soneca",
+	points: -200,
+	date: new Date()
+});
+
+//Badges
+db.rooms.drop();
+db.createCollection("rooms");
+db.rooms.insert({
+	name: "soneca",
+	badges: [
+		{
+			name: "soneca"
+		},
+		{
+			name: "outro"
+		}
+	]
 });
