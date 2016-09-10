@@ -17,7 +17,7 @@ Template.Map.helpers({
 		var img_energyLevel = "/energyLevels/energyLevels_5.png";
 
 		switch(energy_level) {
-			case 0:
+			default:
 				img_energyLevel = "/energyLevels/energyLevels_0.png";
 				break;
 			case 1:

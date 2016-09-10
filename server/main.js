@@ -62,13 +62,13 @@ Meteor.methods({
       );
 	  },
 	  deleteRoom: function (roomname) {
-		
+
       Rooms.remove(
           { name: roomname }
       );
 	  },
 	deleteChallenge: function (challengename) {
-		
+
       Challenges.remove(
           { name: challengename }
       );
@@ -83,6 +83,11 @@ Meteor.methods({
 			var energyLevel = parseInt(latestAcademy.energyLevel - 1);
 
 			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : energyLevel }});
+		},
+		addCheese : function(latestAcademy, burgerCount)
+		{
+			var newValue = latestAcademy.energyLevel + burgerCount;
+			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : newValue }});
 		}
 
 });
