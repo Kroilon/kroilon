@@ -13,16 +13,9 @@ Template.Home.events({
 		
     var latestAcademy = Academy.find({}, {sort: {date: -1, limit: 1}});
 
-	var user;
-	
-	debugger;
-	
-	for(var i = 0; i<latestAcademy.users.length; i++){
-		if(latestAcademy.users[i].nb == playerNb){
-			user = latestAcademy.users[i];
-			return;
-		}
-	}
+    var user = $.grep(latestAcademy.users, function(e){
+		return e.nb == playerId;
+	});
 		
 	Session.set("playerNb", user);
 	
