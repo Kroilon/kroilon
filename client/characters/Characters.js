@@ -1,33 +1,14 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
-var data = {
-	name: "Kroilon Test",
-	date:new Date(),
-	users:[{
-			nb: "nb00001",
-			name:"kroilon",
-			avatar: "foto",
-			score:[{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "HP",
-					points: 20
-				}],
-			profile: "instructor",
-			skills:[{
-					people: 8,
-					communication: 6,
-					manegemment:7,
-					problemSolving: 7,
-					android:2,
-					arduino:0
-				}]
-		}]
-};
+var ItemsPerPage = 1;
+
+//var TotalItems =
 
 Template.Characters.events({
 	'click h1': () => {
+		var page = FlowRouter.getParam("page");
+		console.log(page);
 	}
 })
 
