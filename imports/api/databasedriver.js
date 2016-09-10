@@ -5,3 +5,5 @@ export const Academy = new Mongo.Collection('academy');
 export const Challenges = new Mongo.Collection('challenges');
 
 export const Rooms = new Mongo.Collection('rooms');
+
+export const Secrets = new Mongo.Collection('secrets');
