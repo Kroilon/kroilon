@@ -11,10 +11,19 @@
 	<table id="table_leaderboard_dash">
 	</table>
 	
-	<ul>
-      {{#each users}}
-        {{name}}
-      {{/each}}
-    </ul>
+
+{{#each users}}
+
+	<div class="divTable">
+
+	  <div class="divRow">
+		  <div class="divCell"><img src='{{avatar}}'></div>
+		  <div class="divCell">{{name}}</div>
+		  <div class="divCell">{{totalScore}}</div>
+	  </div>
+
+	</div>
+
+{{/each}}
 	
 </template>

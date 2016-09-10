@@ -5,12 +5,11 @@ import { Academy } from '/imports/api/databasedriver.js';
 Template.Leaderboard_dash.helpers({
 	users() {
 
-		debugger;
+		//debugger;
 		
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
 		var users = latestAcademy.users;
 		
-		/*var total_points = 0;	
 		var total_users = users.length;
 		
 		$.each(users, function(index_users, value_users){
@@ -23,16 +22,15 @@ Template.Leaderboard_dash.helpers({
 				
 			});
 			
-			value_users.totalScore = total_points;
+			value_users.totalScore = user_points;
 			
-			//var tr_ ="<tr><td><img src='" + value.avatar + "' style='width:226px;height:226px;'></td><td>" + value.name + "</td><td>" + user_points + "</td></tr>";
-			//console.log( tr_);
-
-			//$("#table_leaderboard_dash").append(tr_);
 		});
 		
-		//$("#div_pontos_equipa").html(total_points);
-		*/
+		debugger;
+		myArray = myArray.sort(function(a, b) {
+			return a[1].localeCompare(b[1]);
+		});
+		
 		return users;
 	}
 });
