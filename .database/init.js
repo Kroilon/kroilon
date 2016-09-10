@@ -13,6 +13,7 @@ db.academy.drop();
 db.createCollection("academy");
 db.academy.insert({
 	name: "Kroilon Test",
+	dailyMessage: "Bem Vindos a Kroilon",
 	date:new Date(),
 	energyLevel: [{
 		date: new Date(),

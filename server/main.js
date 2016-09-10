@@ -47,6 +47,11 @@ Meteor.methods({
 
     addAcademy : function(data) {
       Academy.insert(data);
-    }
+    },
+
+		updateDailyMessage : function(latestAcademy, message)
+		{
+			Academy.update({_id: latestAcademy._id}, {$push : {'dailyMessage' : message}});
+		}
 
 });

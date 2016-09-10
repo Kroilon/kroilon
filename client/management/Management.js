@@ -47,7 +47,6 @@ Template.Management.events({
     var pointType = $("#pointType").val();
     var points = parseInt($("#points").val());
 
-
     var score = {
       challenge : activityId,
       category: pointType,
@@ -154,6 +153,15 @@ Template.Management.events({
     };
 
     Meteor.call("addAcademy", data);
+
+  },
+  'click #updateDailyMessage' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    var message = $("#message").val();
+
+    Meteor.call("updateDailyMessage", latestAcademy, message);
 
   }
 });
