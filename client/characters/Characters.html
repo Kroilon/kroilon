@@ -5,8 +5,6 @@
 {{#each characters}}
 <div class="divTable">
 
-<script>   </script>
-
   <div class="headRow">
     <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
     <div class="divCell" align="center">
@@ -25,40 +23,22 @@
 
   {{#each skills}}
   <div class="divRow">
-      <div class="divCell">Android</div>
-      <div class="divCell">{{android}}</div>
+      <div class="divCell">Android {{android}}</div>
   </div>
   <div class="divRow">
-      <div class="divCell">Communication</div>
-      <div class="divCell">{{communication}}</div>
+      <div class="divCell">Communication {{communication}}</div>
   </div>
   <div class="divRow">
-      <div class="divCell">Management</div>
-      <div class="divCell">{{manegement}}</div>
+      <div class="divCell">Management {{manegement}}</div>
   </div>
   <div class="divRow">
-      <div class="divCell">People</div>
-      <div class="divCell">{{people}}</div>
+      <div class="divCell">People {{people}}</div>
   </div>
   <div class="divRow">
-      <div class="divCell">Problem Solving</div>
-      <div class="divCell">{{problemSolving}}</div>
+      <div class="divCell">Problem Solving {{problemSolving}}</div>
   </div>
   {{/each}}
 
 </div>
-<br>
 {{/each}}
-
-<ul class="pagination">
-  <li><a href="#">«</a></li>
-  <li><a href="#">1</a></li>
-  <li><a class="active" href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">6</a></li>
-  <li><a href="#">»</a></li>
-</ul>
-
 </template>
