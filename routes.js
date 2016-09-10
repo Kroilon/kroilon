@@ -39,6 +39,9 @@ FlowRouter.route('/map', {
 // Leaderboard_dash Page
 FlowRouter.route('/leaderboard_dash', {
     name: '/leaderboard_dash',
+	waitOn: function () {
+        return Meteor.subscribe('academy');
+    },
     action() {
         BlazeLayout.render("AppLayout", {main: "Leaderboard_dash"});
     }
