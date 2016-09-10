@@ -14,6 +14,13 @@ FlowRouter.route('/dashboard', {
     }
 });
 
+FlowRouter.route('/login', {
+    name: 'login',
+    action() {
+        BlazeLayout.render("LoginLayout", {main: "Login"});
+    }
+});
+
 // Characters
 FlowRouter.route('/characters/:page', {
     name: 'characters',
