@@ -51,7 +51,7 @@ Meteor.methods({
 
 		updateDailyMessage : function(latestAcademy, message)
 		{
-			Academy.update({_id: latestAcademy._id}, {$push : {'dailyMessage' : message}});
+			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
 		}
 
 });
