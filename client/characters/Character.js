@@ -12,7 +12,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].avatar;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].avatar;
 	},
   name() {
     var nb = FlowRouter.getParam("nb");
@@ -21,7 +21,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].name;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].name;
   },
   nb() {
     var nb = FlowRouter.getParam("nb");
@@ -30,7 +30,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].nb;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].nb;
   },
   profile() {
     var nb = FlowRouter.getParam("nb");
@@ -39,7 +39,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].profile;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].profile;
   },
   mbti() {
     var nb = FlowRouter.getParam("nb");
@@ -48,7 +48,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].mbti;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].mbti;
   },
   skills() {
     var nb = FlowRouter.getParam("nb");
@@ -57,7 +57,7 @@ Template.Character.helpers({
 
 		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-		return user[0].skills;
+		if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user[0].skills;
   },
   score()
   {
@@ -75,6 +75,6 @@ Template.Character.helpers({
 
 			});
 
-			return user_points;
+			if ( (user[0].name != "formador") && (user[0].name != "admin") ) return user_points;
   }
 });

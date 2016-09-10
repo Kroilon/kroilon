@@ -79,6 +79,12 @@ Template.Management.events({
 
     Meteor.call("insertChallenge", data);
   },
+  'click #deleteChallenge' (event) {
+
+    var challengeName = $("#challengeName").val();
+
+    Meteor.call("deleteChallenge", challengeName);
+  },
   'click #insertRoom' (event) {
 
     var roomName = $("#roomName").val();
@@ -92,6 +98,10 @@ Template.Management.events({
 
     Meteor.call("insertRoom", data);
   },
+  'click #deleteRoom' (event) {
+    var roomName = $("#roomName").val();
+    Meteor.call("deleteRoom", roomName);
+  },
   'click #insertBadge' (event) {
 
     var badgeName = $("#badgeName").val();
@@ -104,6 +114,12 @@ Template.Management.events({
     };
 
     Meteor.call("insertBadge", data);
+  },
+  'click #deleteBadge' (event) {
+
+    var badgeName = $("#badgeName").val();
+
+    Meteor.call("deleteBadge", badgeName);
   },
   'click #insertCharacter' (event){
 
@@ -147,6 +163,17 @@ Template.Management.events({
         Meteor.call("addAcademyUser",latestAcademy._id, user);
 
   },
+  'click #deleteCharacter' (event){
+
+		debugger;
+  
+		var playerId = $("#characterNB").val();
+
+        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		
+        Meteor.call("deleteCharacter",latestAcademy._id, playerId);
+
+  },
   'click #insertAcademy' (event){
     var academyName = $('#academyName').val();
 
@@ -167,5 +194,11 @@ Template.Management.events({
 
     Meteor.call("updateDailyMessage", latestAcademy, message);
 
+  },
+  'click #terminateDay' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    Meteor.call("terminateDay", latestAcademy);
   }
 });

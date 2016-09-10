@@ -15,10 +15,7 @@ db.academy.insert({
 	name: "Kroilon Test",
 	dailyMessage: "Bem Vindos a Kroilon",
 	date:new Date(),
-	energyLevel: [{
-		date: new Date(),
-		energy: 5
-	}],
+	energyLevel: 5,
 	teamChallengeScore: [{
 		date: new Date(),
 		challenge: "CH_001_01",

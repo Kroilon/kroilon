@@ -48,10 +48,41 @@ Meteor.methods({
     addAcademy : function(data) {
       Academy.insert(data);
     },
+	deleteCharacter: function (id,playerId) {
 
+      Academy.update(
+          { _id: id },
+          {$pull: {'users': {nb:playerId}}}
+      );
+	  },
+	deleteBadge: function (badgename) {
+
+      Badges.remove(
+          { name: badgename }
+      );
+	  },
+	  deleteRoom: function (roomname) {
+		
+      Rooms.remove(
+          { name: roomname }
+      );
+	  },
+	deleteChallenge: function (challengename) {
+		
+      Challenges.remove(
+          { name: challengename }
+      );
+	  },
 		updateDailyMessage : function(latestAcademy, message)
 		{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
+		},
+
+		terminateDay : function(latestAcademy)
+		{
+			var energyLevel = parseInt(latestAcademy.energyLevel - 1);
+
+			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : energyLevel }});
 		}
 
 });

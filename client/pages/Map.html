@@ -4,10 +4,10 @@
   <img class="map-center" src="Mapa-09(2).png" alt="map" style="margin-left:0px;padding-right:20px;padding-bottom:30px;overflow: hidden;">
   </div>
 
-<div id="team_description">
+
 
     <div class="headRow">
-      <div class="divCell" align="center">Game Dashboard - <div id="div_date_today"></div></div>
+      <div class="divCellMap" align="center">Game Dashboard - <span id="div_date_today"></span></div>
     </div>
     <div class="headRow">
       <div class="divCell" align="center">Score <div id="div_score_today">{{total_day.score}}</div></div>
@@ -22,7 +22,7 @@
       <div class="divCell" align="center">{{message}}</div>
     </div>
 
-</div>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -30,15 +30,16 @@ $(document).ready(function() {
 	var d = new Date();
 	var weekday = new Array(7);
 	weekday[0]=  "Domingo";
-	weekday[1] = "Segunda-feira";
-	weekday[2] = "Terça-feira";
-	weekday[3] = "Quarta-feira";
-	weekday[4] = "Quinta-feira";
-	weekday[5] = "Sexta-feira";
+	weekday[1] = "Segunda";
+	weekday[2] = "Terça";
+	weekday[3] = "Quarta";
+	weekday[4] = "Quinta";
+	weekday[5] = "Sexta";
 	weekday[6] = "Sábado";
 
 	var n = weekday[d.getDay()];
-	$('#div_date_today').html(n);
+
+  document.getElementById("div_date_today").innerHTML = n;
 
 });
 </script>

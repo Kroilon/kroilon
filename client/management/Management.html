@@ -10,6 +10,7 @@
           <li2><a href="#tab-3">Rooms</a></li2>
           <li2><a href="#tab-4">Challenges</a></li2>
           <li2><a href="#tab-5">Message</a></li2>
+          <li2><a href="#tab-6">Fecho Dia</a></li2>
 
       </ul>
       <div class="tab">
@@ -35,8 +36,10 @@
         </div>
 
           <div id="tab-1" class="tab-content">
-            <!-- Adicionar Badges -->
-            <h2>Add Character</h2>
+
+            <!-- Adicionar Character -->
+            <h2>Adicionar Character</h2>
+
             <form>
               <table>
                 <tr>
@@ -106,9 +109,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>&nbsp;</td>
-                  <td><input type="button" id="insertCharacter" value="Insert"></td>
-                  <td><input type="button" id="deleteCharacter" value="Delete"></td>
+
+				  <td><input type="button" id="deleteCharacter" value="Apagar"></td>
+				  <td><input type="button" id="insertCharacter" value="Inserir"></td>
+
                 </tr>
               </table>
             </form>
@@ -179,9 +183,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>&nbsp;</td>
-                  <td><input type="button" id="insertBadge" value="Insert"></td>
-                  <td><input type="button" id="deleteBadge" value="Delete"></td>
+
+                  <td><input type="button" id="deleteBadge" value="Apagar"></td>
+                  <td><input type="button" id="insertBadge" value="Inserir"></td>
+
                 </tr>
               </table>
             </form>
@@ -210,9 +215,10 @@
                       </select></td>
                   </tr>
                   <tr>
-                    <td>&nbsp;</td>
-                    <td><input type="button" id="insertRoom" value="Insert"></td>
-                    <td><input type="button" id="deleteRoom" value="Delete"></td>
+
+                    <td><input type="button" id="deleteRoom" value="Apagar"></td>
+                    <td><input type="button" id="insertRoom" value="Inserir"></td>
+
                   </tr>
                 </table>
               </form>
@@ -257,9 +263,10 @@
                       </select></td>
                   </tr>
                   <tr>
-                    <td>&nbsp;</td>
-                    <td><input type="button" id="insertChallenge" value="Insert"></td>
-                    <td><input type="button" id="deleteChallenge" value="Delete"></td>
+
+                    <td><input type="button" id="deleteChallenge" value="Apagar"></td>
+                    <td><input type="button" id="insertChallenge" value="Inserir"></td>
+
                   </tr>
                 </table>
               </form>
@@ -280,6 +287,19 @@
                     <td>&nbsp;</td>
                     <td><input type="button" id="updateDailyMessage" value="Update"></td>
                     <td><input type="button" id="deleteDailyMessage" value="Delete"></td>
+                  </tr>
+                </table>
+              </form>
+          </div>
+
+          <div id="tab-6" class="tab-content">
+            <!-- Adicionar Challenge -->
+              <h2>Fecho Dia</h2>
+              <form>
+                <table>
+                  <tr>
+                    <td><input type="button" id="terminateDay" value="Encerramento Dia"></td>
+                    <td><input type="number" id="burgerCount" placeholder="menu estudante"><input type="button" id="addCheese" value="Adicionar CheeseBurger"></td>
                   </tr>
                 </table>
               </form>
