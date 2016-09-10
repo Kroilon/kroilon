@@ -3,6 +3,7 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
+import { Session } from 'meteor/session';
 
 Template.Home.events({
    'click #myLoginBtn' (event)  {
