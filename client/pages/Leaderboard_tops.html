@@ -6,15 +6,42 @@
 		<li><h3 class="leaderboard-subtitle">Top Scores</h3></li>
 	</ul>
 	
-	<div>TOP HEALTH</div>
-	<table id="table_leaderboard_topHealth">
-	</table>
+	<div>TOP HEALTH</div>	
+	{{#each userScores.users}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
 	
 	<div>TOP KNOWLEDGE</div>
-	<table id="table_leaderboard_topKnowledge">
-	</table>
+	{{#each userScores.users}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
 	
 	<div>TOP EXPERIENCE</div>
-	<table id="table_leaderboard_topExperience">
-	</table>
+	{{#each userScores.users}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell"><img src='{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
 </template>

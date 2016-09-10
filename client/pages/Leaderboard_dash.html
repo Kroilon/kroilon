@@ -6,24 +6,20 @@
 		<li><h3 class="leaderboard-subtitle"><a href="/leaderboard_tops">Top Scores</a></h3></li>
 	</ul>
 	
-	<div><div>Pontos de Equipa</div><div id="div_pontos_equipa"></div></div>
+	<div><div>Pontos de Equipa</div><div>{{userScores.avg}}</div></div>
 	
-	<table id="table_leaderboard_dash">
-	</table>
-	
+	{{#each userScores.users}}
 
-{{#each users}}
+		<div class="divTable">
 
-	<div class="divTable">
+		  <div class="divRow">
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalScore}}</div>
+		  </div>
 
-	  <div class="divRow">
-		  <div class="divCell"><img src='{{avatar}}'></div>
-		  <div class="divCell">{{name}}</div>
-		  <div class="divCell">{{totalScore}}</div>
-	  </div>
+		</div>
 
-	</div>
+	{{/each}}
 
-{{/each}}
-	
 </template>
