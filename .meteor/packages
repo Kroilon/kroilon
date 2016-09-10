@@ -31,8 +31,6 @@ accounts-password
 useraccounts:unstyled
 raix:handlebar-helpers
 
-session
-
 aldeed:template-extension
 
 autopublish             # Publish all data to the clients (for prototyping)
