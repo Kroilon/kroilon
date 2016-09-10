@@ -1,8 +1,11 @@
+Template.MainNav.helpers({
+	isLoggedIn() {
+		return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined;
+	}
+});
+
 Template.MainNav.events({
-	'click .login-toggle': () => {
-		Session.set('nav-toggle', 'open');
-	},
-	'click .logout': () => {
-		AccountsTemplates.logout();
+	'click .logout': () => {		
+		Session.set("loggedUser",'');
 	}
 })
