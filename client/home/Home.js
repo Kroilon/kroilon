@@ -11,14 +11,19 @@ Template.Home.events({
     var playerNb = $("#playerNb").val();
 	var playerPass = $("#playerPass").val();
 		
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var latestAcademy = Academy.find({}, {sort: {date: -1, limit: 1}});
 
-    var user = $.each(latestAcademy.users, function(index,value){
-		if(value.nb == playerNb){
-			return value;
-		}
-	});
+	var user;
 	
+	debugger;
+	
+	for(var i = 0; i<latestAcademy.users.length; i++){
+		if(latestAcademy.users[i].nb == playerNb){
+			user = latestAcademy.users[i];
+			return;
+		}
+	}
+		
 	Session.set("playerNb", user);
 	
 	console.log(Session.get("playerNb"));
