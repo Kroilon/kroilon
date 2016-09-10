@@ -42,11 +42,10 @@ Template.Management.events({
 
     var user = $.grep(latestAcademy.users, function(e){ return e.nb == playerId; });
 
-
     var activityId = $("#activity").val();
     var room = $("#room").val();
     var pointType = $("#pointType").val();
-    var points = $("#points").val();
+    var points = parseInt($("#points").val());
 
 
     var score = {
@@ -129,12 +128,30 @@ Template.Management.events({
     					problemSolving: characterProblemSolvingSkills,
     					manegement:characterManagementSkills,
     					android:characterAndroidSkills
-    				}]
+    				}],
+          score:[
+            {
+              date: new Date(),
+    					points: 0
+            }
+          ]
     		}
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
         Meteor.call("addAcademyUser",latestAcademy._id, user);
+
+  },
+  'click #insertAcademy' (event){
+    var academyName = $('#academyName').val();
+
+    var data =
+    {
+      name: academyName,
+      date: new Date()
+    };
+
+    Meteor.call("addAcademy", data);
 
   }
 });

@@ -27,6 +27,11 @@ db.academy.insert({
 		date:new Date(),
 		points: "3534"
 	}],
+	pe: [{
+			challenge: "All in Time",
+			value: 50,
+			badge: ""
+		}],
 	users:[
 		{
 			nb: "nb22634",
@@ -143,4 +148,14 @@ db.rooms.insert({
 			name: "outro"
 		}
 	]
+});
+
+//secrets
+db.secrets.drop();
+db.createCollection("secrets");
+db.secrets.insert({
+	description: "parti uma perna",
+	nb: "nb22758",
+	challenge: "Submeter Segredo",
+	discovered: 0
 });
