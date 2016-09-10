@@ -75,3 +75,18 @@ FlowRouter.route('/test', {
         BlazeLayout.render("TestLayout", {main: "Test"});
     }
 });
+
+//Adicionar Actividade
+FlowRouter.route('/addactivity', {
+    name: 'addactivity',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "AddActivity"});
+    }
+});
+
+FlowRouter.route('/management', {
+    name: 'management',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Management"});
+    }
+});
