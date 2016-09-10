@@ -98,6 +98,7 @@ db.academy.insert({
 });
 
 //Challenges
+db.challenges.drop();
 db.createCollection("challenges");
 db.challenges.insert({
 	name: "kahoot",
