@@ -52,6 +52,13 @@ Meteor.methods({
 		updateDailyMessage : function(latestAcademy, message)
 		{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
+		},
+
+		terminateDay : function(latestAcademy)
+		{
+			var energyLevel = parseInt(latestAcademy.energyLevel - 1);
+
+			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : energyLevel }});
 		}
 
 });

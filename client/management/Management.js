@@ -167,5 +167,11 @@ Template.Management.events({
 
     Meteor.call("updateDailyMessage", latestAcademy, message);
 
+  },
+  'click #terminateDay' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    Meteor.call("terminateDay", latestAcademy);
   }
 });
