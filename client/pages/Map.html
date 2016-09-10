@@ -1,18 +1,27 @@
 
 <template name="Map">
-  <h1 class="page-title">Map of Kroilon</h1>
-
   <div>
   <img class="map-center" src="Mapa-09(2).png" alt="map" style="margin-left:0px;padding-right:20px;padding-bottom:30px;overflow: hidden;">
   </div>
-  
+
 <div id="team_description">
-	<div><h2>In the Land of Kroilon</h2>	
-	</div>
-	<div><h3>Game Dashboard<div id="div_date_today"></div></h3></div>
-	<div><h3>Score<div id="div_score_today">{{total_day.score}}</div></h3></div>
-	<div><h3>Energy Level</h3><img id="div_energylevel" src={{total_day.img_energyLevel}}></div>
-	
+
+    <div class="headRow">
+      <div class="divCell" align="center">Game Dashboard - <div id="div_date_today"></div></div>
+    </div>
+    <div class="headRow">
+      <div class="divCell" align="center">Score <div id="div_score_today">{{total_day.score}}</div></div>
+    </div>
+    <div class="headRow">
+      <div class="divCell" align="center">&nbsp;</div>
+      <div class="divCell" align="center">Energy Level </div>
+      <div class="divCell" align="center"><img id="div_energylevel" src={{total_day.img_energyLevel}} height="75" width="37,5"> </div>
+    </div>
+    <div class="headRow">
+      <div class="divCell" align="center">&nbsp;</div>
+      <div class="divCell" align="center">{{message}}</div>
+    </div>
+
 </div>
 
 <script type="text/javascript">
@@ -30,12 +39,7 @@ $(document).ready(function() {
 
 	var n = weekday[d.getDay()];
 	$('#div_date_today').html(n);
-	
-    $('map').imageMapResize();
-	
+
 });
 </script>
-
-<script src="../../public/imageMapResizer.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </template>

@@ -15,7 +15,7 @@ Template.Map.helpers({
 		});
 
 		var img_energyLevel = "/energyLevels/energyLevels_5.png";
-		
+
 		switch(energy_level) {
 			case 1:
 				img_energyLevel = "/energyLevels/energyLevels_1.png";
@@ -30,10 +30,16 @@ Template.Map.helpers({
 				img_energyLevel = "/energyLevels/energyLevels_4.png";
 				break;
 		}
-		
+
 		var total = {score:total_score,img_energyLevel:img_energyLevel};
-		
+
 		return total;
+	},
+	message() {
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+		return latestAcademy.dailyMessage;
+
 	}
 
 });
