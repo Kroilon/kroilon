@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
-			
+
+var average_points = 0;			
 
 Template.Leaderboard_dash.helpers({
 	users() {
@@ -11,6 +12,7 @@ Template.Leaderboard_dash.helpers({
 		var users = latestAcademy.users;
 		
 		var total_users = users.length;
+		var total_points = 0;
 		
 		$.each(users, function(index_users, value_users){
 			
@@ -23,14 +25,32 @@ Template.Leaderboard_dash.helpers({
 			});
 			
 			value_users.totalScore = user_points;
-			
+			total_points += user_points;
 		});
 		
-		/*debugger;
-		users = users.sort(function(a, b) {
-			return a[1].localeCompare(b[1]);
-		});*/
+		sortArrOfObjectsByParam(users, "totalScore", false);
+		
+		average_points = total_points/total_users;
 		
 		return users;
+	},
+	uu(){
+		//return users();
 	}
 });
+
+
+function sortArrOfObjectsByParam(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+    if(sortAscending == undefined) sortAscending = true;  // default to true
+    
+    if(sortAscending) {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+        });
+    }
+    else {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+        });
+    }
+}

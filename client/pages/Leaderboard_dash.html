@@ -6,7 +6,7 @@
 		<li><h3 class="leaderboard-subtitle"><a href="/leaderboard_tops">Top Scores</a></h3></li>
 	</ul>
 	
-	<div><div>Pontos de Equipa</div><div id="div_pontos_equipa"></div></div>
+	
 	
 	<table id="table_leaderboard_dash">
 	</table>
@@ -26,4 +26,7 @@
 
 {{/each}}
 	
+	{{#each uu}}
+		<div><div>Pontos de Equipa</div><div>{{average_points}}</div></div>
+	{{/each}}
 </template>
