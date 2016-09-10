@@ -4,7 +4,7 @@
 
 <div id="tabs-container">
     <ul class="tabs-menu">
-        <li2 class="current"><a href="#tab-1">My Profile</a></li2>
+        <li2 class="current"><a id="active" href="#tab-1">My Profile</a></li2>
         <li2><a href="#tab-2">My Performance</a></li2>
         <li2><a href="#tab-3">Dashboard</a></li2>
         <li2><a href="#tab-4">Top Scores</a></li2>
@@ -19,7 +19,7 @@
         </div>
         <div id="tab-3" class="tab-content" style="width:1350px;">
         <div>
-        <div><div>Pontos de Equipa</div><div>{{userScores.avg}}</div></div>
+        <div><div>Team Score {{userScores.avg}}</div></div><br>
 
 	{{#each userScores.users}}
 
@@ -40,7 +40,7 @@
             </div>
         <div id="tab-4" class="tab-content" style="width:1350px;">
         <div>
-        <div>TOP HEALTH</div>	
+        <div>TOP HEALTH</div>
 	{{#each userHealthScores}}
 		<div class="divTable">
 
@@ -53,7 +53,8 @@
 
 		</div>
 	{{/each}}
-	
+  <br>
+
 	<div>TOP KNOWLEDGE</div>
 	{{#each userKnowledgeScores}}
 		<div class="divTable">
@@ -67,7 +68,8 @@
 
 		</div>
 	{{/each}}
-	
+  <br>
+
 	<div>TOP EXPERIENCE</div>
 	{{#each userExperienceScores}}
 		<div class="divTable">
@@ -81,11 +83,11 @@
 
 		</div>
 	{{/each}}
-        
-        
+
+
         </div>
-        
-        
+
+
             </div>
     </div>
 </div>
@@ -101,6 +103,7 @@ $(document).ready(function() {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
+    $("#active").click();
 });
 </script>
 </template>

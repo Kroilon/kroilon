@@ -26,91 +26,91 @@ Template.Leaderboard.helpers({
 
 		sortArrOfObjectsByParam(users, "totalScore", false);
 
-		average_points = total_points/total_users;
+		var average_points = (total_points/total_users);
 
-		var userScores = {users:users,avg:average_points};
+		var userScores = {users:users, avg: parseInt(average_points)};
 
 		return userScores;
 	},
 	userHealthScores() {
-		
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var users = latestAcademy.users;
-		
+
 		var total_points = 0;
-		
+
 		$.each(users, function(index_users, value_users){
-			
+
 			var user_points = 0;
-			
+
 			$.each(value_users.score, function(index_score, value_score){
-				
+
 				if(value_score.category=="HP"){
 					user_points += value_score.points;
 				}
-				
+
 			});
-			
+
 			value_users.totalHealthScore = user_points;
 			total_points += user_points;
 		});
-		
+
 		sortArrOfObjectsByParam(users, "totalHealthScore", false);
-	
+
 		return users;
 	},
 	userKnowledgeScores() {
-		
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var users = latestAcademy.users;
-		
+
 		var total_points = 0;
-		
+
 		$.each(users, function(index_users, value_users){
-			
+
 			var user_points = 0;
-			
+
 			$.each(value_users.score, function(index_score, value_score){
-				
+
 				if(value_score.category=="KP"){
 					user_points += value_score.points;
 				}
-				
+
 			});
-			
+
 			value_users.totalKnowledgeScore = user_points;
 			total_points += user_points;
 		});
-		
+
 		sortArrOfObjectsByParam(users, "totalKnowledgeScore", false);
-	
+
 		return users;
 	},
 	userExperienceScores() {
-		
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var users = latestAcademy.users;
-		
+
 		var total_points = 0;
-		
+
 		$.each(users, function(index_users, value_users){
-			
+
 			var user_points = 0;
-			
+
 			$.each(value_users.score, function(index_score, value_score){
-				
+
 				if(value_score.category=="XP"){
 					user_points += value_score.points;
 				}
-				
+
 			});
-			
+
 			value_users.totalExperienceScore = user_points;
 			total_points += user_points;
 		});
-		
+
 		sortArrOfObjectsByParam(users, "totalExperienceScore", false);
-	
+
 		return users;
 	}
 });
@@ -118,21 +118,21 @@ Template.Leaderboard.helpers({
 
 Template.Leaderboard.events({
     'click .divCell-like': function(event, instance) {
-		$(event.currentTarget).prop('src', 'Like-07.png'); 
+		$(event.currentTarget).prop('src', 'Like-07.png');
 		//console.log($(this).attr('src'));
-		
+
 		//$("img .divCell-like").attr('src','Like-07.png');
-		
+
 		//Session.set("src", "Like-07.png");
 		//console.log($(this).find(''));//.attr('src','Like-07.png');
-		
-		
+
+
 		//attr('src','Like-07.png');
     }
 });
 
 
-//{ 'click #myButton': function (event, instance) { $(event.currentTarget).prop('disabled', true); } 
+//{ 'click #myButton': function (event, instance) { $(event.currentTarget).prop('disabled', true); }
 
 
 function sortArrOfObjectsByParam(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
