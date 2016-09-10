@@ -43,6 +43,10 @@ Meteor.methods({
           { _id: id},
           {$push: {'users': user}}
       );
+    },
+
+    addAcademy : function(data) {
+      Academy.insert(data);
     }
 
 });
