@@ -28,15 +28,12 @@ var data = {
 
 Template.Characters.events({
 	'click h1': () => {
-
 	}
 })
 
 Template.Characters.helpers({
 	characters() {
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-		console.log(latestAcademy.users);
 
 		return latestAcademy.users;
 	},

@@ -15,12 +15,20 @@ FlowRouter.route('/dashboard', {
 });
 
 // Characters
-FlowRouter.route('/characters', {
+FlowRouter.route('/characters/:page', {
     name: 'characters',
-    action() {
+    action: function(params, queryParams){
+      console.log(params);
       BlazeLayout.render("CharactersLayout", {main: "Characters"});
     }
 });
+FlowRouter.route('/characters', {
+    name: 'characters',
+    action(){
+      BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    }
+});
+
 // Map
 FlowRouter.route('/map', {
     name: 'map',

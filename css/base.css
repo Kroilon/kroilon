@@ -1,23 +1,45 @@
+.divTable
+{
+    display:  table;
+    width:auto;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:5px;/*cellspacing:poor IE support for  this*/
+   /* border-collapse:separate;*/
+}
 
-  .divTable
-  {
-      display:  table;
-      width:auto;
-      background-color:#eee;
-      border:1px solid  #666666;
-      border-spacing:5px;/*cellspacing:poor IE support for  this*/
-     /* border-collapse:separate;*/
-  }
+.divRow
+{
+   display:table-row;
+   width:auto;
+}
 
-  .divRow
-  {
-     display:table-row;
-     width:auto;
-  }
+.divCell
+{
+    float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    width:200px;
+}
 
-  .divCell
-  {
-      float:left;/*fix for  buggy browsers*/
-      display:table-column;
-      width:200px;
-  }
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
