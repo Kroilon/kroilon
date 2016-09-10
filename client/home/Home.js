@@ -13,12 +13,14 @@ Template.Home.events({
 		
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
+	console.log(latestAcademy.name);
+	
     var user = $.grep(latestAcademy.users, function(e){
 		return e.nb == playerNb;
 	});
 		
-	Session.set("playerNb", user);
+	Session.set("loggedUser", user);
 	
-	console.log(Session.get("playerNb"));
+	console.log(Session.get("loggedUser"));
   }
 });
