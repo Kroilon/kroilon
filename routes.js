@@ -68,6 +68,13 @@ FlowRouter.route('/leaderboard_tops', {
     }
 });
 
+FlowRouter.route('/leaderboard', {
+    name: '/leaderboard',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Leaderboard"});
+    }
+});
+
 // Leaderboard_tops Page
 FlowRouter.route('/test', {
     name: '/test',
