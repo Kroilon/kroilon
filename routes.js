@@ -117,3 +117,10 @@ FlowRouter.route('/rules', {
         BlazeLayout.render("AppLayout", {main: "Rules"});
     }
 });
+
+FlowRouter.route('/secrets', {
+    name: '/secrets',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Secrets"});
+    }
+});

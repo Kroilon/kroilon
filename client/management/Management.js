@@ -60,6 +60,7 @@ Template.Management.events({
     Meteor.call("updateScore",latestAcademy._id,playerId,score);
 
   },
+
   'click #insertChallenge' (event) {
 
     var challengeName = $("#challengeName").val();

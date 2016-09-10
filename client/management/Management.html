@@ -9,25 +9,26 @@
           <li2><a href="#tab-2">Badges</a></li2>
           <li2><a href="#tab-3">Rooms</a></li2>
           <li2><a href="#tab-4">Challenges</a></li2>
-          <li2><a href="#tab-5">Mensagem</a></li2>
+          <li2><a href="#tab-5">Message</a></li2>
 
       </ul>
       <div class="tab">
         <div id="tab-0" class="tab-content">
           <iframe width="320" height="180" src="https://www.youtube.com/embed/mAHC1wmmrok" frameborder="2" allowfullscreen></iframe>
           <!-- Adicionar Academy -->
-            <h2>Adicionar Academy</h2>
+            <h2>Add Academy</h2>
             <form>
               <table>
                 <tr>
-                  <td>Nome Academy</td>
+                  <td>Name Academy</td>
                   <td>
                     <input type="text" id="academyName">
                   </td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td><input type="button" id="insertAcademy" value="Inserir"></td>
+                  <td><input type="button" id="insertAcademy" value="Insert"></td>
+                  <td><input type="button" id="deleteAcademy" value="Delete"></td>
                 </tr>
               </table>
             </form>
@@ -35,7 +36,7 @@
 
           <div id="tab-1" class="tab-content">
             <!-- Adicionar Badges -->
-            <h2>Adicionar Character</h2>
+            <h2>Add Character</h2>
             <form>
               <table>
                 <tr>
@@ -45,7 +46,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Nome</td>
+                  <td>Name</td>
                   <td>
                     <input type="text" id="characterName">
                   </td>
@@ -106,14 +107,15 @@
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td><input type="button" id="insertCharacter" value="Inserir"></td>
+                  <td><input type="button" id="insertCharacter" value="Insert"></td>
+                  <td><input type="button" id="deleteCharacter" value="Delete"></td>
                 </tr>
               </table>
             </form>
 
 
           <!-- Atualizar Score -->
-          <h2>Adicionar Atividades</h2>
+          <h2>Add Atividades</h2>
             <form>
               <table>
                 <tr>
@@ -126,7 +128,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                  <td>Atividade</td>
+                  <td>Activity</td>
                   <td>
                     <select id="activity">
                       {{#each challs}}
@@ -136,7 +138,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Tipo de Pontos</td>
+                  <td>Type of Points</td>
                   <td>
                     <select id="pointType">
                         <option value="KP">KP</option>
@@ -145,14 +147,15 @@
                     </select></td>
                 </tr>
                 <tr>
-                  <td>Pontos</td>
+                  <td>Points</td>
                   <td>
                     <input type="number" id="points" value="0">
                   </td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td><input type="button" id="insert" value="Inserir"></td>
+                  <td><input type="button" id="insert" value="Insert"></td>
+                  <td><input type="button" id="delete" value="Delete"></td>
                 </tr>
               </table>
             </form>
@@ -160,24 +163,25 @@
 
           <div id="tab-2" class="tab-content">
             <!-- Adicionar Badges -->
-            <h2>Adicionar Badges</h2>
+            <h2>Add Badges</h2>
             <form>
               <table>
                 <tr>
-                  <td>Nome</td>
+                  <td>Name</td>
                   <td>
                     <input type="text" id="badgeName">
                   </td>
                 </tr>
                 <tr>
-                  <td>Pontos</td>
+                  <td>Points</td>
                   <td>
                     <input type="number" id="badgePoints" value="0">
                   </td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td><input type="button" id="insertBadge" value="Inserir"></td>
+                  <td><input type="button" id="insertBadge" value="Insert"></td>
+                  <td><input type="button" id="deleteBadge" value="Delete"></td>
                 </tr>
               </table>
             </form>
@@ -186,11 +190,11 @@
           <div id="tab-3" class="tab-content">
             <div>
               <!-- Adicionar Room -->
-              <h2>Adicionar Rooms</h2>
+              <h2>Add Rooms</h2>
               <form>
                 <table>
                   <tr>
-                    <td>Nome</td>
+                    <td>Name</td>
                     <td>
                       <input type="text" id="roomName">
                     </td>
@@ -199,7 +203,7 @@
                     <td>Badges</td>
                     <td>
                       <select id="roomBadge">
-                        <option selected>Sem Badge</option>
+                        <option selected>No Badge</option>
                         {{#each badges}}
                         <option value="{{name}}">{{name}}</option>
                         {{/each}}
@@ -207,7 +211,8 @@
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><input type="button" id="insertRoom" value="Inserir"></td>
+                    <td><input type="button" id="insertRoom" value="Insert"></td>
+                    <td><input type="button" id="deleteRoom" value="Delete"></td>
                   </tr>
                 </table>
               </form>
@@ -216,17 +221,17 @@
 
           <div id="tab-4" class="tab-content">
             <!-- Adicionar Challenge -->
-              <h2>Adicionar Challenge</h2>
+              <h2>Add Challenge</h2>
               <form>
                 <table>
                   <tr>
-                    <td>Nome Challenge</td>
+                    <td>Name Challenge</td>
                     <td>
                       <input type="text" id="challengeName">
                     </td>
                   </tr>
                   <tr>
-                    <td>Pontos</td>
+                    <td>Points</td>
                     <td>
                       <input type="number" id="challengePoints" value="0">
                     </td>
@@ -235,7 +240,7 @@
                     <td>Room</td>
                     <td>
                       <select id="challengeRoom">
-                        <option selected>Sem Sala</option>
+                        <option selected>No Room</option>
                         {{#each rooms}}
                         <option value="{{name}}">{{name}}</option>
                         {{/each}}
@@ -245,7 +250,7 @@
                     <td>Badges</td>
                     <td>
                       <select id="challengeBadge">
-                        <option selected>Sem Badge</option>
+                        <option selected>No Badge</option>
                         {{#each badges}}
                         <option value="{{name}}">{{name}}</option>
                         {{/each}}
@@ -253,7 +258,8 @@
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><input type="button" id="insertChallenge" value="Inserir"></td>
+                    <td><input type="button" id="insertChallenge" value="Insert"></td>
+                    <td><input type="button" id="deleteChallenge" value="Delete"></td>
                   </tr>
                 </table>
               </form>
@@ -261,18 +267,19 @@
 
           <div id="tab-5" class="tab-content">
             <!-- Adicionar Challenge -->
-              <h2>Mensagem Diária</h2>
+              <h2>Daily Message</h2>
               <form>
                 <table>
                   <tr>
-                    <td>Mensagem</td>
+                    <td>Message</td>
                     <td>
                       <input type="text" id="message">
                     </td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
-                    <td><input type="button" id="updateDailyMessage" value="Atualizar"></td>
+                    <td><input type="button" id="updateDailyMessage" value="Update"></td>
+                    <td><input type="button" id="deleteDailyMessage" value="Delete"></td>
                   </tr>
                 </table>
               </form>
