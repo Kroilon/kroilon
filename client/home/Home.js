@@ -18,9 +18,17 @@ Template.Home.events({
     var user = $.grep(latestAcademy.users, function(e){
 		return e.nb == playerNb;
 	});
-		
-	Session.set("loggedUser", user);
 	
-	console.log(Session.get("loggedUser"));
+	if(user.nb == playerNb && playerPass == user.password){
+		
+		Session.set("loggedUser", user);
+		
+		console.log(Session.get("loggedUser"));
+		$('#loginPage').html('<h3>LOGIN DONE</h3>');
+		
+		
+	}
+	
+
   }
 });
