@@ -44,3 +44,11 @@ FlowRouter.route('/leaderboard_tops', {
         BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
     }
 });
+
+// Leaderboard_tops Page
+FlowRouter.route('/test', {
+    name: '/test',
+    action() {
+        BlazeLayout.render("TestLayout", {main: "Test"});
+    }
+});
