@@ -28,3 +28,11 @@ FlowRouter.route('/map', {
       BlazeLayout.render("MapLayout", {main: "Map"});
     }
 });
+
+// Characters
+FlowRouter.route('/test', {
+    name: 'test',
+    action() {
+      BlazeLayout.render("TestLayout", {main: "Test"});
+    }
+});

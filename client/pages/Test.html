@@ -1,0 +1,615 @@
+<template name="Test">
+<body>
+	aa
+<div class="container body-content">
+            
+    <div id="MainContent_pnlPoints" style="border-style:Ridge;">
+	<fieldset>
+		<legend>
+			Points
+		</legend>
+
+
+		<table id="MainContent_tblAddPoints" style="width:100%;">
+			<tr>
+				<td style="width:300px;">
+                    <div><label for="MainContent_ddlNomePoints" id="MainContent_lblNomePoints">Player</label></div>
+                    <select name="ctl00$MainContent$ddlNomePoints" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlNomePoints\&#39;,\&#39;\&#39;)&#39;, 0)" id="MainContent_ddlNomePoints">
+					<option selected="selected" value="153">Adriana Santos Martins</option>
+					<option value="163">Andr&#233; Martins Silva</option>
+					<option value="169">Carla Matos Bernardino</option>
+					<option value="151">Cl&#225;udio Miguel Sebasti&#227;o</option>
+					<option value="161">Diogo Anjo Vieira</option>
+					<option value="172">Diogo Carvalho Vieira</option>
+					<option value="164">Diogo Ferreira Feliciano</option>
+					<option value="168">Diogo Pereira Sousa</option>
+					<option value="33">Equipa</option>
+					<option value="159">Fernando Delgado Canhoto</option>
+					<option value="155">Gon&#231;alo Bai&#227;o Queimado</option>
+					<option value="158">Guilherme Campos Costa</option>
+					<option value="152">In&#234;s Pinto Seixas</option>
+					<option value="167">Joana Pimenta Gomes</option>
+					<option value="176">Jo&#227;o Dion&#237;sio Santos</option>
+					<option value="173">Jorge Marques Silva</option>
+					<option value="174">Jos&#233; Eg&#237;dio Reis</option>
+					<option value="149">Jos&#233; Peixeiro</option>
+					<option value="150">M&#243;nica Henriques Abreu</option>
+					<option value="170">Nelson Rosa Sousa</option>
+					<option value="160">Nuno Levezinho Silva</option>
+					<option value="156">Pedro Azevedo Tavares</option>
+					<option value="177">Pedro Coutinho</option>
+					<option value="154">Pedro Miguel Silvestre</option>
+					<option value="162">Rita Fonseca Nicolau</option>
+					<option value="171">Ruben Gomes Machado</option>
+					<option value="165">Sara Pereira Grancho</option>
+					<option value="175">Sofia Carmo Rebelo</option>
+					<option value="157">Tiago Furtado Gon&#231;alves</option>
+					<option value="166">Vera Palma Pereira</option>
+
+				</select></td><td style="width:300px;">
+                    <div><label for="MainContent_ddlSalas" id="MainContent_lblSalas">Rooms</label></div>
+                    <select name="ctl00$MainContent$ddlSalas" id="MainContent_ddlSalas">
+					<option value="1">Adolph Room</option>
+					<option value="2">Almusther Room</option>
+					<option value="3">Cockroach Entry</option>
+					<option value="12">Dungeon</option>
+					<option value="4">Kalu Hall</option>
+					<option value="11">N/A</option>
+					<option value="5">Normingor Room</option>
+					<option value="13">Normingor Room B</option>
+					<option value="6">Performanthor Room</option>
+					<option value="7">Project Room</option>
+					<option value="8">Ristar Room</option>
+					<option value="14">Stormillor Dungeons</option>
+					<option value="15">Stormillor Dungeons</option>
+					<option value="16">Stormillor Dungeons</option>
+					<option value="9">Stormillor Hall</option>
+					<option value="10">Wondering Hall</option>
+
+				</select></td><td style="width:200px;">
+                    <div><label for="MainContent_ddlDias" id="MainContent_lblDias">Days</label></div>
+                    <select name="ctl00$MainContent$ddlDias" id="MainContent_ddlDias">
+					<option value="1">01 Segunda</option>
+					<option value="2">02 Ter&#231;a</option>
+					<option value="3">03 Quarta</option>
+					<option value="4">04 Quinta</option>
+					<option value="5">05 Sexta</option>
+					<option value="6">06 Fds</option>
+					<option value="7">08 Segunda</option>
+					<option value="8">09 Ter&#231;a</option>
+					<option value="9">10 Quarta</option>
+					<option value="11">11 Quinta</option>
+					<option value="12">12 Sexta</option>
+
+				</select></td><td style="width:300px;">
+                    <div><label for="MainContent_ddlActividades" id="MainContent_lblActividades">Activities</label></div>
+                    <select name="ctl00$MainContent$ddlActividades" id="MainContent_ddlActividades">
+					<option value="38">+70% pratos com muito bom</option>
+					<option value="53">-50% Landing Quest Goal</option>
+					<option value="54">-50% Landing Quest Goal</option>
+					<option value="1">Adivinhar segredo</option>
+					<option value="79">App Challenge Pitch</option>
+					<option value="76">AppChallengeonTime</option>
+					<option value="106">Apresenta&#231;&#227;o Case Study</option>
+					<option value="97">Assiduidade</option>
+					<option value="65">Atrasado (am)</option>
+					<option value="67">Atrasado (cam)</option>
+					<option value="66">Atrasado (pm)</option>
+					<option value="70">Atraso colectivo</option>
+					<option value="96">Attacker</option>
+					<option value="90">Autoavalia&#231;&#227;o</option>
+					<option value="91">Autoavalia&#231;&#227;o</option>
+					<option value="2">Avatar</option>
+					<option value="52">Badge Boss</option>
+					<option value="60">Badge Houdini</option>
+					<option value="61">Badge MegaShowBiz Watch</option>
+					<option value="47">Badge Soneca</option>
+					<option value="48">Badge Soneca</option>
+					<option value="51">Badge Team Player</option>
+					<option value="62">Badge Top Boss</option>
+					<option value="82">Badge Top Houdini</option>
+					<option value="89">Badge Top Team Player</option>
+					<option value="56">Badge Top Watch</option>
+					<option value="57">Badge Top Watch</option>
+					<option value="49">Badge Watch</option>
+					<option value="99">Bola</option>
+					<option value="42">Bom comportamento</option>
+					<option value="59">Capit&#227;o Cook</option>
+					<option value="104">Carta Gandalf</option>
+					<option value="83">Cartas por pontos</option>
+					<option value="3">Chegar a horas (am)</option>
+					<option value="4">Chegar a horas (cam)</option>
+					<option value="5">Chegar a horas (pm)</option>
+					<option value="6">Confessionario</option>
+					<option value="101">Crossing Paths</option>
+					<option value="94">Daily scrum</option>
+					<option value="7">Dar feedback</option>
+					<option value="45">Death Corridor</option>
+					<option value="46">Death Corridor</option>
+					<option value="8">Divide &amp; Conquer</option>
+					<option value="100">Extra Team</option>
+					<option value="9">Falhar segredo</option>
+					<option value="87">GANT</option>
+					<option value="50">Gelatina</option>
+					<option value="86">GTE Desafio - apresenta&#231;&#227;o </option>
+					<option value="98">How Might we</option>
+					<option value="39">Jantar servido antes das 21h</option>
+					<option value="93">Kahoot</option>
+					<option value="105">Le Coq Sportif</option>
+					<option value="55">Lipsync done</option>
+					<option value="74">Logo Challenge</option>
+					<option value="103">Lunch</option>
+					<option value="35">Mais 50% Marshmallow a funcionar</option>
+					<option value="36">Mais 50% Marshmallow a funcionar</option>
+					<option value="37">Mais 50% Marshmallow a funcionar</option>
+					<option value="68">Mau Comportamento</option>
+					<option value="10">MBTI</option>
+					<option value="72">MC</option>
+					<option value="81">Medley</option>
+					<option value="92">Medley Volunt&#225;rio</option>
+					<option value="11">Minimum number of secrets</option>
+					<option value="78">Night Challenge</option>
+					<option value="12">Ninja mf (participante)</option>
+					<option value="13">Ninja mf (vencedor)</option>
+					<option value="14">Objetivo caminhada</option>
+					<option value="71">Participa&#231;&#227;o</option>
+					<option value="58">Pedra, papel, tesoura</option>
+					<option value="85">Penaliza&#231;&#227;o </option>
+					<option value="102">Pitch</option>
+					<option value="75">Radioactive Circles</option>
+					<option value="15">Robot</option>
+					<option value="80">Sabotagem</option>
+					<option value="16">Scoreboard manager</option>
+					<option value="73">Skinny Dipping</option>
+					<option value="84">Team Balance</option>
+					<option value="17">Ter segredo</option>
+					<option value="18">The App Quest</option>
+					<option value="19">The Blind Quest</option>
+					<option value="20">The Chain of Claws</option>
+					<option value="21">The Entry Dinner Party</option>
+					<option value="88">The Falling Pieces</option>
+					<option value="22">The Final Battle</option>
+					<option value="77">The Flashmob Project</option>
+					<option value="63">The Food Quest</option>
+					<option value="23">The Gantt Quest</option>
+					<option value="24">The Interview</option>
+					<option value="25">The Landing Project</option>
+					<option value="26">The LipSync Battle</option>
+					<option value="27">The Marshmallow Ladder</option>
+					<option value="28">The Narrow Corridor</option>
+					<option value="95">The Night Challenge</option>
+					<option value="29">The Night Walkabout</option>
+					<option value="30">The Quest for The Smart Team Plan</option>
+					<option value="31">The Wacky Chase</option>
+					<option value="44">Todos onTime</option>
+					<option value="41">Todos onTime AM</option>
+					<option value="40">Todos onTime PM</option>
+					<option value="32">Volunt&#225;rio Chef</option>
+					<option value="64">Volunt&#225;rio FlashMob Battle</option>
+					<option value="33">Volunt&#225;rio LipSync Battle</option>
+					<option value="43">Volunt&#225;rio p/ Team Leader Android</option>
+					<option value="69">Voluntarismo</option>
+					<option value="34">Wells &amp; Cans</option>
+
+				</select></td><td style="width:300px;">
+                    <div><label for="MainContent_ddlTipos" id="MainContent_lblTipos">Tipos</label></div>
+                    <select name="ctl00$MainContent$ddlTipos" id="MainContent_ddlTipos">
+					<option value="1">Experience points</option>
+					<option value="2">Health points</option>
+					<option value="3">Knowledge points</option>
+					<option value="4">Team points</option>
+
+				</select>
+			</td>
+
+				<td style="width:200px;">
+                    <div><label for="MainContent_txtPontos" id="MainContent_lblPontos">Points</label></div>
+                    <input name="ctl00$MainContent$txtPontos" type="text" maxlength="5" id="MainContent_txtPontos" onkeyup="keyUP(event.keyCode)" onkeydown="return isNumeric(event.keyCode);" onpaste="return false;" style="width:45px;text-align:right" />
+                </td>
+                    <td><input type="submit" name="ctl00$MainContent$btnSubmit" value="Insert" id="MainContent_btnSubmit" class="kroilonTest" />
+                </td>
+                    <td><input type="submit" name="ctl00$MainContent$btnUpdate" value="Update" id="MainContent_btnUpdate" />
+                    </td>
+                    <td><input type="submit" name="ctl00$MainContent$btnDelete" value="Delete" id="MainContent_btnDelete" />
+                </td>
+			</tr>
+		</table>
+
+
+<div id="MainContent_divResult" class="top-buffer">
+            <span id="MainContent_lblResult"></span>
+        </div>
+
+	</fieldset>
+
+	</div>
+
+
+<div id="MainContent_pnlSkills" style="border-style:Ridge;">
+	<fieldset>
+		<legend>
+			Skills
+		</legend>
+        <table id="MainContent_tblSkills" style="width:100%;">
+			<tr>
+				<td style="width:300px;">
+                    <div><label for="MainContent_ddlNomeSkills" id="MainContent_lblNomeSkills">Player</label></div>
+                    <select name="ctl00$MainContent$ddlNomeSkills" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlNomeSkills\&#39;,\&#39;\&#39;)&#39;, 0)" id="MainContent_ddlNomeSkills" style="width:250px;">
+					<option selected="selected" value="153">Adriana Santos Martins</option>
+					<option value="163">Andr&#233; Martins Silva</option>
+					<option value="169">Carla Matos Bernardino</option>
+					<option value="151">Cl&#225;udio Miguel Sebasti&#227;o</option>
+					<option value="161">Diogo Anjo Vieira</option>
+					<option value="172">Diogo Carvalho Vieira</option>
+					<option value="164">Diogo Ferreira Feliciano</option>
+					<option value="168">Diogo Pereira Sousa</option>
+					<option value="159">Fernando Delgado Canhoto</option>
+					<option value="155">Gon&#231;alo Bai&#227;o Queimado</option>
+					<option value="158">Guilherme Campos Costa</option>
+					<option value="152">In&#234;s Pinto Seixas</option>
+					<option value="167">Joana Pimenta Gomes</option>
+					<option value="176">Jo&#227;o Dion&#237;sio Santos</option>
+					<option value="173">Jorge Marques Silva</option>
+					<option value="174">Jos&#233; Eg&#237;dio Reis</option>
+					<option value="149">Jos&#233; Peixeiro</option>
+					<option value="150">M&#243;nica Henriques Abreu</option>
+					<option value="170">Nelson Rosa Sousa</option>
+					<option value="160">Nuno Levezinho Silva</option>
+					<option value="156">Pedro Azevedo Tavares</option>
+					<option value="177">Pedro Coutinho</option>
+					<option value="154">Pedro Miguel Silvestre</option>
+					<option value="162">Rita Fonseca Nicolau</option>
+					<option value="171">Ruben Gomes Machado</option>
+					<option value="165">Sara Pereira Grancho</option>
+					<option value="175">Sofia Carmo Rebelo</option>
+					<option value="157">Tiago Furtado Gon&#231;alves</option>
+					<option value="166">Vera Palma Pereira</option>
+
+				</select></td><td style="width:200px;">
+                   <div><label for="MainContent_txtNB" id="MainContent_lblNB">NB</label></div>
+                   <input name="ctl00$MainContent$txtNB" type="text" value="22372" maxlength="5" id="MainContent_txtNB" style="width:50px;text-align:right" /></td><td style="width:200px;">
+                   <div><label for="MainContent_txtPeople" id="MainContent_lblPeople">People</label></div>
+                   <input name="ctl00$MainContent$txtPeople" type="text" value="8" maxlength="2" id="MainContent_txtPeople" style="width:45px;text-align:right" /></td><td style="width:200px;">
+                    <div><label for="MainContent_txtCommunication" id="MainContent_lblCommunication">Communication</label></div>
+                   <input name="ctl00$MainContent$txtCommunication" type="text" value="6" maxlength="2" id="MainContent_txtCommunication" style="width:45px;text-align:right" /></td><td style="width:200px;">
+                     <div><label for="MainContent_txtManagement" id="MainContent_lblManagement">Management</label></div>
+                   <input name="ctl00$MainContent$txtManagement" type="text" value="7" maxlength="2" id="MainContent_txtManagement" style="width:45px;text-align:right" /></td><td style="width:200px;">
+                    <div><label for="MainContent_txtProblemSolving" id="MainContent_lblProblemSolving">ProblemSolving</label></div>
+                   <input name="ctl00$MainContent$txtProblemSolving" type="text" value="7" maxlength="2" id="MainContent_txtProblemSolving" style="width:45px;text-align:right" /></td><td style="width:200px;">
+                    <div><label for="MainContent_txtAndriodProgramming" id="MainContent_lblAndriodProgramming">AndriodProgramming</label></div>
+                   <input name="ctl00$MainContent$txtAndriodProgramming" type="text" value="2" maxlength="2" id="MainContent_txtAndriodProgramming" style="width:45px;text-align:right" /></td><td style="width:200px;">
+                     <div><label for="MainContent_txtArduino" id="MainContent_lblArduino">Arduino</label></div>
+                   <input name="ctl00$MainContent$txtArduino" type="text" value="0" maxlength="2" id="MainContent_txtArduino" style="width:45px;text-align:right" /></td><td><input type="submit" name="ctl00$MainContent$btnSubmeterSkills" value="Update" id="MainContent_btnSubmeterSkills" /></td>
+			</tr>
+		</table>
+        <div id="MainContent_divSkills" class="top-buffer">
+            <span id="MainContent_lblSkills"></span>
+        </div>
+    
+	</fieldset>
+</div>
+
+
+
+<div id="MainContent_pnlConfigurations" style="border-style:Ridge;">
+	<fieldset>
+		<legend>
+			Configurations
+		</legend>
+        <table id="MainContent_tblConfigurations" style="width:100%;">
+			<tr>
+				<td style="width:600px;">
+                    <div>
+                        <label for="MainContent_txtActivity" id="MainContent_Label1">Activity</label>
+                    </div>
+                   <input name="ctl00$MainContent$txtActivity" type="text" maxlength="400" id="MainContent_txtActivity" style="width:300px;" /><input type="submit" name="ctl00$MainContent$btnInsertActivity" value="Insert" id="MainContent_btnInsertActivity" />
+                    <div class="tabelas">
+                    <table cellspacing="0" cellpadding="4" rules="all" border="1" id="MainContent_dgrActivity" style="color:Black;border-collapse:collapse;">
+					<tr>
+						<td align="left" style="width:400px;">Adivinhar segredo</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Avatar</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Chegar a horas (am)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Chegar a horas (cam)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Chegar a horas (pm)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Confessionario</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Dar feedback</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Divide & Conquer</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Falhar segredo</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">MBTI</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Minimum number of secrets</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Ninja mf (participante)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Ninja mf (vencedor)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Objetivo caminhada</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Robot</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Scoreboard manager</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Ter segredo</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The App Quest</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Blind Quest</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Chain of Claws</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Entry Dinner Party</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Final Battle</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Gantt Quest</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Interview</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Landing Project</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The LipSync Battle</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Marshmallow Ladder</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Narrow Corridor</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Night Walkabout</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Quest for The Smart Team Plan</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Wacky Chase</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Voluntário Chef</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Voluntário LipSync Battle</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Wells & Cans</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Mais 50% Marshmallow a funcionar</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Mais 50% Marshmallow a funcionar</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Mais 50% Marshmallow a funcionar</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">+70% pratos com muito bom</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Jantar servido antes das 21h</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Todos onTime PM</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Todos onTime AM</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Bom comportamento</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Voluntário p/ Team Leader Android</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Todos onTime</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Death Corridor</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Death Corridor</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Soneca</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Soneca</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Watch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Gelatina</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Team Player</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Boss</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">-50% Landing Quest Goal</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">-50% Landing Quest Goal</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Lipsync done</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Top Watch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Top Watch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Pedra, papel, tesoura</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Capitão Cook</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Houdini</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge MegaShowBiz Watch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Top Boss</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Food Quest</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Voluntário FlashMob Battle</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Atrasado (am)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Atrasado (pm)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Atrasado (cam)</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Mau Comportamento</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Voluntarismo</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Atraso colectivo</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Participação</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">MC</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Skinny Dipping</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Logo Challenge</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Radioactive Circles</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">AppChallengeonTime</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Flashmob Project</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Night Challenge</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">App Challenge Pitch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Sabotagem</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Medley</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Top Houdini</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Cartas por pontos</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Team Balance</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Penalização </td>
+					</tr><tr>
+						<td align="left" style="width:400px;">GTE Desafio - apresentação </td>
+					</tr><tr>
+						<td align="left" style="width:400px;">GANT</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Falling Pieces</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Badge Top Team Player</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Autoavaliação</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Autoavaliação</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Medley Voluntário</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Kahoot</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Daily scrum</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">The Night Challenge</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Attacker</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Assiduidade</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">How Might we</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Bola</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Extra Team</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Crossing Paths</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Pitch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Lunch</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Carta Gandalf</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Le Coq Sportif</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Apresentação Case Study</td>
+					</tr>
+				</table>
+                    </div>
+                </td><td style="width:600px;">
+                     <div>
+                        <label for="MainContent_txtSalas" id="MainContent_Label2">Rooms</label>
+                    </div>
+                   <input name="ctl00$MainContent$txtSalas" type="text" maxlength="200" id="MainContent_txtSalas" style="width:300px;" /><input type="submit" name="ctl00$MainContent$btnSubmitSalas" value="Insert" id="MainContent_btnSubmitSalas" />
+                     <div class="tabelas">
+                        <table cellspacing="0" cellpadding="4" rules="all" border="1" id="MainContent_dgrRooms" style="color:Black;border-collapse:collapse;">
+					<tr>
+						<td align="left" style="width:400px;">Adolph Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Almusther Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Cockroach Entry</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Kalu Hall</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Normingor Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Performanthor Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Project Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Ristar Room</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Stormillor Hall</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Wondering Hall</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">N/A</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Dungeon</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Normingor Room B</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Stormillor Dungeons</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Stormillor Dungeons</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">Stormillor Dungeons</td>
+					</tr>
+				</table>
+                    </div>
+                </td><td style="width:600px;">
+                     <div>
+                        <label for="MainContent_txtSalas" id="MainContent_Label3" style="width:200px;">Days</label><label for="MainContent_txtPMinimo" id="MainContent_Label4" style="width:45px;">PIMn</label><label for="MainContent_txtPMaximo" id="MainContent_Label5" style="width:45px;">PIMx</label>
+                        
+                    </div>        
+                     <input name="ctl00$MainContent$txtDias" type="text" maxlength="200" id="MainContent_txtDias" style="width:200px;text-align:left" /><input name="ctl00$MainContent$txtPMinimo" type="text" maxlength="5" id="MainContent_txtPMinimo" onkeyup="keyUP(event.keyCode)" onkeydown="return isNumeric(event.keyCode);" onpaste="return false;" style="width:45px;text-align:right" /><input name="ctl00$MainContent$txtPMaximo" type="text" maxlength="5" id="MainContent_txtPMaximo" onkeyup="keyUP(event.keyCode)" onkeydown="return isNumeric(event.keyCode);" onpaste="return false;" style="width:45px;text-align:right" /><input type="submit" name="ctl00$MainContent$btnSubmitDias" value="Insert" id="MainContent_btnSubmitDias" /><input type="submit" name="ctl00$MainContent$btnUpdateDias" value="Update" id="MainContent_btnUpdateDias" />
+                
+                    <div class="tabelas">
+                        <table cellspacing="0" cellpadding="4" rules="all" border="1" id="MainContent_dgrDays" style="color:Black;border-collapse:collapse;">
+					<tr>
+						<td align="left" style="width:400px;">01 Segunda</td><td align="left" style="width:400px;">133</td><td align="left" style="width:400px;">333</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">02 Terça</td><td align="left" style="width:400px;">58</td><td align="left" style="width:400px;">233</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">03 Quarta</td><td align="left" style="width:400px;">45</td><td align="left" style="width:400px;">220</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">04 Quinta</td><td align="left" style="width:400px;">76</td><td align="left" style="width:400px;">211</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">05 Sexta</td><td align="left" style="width:400px;">76</td><td align="left" style="width:400px;">451</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">06 Fds</td><td align="left" style="width:400px;">&nbsp;</td><td align="left" style="width:400px;">500</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">08 Segunda</td><td align="left" style="width:400px;">76</td><td align="left" style="width:400px;">201</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">09 Terça</td><td align="left" style="width:400px;">45</td><td align="left" style="width:400px;">170</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">10 Quarta</td><td align="left" style="width:400px;">45</td><td align="left" style="width:400px;">190</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">11 Quinta</td><td align="left" style="width:400px;">45</td><td align="left" style="width:400px;">170</td>
+					</tr><tr>
+						<td align="left" style="width:400px;">12 Sexta</td><td align="left" style="width:400px;">5</td><td align="left" style="width:400px;">90</td>
+					</tr>
+				</table>
+                    </div>
+                </td>
+			</tr>
+		</table>
+        
+        <div id="MainContent_divConfigurations" class="top-buffer">
+            <span id="MainContent_lblConfigurations"></span>
+        </div>
+    
+	</fieldset>
+</div>
+
+
+	</div> 
+
+
+</body>
+</template>
