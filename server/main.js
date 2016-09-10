@@ -88,6 +88,9 @@ Meteor.methods({
 		{
 			var newValue = parseInt(latestAcademy.energyLevel) + parseInt(burgerCount);
 			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : newValue }});
+		},
+		updateMessageHome : function(latestAcademy, messageHome) {
+			Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : messageHome }});
 		}
 
 });

@@ -14,6 +14,7 @@ db.createCollection("academy");
 db.academy.insert({
 	name: "Kroilon Test",
 	dailyMessage: "Bem Vindos a Kroilon",
+	homeMessage: "#ficaadica",
 	date:new Date(),
 	energyLevel: 5,
 	teamChallengeScore: [{

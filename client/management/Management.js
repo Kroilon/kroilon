@@ -208,6 +208,14 @@ Template.Management.events({
     var burgerCount = $('#burgerCount').val();
 
     Meteor.call("addCheese", latestAcademy, burgerCount);
+  },
+  'click #updateMessageHome' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    var messageHome = $('#messageHome').val();
+
+    Meteor.call("updateMessageHome", latestAcademy, messageHome);
   }
 
 });
