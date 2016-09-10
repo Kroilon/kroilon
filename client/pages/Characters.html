@@ -2,15 +2,14 @@
 
   <h1 class="page-title">Characters</h1>
 
-{{characters}}
-
 {{#each characters}}
-
 <div class="divTable">
 
+<script>   </script>
+
   <div class="headRow">
-    <div class="divCell" align="center"><img src="/avatar/AfonsoSousa.jpg" /></div>
-    <div class="divCell" align="center">{{score.points}} Pontos</div>
+    <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
+    <div class="divCell" align="center">{{score nb}} Pontos</div>
   </div>
 
   <div class="divRow">
@@ -26,9 +25,6 @@
      <div class="divCell">{{profile}}</div>
   </div>
 
-  <div class="divRow">
-      <div class="divCell"><b>Skills</b></div>
-  </div>
   {{#each skills}}
   <div class="divRow">
       <div class="divCell">Android</div>
@@ -40,7 +36,7 @@
   </div>
   <div class="divRow">
       <div class="divCell">Management</div>
-      <div class="divCell">{{manegemment}}</div>
+      <div class="divCell">{{manegement}}</div>
   </div>
   <div class="divRow">
       <div class="divCell">People</div>
@@ -51,13 +47,13 @@
       <div class="divCell">{{problemSolving}}</div>
   </div>
   {{/each}}
+  <div class="divRow">
+      <div class="divCell">Secret Code</div>
+      <div class="divCell">{{mbti}}</div>
+  </div>
 
 </div>
-
+<br>
 {{/each}}
-
-
-
-
 
 </template>
