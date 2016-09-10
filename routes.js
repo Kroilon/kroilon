@@ -97,3 +97,17 @@ FlowRouter.route('/management', {
         BlazeLayout.render("AppLayout", {main: "Management"});
     }
 });
+
+FlowRouter.route('/story', {
+    name: '/story',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Story"});
+    }
+});
+
+FlowRouter.route('/rules', {
+    name: '/rules',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Rules"});
+    }
+});
