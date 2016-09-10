@@ -19,7 +19,13 @@
 <area shape="circle" coords="749,141,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
   </map>
   </div>
-
+  
+<div id="team_description">
+	<div><h2>In the Land of Kroilon</h2>	
+	</div>
+	<div><h3>Game Dashboard<div id="div_date_today"></div></h3></div>
+	<div><h3>Score<div id="div_score_today">{{total_score}}</div></h3></div>
+</div>
 
 <div id="openModalBoat" class="modalDialog">
 	<div>
@@ -63,7 +69,22 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var d = new Date();
+	var weekday = new Array(7);
+	weekday[0]=  "Domingo";
+	weekday[1] = "Segunda-feira";
+	weekday[2] = "Terça-feira";
+	weekday[3] = "Quarta-feira";
+	weekday[4] = "Quinta-feira";
+	weekday[5] = "Sexta-feira";
+	weekday[6] = "Sábado";
+
+	var n = weekday[d.getDay()];
+	$('#div_date_today').html(n);
+	
     $('map').imageMapResize();
+	
 });
 </script>
 
