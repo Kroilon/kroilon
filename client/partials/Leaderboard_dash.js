@@ -1,34 +1,16 @@
-var users = [{
-	nb: "nb22477",
-	name:"Nuno Silva",
-	avatar: "nb22477.jpg",
-	score:[{
-			date: new Date(),
-			challenge: "kahoot",
-			category: "HP",
-			points: 20
-		}],
-	profile: "trainee",
-	skills:[{
-			people: 8,
-			communication: 6,
-			manegemment:7,
-			problemSolving: 7,
-			android:2,
-			arduino:0
-		}]
-}];
-			
+import { Template } from 'meteor/templating';
+import { Academy } from '/imports/api/databasedriver.js';
 
-Template.Leaderboard_dash.onRendered(
-	function() {
+var average_points = 0;			
 
-		//debugger;
+Template.Leaderboard_dash.helpers({
+	userScores() {
 		
-		var total_points = 0;
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
+		var users = latestAcademy.users;
 		
-		//var users [] =//db.academy.find();
 		var total_users = users.length;
+		var total_points = 0;
 		
 		$.each(users, function(index_users, value_users){
 			
@@ -40,11 +22,33 @@ Template.Leaderboard_dash.onRendered(
 				
 			});
 			
-			var tr_ ="<tr><td><img src='" + value.avatar + "' style='width:226px;height:226px;'></td><td>" + value.name + "</td><td>" + user_points + "</td></tr>";
-			console.log( tr_);
-
-			$("#table_leaderboard_dash").append(tr_);
+			value_users.totalScore = user_points;
+			total_points += user_points;
 		});
 		
-		$("#div_pontos_equipa").html(total_points);
+		sortArrOfObjectsByParam(users, "totalScore", false);
+		
+		average_points = total_points/total_users;
+		
+		var userScores = {users:users,avg:average_points};
+	
+		return userScores;
+	},
+
 });
+
+
+function sortArrOfObjectsByParam(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+    if(sortAscending == undefined) sortAscending = true;  // default to true
+    
+    if(sortAscending) {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+        });
+    }
+    else {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+        });
+    }
+}
