@@ -11,7 +11,7 @@ Template.Home.events({
     var playerNb = $("#playerNb").val();
 	var playerPass = $("#playerPass").val();
 		
-    var latestAcademy = Academy.find({}, {sort: {date: -1, limit: 1}});
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
     var user = $.grep(latestAcademy.users, function(e){
 		return e.nb == playerNb;
