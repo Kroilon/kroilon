@@ -2,7 +2,7 @@
 <h1 class="page-title">Rules</h1>
 <div id="tabs-container">
     <ul class="tabs-menu">
-        <li2 class="current"><a href="#tab-1">Special Cards</a></li2>
+        <li2 class="current"><a href="#tab-1" id="first">Special Cards</a></li2>
         <li2><a href="#tab-2">Soldiers</a></li2>
         <li2><a href="#tab-3">Individual Points System</a></li2>
         <li2><a href="#tab-4">Team Points System</a></li2>
@@ -14,6 +14,7 @@
         <img src="rules/cartas especiaias-05.png">
          <img src="rules/cartas especiaias-06.png">
           <img src="rules/cartas especiaias-07.png">
+          <img src="rules/houdini-12.png">
         
             </div>
         <div id="tab-2" class="tab-content" style="width:1350px;">
@@ -50,6 +51,7 @@ $(document).ready(function() {
         $(".tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
     });
+    $("#first").click();
 });
 </script>
 </template> 
