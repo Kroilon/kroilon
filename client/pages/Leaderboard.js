@@ -27,8 +27,10 @@ Template.Leaderboard.helpers({
 		sortArrOfObjectsByParam(users, "totalScore", false);
 
 		average_points = total_points/total_users;
+		var average_points2=Math.floor(average_points);
+		//var x = Math.round(average_points};
 
-		var userScores = {users:users,avg:average_points};
+		var userScores = {users:users,avg:average_points2};
 
 		return userScores;
 	},
