@@ -21,6 +21,13 @@
     width:200px;
 }
 
+.divCellMap
+{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:250px;
+}
+
 ul.pagination {
     display: inline-block;
     padding: 0;
