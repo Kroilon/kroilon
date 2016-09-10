@@ -2,11 +2,11 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
 Template.Map.helpers({
-	total_score() {
+	total_day() {
 
-	debugger;
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var scores = latestAcademy.teamScore;
+		var energy_level = latestAcademy.energyLevel[0].energy;
 		var total_score = 0;
 
 		$.each(scores, function(index, value){
@@ -14,7 +14,26 @@ Template.Map.helpers({
 			total_score += value.points;
 		});
 
-		return total_score;
+		var img_energyLevel = "/energyLevels/energyLevels_5.png";
+		
+		switch(energy_level) {
+			case 1:
+				img_energyLevel = "/energyLevels/energyLevels_1.png";
+				break;
+			case 2:
+				img_energyLevel = "/energyLevels/energyLevels_2.png";
+				break;
+			case 3:
+				img_energyLevel = "/energyLevels/energyLevels_3.png";
+				break;
+			case 4:
+				img_energyLevel = "/energyLevels/energyLevels_4.png";
+				break;
+		}
+		
+		var total = {score:total_score,img_energyLevel:img_energyLevel};
+		
+		return total;
 	}
 
 });
