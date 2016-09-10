@@ -2,11 +2,11 @@
     <nav class="main-nav">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            {{#if currentUser}}
-            	<li class="logout">Logout</li>
+			{{#if currentUser}}
+				<li><a href="/dashboard">Dashboard</a></li>            
+				<li><a class="logout">Logout</a></li>
             {{else}}
-            	<li class="login-toggle">Sign-in</li>
+            	<li><a class="login-toggle">Sign-in</a></li>
             {{/if}}
         </ul>
     </nav>
