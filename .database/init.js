@@ -16,7 +16,7 @@ db.academy.insert({
 	date:new Date(),
 	energyLevel: [{
 		date: new Date(),
-		energy: 5		
+		energy: 5
 	}],
 	teamChallengeScore: [{
 		date: new Date(),
@@ -27,6 +27,11 @@ db.academy.insert({
 		date:new Date(),
 		points: "3534"
 	}],
+	pe: [{
+			challenge: "All in Time",
+			value: 50,
+			badge: ""
+		}],
 	users:[
 		{
 			nb: "nb22634",
@@ -115,14 +120,42 @@ db.challenges.drop();
 db.createCollection("challenges");
 db.challenges.insert({
 	name: "kahoot",
-	technicalName:"CH_001",
-	nParticipants: "35",
-	room: [{name:"room1"}, {name:"room 2"}],
+	points: 100,
+	room: "masmorra",
 	date: new Date(),
-	badges: [{
-		name: "soneca",
-		avatar: "foto_badge",
-		score: "-100",
-		category: "XP"
-		}]
+	badges: "soneca"
+});
+
+//Badges
+db.badges.drop();
+db.createCollection("badges");
+db.badges.insert({
+	name: "soneca",
+	points: -200,
+	date: new Date()
+});
+
+//Badges
+db.rooms.drop();
+db.createCollection("rooms");
+db.rooms.insert({
+	name: "soneca",
+	badges: [
+		{
+			name: "soneca"
+		},
+		{
+			name: "outro"
+		}
+	]
+});
+
+//secrets
+db.secrets.drop();
+db.createCollection("secrets");
+db.secrets.insert({
+	description: "parti uma perna",
+	nb: "nb22758",
+	challenge: "Submeter Segredo",
+	discovered: 0
 });

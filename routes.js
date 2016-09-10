@@ -104,3 +104,16 @@ FlowRouter.route('/kahoot', {
         BlazeLayout.render("KahootLayout", {main: "Kahoot"});
     }
 });
+FlowRouter.route('/story', {
+    name: '/story',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Story"});
+    }
+});
+
+FlowRouter.route('/rules', {
+    name: '/rules',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Rules"});
+    }
+});

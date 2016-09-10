@@ -1,0 +1,55 @@
+<template name="Rules">
+<h1 class="page-title">Rules</h1>
+<div id="tabs-container">
+    <ul class="tabs-menu">
+        <li2 class="current"><a href="#tab-1">Special Cards</a></li2>
+        <li2><a href="#tab-2">Soldiers</a></li2>
+        <li2><a href="#tab-3">Individual Points System</a></li2>
+        <li2><a href="#tab-4">Team Points System</a></li2>
+        <li2><a href="#tab-5">Individual Badges</a></li2>
+        <li2><a href="#tab-6">Team Badges</a></li2>
+    </ul>
+    <div class="tab" style="margin-top:10px;">
+        <div id="tab-1" class="tab-content" style="width:1350px;">
+        <img src="rules/cartas especiaias-05.png">
+         <img src="rules/cartas especiaias-06.png">
+          <img src="rules/cartas especiaias-07.png">
+        
+            </div>
+        <div id="tab-2" class="tab-content" style="width:1350px;">
+            <img src="rules/soldados-02.png">
+            <img src="rules/soldados-03.png">
+            <img src="rules/soldados-04.png">
+            <img src="rules/magician-03-03.png">
+        </div>
+        
+        <div id="tab-3" class="tab-content" style="width:1350px;">
+         <img src="rules/pontos individuais-10.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+	</div>
+
+        <div id="tab-4" class="tab-content" style="width:1350px;">
+        <img src="rules/pontos de equipa-11.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+             </div>
+         <div id="tab-5" class="tab-content" style="width:1350px;">
+         <img src="rules/badges individuais-08.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+	</div>    
+	<div id="tab-6" class="tab-content" style="width:1350px;">
+         <img src="rules/badges equipa-09.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+	</div> 
+             
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".tabs-menu a").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".tab-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+});
+</script>
+</template> 
