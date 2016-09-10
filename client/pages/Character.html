@@ -1,0 +1,57 @@
+<template name="Character">
+
+  <h1 class="page-title">Character</h1>
+
+<div class="divTable">
+
+<script>   </script>
+
+  <div class="headRow">
+    <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
+    <div class="divCell" align="center">{{score}} Pontos</div>
+  </div>
+
+  <div class="divRow">
+      <div class="divCell">Nome</div>
+      <div class="divCell">{{name}}</div>
+  </div>
+  <div class="divRow">
+      <div class="divCell">NB</div>
+      <div class="divCell">{{nb}}</div>
+ </div>
+ <div class="divRow">
+     <div class="divCell">Perfil</div>
+     <div class="divCell">{{profile}}</div>
+  </div>
+
+  {{#each skills}}
+  <div class="divRow">
+      <div class="divCell">Android</div>
+      <div class="divCell">{{android}}</div>
+  </div>
+  <div class="divRow">
+      <div class="divCell">Communication</div>
+      <div class="divCell">{{communication}}</div>
+  </div>
+  <div class="divRow">
+      <div class="divCell">Management</div>
+      <div class="divCell">{{manegement}}</div>
+  </div>
+  <div class="divRow">
+      <div class="divCell">People</div>
+      <div class="divCell">{{people}}</div>
+  </div>
+  <div class="divRow">
+      <div class="divCell">Problem Solving</div>
+      <div class="divCell">{{problemSolving}}</div>
+  </div>
+  {{/each}}
+  <div class="divRow">
+      <div class="divCell">Secret Code</div>
+      <div class="divCell">{{mbti}}</div>
+  </div>
+
+</div>
+<br>
+
+</template>

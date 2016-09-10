@@ -25,8 +25,13 @@ FlowRouter.route('/login', {
 FlowRouter.route('/characters/:page', {
     name: 'characters',
     action: function(params, queryParams){
-      console.log(params);
       BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    }
+});
+FlowRouter.route('/character/:nb', {
+    name: 'character',
+    action: function(params, queryParams){
+      BlazeLayout.render("CharacterLayout", {main: "Character"});
     }
 });
 FlowRouter.route('/characters', {
