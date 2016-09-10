@@ -6,6 +6,13 @@ FlowRouter.route('/', {
     }
 });
 
+FlowRouter.route('/login', {
+    name: '/login',
+    action() {
+        BlazeLayout.render("LoginLayout", {main: "Login"});
+    }
+});
+
 // Home Page
 FlowRouter.route('/dashboard', {
     name: 'dashboard',
@@ -42,5 +49,12 @@ FlowRouter.route('/leaderboard_tops', {
     name: '/leaderboard_tops',
     action() {
         BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
+    }
+});
+
+FlowRouter.route('/test_tabs', {
+    name: '/test_tabs',
+    action() {
+        BlazeLayout.render("TabsLayout", {main: "Test_tabs"});
     }
 });
