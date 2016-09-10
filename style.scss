@@ -34,7 +34,7 @@ p {
 }
 
 a {
-    color: $accent;
+    text-decoration: none;
 }
 
 input[type="text"],
@@ -191,6 +191,8 @@ input[type="password"] {
 table {
     font-size: 0.8em;
     width: 100%;
+    border-style: solid;
+        border-width: 3px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20);
     @include card(2);
@@ -203,7 +205,7 @@ table {
     }
     th {
         text-transform: uppercase;
-        background: $dblue;
+        background: #fff;
         color: #fff;
     }
     &.edit-mode {
@@ -236,6 +238,8 @@ display: block;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 	pointer-events: none;
+	
+    overflow-y: auto;
 }
 
 .modalDialog:target {

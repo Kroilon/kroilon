@@ -62,6 +62,12 @@ FlowRouter.route('/leaderboard_tops', {
         BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
     }
 });
+FlowRouter.route('/leaderboard_pequipa', {
+    name: '/leaderboard_pequipa',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Leaderboard_pequipa"});
+    }
+});
 
 // Leaderboard_tops Page
 FlowRouter.route('/test', {

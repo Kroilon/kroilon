@@ -1,12 +1,76 @@
 <template name="Leaderboard_dash">
     <h1 class="page-title">Leaderboard</h1>
+		
+	<table>
+ <thead>
+  <tr>
+     <th><a href="#openModalDash">Dashboard</a></th>
+     <th><a href="#openModalTop">Top Scores</a></th>
+     <th><a href="#openModalEq">Pontos de Equipa</a></th>
+  </tr>
+ </thead>
+</table>
+
+<div id="openModalDash" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		
+		
+		</div>
+		</div>
+		
+		<div id="openModalTop" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<div>TOP HEALTH</div>	
+	{{#each userHealthScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalHealthScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
 	
-	<ul class="leaderboard_tabs">
-		<li><h3 class="leaderboard-subtitle">Dashboard</h3></li>
-		<li><h3 class="leaderboard-subtitle"><a href="/leaderboard_tops">Top Scores</a></h3></li>
-	</ul>
+	<div>TOP KNOWLEDGE</div>
+	{{#each userKnowledgeScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalKnowledgeScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
 	
-	<div><div>Pontos de Equipa</div><div>{{userScores.avg}}</div></div>
+	<div>TOP EXPERIENCE</div>
+	{{#each userExperienceScores}}
+		<div class="divTable">
+
+		  <div class="divRow">
+			  <div class="divCell">{{@index}}</div>
+			  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+			  <div class="divCell">{{name}}</div>
+			  <div class="divCell">{{totalExperienceScore}}</div>
+		  </div>
+
+		</div>
+	{{/each}}
+		
+		</div>
+		</div>
+
+<div id="openModalEq" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<div><div>Pontos de Equipa</div><div>{{userScores.avg}}</div></div>
 	
 	{{#each userScores.users}}
 
@@ -22,5 +86,9 @@
 		</div>
 
 	{{/each}}
+	</div>
+</div>
+	
+	
 
 </template>
