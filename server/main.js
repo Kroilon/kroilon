@@ -3,6 +3,7 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
+import { Secrets } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
 	  updateScore: function (id,playerId,score) {
@@ -91,6 +92,9 @@ Meteor.methods({
 		},
 		updateMessageHome : function(latestAcademy, messageHome) {
 			Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : messageHome }});
+		},
+		insertSecret : function(data) {
+			Secrets.insert(data);
 		}
 
 });

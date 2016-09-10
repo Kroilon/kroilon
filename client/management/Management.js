@@ -3,6 +3,7 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
+import { Secrets } from '/imports/api/databasedriver.js';
 
 Template.Management.helpers({
 rooms(){
@@ -216,6 +217,21 @@ Template.Management.events({
     var messageHome = $('#messageHome').val();
 
     Meteor.call("updateMessageHome", latestAcademy, messageHome);
+  },
+  'click #addSecret' (event){
+
+    var secretValue = $('#secretValue').val();
+    var secretPlayerNB = $('#secretPlayerNB').val();
+
+    var data = {
+      description: secretValue,
+      nb: secretPlayerNB,
+      challenge: "Submeter Segredo",
+      discovered: 0
+    }
+
+    Meteor.call("insertSecret", data);
   }
+
 
 });

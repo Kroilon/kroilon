@@ -11,6 +11,7 @@
           <li2><a href="#tab-4">Challenges</a></li2>
           <li2><a href="#tab-5">Message</a></li2>
           <li2><a href="#tab-6">Fecho Dia</a></li2>
+          <li2><a href="#tab-7">Segredos</a></li2>
 
       </ul>
       <div class="tab">
@@ -320,6 +321,34 @@
                   </tr>
                 </table>
               </form>
+          </div>
+
+          <div id="tab-7" class="tab-content">
+            <!-- Adicionar Challenge -->
+              <h2>Segredos</h2>
+
+              <form>
+                <table>
+                  <tr>
+                    <td>Segredo</td>
+                    <td><input type="text" id="secretValue"></td>
+                  </tr>
+                  <tr>
+                    <td>Player</td>
+                    <td>
+                      <select id="secretPlayerNB">
+                        {{#each players}}
+                        <option value="{{nb}}">{{name}}</option>
+                        {{/each}}
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="button" id="addSecret" value="Inserir"></td>
+                  </tr>
+                </table>
+              </form>
+
           </div>
 
         </div>
