@@ -1,0 +1,222 @@
+<template name="Management">
+  <h1 class="page-title">Management</h1>
+
+  <!-- Adicionar Badges -->
+  <h2>Add Character</h2>
+  <form>
+    <table>
+      <tr>
+        <td>NB</td>
+        <td>
+          <input type="text" id="characterNB">
+        </td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" id="characterName">
+        </td>
+      </tr>
+      <tr>
+        <td>Avatar</td>
+        <td>
+          <input type="text" id="characterAvatar">
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" id="characterEmail">
+        </td>
+      </tr>
+      <tr>
+        <td>MBTI</td>
+        <td>
+          <input type="text" id="characterMBTI">
+        </td>
+      </tr>
+      <tr>
+        <td>People Skills</td>
+        <td>
+          <input type="number" id="characterPPLSkills">
+        </td>
+      </tr>
+      <tr>
+        <td>Communication Skills</td>
+        <td>
+          <input type="number" id="characterCommunicationSkills">
+        </td>
+      </tr>
+      <tr>
+        <td>Problem Solving Skills</td>
+        <td>
+          <input type="number" id="characterProblemSolvingSkills">
+        </td>
+      </tr>
+      <tr>
+        <td>Management Skills</td>
+        <td>
+          <input type="number" id="characterManagementSkills">
+        </td>
+      </tr>
+      <tr>
+        <td>Android Skills</td>
+        <td>
+          <input type="number" id="characterAndroidSkills">
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="button" id="insertCharacter" value="Insert"></td>
+      </tr>
+    </table>
+  </form>
+
+  <br><br>
+  <!-- Adicionar Badges -->
+  <h2>Add Badges</h2>
+  <form>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" id="badgeName">
+        </td>
+      </tr>
+      <tr>
+        <td>Points</td>
+        <td>
+          <input type="number" id="badgePoints" value="0">
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="button" id="insertBadge" value="Insert"></td>
+      </tr>
+    </table>
+  </form>
+
+  <br><br>
+
+
+  <!-- Adicionar Room -->
+  <h2>Add Rooms</h2>
+  <form>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" id="roomName">
+        </td>
+      </tr>
+      <tr>
+        <td>Badges</td>
+        <td>
+          <select id="roomBadge">
+            <option selected>No Badge</option>
+            {{#each badges}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="button" id="insertRoom" value="Insert"></td>
+      </tr>
+    </table>
+  </form>
+
+  <br><br>
+  <!-- Adicionar Challenge -->
+    <h2>Add Challenge</h2>
+    <form>
+      <table>
+        <tr>
+          <td>Name Challenge</td>
+          <td>
+            <input type="text" id="challengeName">
+          </td>
+        </tr>
+        <tr>
+          <td>Points</td>
+          <td>
+            <input type="number" id="challengePoints" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>Room</td>
+          <td>
+            <select id="challengeRoom">
+              <option selected>No Room</option>
+              {{#each rooms}}
+              <option value="{{name}}">{{name}}</option>
+              {{/each}}
+            </select></td>
+        </tr>
+        <tr>
+          <td>Badges</td>
+          <td>
+            <select id="challengeBadge">
+              <option selected>No Badge</option>
+              {{#each badges}}
+              <option value="{{name}}">{{name}}</option>
+              {{/each}}
+            </select></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="button" id="insertChallenge" value="Insert"></td>
+        </tr>
+      </table>
+    </form>
+
+<br><br>
+
+<!-- Atualizar Score -->
+<h2>Add Activities</h2>
+  <form>
+    <table>
+      <tr>
+        <td>Player</td>
+        <td>
+          <select id="player">
+            {{#each players}}
+            <option value="{{nb}}">{{name}}</option>
+            {{/each}}
+          </select></td>
+      </tr>
+      <tr>
+        <td>Ativity</td>
+        <td>
+          <select id="activity">
+            {{#each challs}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Type of Points</td>
+        <td>
+          <select id="pointType">
+              <option value="KP">KP</option>
+              <option value="HP">HP</option>
+              <option value="XP">XP</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td>Points</td>
+        <td>
+          <input type="number" id="points" value="0">
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="button" id="insert" value="Insert"></td>
+      </tr>
+    </table>
+  </form>
+
+
+
+</template>
