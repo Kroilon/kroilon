@@ -29,6 +29,9 @@ accounts-ui
 accounts-base
 accounts-password
 useraccounts:unstyled
-raix:handlebar-helpers 
+raix:handlebar-helpers
 
 aldeed:template-extension
+
+autopublish             # Publish all data to the clients (for prototyping)
+insecure                # Allow all DB writes from clients (for prototyping)
