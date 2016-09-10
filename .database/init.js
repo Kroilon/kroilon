@@ -54,17 +54,3 @@ db.challenges.insert({
 		category: "XP"
 		}]
 });
-
-//Rooms
-db.createCollection("rooms");
-db.rooms.insert({
-	name: "masmorra",
-	challenge: "wells and  ",
-	badges: [{
-		name: "Espada",
-		avatar: "foto_badge",
-		score: "50",
-		category: "XP"
-		}],
-	date: new Date()
-});
