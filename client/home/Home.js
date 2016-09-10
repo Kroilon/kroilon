@@ -13,7 +13,11 @@ Template.Home.events({
 		
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-    var user = $.grep(latestAcademy.users, function(e){ return e.nb == playerNb});
+    var user = $.each(latestAcademy.users, function(index,value){
+		if(value.nb == playerNb){
+			return value;
+		}
+	});
 	
 	Session.set("playerNb", user);
 	
