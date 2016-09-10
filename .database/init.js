@@ -4,11 +4,12 @@ Run file to Init the database with dummy data
 Do
 Step 1 -> meteor mongo
 Step 2 -> use meteor
-Step 3-> load("database/init.js")
+Step 3-> load(".database/init.js")
 
 */
 
 //Academy
+
 db.createCollection("academy");
 db.academy.insert({
 	name: "Kroilon Test",
