@@ -25,8 +25,13 @@ FlowRouter.route('/login', {
 FlowRouter.route('/characters/:page', {
     name: 'characters',
     action: function(params, queryParams){
-      console.log(params);
       BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    }
+});
+FlowRouter.route('/character/:nb', {
+    name: 'character',
+    action: function(params, queryParams){
+      BlazeLayout.render("CharacterLayout", {main: "Character"});
     }
 });
 FlowRouter.route('/characters', {
@@ -62,12 +67,6 @@ FlowRouter.route('/leaderboard_tops', {
         BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
     }
 });
-FlowRouter.route('/leaderboard_pequipa', {
-    name: '/leaderboard_pequipa',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "Leaderboard_pequipa"});
-    }
-});
 
 // Leaderboard_tops Page
 FlowRouter.route('/test', {
@@ -77,9 +76,17 @@ FlowRouter.route('/test', {
     }
 });
 
-FlowRouter.route('/leaderboard', {
-    name: '/leaderboard',
+//Adicionar Actividade
+FlowRouter.route('/addactivity', {
+    name: 'addactivity',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Leaderboard"});
+        BlazeLayout.render("AppLayout", {main: "AddActivity"});
+    }
+});
+
+FlowRouter.route('/management', {
+    name: 'management',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Management"});
     }
 });
