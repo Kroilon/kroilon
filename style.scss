@@ -34,7 +34,7 @@ p {
 }
 
 a {
-    color: $accent;
+    text-decoration: none;
 }
 
 input[type="text"],
@@ -191,6 +191,8 @@ input[type="password"] {
 table {
     font-size: 0.8em;
     width: 100%;
+    border-style: solid;
+        border-width: 3px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20);
     @include card(2);
@@ -203,7 +205,7 @@ table {
     }
     th {
         text-transform: uppercase;
-        background: $dblue;
+        background: #fff;
         color: #fff;
     }
     &.edit-mode {
@@ -236,6 +238,8 @@ display: block;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 	pointer-events: none;
+	
+    overflow-y: auto;
 }
 
 .modalDialog:target {
@@ -276,39 +280,55 @@ display: block;
 
 	.close:hover { background: #00d9ff; }
 
-/* Style the list */
-ul.tab {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+	.tabs-container .tabs-menu {
+    height: 30px;
+    float: left;
+    clear: both;
 }
 
-/* Float the list items side by side */
-ul.tab li {float: left;}
-
-/* Style the links inside the list items */
-ul.tab li a {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
+.tabs-menu li2 {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
 }
 
-/* Change background color of links on hover */
-ul.tab li a:hover {background-color: #ddd;}
+.tabs-menu li2.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
 
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {background-color: #ccc;}
+.tabs-menu li2 a {
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none; 
+}
 
-	.tabcontent {
+.tabs-menu .current a {
+    color: #2e7da3;
+}
+
+.tab {
+    border: 1px solid #d4d4d1;
+    background-color: #fff;
+    float: left;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.tab-content {
+    width: 660px;
+    padding: 20px;
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+}
+
+#tab-1 {
+ display: block;   
 }
