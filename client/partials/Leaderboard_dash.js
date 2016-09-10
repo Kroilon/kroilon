@@ -26,10 +26,10 @@ Template.Leaderboard_dash.helpers({
 			
 		});
 		
-		debugger;
-		myArray = myArray.sort(function(a, b) {
+		/*debugger;
+		users = users.sort(function(a, b) {
 			return a[1].localeCompare(b[1]);
-		});
+		});*/
 		
 		return users;
 	}
