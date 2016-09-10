@@ -4,9 +4,7 @@ import { Academy } from '/imports/api/databasedriver.js';
 var average_points = 0;			
 
 Template.Leaderboard_dash.helpers({
-	users() {
-
-		//debugger;
+	userScores() {
 		
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}}); 
 		var users = latestAcademy.users;
@@ -32,11 +30,11 @@ Template.Leaderboard_dash.helpers({
 		
 		average_points = total_points/total_users;
 		
-		return users;
+		var userScores = {users:users,avg:average_points};
+	
+		return userScores;
 	},
-	uu(){
-		//return users();
-	}
+
 });
 
 
