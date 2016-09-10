@@ -108,6 +108,7 @@ Template.Management.events({
       var characterName = $('#characterName').val();
       var characterAvatar = $('#characterAvatar').val();
       var characterEmail = $('#characterEmail').val();
+      var characterPassword = $('#characterPassword').val();
       var characterMBTI = $('#characterMBTI').val();
       var characterPPLSkills = $('#characterPPLSkills').val();
       var characterCommunicationSkills = $('#characterCommunicationSkills').val();
@@ -120,6 +121,7 @@ Template.Management.events({
     			name:characterName,
     			avatar: characterAvatar,
     			email: characterEmail,
+          password: characterPassword,
     			profile: "Trainee",
     			mbti: characterMBTI,
     			skills:[{

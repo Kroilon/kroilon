@@ -38,6 +38,7 @@ db.academy.insert({
 			name:"Afonso Correia Sousa",
 			avatar: "AfonsoSousa.jpg",
 			email: "afonsosousa0@gmail.com",
+			password: "12345",
 			score:[
 				{
 					date: new Date(),
@@ -67,6 +68,7 @@ db.academy.insert({
 			name:"Anabela Araújo Rodrigues",
 			avatar: "Anabela.jpg",
 			email: "anabelarodrigues1993@gmail.com",
+			password: "12345",
 			score:[
 				{
 					date: new Date(),
@@ -96,6 +98,7 @@ db.academy.insert({
 			name:"André Gonçalo Ferreira",
 			avatar: "AndreFerreira.jpg",
 			email: "andre_ferreira815@hotmail.com",
+			password: "12345",
 			score:[{
 					date: new Date(),
 					challenge: "kahoot",
