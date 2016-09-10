@@ -2,68 +2,35 @@
 <template name="Map">
   <h1 class="page-title">Map of Kroilon</h1>
 
-  <div id="image_map">
-  <img class="map-center" src="0 mapa_nomes_v2.png" alt="map" usemap="#mapbadges">
-  <map name="mapbadges">
-  <area shape="circle" coords="395,186,15" href="#openModalBoat" title="BOAT UNLOCK SPOT">
-  <area shape="circle" coords="620,87,15" href="#openModalBoat" title="BOAT UNLOCK SPOT">
-<area shape="circle" coords="327,375,15" href="#openModalMystery" title="MYSTERY UNLOCK SPOT">
-<area shape="circle" coords="705,328,15" href="#openModalMystery" title="MYSTERY UNLOCK SPOT">
-<area shape="circle" coords="548,284,15" href="#openModalFood" title="FOOD SPOT">
-<area shape="circle" coords="682,186,15" href="#openModalFood" title="FOOD SPOT">
-<area shape="circle" coords="660,430,15" href="#openModalFood" title="FOOD SPOT">
-<area shape="circle" coords="672,162,15" href="#openModalAttackers" title="ATTACKERS UNLOCK SPOT">
-<area shape="circle" coords="465,275,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
-<area shape="circle" coords="482,390,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
-<area shape="circle" coords="601,251,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
-<area shape="circle" coords="749,141,15" href="#openModalDoublePoints" title="DOUBLE POINTS SPOT">
-  </map>
+  <div>
+  <img class="map-center" src="Mapa-09(1).png" alt="map" usemap="#mapbadges">
   </div>
-
-
-<div id="openModalBoat" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<p>BOAT UNLOCK SPOT</p>
-		<p>Allows team to use underground water channels.</p>
+  
+<div id="team_description">
+	<div><h2>In the Land of Kroilon</h2>	
 	</div>
-</div>
-
-<div id="openModalMystery" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<p>MYSTERY SPOT</p>
-		<p>Mystery badge... take your chances and... pray.</p>
-	</div>
-</div>
-
-<div id="openModalFood" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<p>FOOD SPOT</p>
-		<p>Energy level (food) starts with 5 and uses 1 badge per day.</p>
-	</div>
-</div>
-
-<div id="openModalDoublePoints" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<p>DOUBLE POINTS SPOT</p>
-		<p>Doubles the points earned in the room.</p>
-	</div>
-</div>
-
-<div id="openModalAttackers" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<p>ATTACKERS UNLOCK SPOT</p>
-		<p>Unlock the sword badge to use the attacker's cards.</p>
-	</div>
+	<div><h3>Game Dashboard<div id="div_date_today"></div></h3></div>
+	<div><h3>Score<div id="div_score_today">{{total_score}}</div></h3></div>
 </div>
 
 <script type="text/javascript">
 $(document).ready(function() {
+
+	var d = new Date();
+	var weekday = new Array(7);
+	weekday[0]=  "Domingo";
+	weekday[1] = "Segunda-feira";
+	weekday[2] = "Terça-feira";
+	weekday[3] = "Quarta-feira";
+	weekday[4] = "Quinta-feira";
+	weekday[5] = "Sexta-feira";
+	weekday[6] = "Sábado";
+
+	var n = weekday[d.getDay()];
+	$('#div_date_today').html(n);
+	
     $('map').imageMapResize();
+	
 });
 </script>
 

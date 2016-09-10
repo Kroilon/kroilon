@@ -43,3 +43,9 @@ ul.pagination li a.active {
 }
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+.divCell-like {
+	float:left;/*fix for  buggy browsers*/
+    width:36px;
+    height:48px;
+}

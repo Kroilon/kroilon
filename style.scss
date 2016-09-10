@@ -319,16 +319,28 @@ display: block;
     border: 1px solid #d4d4d1;
     background-color: #fff;
     float: left;
+    margin-left:40px;
     margin-bottom: 20px;
     width: auto;
 }
 
 .tab-content {
-    width: 660px;
+    width: 700px;
     padding: 20px;
     display: none;
 }
 
 #tab-1 {
  display: block;   
+}
+
+.storycont {
+	display: block; 
+	top: 0; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	width: 700px;  
+	margin: auto; 
+	display-text:center;
 }
