@@ -26,6 +26,9 @@ user(nb) {
 
   return user[0];
 },
+isLoggedInAsAdmin() {
+	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined && Session.get("loggedUser")[0].profile == "Admin";
+},
 badges(){
 var badges = Badges.find({}).fetch();
 

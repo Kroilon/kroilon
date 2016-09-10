@@ -7,8 +7,9 @@
             <li><a class="list-group-item" href="/map"><img src="/map.svg" width="75" height="25"> <span>Map</span></a></li>
             <li><a class="list-group-item" href="/characters"><img src="/secret.svg" width="75" height="25"> <span>Character info</span></a></li>
             <li><a class="list-group-item" href="/kahoot"><img src="/kahoot.svg" width="75" height="25"> <span>Kahoot</span></a></li>
-            <li><a class="list-group-item" href="/management"><img src="/icon gestao-01.png" width="65" height="25"> <span>Management</span></a></li>
-        <li><a class="list-group-item" href=/secrets><img src="/icon gestao-01.png" width="65" height="25"> <span>Secrets</span></a></li>
+			{{#if isLoggedInAsAdmin}}
+			<li><a class="list-group-item" href="/management"><img src="/icon gestao-01.png" width="65" height="25"> <span>Management</span></a></li>           	
+            {{/if}}
         </ul>
     </div>
         </template>
