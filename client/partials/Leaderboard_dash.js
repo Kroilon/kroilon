@@ -27,7 +27,7 @@ Template.Leaderboard_dash.onRendered(
 		
 		var total_points = 0;
 		
-		var users [] =//db.academy.find();
+		//var users [] =//db.academy.find();
 		var total_users = users.length;
 		
 		$.each(users, function(index_users, value_users){
