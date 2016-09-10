@@ -19,7 +19,9 @@ Template.Home.events({
 		return e.nb == playerNb;
 	});
 	
-	if(user.nb == playerNb && playerPass == user.password){
+	debugger;
+	
+	if(user[0].nb == playerNb && playerPass == user[0].password){
 		
 		Session.set("loggedUser", user);
 		

@@ -1,6 +1,7 @@
 <template name="Management">
   <h1 class="page-title">Management</h1>
 
+  {{#if isLoggedInAsAdmin}}
   <div id="tabs-container">
       <ul class="tabs-menu">
           <li2 class="current"><a href="#tab-0" id="first">Academy</a></li2>
@@ -280,6 +281,9 @@
         </div>
       </div>
 
+  {{else}}
+	<h3>ACCESS DENIED</h3>
+  {{/if}}
   <script type="text/javascript">
   $(document).ready(function() {
 
