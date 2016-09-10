@@ -14,6 +14,19 @@ db.createCollection("academy");
 db.academy.insert({
 	name: "Kroilon Test",
 	date:new Date(),
+	energyLevel: [{
+		date: new Date(),
+		energy: 5		
+	}],
+	teamChallengeScore: [{
+		date: new Date(),
+		challenge: "CH_001_01",
+		points: "2979"
+	}],
+	teamScore: [{
+		date:new Date(),
+		points: "3534"
+	}],
 	users:[
 		{
 			nb: "nb22634",
