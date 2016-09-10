@@ -28,3 +28,19 @@ FlowRouter.route('/map', {
       BlazeLayout.render("MapLayout", {main: "Map"});
     }
 });
+
+// Leaderboard_dash Page
+FlowRouter.route('/leaderboard_dash', {
+    name: '/leaderboard_dash',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Leaderboard_dash"});
+    }
+});
+
+// Leaderboard_tops Page
+FlowRouter.route('/leaderboard_tops', {
+    name: '/leaderboard_tops',
+    action() {
+        BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
+    }
+});
