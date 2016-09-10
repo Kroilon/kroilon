@@ -102,10 +102,7 @@ db.challenges.insert({
 	name: "kahoot",
 	technicalName:"CH_001",
 	nParticipants: "35",
-	room: 3,
-	users: [{
-			nb:["nb00001", "nb00002"]
-		}],
+	room: [{name:"room1"}, {name:"room 2"}],
 	date: new Date(),
 	badges: [{
 		name: "soneca",

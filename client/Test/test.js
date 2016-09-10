@@ -10,7 +10,7 @@ Template.Test.helpers({
   	console.log('oi');
     return console.log(Academy.find({}).fetch());
   },
-  
+
   users(){
 	var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
@@ -23,6 +23,10 @@ Template.Test.helpers({
 	var chall = Challenges.find();
 	var rooms = [];
 
+	console.log("TESTE");
+
+	console.log(chall);
+
 	$.each(chall, function(index_chall,value_chall){
 		$.each(value_chall.rooms,function(index_room,value_room){
 			if ($.inArray(value_room.name, rooms) == -1)
@@ -32,10 +36,19 @@ Template.Test.helpers({
 		});
 	});
 
-	console.log(chall.rooms);
+	console.log(rooms);
 
 	return rooms;
+  },
+
+  challs(){
+	var latestChalls = Challenges.findOne({}, {sort: {date: -1, limit: 1}});
+
+	console.log(latestChalls.name);
+
+	return latestChalls.name;
   }
+
 
 });
 
