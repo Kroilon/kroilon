@@ -38,7 +38,7 @@ db.academy.insert({
 
 //Challenges
 db.createCollection("challenges");
-db.academy.insert({
+db.challenges.insert({
 	name: "kahoot",
 	technicalName:"CH_001",
 	nParticipants: "35",
@@ -57,7 +57,7 @@ db.academy.insert({
 
 //Rooms
 db.createCollection("rooms");
-db.academy.insert({
+db.rooms.insert({
 	name: "masmorra",
 	challenge: "wells and  ",
 	badges: [{
