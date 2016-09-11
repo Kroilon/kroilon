@@ -8,6 +8,7 @@
         <li2><a href="#tab-2">My Performance</a></li2>
         <li2><a href="#tab-3">Dashboard</a></li2>
         <li2><a href="#tab-4">Top Scores</a></li2>
+        <li2><a href="#tab-5">Player Points</a></li2>
     </ul>
     <div class="tab" style="margin-top:10px;">
         <div id="tab-1" class="tab-content" style="width:1350px;">
@@ -89,6 +90,28 @@
 
 
             </div>
+
+
+
+
+        <div id="tab-5" class="tab-content" style="width:1350px;">
+        <div>
+        <div>Player Points</div>
+        	<div class="divTable">
+			{{#each playerPoints}}
+				  <div class="divRow">
+					  <div class="divCell">{{category}}</div>
+				  </div>
+				  			{{/each}}
+
+				</div>
+
+        </div>
+    </div>
+
+
+
+
     </div>
 </div>
 

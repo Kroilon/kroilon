@@ -2,6 +2,26 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
 Template.Leaderboard.helpers({
+
+	playerPoints (){
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var users = latestAcademy.users;
+
+		$.each(users, function(index_users, value_users){
+			$.each(value_users.score, function(index_score, value_score){
+				console.log(value_users.score);
+				return value_users.score;
+			});
+		});
+	},
+
+
+	players() {
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+		return latestAcademy.users;		
+	},
+
 	userScores() {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
