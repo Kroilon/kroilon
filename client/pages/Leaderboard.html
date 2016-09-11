@@ -99,16 +99,28 @@
         <div id="tab-5" class="tab-content" style="width:1350px;">
         <div>
         <div>Player Points</div>
+        <br>
         	<div class="divTable">
-			{{#each playerPoints}}
-				  <div class="divRow">
-					  <div class="divCell">{{category}}</div>
-				  </div>
-				  			{{/each}}
 
+				<div class="divRow">
+					<div class="divCell"><b>Player</b></div>
+					<div class="divCell"><b>Challenge</b></div>
+					<div class="divCell"><b>Category</b></div>
+					<div class="divCell"><b>Points</b></div>
 				</div>
+				<br>
 
+			{{#each playerPoints}}
+				<div class="divRow">
+					<div class="divCell">{{name}}</div>
+					<div class="divCell">{{challenge}}</div>
+					<div class="divCell">{{category}}</div>
+					<div class="divCell">{{points}}</div>
+				</div>
+  			{{/each}}
+			</div>
         </div>
+
     </div>
 
 

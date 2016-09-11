@@ -46,7 +46,7 @@ db.academy.insert({
 					points: 20
 				},
 				{
-					date: new Date(),
+					date: new Date(2015, 02),
 					challenge: "kahoot",
 					category: "KP",
 					points: 320
@@ -84,7 +84,7 @@ db.academy.insert({
 					points: 20
 				},
 				{
-					date: new Date(),
+					date: new Date(2017,09),
 					challenge: "daily coiso",
 					category: "KP",
 					points: 50
