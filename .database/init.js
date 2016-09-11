@@ -14,11 +14,9 @@ db.createCollection("academy");
 db.academy.insert({
 	name: "Kroilon Test",
 	dailyMessage: "Bem Vindos a Kroilon",
+	homeMessage: "#ficaadica",
 	date:new Date(),
-	energyLevel: [{
-		date: new Date(),
-		energy: 5
-	}],
+	energyLevel: 5,
 	teamChallengeScore: [{
 		date: new Date(),
 		challenge: "CH_001_01",
@@ -65,34 +63,12 @@ db.academy.insert({
 				}]
 		},
 		{
-			nb: "nb000",
+			nb: "formador",
 			name:"admin",
-			avatar: "AfonsoSousa.jpg",
-			email: "afonsosousa0@gmail.com",
-			password: "12345",
-			score:[
-				{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "HP",
-					points: 20
-				},
-				{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "KP",
-					points: 320
-				}
-			],
-			profile: "Admin",
-			mbti: "ENTJ",
-			skills:[{
-					people: 7,
-					communication: 8,
-					problemSolving: 8,
-					manegement:7,
-					android:1
-				}]
+			avatar: "",
+			email: "",
+			password: "academiasantarem",
+			profile: "Admin"
 		},
 		{
 			nb: "nb22756",

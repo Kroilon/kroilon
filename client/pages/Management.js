@@ -3,7 +3,6 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
-import { Secrets } from '/imports/api/databasedriver.js';
 
 Template.Management.helpers({
 rooms(){
@@ -27,9 +26,6 @@ user(nb) {
 
   return user[0];
 },
-isLoggedInAsAdmin() {
-	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined && Session.get("loggedUser")[0].profile == "Admin";
-},
 badges(){
 var badges = Badges.find({}).fetch();
 
@@ -51,6 +47,7 @@ Template.Management.events({
     var pointType = $("#pointType").val();
     var points = parseInt($("#points").val());
 
+
     var score = {
       challenge : activityId,
       category: pointType,
@@ -61,7 +58,6 @@ Template.Management.events({
     Meteor.call("updateScore",latestAcademy._id,playerId,score);
 
   },
-
   'click #insertChallenge' (event) {
 
     var challengeName = $("#challengeName").val();
@@ -80,12 +76,6 @@ Template.Management.events({
 
     Meteor.call("insertChallenge", data);
   },
-  'click #deleteChallenge' (event) {
-
-    var challengeName = $("#challengeName").val();
-
-    Meteor.call("deleteChallenge", challengeName);
-  },
   'click #insertRoom' (event) {
 
     var roomName = $("#roomName").val();
@@ -99,10 +89,6 @@ Template.Management.events({
 
     Meteor.call("insertRoom", data);
   },
-  'click #deleteRoom' (event) {
-    var roomName = $("#roomName").val();
-    Meteor.call("deleteRoom", roomName);
-  },
   'click #insertBadge' (event) {
 
     var badgeName = $("#badgeName").val();
@@ -115,12 +101,6 @@ Template.Management.events({
     };
 
     Meteor.call("insertBadge", data);
-  },
-  'click #deleteBadge' (event) {
-
-    var badgeName = $("#badgeName").val();
-
-    Meteor.call("deleteBadge", badgeName);
   },
   'click #insertCharacter' (event){
 
@@ -164,17 +144,6 @@ Template.Management.events({
         Meteor.call("addAcademyUser",latestAcademy._id, user);
 
   },
-  'click #deleteCharacter' (event){
-
-		debugger;
-
-		var playerId = $("#characterNB").val();
-
-        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-        Meteor.call("deleteCharacter",latestAcademy._id, playerId);
-
-  },
   'click #insertAcademy' (event){
     var academyName = $('#academyName').val();
 
@@ -186,52 +155,5 @@ Template.Management.events({
 
     Meteor.call("addAcademy", data);
 
-  },
-  'click #updateDailyMessage' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var message = $("#message").val();
-
-    Meteor.call("updateDailyMessage", latestAcademy, message);
-
-  },
-  'click #terminateDay' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    Meteor.call("terminateDay", latestAcademy);
-  },
-  'click #addCheese' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var burgerCount = $('#burgerCount').val();
-
-    Meteor.call("addCheese", latestAcademy, burgerCount);
-  },
-  'click #updateMessageHome' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var messageHome = $('#messageHome').val();
-
-    Meteor.call("updateMessageHome", latestAcademy, messageHome);
-  },
-  'click #addSecret' (event){
-
-    var secretValue = $('#secretValue').val();
-    var secretPlayerNB = $('#secretPlayerNB').val();
-
-    var data = {
-      description: secretValue,
-      nb: secretPlayerNB,
-      challenge: "Submeter Segredo",
-      discovered: 0
-    }
-
-    Meteor.call("insertSecret", data);
   }
-
-
 });

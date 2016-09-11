@@ -132,6 +132,9 @@ Template.Leaderboard.helpers({
 		sortArrOfObjectsByParam(users, "totalExperienceScore", false);
 
 		return users;
+	},
+	isLoggedIn() {
+		return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined
 	}
 });
 
@@ -139,23 +142,11 @@ Template.Leaderboard.helpers({
 Template.Leaderboard.events({
     'click .divCell-like': function(event, instance) {
 		$(event.currentTarget).prop('src', 'Like-07.png');
-		//console.log($(this).attr('src'));
-
-		//$("img .divCell-like").attr('src','Like-07.png');
-
-		//Session.set("src", "Like-07.png");
-		//console.log($(this).find(''));//.attr('src','Like-07.png');
-
-
-		//attr('src','Like-07.png');
     }
 });
 
 
-//{ 'click #myButton': function (event, instance) { $(event.currentTarget).prop('disabled', true); }
-
-
-function sortArrOfObjectsByParam(arrToSort /* array */, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
     if(sortAscending == undefined) sortAscending = true;  // default to true
 
     if(sortAscending) {
