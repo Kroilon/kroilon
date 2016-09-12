@@ -163,9 +163,11 @@ Template.Management.events({
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-        Meteor.call("addAcademyUser",latestAcademy._id, (error, user) => {
-          if (error) { console.log(error) }
-          else { return user });         
+        if (Meteor.isClient) {
+            alert("Added user!");
+            Meteor.call("addAcademyUser",latestAcademy._id, user); 
+        }
+        
 
   },
   'click #deleteCharacter' (event){
