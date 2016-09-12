@@ -163,10 +163,11 @@ Template.Management.events({
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-        if (Meteor.isClient) {
-            alert("Added user!");
-            Meteor.call("addAcademyUser",latestAcademy._id, user); 
-        }
+        alert("Added user!");
+        event.preventDefault();
+        var characterNB = event.target.characterNB.value;
+        Meteor.call("addAcademyUser",latestAcademy._id, user); 
+        event.target.characterNB.value = "";
         
 
   },
