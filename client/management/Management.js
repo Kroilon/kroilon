@@ -124,6 +124,8 @@ Template.Management.events({
   },
   'click #insertCharacter' (event){
 
+      var user = {};
+
       var characterNB = $('#characterNB').val();
       var characterName = $('#characterName').val();
       var characterAvatar = $('#characterAvatar').val();
@@ -157,7 +159,7 @@ Template.Management.events({
     					points: 0
             }
           ]
-    		}
+    		};
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
