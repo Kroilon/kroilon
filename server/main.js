@@ -44,7 +44,7 @@ Meteor.methods({
       Academy.update(
           { _id: id},
           {$push: {'users': user},
-          {createdBy: currentUserId}
+          createdBy: currentUserId
       );
     },
 
