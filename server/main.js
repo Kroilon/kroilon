@@ -8,9 +8,11 @@ import { Secrets } from '/imports/api/databasedriver.js';
 Meteor.methods({
 	  updateScore: function (id,playerId,score) {
 
+      var currentUserId = Meteor.userId();
       Academy.update(
           { _id: id, 'users.nb': playerId },
-          {$push: {'users.$.score': score}}
+          {$push: {'users.$.score': score}},
+          {updatedBy: currentUserId}
       );
 
 },

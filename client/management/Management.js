@@ -58,6 +58,8 @@ Template.Management.events({
       date: new Date()
     };
 
+    alert("Score updated!");
+    event.preventDefault();
     Meteor.call("updateScore",latestAcademy._id,playerId,score);
 
   },
@@ -78,12 +80,16 @@ Template.Management.events({
     	badges: challengeBadge
     };
 
+    alert("Challenge inserted!");
+    event.preventDefault();
     Meteor.call("insertChallenge", data);
   },
   'click #deleteChallenge' (event) {
 
     var challengeName = $("#challengeName").val();
 
+    alert("Challenge deleted!");
+    event.preventDefault();
     Meteor.call("deleteChallenge", challengeName);
   },
   'click #insertRoom' (event) {
@@ -97,10 +103,15 @@ Template.Management.events({
     	badges: [{ badge: roomBadge }]
     };
 
+    alert("Room inserted!");
+    event.preventDefault();
     Meteor.call("insertRoom", data);
   },
   'click #deleteRoom' (event) {
     var roomName = $("#roomName").val();
+
+    alert("Room deleted!");
+    event.preventDefault();
     Meteor.call("deleteRoom", roomName);
   },
   'click #insertBadge' (event) {
@@ -114,12 +125,16 @@ Template.Management.events({
     	points: badgePoints
     };
 
+    alert("Badge inserted!");
+    event.preventDefault();
     Meteor.call("insertBadge", data);
   },
   'click #deleteBadge' (event) {
 
     var badgeName = $("#badgeName").val();
 
+    alert("Badge deleted!");
+    event.preventDefault();
     Meteor.call("deleteBadge", badgeName);
   },
   'click #insertCharacter' (event){
@@ -179,6 +194,8 @@ Template.Management.events({
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
+        alert("Character deleted!");
+        event.preventDefault();
         Meteor.call("deleteCharacter",latestAcademy._id, playerId);
 
   },
@@ -191,6 +208,8 @@ Template.Management.events({
       date: new Date()
     };
 
+    alert("Academy inserted!");
+    event.preventDefault();
     Meteor.call("addAcademy", data);
 
   },
@@ -200,6 +219,8 @@ Template.Management.events({
 
     var message = $("#message").val();
 
+    alert("Daily message updated!");
+    event.preventDefault();
     Meteor.call("updateDailyMessage", latestAcademy, message);
 
   },
@@ -207,6 +228,8 @@ Template.Management.events({
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
+    alert("Day terminated!");
+    event.preventDefault();
     Meteor.call("terminateDay", latestAcademy);
   },
   'click #addCheese' (event){
@@ -215,6 +238,8 @@ Template.Management.events({
 
     var burgerCount = $('#burgerCount').val();
 
+    alert("Cheese added!");
+    event.preventDefault();
     Meteor.call("addCheese", latestAcademy, burgerCount);
   },
   'click #updateMessageHome' (event){
@@ -223,6 +248,8 @@ Template.Management.events({
 
     var messageHome = $('#messageHome').val();
 
+    alert("Home message updated!");
+    event.preventDefault();
     Meteor.call("updateMessageHome", latestAcademy, messageHome);
   },
   'click #addSecret' (event){
@@ -237,6 +264,8 @@ Template.Management.events({
       discovered: 0
     }
 
+    alert("Secret inserted!");
+    event.preventDefault();
     Meteor.call("insertSecret", data);
   }
 
