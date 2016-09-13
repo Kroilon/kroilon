@@ -165,9 +165,9 @@ Template.Management.events({
 
         alert("Added user!");
         event.preventDefault();
-        var characterNB = event.target.characterNB.value;
+        //var characterNB = event.target.characterNB.value;
         Meteor.call("addAcademyUser",latestAcademy._id, user); 
-        event.target.characterNB.value = "";
+        //event.target.characterNB.value = "";
         
 
   },
