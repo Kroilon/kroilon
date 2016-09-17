@@ -80,14 +80,8 @@ db.academy.insert({
 			score:[
 				{
 					date: new Date(),
-					challenge: "kahoot",
+					challenge: "Autoavaliação",
 					category: "HP",
-					points: 20
-				},
-				{
-					date: new Date(2017,09),
-					challenge: "daily coiso",
-					category: "KP",
 					points: 50
 				}
 			],
@@ -115,13 +109,183 @@ db.academy.insert({
 				}],
 			profile: "Trainee",
 			mbti: "ESTJ",
+			skills:[
+				{
+					date: new Date(),
+					challenge: "Autoavaliação",
+					category: "HP",
+					points: 50
+				},
+				{
+					date: new Date(),
+					challenge: "Avatar",
+					category: "HP",
+					points: 50
+				}
+			]
+		},
+		{
+			nb: "21003",
+			name:"Andreia Alves",
+			avatar: "AndreiaAlves.jpg",
+			email: "dummy@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Autoavaliação",
+					category: "HP",
+					points: 50
+				},
+				{
+					date: new Date(),
+					challenge: "Kahoot-1st",
+					category: "KP",
+					points: 50
+				}
+			],
+			profile: "Trainee",
+			mbti: "ISTJ",
 			skills:[{
-					people: 7,
+					people: 8,
 					communication: 9,
 					problemSolving: 7,
 					manegement:7,
-					android:1
+					android:7
 				}]
+		},
+		{
+			nb: "21004",
+			name:"Catarina Oliveira",
+			avatar: "CatarinaOliveira.jpg",
+			email: "catarina@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Kahoot-2nd",
+					category: "KP",
+					points: 40
+				}
+			],
+			profile: "Trainee",
+			mbti: "ESTJ",
+			skills:[{
+					people: 6,
+					communication: 9,
+					problemSolving: 7,
+					manegement:7,
+					android:6
+				}]
+		},
+		{
+			nb: "21005",
+			name:"Fernando Garcia",
+			avatar: "FernandoGarcia.jpg",
+			email: "someemail@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Voluntário LipSync Battle",
+					category: "HP",
+					points: 50
+				}
+			],
+			profile: "Trainee",
+			mbti: "ESTJ",
+			skills:[{
+					people: 6,
+					communication: 7,
+					problemSolving: 9,
+					manegement:7,
+					android:3
+				}]
+		},
+		{
+			nb: "21006",
+			name:"Joao Baptista",
+			avatar: "JoaoBaptista.jpg",
+			email: "joao@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Voluntário Android",
+					category: "HP",
+					points: 50
+				}
+			],
+			profile: "Trainee",
+			mbti: "ESTJ",
+			skills:[{
+					people: 6,
+					communication: 9,
+					problemSolving: 7,
+					manegement:8,
+					android:5
+				}]
+		},
+		{
+			nb: "21007",
+			name:"Pedro Gabriel",
+			avatar: "PedroGabriel.jpg",
+			email: "pedro@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Voluntário Medley",
+					category: "HP",
+					points: 50
+				},
+				{
+					date: new Date(),
+					challenge: "Penalizacao",
+					category: "HP",
+					points: -10
+				}
+			],
+			profile: "Trainee",
+			mbti: "ESTJ",
+			skills:[{
+					people: 9,
+					communication: 9,
+					problemSolving: 7,
+					manegement:7,
+					android:9
+				}]
+		},
+		{
+			nb: "21008",
+			name:"Rita Narciso",
+			avatar: "RitaNarciso.jpg",
+			email: "rita123@hotmail.com",
+			password: "12345",
+			score:[
+				{
+					date: new Date(),
+					challenge: "Kahoot-2nd",
+					category: "KP",
+					points: 40
+				},
+				{
+					date: new Date(),
+					challenge: "Atraso",
+					category: "HP",
+					points: -10
+				}
+			],
+			profile: "Trainee",
+			mbti: "ESTJ",
+			skills:[{
+					people: 7,
+					communication: 6,
+					problemSolving: 3,
+					manegement:7,
+					android:1
+				}
+			]
 		}
 	]
 });
