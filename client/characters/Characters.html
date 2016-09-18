@@ -2,43 +2,49 @@
 
   <h1 class="page-title">Characters</h1>
 
-{{#each characters}}
-<div class="divTable">
+  {{#each characters}}
+  
+  {{#if isAdmin profile }} 
 
-  <div class="headRow">
-    <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
-    <div class="divCell" align="center">
+    <div class="divTable">    
       <div class="headRow">
-        <div class="divCell">{{score nb}} Score</div>
-        <div class="divCell">{{name}}</div>
+        <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
+        <div class="divCell" align="center">
+          <div class="headRow">
+            <div class="divCell">Score: {{score nb}}</div>
+            <div class="divCell">{{name}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">{{mbti}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">NB {{nb}}</div>
+          </div>
+        </div>
       </div>
-      <div class="divRow">
-          <div class="divCell">{{mbti}}</div>
-      </div>
-      <div class="divRow">
-          <div class="divCell">NB {{nb}}</div>
-     </div>
+
+    {{#each skills}}
+    <div class="divRow">
+        <div class="divCell">Android {{android}}</div>
     </div>
-  </div>
+    <div class="divRow">
+        <div class="divCell">Communication {{communication}}</div>
+    </div>
+    <div class="divRow">
+        <div class="divCell">Management {{manegement}}</div>
+    </div>
+    <div class="divRow">
+        <div class="divCell">People {{people}}</div>
+    </div>
+    <div class="divRow">
+        <div class="divCell">Problem Solving {{problemSolving}}</div>
+    </div>
+    {{/each}}
 
-  {{#each skills}}
-  <div class="divRow">
-      <div class="divCell">Android {{android}}</div>
   </div>
-  <div class="divRow">
-      <div class="divCell">Communication {{communication}}</div>
-  </div>
-  <div class="divRow">
-      <div class="divCell">Management {{manegement}}</div>
-  </div>
-  <div class="divRow">
-      <div class="divCell">People {{people}}</div>
-  </div>
-  <div class="divRow">
-      <div class="divCell">Problem Solving {{problemSolving}}</div>
-  </div>
-  {{/each}}
+      
+  {{/if}}
 
-</div>
-{{/each}}
+  {{/each}} 
+
 </template>

@@ -2,7 +2,6 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
 
-
 Template.Character.helpers({
 	avatar() {
 
