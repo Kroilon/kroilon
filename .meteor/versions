@@ -41,6 +41,8 @@ hot-code-push@1.0.3
 html-tools@1.0.8
 htmljs@1.0.8
 http@1.1.4
+huttonr:bootstrap3@3.3.6_13
+huttonr:bootstrap3-assets@3.3.6_3
 id-map@1.0.6
 insecure@1.0.6
 jquery@1.11.7
