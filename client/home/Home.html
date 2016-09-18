@@ -6,33 +6,9 @@
         <!--<div class="btn-group">
             <a class="btn">Login</a>
 		</div> -->
-    </div>
+    </div>	
 
-	<div id ="loginPage" align="center">
-		<p>NB</p>
-		<input type="text" id="playerNb" value="">
-		<p>Password</p>
-		<input type="password" id="playerPass" value=""/>
-		<p></p>
-		<button id="myLoginBtn" type="submit" style="margin: 10px 0px 0px 0px">Login</button>
-		<!-- 
-		<div class="btn-group" style="margin: 30px 0px 0px 0px" >
-            <a class="btn" id="myLoginBtn" >Login</a>
-		</div>
-		-->
-	</div>
+	{{> HomeLogin}}
+	{{> HomeFooter}}	
 
-	<footer>
-	  <p style="text-align:center; font-size:70%;">Copyright © 2016 by Kroilon</p>
-	  <p style="text-align:center; font-size:70%;">All content included in or made available in this website, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software is the property of Kroilon.</p>
-	</footer>
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-		    $('#playerPass').keypress(function(e){
-		      if(e.keyCode == 13)
-		      $('#myLoginBtn').click();
-		    });
-		});
-	</script>
 </template>

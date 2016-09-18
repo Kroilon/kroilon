@@ -1,0 +1,32 @@
+<template name="HomeLogin">
+
+	<div id ="loginPage" align="center"> 
+		<p>NB</p>
+		<input type="text" id="playerNb" value="">
+		<p>Password</p>
+		<input type="password" id="playerPass" value=""/>
+		<p></p>
+		<button id="myLoginBtn" type="submit" style="margin: 10px 0px 0px 0px">Login</button>
+		<!--
+		<div class="btn-group" style="margin: 30px 0px 0px 0px" >
+            <a class="btn" id="myLoginBtn" >Login</a>
+		</div>	
+		-->
+	</div>		
+
+	<script type="text/javascript">
+		$(document).ready(function(){			    
+	    	$('#playerNb').keypress(function(e){
+		      	if(e.keyCode == 13)
+		      	$('#myLoginBtn').click();
+    		}); 
+		});
+		$(document).ready(function(){			    
+	    	$('#playerPass').keypress(function(e){
+		      	if(e.keyCode == 13)
+		      	$('#myLoginBtn').click();
+    		}); 
+		});
+	</script>
+
+</template>
