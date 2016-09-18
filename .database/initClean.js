@@ -12,7 +12,7 @@ Step 3-> load(".database/init.js")
 db.academy.drop();
 db.createCollection("academy");
 db.academy.insert({
-	name: "Kroilon",
+	name: "Academy Setembro 2016",
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
 	date:new Date(),
@@ -20,9 +20,9 @@ db.academy.insert({
 	users:[		
 		{
 			nb: "formador",
-			name:"admin",
+			name:"Pedro Crespo",
 			avatar: "",
-			email: "",
+			email: "pedro.crespo@novabase.pt",
 			password: "academiasantarem",
 			profile: "Admin"
 		}
