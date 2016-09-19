@@ -149,6 +149,7 @@ Template.Leaderboard.events({
     'click .divCell-like': function(event, instance) {
 		$(event.currentTarget).prop('src', 'Like-07.png');
     }
+
 });
 
 
@@ -166,3 +167,5 @@ function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, so
         });
     }
 }
+
+
