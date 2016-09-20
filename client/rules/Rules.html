@@ -1,0 +1,16 @@
+<template name="Rules">
+  <h2>Rules</h2>
+  <br>
+
+  <ul class="nav nav-tabs">
+    <li data-template="specialCards" role="presentation" class="active"><a href="#">Special Cards</a></li>
+    <li data-template="soldierCards" role="presentation"><a href="#">Soldiers</a></li>
+    <li data-template="individualPoints" role="presentation"><a href="#">Individual Points System</a></li>
+    <li data-template="teamPoints" role="presentation"><a href="#">Team Points System</a></li>
+    <li data-template="individualBadges" role="presentation"><a href="#">Individual Badges</a></li>
+    <li data-template="teamBadges" role="presentation"><a href="#">Team Badges</a></li>
+  </ul>
+
+  {{> Template.dynamic template=tab data=tabData}}
+
+</template> 
