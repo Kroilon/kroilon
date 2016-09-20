@@ -34,6 +34,7 @@ raix:handlebar-helpers
 aldeed:template-extension
 
 huttonr:bootstrap3		# Bootstrap 3 for Meteor: modular, configurable, customizable
+templates:tabs
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)

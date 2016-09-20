@@ -1,7 +1,7 @@
 <template name="Rules">
   <h2>Rules</h2>
   <br>
-
+  <!--
   <ul class="nav nav-tabs">
     <li data-template="specialCards" role="presentation" class="active"><a href="#">Special Cards</a></li>
     <li data-template="soldierCards" role="presentation"><a href="#">Soldiers</a></li>
@@ -12,5 +12,86 @@
   </ul>
 
   {{> Template.dynamic template=tab data=tabData}}
+  -->
+  <!-- Use `name` to add a custom class to the outer container -->
+  {{#basicTabs name="" tabs=tabs}}
+    <!--
+      There are two ways to define content for your tabs:
 
-</template> 
+      1. Wrap each tabbed section in a blank `<div></div>`.
+         Sections must correspond with the order of the tabs you specified.
+
+      2. Wrap each tabbed section in the provided block helper (RECOMMENDED!).
+         `{{#tabContent slug="nameOfSlug"}} ... {{/tabContent}}`
+         These can be defined in any order you like.
+    -->
+    {{#tabContent slug="specialCards"}}
+      <!--
+      <h3>Special Cards</h3>
+      -->
+
+      <div class="container"> 
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/cartas especiaias-05.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/cartas especiaias-06.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/cartas especiaias-07.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/houdini-12.png"></div>
+        </div>
+      </div>
+
+    {{/tabContent}}
+
+    {{#tabContent slug="soldierCards"}}
+      <!--
+      <h2>Soldiers</h2>
+      -->
+
+      <div class="container"> 
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/soldados-02.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/soldados-03.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/soldados-04.png"></div>
+            <div class="col-lg-4 col-sm-6 col-6"><img src="rules/magician-03-03.png"></div>
+        </div>
+      </div>
+
+    {{/tabContent}}
+
+    {{#tabContent slug="individualPoints"}}
+      <!--
+      <h2>Individual Points</h2>
+      -->
+      <img src="rules/pontos individuais-10.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+
+    {{/tabContent}}
+
+    {{#tabContent slug="teamPoints"}}
+      <!--
+      <h2>Team Points</h2>
+      -->
+
+      <img src="rules/pontos de equipa-11.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+
+    {{/tabContent}}
+
+    {{#tabContent slug="individualBadges"}}
+      <!--
+      <h2>Individual Badges</h2>
+      -->
+
+      <img src="rules/badges individuais-08.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+
+    {{/tabContent}}
+
+    {{#tabContent slug="teamBadges"}}
+      <!--
+      <h2>Team Badges</h2>
+      -->
+
+      <img src="rules/badges equipa-09.png" width="850px" style="display:block;margin-left:auto; margin-right:auto;">
+
+    {{/tabContent}}
+
+  {{/basicTabs}}
+
+</template>

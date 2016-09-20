@@ -8,23 +8,17 @@ ReactiveTabs.createInterface({
   }
 });
 
-Template.Rules.helpers({
+Template.theexample.helpers({
   tabs: function () {
     // Every tab object MUST have a name and a slug!
     return [
-      { name: 'Special Cards', slug: 'specialCards' },
-      { name: 'Soldier Cards', slug: 'soldierCards' },
-      { name: 'Individual Points', slug: 'individualPoints' },
-      { name: 'Team Points', slug: 'teamPoints' },
-      { name: 'Individual Badges', slug: 'individualBadges' },
-      { name: 'Team Badges', slug: 'teamBadges' }
-      /*
-      { name: 'Team Badges', slug: 'teamBadges', onRender: function(slug, template) {
+      { name: 'People', slug: 'people' },
+      { name: 'Places', slug: 'places' },
+      { name: 'Things', slug: 'things', onRender: function(slug, template) {
         // This callback runs every time this specific tab's content renders.
         // As with `onChange`, the `template` instance is unique per block helper.
         alert("[tabs] Things has been rendered!");
       }}
-      */
     ];
   },
   activeTab: function () {
@@ -39,3 +33,5 @@ Template.Rules.helpers({
     return Session.get('activeTab'); // Returns "people", "places", or "things".
   }
 });
+
+
