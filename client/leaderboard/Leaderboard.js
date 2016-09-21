@@ -1,6 +1,16 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
+ReactiveTabs.createInterface({
+  template: 'basicTabs',
+  onChange: function (slug, template) {
+    // This callback runs every time a tab changes.
+    // The `template` instance is unique per {{#basicTabs}} block.
+    console.log('[tabs] Tab has changed! Current tab:', slug);
+    console.log('[tabs] Template instance calling onChange:', template);
+  }
+});
+
 Template.Leaderboard.helpers({
 
 	playerPoints() {
@@ -141,7 +151,25 @@ Template.Leaderboard.helpers({
 	},
 	isLoggedIn() {
 		return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined
+	},
+
+	tabs: function () {
+    // Every tab object MUST have a name and a slug!
+    return [
+	      { name: 'My Profile', slug: 'myProfile' },
+	      { name: 'My Performance', slug: 'myPerformance' },
+	      { name: 'Dashboard', slug: 'dashboard' },
+	      { name: 'Top Scores', slug: 'topScores' },
+	      { name: 'Player Points', slug: 'playerPoints' }
+    	];
+  	},
+
+	activeTab: function () {
+	    // If you don't provide an active tab, the first one is selected by default.
+	    // See the `advanced use` section below to learn about dynamic tabs.
+	    return Session.get('activeTab'); // Returns "people", "places", or "things".
 	}
+
 });
 
 
