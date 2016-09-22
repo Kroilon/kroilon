@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
+import { Secrets } from '/imports/api/databasedriver.js';
 
 ReactiveTabs.createInterface({
   template: 'basicTabs',
@@ -37,8 +38,7 @@ Template.Leaderboard.helpers({
 		//var nb = players[0].score;
 		sortArrOfObjectsByParam(points, "date", false);
 		return points;
-	},
-
+	},		
 	userScores() {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -152,7 +152,15 @@ Template.Leaderboard.helpers({
 	isLoggedIn() {
 		return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined
 	},
+	playerSecrets() {
 
+		var secrets = Secrets.find({}).fetch();
+
+		return secrets;
+	},
+	isDiscovered: function (flag) {
+	    return flag !== true
+	},
 	tabs: function () {
     // Every tab object MUST have a name and a slug!
     return [
@@ -160,16 +168,15 @@ Template.Leaderboard.helpers({
 	      { name: 'My Performance', slug: 'myPerformance' },
 	      { name: 'Dashboard', slug: 'dashboard' },
 	      { name: 'Top Scores', slug: 'topScores' },
-	      { name: 'Player Points', slug: 'playerPoints' }
+	      { name: 'Player Points', slug: 'playerPoints' },
+	      { name: 'Secrets', slug: 'secrets' }
     	];
   	},
-
 	activeTab: function () {
 	    // If you don't provide an active tab, the first one is selected by default.
 	    // See the `advanced use` section below to learn about dynamic tabs.
 	    return Session.get('activeTab'); // Returns "people", "places", or "things".
 	}
-
 });
 
 
