@@ -5,36 +5,64 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
+ReactiveTabs.createInterface({
+  template: 'basicTabs',
+  onChange: function (slug, template) {
+    // This callback runs every time a tab changes.
+    // The `template` instance is unique per {{#basicTabs}} block.
+    console.log('[tabs] Tab has changed! Current tab:', slug);
+    console.log('[tabs] Template instance calling onChange:', template);
+  }
+});
+
 Template.Management.helpers({
-rooms(){
-  return Rooms.find({}).fetch();
-},
-challs(){
-var latestChalls = Challenges.find();
+    rooms(){
+      return Rooms.find({}).fetch();
+    },
+    challs(){
+      var latestChalls = Challenges.find();
 
-return latestChalls;
-},
-players(){
-var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      return latestChalls;
+    },
+    players(){
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-return latestAcademy.users;
-},
-user(nb) {
+      return latestAcademy.users;
+    },
+    user(nb) {
 
-  var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-  var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+      var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-  return user[0];
-},
-isLoggedInAsAdmin() {
-	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined && Session.get("loggedUser")[0].profile == "Admin";
-},
-badges(){
-var badges = Badges.find({}).fetch();
+      return user[0];
+    },
+    isLoggedInAsAdmin() {
+    	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined && Session.get("loggedUser")[0].profile == "Admin";
+    },
+    badges(){
+      var badges = Badges.find({}).fetch();
 
-return badges;
-}
+      return badges;
+    },
+    tabs: function () {
+    // Every tab object MUST have a name and a slug!
+    return [
+        { name: 'Academy', slug: 'academy' },
+        { name: 'Characters', slug: 'characters' },
+        { name: 'Badges', slug: 'badges' },
+        { name: 'Rooms', slug: 'rooms' },
+        { name: 'Challenges', slug: 'challenges' },
+        { name: 'Message', slug: 'message' },
+        { name: 'Fecho dia', slug: 'dayManagement' },
+        { name: 'Segredos', slug: 'secrets' }
+      ];
+    },
+    activeTab: function () {
+        // If you don't provide an active tab, the first one is selected by default.
+        // See the `advanced use` section below to learn about dynamic tabs.
+        return Session.get('activeTab'); // Returns "people", "places", or "things".
+    }
 });
 
 Template.Management.events({
@@ -256,10 +284,12 @@ Template.Management.events({
 
     var secretValue = $('#secretValue').val();
     var secretPlayerNB = $('#secretPlayerNB').val();
+    var secretPlayerName = $('#secretPlayerNB').find(":selected").text();
 
     var data = {
       description: secretValue,
       nb: secretPlayerNB,
+      name: secretPlayerName,
       challenge: "Submeter Segredo",
       discovered: 0
     }
