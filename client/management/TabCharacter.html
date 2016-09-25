@@ -1,0 +1,98 @@
+<template name="TabCharacter">  
+  <div class="container">        
+    <div class="form-group row">
+      <label for="characterNB" class="col-xs-2 col-form-label">NB</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="12345" id="characterNB">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterName" class="col-xs-2 col-form-label">Name</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="" id="characterName">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterPassword" class="col-xs-2 col-form-label">Password</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="" id="characterPassword">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterAvatar" class="col-xs-2 col-form-label">Avatar</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="" id="characterAvatar">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterEmail" class="col-xs-2 col-form-label">Email</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="email" value="" id="characterEmail">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterMBTI" class="col-xs-2 col-form-label">MBTI</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="" id="characterMBTI">
+      </div>
+    </div>    
+    <div class="form-group row">
+      <label for="characterPPLSkills" class="col-xs-2 col-form-label">People Skills</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="characterPPLSkills">          
+          {{#each possiblePoints}}
+            <option value="{{name}}">{{value}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterCommunicationSkills" class="col-xs-2 col-form-label">Communication Skills</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="characterCommunicationSkills">          
+          {{#each possiblePoints}}
+            <option value="{{name}}">{{value}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterProblemSolvingSkills" class="col-xs-2 col-form-label">Problem Solving Skills</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="characterProblemSolvingSkills">          
+          {{#each possiblePoints}}
+            <option value="{{name}}">{{value}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterManagementSkills" class="col-xs-2 col-form-label">Management Skills</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="characterManagementSkills">          
+          {{#each possiblePoints}}
+            <option value="{{name}}">{{value}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="characterAndroidSkills" class="col-xs-2 col-form-label">Android Skills</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="characterAndroidSkills">          
+          {{#each possiblePoints}}
+            <option value="{{name}}">{{value}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <input type="button" id="insertCharacter" class="btn btn-default btn-sm" value="Insert">
+      </div>
+      <div class="col-xs-3">
+        <input type="button" id="deleteCharacter" class="btn btn-default btn-sm" value="Delete">
+      </div>
+    </div>
+  </div> 
+</template>

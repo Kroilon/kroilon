@@ -1,0 +1,71 @@
+<template name="TabMessages">  
+  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">    
+    <div class="form-group row">
+      <label for="message1" class="col-xs-2 col-form-label">Current Message</label>
+      <div class="col-xs-9">
+        <p id="message1">{{dailyMessage}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="message" class="col-xs-2 col-form-label">New Daily Message</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="New Daily Message" id="message"> 
+      </div>
+    </div>  
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <input type="button" id="updateDailyMessage" class="btn btn-default btn-sm" value="Update">
+      </div>
+      <div class="col-xs-3">
+        <input type="button" id="deleteDailyMessage" class="btn btn-default btn-sm" value="Reset">
+      </div>
+    </div>
+  </div>  
+  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">    
+    <div class="form-group row">
+      <label for="message2" class="col-xs-2 col-form-label">Current Message</label>
+      <div class="col-xs-9">
+        <p id="message2">{{homeMessage}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="messageHome" class="col-xs-2 col-form-label">New Home Message</label>
+      <div class="col-xs-9">
+        <input class="form-control" type="text" value="New Daily Message" id="messageHome"> 
+      </div>
+    </div>  
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <input type="button" id="updateMessageHome" class="btn btn-default btn-sm" value="Update">
+      </div>
+    </div>
+  </div> 
+  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">    
+    <div class="form-group row">
+      <label for="terminateDay" class="col-xs-2 col-form-label">End Day</label>
+      <div class="col-xs-3">
+        <input type="button" id="terminateDay" class="btn btn-default btn-sm" value="Submit">
+      </div>
+    </div>
+  </div> 
+  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">    
+    <div class="form-group row">
+      <label for="burgerCount" class="col-xs-2 col-form-label">Menu Estudante</label>
+      <div class="col-xs-3">
+        <select class="selectpicker form-control" id="burgerCount">          
+          <option value="oneEnergy">1</option>
+          <option value="twoEnergy">2</option>
+          <option value="threeEnergy">3</option>
+          <option value="fourEnergy">4</option>
+          <option value="fiveEnergy">5</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="addCheese" class="col-xs-2 col-form-label">Add Cheese</label>
+      <div class="col-xs-3">
+        <input type="button" id="addCheese" class="btn btn-default btn-sm" value="Submit">
+      </div>
+    </div>
+  </div> 
+</template>

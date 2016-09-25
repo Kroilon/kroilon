@@ -8,356 +8,51 @@
 
       {{#tabContent slug="academy"}}
 
-        <div class="container">
-          <br>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/mAHC1wmmrok" style="display:block; margin: 0 auto;" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-          <br>
-          <h4>Add Academy</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Academy Name</td>
-                <td>
-                  <input type="text" id="academyName">
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td><input type="button" id="insertAcademy" value="Insert"></td>
-                <td><input type="button" id="deleteAcademy" value="Delete"></td>
-              </tr>
-            </table>
-          </form>
-        </div>
+        {{> TabAcademy}}
 
       {{/tabContent}}
 
       {{#tabContent slug="characters"}}
 
-        <div class="container">
-          <!-- Adicionar Character -->
-          <h4>Adicionar Character</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>NB</td>
-                <td>
-                  <input type="text" id="characterNB">
-                </td>
-              </tr>
-              <tr>
-                <td>Name</td>
-                <td>
-                  <input type="text" id="characterName">
-                </td>
-              </tr>
-              <tr>
-                <td>Password</td>
-                <td>
-                  <input type="password" id="characterPassword">
-                </td>
-              </tr>
-              <tr>
-                <td>Avatar</td>
-                <td>
-                  <input type="text" id="characterAvatar">
-                </td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td>
-                  <input type="text" id="characterEmail">
-                </td>
-              </tr>
-              <tr>
-                <td>MBTI</td>
-                <td>
-                  <input type="text" id="characterMBTI">
-                </td>
-              </tr>
-              <tr>
-                <td>People Skills</td>
-                <td>
-                  <input type="number" id="characterPPLSkills">
-                </td>
-              </tr>
-              <tr>
-                <td>Communication Skills</td>
-                <td>
-                  <input type="number" id="characterCommunicationSkills">
-                </td>
-              </tr>
-              <tr>
-                <td>Problem Solving Skills</td>
-                <td>
-                  <input type="number" id="characterProblemSolvingSkills">
-                </td>
-              </tr>
-              <tr>
-                <td>Management Skills</td>
-                <td>
-                  <input type="number" id="characterManagementSkills">
-                </td>
-              </tr>
-              <tr>
-                <td>Android Skills</td>
-                <td>
-                  <input type="number" id="characterAndroidSkills">
-                </td>
-              </tr>
-              <tr>
-              <td><input type="button" id="deleteCharacter" value="Apagar"></td>
-              <td><input type="button" id="insertCharacter" value="Inserir"></td>
-              </tr>
-            </table>
-          </form>
-        </div>
+           {{> TabCharacter}}
 
-        <br>
+      {{/tabContent}}
 
-        <!-- Atualizar Score -->
-        <div class="container">
-          <h4>Add Atividades</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Player</td>
-                <td>
-                  <select id="player">
-                    {{#each players}}
-                    <option value="{{nb}}">{{name}}</option>
-                    {{/each}}
-                  </select></td>
-              </tr>
-              <tr>
-                <td>Activity</td>
-                <td>
-                  <select id="activity">
-                    {{#each challs}}
-                    <option value="{{name}}">{{name}}</option>
-                    {{/each}}
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Type of Points</td>
-                <td>
-                  <select id="pointType">
-                      <option value="KP">KP</option>
-                      <option value="HP">HP</option>
-                      <option value="XP">XP</option>
-                  </select></td>
-              </tr>
-              <tr>
-                <td>Points</td>
-                <td>
-                  <input type="number" id="points" value="0">
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td><input type="button" id="insert" value="Insert"></td>
-                <td><input type="button" id="delete" value="Delete"></td>
-              </tr>
-            </table>
-          </form>
-        </div>
+      {{#tabContent slug="activity"}}
+
+        {{> TabActivity}}
 
       {{/tabContent}}
 
       {{#tabContent slug="badges"}}
 
-        <div class="container">
-          <h4>Add Badges</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Name</td>
-                <td>
-                  <input type="text" id="badgeName">
-                </td>
-              </tr>
-              <tr>
-                <td>Points</td>
-                <td>
-                  <input type="number" id="badgePoints" value="0">
-                </td>
-              </tr>
-              <tr>
-                <td><input type="button" id="deleteBadge" value="Apagar"></td>
-                <td><input type="button" id="insertBadge" value="Inserir"></td>
-              </tr>
-            </table>
-          </form>
-        </div>
+        {{> TabBadges}}
 
       {{/tabContent}}
 
       {{#tabContent slug="rooms"}}
 
-        <div class="container">
-          <h4>Add Rooms</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Name</td>
-                <td>
-                  <input type="text" id="roomName">
-                </td>
-              </tr>
-              <tr>
-                <td>Badges</td>
-                <td>
-                  <select id="roomBadge">
-                    <option selected>No Badge</option>
-                    {{#each badges}}
-                    <option value="{{name}}">{{name}}</option>
-                    {{/each}}
-                  </select></td>
-              </tr>
-              <tr>
-
-                <td><input type="button" id="deleteRoom" value="Apagar"></td>
-                <td><input type="button" id="insertRoom" value="Inserir"></td>
-
-              </tr>
-            </table>
-          </form>
-        </div>
+        {{> TabRooms}}
 
       {{/tabContent}}
 
       {{#tabContent slug="challenges"}}
 
-        <div class="container">
-          <h4>Add Challenge</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Name Challenge</td>
-                <td>
-                  <input type="text" id="challengeName">
-                </td>
-              </tr>
-              <tr>
-                <td>Points</td>
-                <td>
-                  <input type="number" id="challengePoints" value="0">
-                </td>
-              </tr>
-              <tr>
-                <td>Room</td>
-                <td>
-                  <select id="challengeRoom">
-                    <option selected>No Room</option>
-                    {{#each rooms}}
-                    <option value="{{name}}">{{name}}</option>
-                    {{/each}}
-                  </select></td>
-              </tr>
-              <tr>
-                <td>Badges</td>
-                <td>
-                  <select id="challengeBadge">
-                    <option selected>No Badge</option>
-                    {{#each badges}}
-                    <option value="{{name}}">{{name}}</option>
-                    {{/each}}
-                  </select></td>
-              </tr>
-              <tr>
-                <td><input type="button" id="deleteChallenge" value="Apagar"></td>
-                <td><input type="button" id="insertChallenge" value="Inserir"></td>
-              </tr>
-            </table>
-          </form>   
-        </div> 
+        {{> TabChallenges}}
 
       {{/tabContent}}
 
       {{#tabContent slug="message"}}
 
-        <div class="container">
-          <h4>Daily Activities</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Message</td>
-                <td>
-                  <input type="text" id="message">
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td><input type="button" id="updateDailyMessage" value="Update"></td>
-                <td><input type="button" id="deleteDailyMessage" value="Delete"></td>
-              </tr>
-            </table>
-          </form>
-
-          <br>
-
-          <h4>Daily Message (esta fica na home crespo!)</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td>Message (#ficadica)</td>
-                <td>
-                  <input type="text" id="messageHome">
-                </td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td><input type="button" id="updateMessageHome" value="Update"></td>
-              </tr>
-            </table>
-          </form>
-        </div>
-
-      {{/tabContent}}
-
-      {{#tabContent slug="dayManagement"}}
-
-        <div class="container">
-          <h4>Fecho Dia</h4>
-          <form>
-            <table class="table-striped table-bordered table-condensed">
-              <tr>
-                <td><input type="button" id="terminateDay" value="Encerramento Dia"></td>
-                <td><input type="number" id="burgerCount" placeholder="menu estudante"><input type="button" id="addCheese" value="Adicionar CheeseBurger"></td>
-              </tr>
-            </table>
-          </form>
-        </div>  
+        {{> TabMessages}}
 
       {{/tabContent}}
 
       {{#tabContent slug="secrets"}}
 
-      <div class="container">
-        <h4>Segredos</h4>
-        <form>
-          <table class="table-striped table-bordered table-condensed">
-            <tr>
-              <td>Segredo</td>
-              <td><input type="text" id="secretValue"></td>
-            </tr>
-            <tr>
-              <td>Player</td>
-              <td>
-                <select id="secretPlayerNB">
-                  {{#each players}}
-                  <option value="{{nb}}">{{name}}</option>
-                  {{/each}}
-                </select></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><input type="button" id="addSecret" value="Inserir"></td>
-            </tr>
-          </table>
-        </form>
-      </div>
+        {{> TabSecrets}}
+        <br>
+        {{> TableAdminSecrets}}      
 
       {{/tabContent}}
 
