@@ -82,24 +82,27 @@ Meteor.methods({
 		{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
 		},
-    deleteDailyMessage : function(latestAcademy, message)
+    resetDailyMessage : function(latestAcademy)
     {
-      Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : " " }});
+      Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : "" }});
     },
 		terminateDay : function(latestAcademy)
 		{
-			var energyLevel = parseInt(latestAcademy.energyLevel - 1);
+			var energyLevel = parseInt(latestAcademy.energyLevel) - 1;
 
 			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : energyLevel }});
 		},
 		addCheese : function(latestAcademy, burgerCount)
 		{
-			var newValue = parseInt(latestAcademy.energyLevel) + parseInt(burgerCount);
-			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : newValue }});
+			//var newValue = parseInt(latestAcademy.energyLevel) + parseInt(burgerCount);
+			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : burgerCount }});
 		},
-		updateMessageHome : function(latestAcademy, messageHome) {
+		updateHomeMessage : function(latestAcademy, messageHome) {
 			Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : messageHome }});
 		},
+    resetHomeMessage : function(latestAcademy) {
+      Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : "" }});
+    },
 		insertSecret : function(data) {
 			Secrets.insert(data);
 		},

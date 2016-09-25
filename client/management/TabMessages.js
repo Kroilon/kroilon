@@ -17,50 +17,45 @@ Template.TabMessages.events({
   'click #updateDailyMessage' (event){
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
     var message = $("#message").val();
-
-    Modal.show('alertModal');
     event.preventDefault();
     Meteor.call("updateDailyMessage", latestAcademy, message);
 
   },
-  'click #deleteDailyMessage' (event){
+  'click #resetDailyMessage' (event){
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var message = $("#message").val();
-
-    //alert("Daily message deleted!");
     event.preventDefault();
-    Meteor.call("deleteDailyMessage", latestAcademy, message);
+    Meteor.call("resetDailyMessage", latestAcademy);
 
   },
-  'click #updateMessageHome' (event){
+  'click #updateHomeMessage' (event){
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
     var messageHome = $('#messageHome').val();
-
-    //alert("Home message updated!");
     event.preventDefault();
-    Meteor.call("updateMessageHome", latestAcademy, messageHome);
+    Meteor.call("updateHomeMessage", latestAcademy, messageHome);
+  },
+  'click #resetHomeMessage' (event){
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    event.preventDefault();
+    Meteor.call("resetHomeMessage", latestAcademy);
   },
   'click #terminateDay' (event){
 
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    alert("Day terminated!");
-    event.preventDefault();
-    Meteor.call("terminateDay", latestAcademy);
+    //var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    Modal.show('endDayModal', this); 
+    //alert("Day terminated!");
+    //event.preventDefault();
+    //Meteor.call("terminateDay", latestAcademy);
   },
   'click #addCheese' (event){
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
     var burgerCount = $('#burgerCount').val();
 
-    alert("Cheese added!");
+    Modal.show('addCheeseModal', this);
     event.preventDefault();
     Meteor.call("addCheese", latestAcademy, burgerCount);
   }
