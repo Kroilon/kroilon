@@ -152,15 +152,6 @@ Template.Leaderboard.helpers({
 	isLoggedIn() {
 		return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined
 	},
-	playerSecrets() {
-
-		var secrets = Secrets.find({}).fetch();
-
-		return secrets;
-	},
-	isDiscovered: function (flag) {
-	    return flag !== true
-	},
 	tabs: function () {
     // Every tab object MUST have a name and a slug!
     return [

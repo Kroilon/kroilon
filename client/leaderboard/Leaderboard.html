@@ -159,66 +159,14 @@
 		{{/tabContent}}
 
 		{{#tabContent slug="playerPoints"}}
-			<!--
-			<h2>Player Points</h2>
-			-->
 
-			<div class="container">
-				<table class="table table-striped table-bordered table-condensed">
-				    <thead>
-				      <tr>
-				        <th><span style="color:black;">Player</span></th>
-				        <th><span style="color:black;">Challenge</span></th>
-				        <th><span style="color:black;">Category</span></th>
-				        <th><span style="color:black;">Points</span></th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				      {{#each playerPoints}}
-						<tr class="divRow">
-							<td>{{name}}</td>
-							<td>{{challenge}}</td>
-							<td>{{category}}</td>
-							<td>{{points}}</td>
-						</tr>
-		  			  {{/each}}
-				    </tbody>
-			    </table>
-   			</div>
+			{{> TablePlayerPoints}}   
 
 		{{/tabContent}}
 
 		{{#tabContent slug="secrets"}}
-			<!--
-			<h2>Player Points</h2>
-			-->
 
-			<div class="container">
-				<table class="table table-striped table-bordered table-condensed">
-				    <thead>
-				      <tr>
-				        <th><span style="color:black;">Secret</span></th>
-				        <th><span style="color:black;">Player</span></th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				    	{{#each playerSecrets}}
-				    		{{#if isDiscovered discovered}}
-							<tr class="divRow">
-								<td>{{description}}</td>
-								<td>NB*****</td>
-							</tr>
-							{{else}}
-							<tr class="divRow">
-								<td><del>{{description}}</del></td>
-								<td>{{name}}</td>
-							</tr>
-							{{/if}}
-		  			    {{/each}}
-				    </tbody>
-			    </table>
-
-   			</div>
+			{{> TableSecrets}}   		
 
 		{{/tabContent}}
 
