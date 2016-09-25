@@ -72,7 +72,7 @@ Meteor.methods({
           { name: roomname }
       );
 	  },
-	deleteChallenge: function (challengename) {
+	  deleteChallenge: function (challengename) {
 
       Challenges.remove(
           { name: challengename }
@@ -82,7 +82,10 @@ Meteor.methods({
 		{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
 		},
-
+    deleteDailyMessage : function(latestAcademy, message)
+    {
+      Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : " " }});
+    },
 		terminateDay : function(latestAcademy)
 		{
 			var energyLevel = parseInt(latestAcademy.energyLevel - 1);
