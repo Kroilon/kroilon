@@ -1,46 +1,44 @@
-
 <template name="Map">
-  <div>
-  <img class="map-center" src="Mapa-09(2).png" alt="map" style="margin-left:0px;padding-right:20px;padding-bottom:30px;overflow: hidden;">
-  </div>
-
-
-
-    <div class="headRow">
-      <div class="divCellMap" align="center">Game Dashboard - <span id="div_date_today"></span></div>
+  
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span9">
+          <img class="map-center" src="Mapa-09(2).png" alt="map" style="margin-left:0px;padding-right:20px;padding-bottom:30px;overflow: hidden;">
+        </div>
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="row-fluid">
+                <h3>In the Land of Kroilon</h3>
+                <div class="span3">Game Dashboard <b>/ <span id="div_date_today"></span></b></div>
+                <div class="span3"><h4><b>SCORE:</b> {{total_day.score}}</h4></div>
+                <div class="span3"><h4><b>ENERGY LEVEL:</b></h4> <img id="div_energylevel" src={{total_day.img_energyLevel}} height="75" width="37,5"></div>
+                <div class="span3"><h4><b>DAILY MESSAGE:</b> {{message}}</h4></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="headRow">
-      <div class="divCell" align="center">Score <div id="div_score_today">{{total_day.score}}</div></div>
-    </div>
-    <div class="headRow">
-      <div class="divCell" align="center">&nbsp;</div>
-      <div class="divCell" align="center">Energy Level </div>
-      <div class="divCell" align="center"><img id="div_energylevel" src={{total_day.img_energyLevel}} height="75" width="37,5"> </div>
-    </div>
-    <div class="headRow">
-      <div class="divCell" align="center">&nbsp;</div>
-      <div class="divCell" align="center">{{message}}</div>
-    </div>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
 
+    	var d = new Date();
+    	var weekday = new Array(7);
+    	weekday[0]=  "Domingo";
+    	weekday[1] = "Segunda";
+    	weekday[2] = "Terça";
+    	weekday[3] = "Quarta";
+    	weekday[4] = "Quinta";
+    	weekday[5] = "Sexta";
+    	weekday[6] = "Sábado";
 
-<script type="text/javascript">
-$(document).ready(function() {
+    	var n = weekday[d.getDay()];
 
-	var d = new Date();
-	var weekday = new Array(7);
-	weekday[0]=  "Domingo";
-	weekday[1] = "Segunda";
-	weekday[2] = "Terça";
-	weekday[3] = "Quarta";
-	weekday[4] = "Quinta";
-	weekday[5] = "Sexta";
-	weekday[6] = "Sábado";
+      document.getElementById("div_date_today").innerHTML = n;
 
-	var n = weekday[d.getDay()];
+    });
+  </script>
 
-  document.getElementById("div_date_today").innerHTML = n;
-
-});
-</script>
 </template>

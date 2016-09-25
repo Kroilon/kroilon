@@ -2,13 +2,13 @@
 
   <h2>Characters</h2>
 
-  {{#each characters}}
-  
-  {{#if isAdmin profile }} 
+  <div class="row">
+    {{#each characters}}
+    
+    {{#if isAdmin profile }} 
 
-    <div class="divTable">    
-      <div class="headRow">
-        <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
+      <div class="col-sm-6 col-md-4" style="margin-top: 20px; margin-bottom: 20px;">
+        <img style="float: left;" src="/avatar/{{avatar}}" class="img-responsive img-rounded" alt="Avatar...">
         <div class="divCell" align="center">
           <div class="headRow">
             <div class="divCell">Score: {{score nb}}</div>
@@ -21,30 +21,32 @@
               <div class="divCell">NB {{nb}}</div>
           </div>
         </div>
+        {{#each skills}}
+        <div class="divCell" align="center">
+          <div class="divRow">
+              <div class="divCell">Android {{android}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">Communication {{communication}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">Management {{manegement}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">People {{people}}</div>
+          </div>
+          <div class="divRow">
+              <div class="divCell">Problem Solving {{problemSolving}}</div>
+          </div>
+        </div>
+        {{/each}}
       </div>
 
-    {{#each skills}}
-    <div class="divRow">
-        <div class="divCell">Android {{android}}</div>
-    </div>
-    <div class="divRow">
-        <div class="divCell">Communication {{communication}}</div>
-    </div>
-    <div class="divRow">
-        <div class="divCell">Management {{manegement}}</div>
-    </div>
-    <div class="divRow">
-        <div class="divCell">People {{people}}</div>
-    </div>
-    <div class="divRow">
-        <div class="divCell">Problem Solving {{problemSolving}}</div>
-    </div>
-    {{/each}}
 
-  </div>
-      
   {{/if}}
 
   {{/each}} 
+
+  </div>
 
 </template>

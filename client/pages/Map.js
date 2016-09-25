@@ -16,21 +16,24 @@ Template.Map.helpers({
 
 		var img_energyLevel = "/energyLevels/energyLevels_5.png";
 
-		switch(energy_level) {
-			default:
-				img_energyLevel = "/energyLevels/energyLevels_0.png";
-				break;
-			case 1:
+		switch(energy_level) {			
+			case "1":
 				img_energyLevel = "/energyLevels/energyLevels_1.png";
 				break;
-			case 2:
+			case "2":
 				img_energyLevel = "/energyLevels/energyLevels_2.png";
 				break;
-			case 3:
+			case "3":
 				img_energyLevel = "/energyLevels/energyLevels_3.png";
 				break;
-			case 4:
+			case "4":
 				img_energyLevel = "/energyLevels/energyLevels_4.png";
+				break;
+			case "5":
+				img_energyLevel = "/energyLevels/energyLevels_5.png";
+				break;
+			default:
+				img_energyLevel = "/energyLevels/energyLevels_0.png";
 				break;
 		}
 
