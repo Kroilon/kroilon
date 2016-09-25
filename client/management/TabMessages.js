@@ -20,7 +20,7 @@ Template.TabMessages.events({
 
     var message = $("#message").val();
 
-    //alert("Daily message updated!");
+    Modal.show('alertModal');
     event.preventDefault();
     Meteor.call("updateDailyMessage", latestAcademy, message);
 

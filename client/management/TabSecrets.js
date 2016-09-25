@@ -26,7 +26,7 @@ Template.TabSecrets.events({
       discovered: 0
     }
 
-    alert("Secret inserted!");
+    Modal.show('secretInsertModal', this);
     event.preventDefault();
     Meteor.call("insertSecret", data);
   }

@@ -16,37 +16,27 @@ Template.TableAdminSecrets.helpers({
 
 Template.TableAdminSecrets.events({  
   'click #discoverSecret' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var message = $("#message").val();
-
-   	alert("Secret Discovered!");
-   	/*
-    event.preventDefault();
-    Meteor.call('discoverSecret', this, function(error, result) {
-      if (error) {
-        alert(error);
-      } 
-    });    
-	*/
-  },
-  'click #deleteSecret' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-    var message = $("#message").val();
-
-    Modal.show('alertModal', this);
-    //alert("Secret Deleted!");
+   	Modal.show('secretDiscoverModal', this);
     /*
-    event.preventDefault();    
-    Meteor.call('deleteSecret', this, function(error, result) {
+    event.preventDefault();
+    Meteor.call('discoverSecret', this._id, function(error, result) {
       if (error) {
         alert(error);
       } 
     });
-	*/
+    */    
+	
+  },
+  'click #deleteSecret' (event){
+    Modal.show('secretDeleteModal', this);    
+    /*
+    event.preventDefault();    
+    Meteor.call('deleteSecret', this._id, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    }); 
+    */ 	
   }
   
 });

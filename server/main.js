@@ -53,14 +53,14 @@ Meteor.methods({
     addAcademy : function(data) {
       Academy.insert(data);
     },
-	deleteCharacter: function (id,playerId) {
+	  deleteCharacter: function (id,playerId) {
 
       Academy.update(
           { _id: id },
           {$pull: {'users': {nb:playerId}}}
       );
 	  },
-	deleteBadge: function (badgename) {
+	  deleteBadge: function (badgename) {
 
       Badges.remove(
           { name: badgename }
@@ -102,6 +102,14 @@ Meteor.methods({
 		},
 		insertSecret : function(data) {
 			Secrets.insert(data);
-		}
+		},
+    discoverSecret : function(id) {
+      Secrets.update({_id: id}, {$set :{'discovered' : true }});
+    },
+    deleteSecret : function(id) {
+      Secrets.remove(
+          { _id: id }
+      );
+    }
 
 });

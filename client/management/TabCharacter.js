@@ -87,11 +87,11 @@ Template.TabCharacter.events({
 
 		var playerId = $("#characterNB").val();
 
-        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-        alert("Character deleted!");
-        event.preventDefault();
-        Meteor.call("deleteCharacter",latestAcademy._id, playerId);
+    alert("Character deleted!");
+    event.preventDefault();
+    Meteor.call("deleteCharacter",latestAcademy._id, playerId);
 
   }
 
