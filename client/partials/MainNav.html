@@ -1,13 +1,21 @@
 <template name="MainNav">
     <nav class="main-nav">
         <ul>
-            <li><a href="/">Home</a></li>
-			{{#if isLoggedIn}}
-				<li><a href="/dashboard">Dashboard</a></li>            
-				<li><a class="logout">Logout</a></li>
+            {{#if isLoggedIn}}
+                <a href="/"><img alt="Home" src="/home.svg" width="20" height="20" style="margin-top:1em; margin-left:1em;" data-toggle="tooltip" data-placement="bottom" title="Home"></a>
+                <a href="/dashboard"><img alt="Dashboard" src="/stopwatch.svg" width="20" height="20" style="margin-top:1em; margin-left:1em;" data-toggle="tooltip" data-placement="bottom" title="Dashboard"></a>
+                <a href="/" id="logout"><img alt="Logout" src="/logout.svg" width="20" height="20" style="margin-top:1em; margin-left:1em;" data-toggle="tooltip" data-placement="bottom" title="Logout"></a>
+                <img alt="User" src="/user.svg" width="20" height="20" style="margin-top:1em; margin-left:1em;" data-toggle="tooltip" data-placement="bottom" title="Hi {{firstName}}!">
+                <p style="margin-top:1em; margin-left:0.5em;">{{firstName}}</p>
             {{else}}
             	
             {{/if}}
         </ul>
-    </nav>
+    </nav> 
+
+    <!-- <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        }); 
+    </script> -->
 </template>
