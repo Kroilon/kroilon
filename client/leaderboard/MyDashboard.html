@@ -1,0 +1,19 @@
+<template name="MyDashboard">  
+  <div class="container">				
+	    <h4>Team Score {{userScores.avg}}</h4>
+	    <br>
+		{{#each userScores.users}}
+			<div class="divTable">
+			  <div class="divRow">
+				  <div class="divCell">{{@index}}</div>
+				  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+				  <div class="divCell">{{name}}</div>
+				  <div class="divCell">{{totalScore}}</div>
+				  {{#if isLoggedIn}}
+				  <div><img class="divCell-like" src='Like_Cizento-08.png'></div>
+				  {{/if}}
+			  </div>
+			</div>
+		{{/each}}
+	</div>
+</template>

@@ -5,176 +5,26 @@
 	{{#basicTabs name="" tabs=tabs}}
 
 		{{#tabContent slug="myProfile"}}
-			<!--
-			<h3>My Profile</h3>
-			-->
-			<div class="container">
-            	<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet purus urna. Proin dictum fringilla enim, sit amet suscipit dolor dictum in. Maecenas porttitor, est et malesuada congue, ligula elit fermentum massa, sit amet porta odio est at velit. Sed nec turpis neque. Fusce at mi felis, sed interdum tortor. Nullam pretium, est at congue mattis, nibh eros pharetra lectus, nec posuere libero dui consectetur arcu. Quisque convallis facilisis fermentum. Nam tincidunt, diam nec dictum mattis, nunc dolor ultrices ipsum, in mattis justo turpis nec ligula. Curabitur a ante mauris. Integer placerat imperdiet diam, facilisis pretium elit mollis pretium. Sed lobortis, eros non egestas suscipit, dui dui euismod enim, ac ultricies arcu risus at tellus. Donec imperdiet congue ligula, quis vulputate mauris ultrices non. Aliquam rhoncus, arcu a bibendum congue, augue risus tincidunt massa, vel vehicula diam dolor eget felis.</p>
-        	</div>
-
+				
+			{{> MyProfile}}
 
 		{{/tabContent}}
 
 		{{#tabContent slug="myPerformance"}}
-			<!--
-			<h2>My Performance</h2>
-			-->
 
-			<div class="container"> 
-			    <div class="row">
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 1"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 2"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 3"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 4"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 5"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 6"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 8"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 9"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 10"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 11"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 12"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 1"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 2"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 3"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 4"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 5"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 6"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 8"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 9"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 10"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 11"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 12"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 1"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 2"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 3"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 4"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 5"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 6"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 8"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 9"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 10"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 11"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 12"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="/avatar/AfonsoSousa.jpg" class="thumbnail img-responsive"></a></div>
-			    </div>
-			</div>
-
+			{{> MyPerformance}}			
 
 		{{/tabContent}}
 
-		{{#tabContent slug="dashboard"}}
-			<!--
-			<h2>Dashboard</h2>
-			-->
-			<div class="container">
-				
-		        <h4>Team Score {{userScores.avg}}</h4>
-		        <br>
-				{{#each userScores.users}}
+		{{#tabContent slug="myDashboard"}}
 
-					<div class="divTable">
-
-					  <div class="divRow">
-						  <div class="divCell">{{@index}}</div>
-						  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
-						  <div class="divCell">{{name}}</div>
-						  <div class="divCell">{{totalScore}}</div>
-						  {{#if isLoggedIn}}
-						  <div><img class="divCell-like" src='Like_Cizento-08.png'></div>
-						  {{/if}}
-					  </div>
-
-					</div>
-
-				{{/each}}
-
-			</div>
+			{{> MyDashboard}}	
 
 		{{/tabContent}}
 
 		{{#tabContent slug="topScores"}}
 
-	        <div class="row">
-	        	<div class="span12">
-			    	<div class="row">
-				      	<div class="span3">
-			          		<span>
-			          			<span class="glyphicon glyphicon-heart" style="color: #de4f4f"></span>
-			          			<h5><b>Top Health</b></h5>
-			          		</span>
-		          		</div>
-		          		<div class="span3">
-			          		<span>
-			          			<span class="glyphicon glyphicon-book" style="color: #de4f4f"></span>
-			          			<h5><b>Top Knowledge</b></h5>
-			          		</span>
-		          		</div>
-		          		<div class="span3">
-			          		<span>
-			          			<span class="glyphicon glyphicon-knight" style="color: #de4f4f"></span>
-			          			<h5><b>Top Experience</b></h5>
-			          		</span>
-		          		</div>
-			    	</div>
-			    </div>
-		    </div>
-
-				<!--
-				<h4>TOP HEALTH</h4>
-				{{#each userHealthScores}}
-					<div class="divTable">
-
-					  <div class="divRow">
-						  <div class="divCell">{{@index}}</div>
-						  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
-						  <div class="divCell">{{name}}</div>
-						  <div class="divCell">{{totalHealthScore}}</div>
-					  </div>
-
-					</div>
-				{{/each}}
-			  	<br>
-
-				<h4>TOP KNOWLEDGE</h4>
-				{{#each userKnowledgeScores}}
-					<div class="divTable">
-
-					  <div class="divRow">
-						  <div class="divCell">{{@index}}</div>
-						  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
-						  <div class="divCell">{{name}}</div>
-						  <div class="divCell">{{totalKnowledgeScore}}</div>
-					  </div>
-
-					</div>
-				{{/each}}
-			  	<br>
-
-				<h4>TOP EXPERIENCE</h4>
-				{{#each userExperienceScores}}
-					<div class="divTable">
-
-					  <div class="divRow">
-						  <div class="divCell">{{@index}}</div>
-						  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
-						  <div class="divCell">{{name}}</div>
-						  <div class="divCell">{{totalExperienceScore}}</div>
-					  </div>
-
-					</div>
-				{{/each}}
-				-->
+			{{> TopScores}}
 
 		{{/tabContent}}
 
@@ -187,6 +37,12 @@
 		{{#tabContent slug="secrets"}}
 
 			{{> TableSecrets}}   		
+
+		{{/tabContent}}
+
+		{{#tabContent slug="sharedContent"}}
+
+			{{> SharedContent}}   		
 
 		{{/tabContent}}
 
