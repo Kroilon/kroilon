@@ -8,9 +8,11 @@
 		</div> -->
     </div>	
 
-	{{> HomeLogin}}
-	<!--
-    {{> HomeFooter}}	
--->
+    {{#if isLoggedIn}}
+
+    {{else}}
+	   {{> HomeLogin}}
+	<!-- {{> HomeFooter}}-->
+    {{/if}}
     
 </template>

@@ -23,14 +23,19 @@ Template.Home.events({
 
 		Session.set("loggedUser", user);
 		console.log(Session.get("loggedUser"));
-		$('#loginPage').html('<h3>LOGIN DONE</h3>');
-	}
-  }
+		//$('#loginPage').html('<h3>LOGIN DONE</h3>');
+		FlowRouter.go('/dashboard');
+		}
+  	}
 });
 
 Template.Home.helpers({
   ficaadica() {
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     return latestAcademy.homeMessage;
+  },
+  isLoggedIn() {
+	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined;
   }
+
 });
