@@ -1,11 +1,13 @@
-import { Template } from 'meteor/templating';
 import { Secrets } from '/imports/api/databasedriver.js';
 
+Template.Secrets.helpers({
+	playerSecrets() {
 
-Template.Secrets.helpers({	
-	secrets(){
-		var allSecrets = Secrets.find();
-		console.log(allSecrets.description);
-		return allSecrets;
+		var secrets = Secrets.find({}).fetch();
+
+		return secrets;
+	},
+	isDiscovered: function (flag) {
+	    return flag !== true
 	}
 });

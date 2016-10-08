@@ -7,13 +7,21 @@ import { Badges } from '/imports/api/databasedriver.js';
 Template.TabBadges.events({
   'click #insertBadge' (event) {
 
+    var badgeType = $("#badgeType").val();
     var badgeName = $("#badgeName").val();
     var badgePoints = $("#badgePoints").val();
+    var badgePointsType = $("#pointsType").val();
+    var badgeDescription = $("#badgeDescription").val();
+
 
     var data =
     {
+      type: badgeType,
       name: badgeName,
-      points: badgePoints
+      points: badgePoints,
+      pointsType: badgePointsType,
+      description: badgeDescription,
+      date: new Date()
     };
 
     alert("Badge inserted!");

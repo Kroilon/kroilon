@@ -157,11 +157,9 @@ Template.Leaderboard.helpers({
     return [
 	      { name: 'My Profile', slug: 'myProfile' },
 	      { name: 'My Performance', slug: 'myPerformance' },
-	      { name: 'My Dashboard', slug: 'myDashboard' },
+	      { name: 'Dashboard', slug: 'myDashboard' },
 	      { name: 'Top Scores', slug: 'topScores' },
-	      { name: 'Player Points', slug: 'playerPoints' },
-	      { name: 'Secrets', slug: 'secrets' },
-	      { name: 'SharedContent', slug: 'sharedContent' }
+	      { name: 'Player Points', slug: 'playerPoints' }
     	];
   	},
 	activeTab: function () {

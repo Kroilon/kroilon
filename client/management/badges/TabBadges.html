@@ -1,5 +1,14 @@
 <template name="TabBadges">  
-  <div class="container">        
+  <div class="container">    
+    <div class="form-group row">
+      <label for="badgeType" class="col-xs-2 col-form-label">Badge Type</label>
+      <div class="col-xs-9">
+        <select class="selectpicker form-control" id="badgeType">          
+          <option value="Team">Team</option>
+          <option value="Player">Player</option>
+        </select>
+      </div>
+    </div>
     <div class="form-group row">
       <label for="badgeName" class="col-xs-2 col-form-label">Badge Name</label>
       <div class="col-xs-9">
@@ -20,7 +29,14 @@
           <option value="KP">Knowledge Points</option>
           <option value="HP">Health Points</option>
           <option value="PE">Team Points</option>
+          <option value="NP">No Points</option>
         </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="badgeDescription" class="col-xs-2 col-form-label">Badge Description</label>
+      <div class="col-xs-9">
+        <textarea class="form-control" rows="3" maxlength="450" id="badgeDescription" placeholder="Insert description..."></textarea>
       </div>
     </div>
     <div class="form-group row">
