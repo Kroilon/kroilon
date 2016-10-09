@@ -15,7 +15,7 @@ Meteor.methods({
           {updatedBy: currentUserId}
       );
 
-},
+    },
 
     insertChallenge: function(data) {
 
