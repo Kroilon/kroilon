@@ -15,6 +15,7 @@ db.academy.insert({
 	name: "Academy Setembro 2016",
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
+	currentRoom: "Coachroach Entry",
 	date:new Date(),
 	energyLevel: 5,
 	teamChallengeScore: [{
@@ -62,6 +63,8 @@ db.academy.insert({
 					points: 320
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ENTJ",
 			skills:[{
@@ -93,6 +96,8 @@ db.academy.insert({
 					points: 600
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ENTJ",
 			skills:[{
@@ -115,7 +120,10 @@ db.academy.insert({
 					challenge: "kahoot",
 					category: "HP",
 					points: 20
-				}],
+				}
+			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[
@@ -149,6 +157,8 @@ db.academy.insert({
 					points: 50
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ISTJ",
 			skills:[{
@@ -180,6 +190,8 @@ db.academy.insert({
 					points: 600
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[{
@@ -205,6 +217,8 @@ db.academy.insert({
 					points: 50
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[{
@@ -230,6 +244,8 @@ db.academy.insert({
 					points: 50
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[{
@@ -267,6 +283,8 @@ db.academy.insert({
 					points: 600
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[{
@@ -298,6 +316,8 @@ db.academy.insert({
 					points: -10
 				}
 			],
+			counter: 0,
+			voted: false,
 			profile: "Trainee",
 			mbti: "ESTJ",
 			skills:[{

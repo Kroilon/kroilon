@@ -13,115 +13,115 @@ db.rooms.drop();
 db.createCollection("rooms");
 db.rooms.insert([
 	{
-	name: "Coachroach Entry",
-	badges: [
-		{}
-		]
+		name: "Coachroach Entry",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Project Room",
-	badges: [
-		{
-			name: "BOAT"
-		}
-		]
+		name: "Project Room",
+		badges: [
+			{
+				name: "BOAT"
+			}
+			]
 	},
 	{
-	name: "Wandering Wall",
-	badges: [
-		{}
-		]
+		name: "Wandering Wall",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Nowayout Corridor",
-	badges: [
-		{}
-		]
+		name: "Nowayout Corridor",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Death Corridor",
-	badges: [
-		{}
-		]
+		name: "Death Corridor",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Adolph Room",
-	badges: [
-		{
-			name: "BOAT"
-		}
-		]
+		name: "Adolph Room",
+		badges: [
+			{
+				name: "BOAT"
+			}
+			]
 	},
 	{
-	name: "Stormillor Hall",
-	badges: [
-		{
-			name: "SWORD"
-		}
-		]
+		name: "Stormillor Hall",
+		badges: [
+			{
+				name: "SWORD"
+			}
+			]
 	},
 	{
-	name: "Diaz Krez Arena",
-	badges: [
-		{}
-		]
+		name: "Diaz Krez Arena",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Kalu Hall",
-	badges: [
-		{
-			name: "FOOD"
-		}
-		]
+		name: "Kalu Hall",
+		badges: [
+			{
+				name: "FOOD"
+			}
+			]
 	},
 	{
-	name: "Ristar Room",
-	badges: [
-		{
-			name: "FOOD"
-		}
-		]
+		name: "Ristar Room",
+		badges: [
+			{
+				name: "FOOD"
+			}
+			]
 	},
 	{
-	name: "Stormillor Dungeons",
-	badges: [
-		{
-			name: "MYSTERY"
-		}
-		]
+		name: "Stormillor Dungeons",
+		badges: [
+			{
+				name: "MYSTERY"
+			}
+			]
 	},
 	{
-	name: "Normingor Room A",
-	badges: [
-		{}
-		]
+		name: "Normingor Room A",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Diktaur Room",
-	badges: [
-		{
-			name: "DOUBLE"
-		}
-		]
+		name: "Diktaur Room",
+		badges: [
+			{
+				name: "DOUBLE"
+			}
+			]
 	},
 	{
-	name: "Normingor Room B",
-	badges: [
-		{}
-		]
+		name: "Normingor Room B",
+		badges: [
+			{}
+			]
 	},
 	{
-	name: "Almusther Room",
-	badges: [
-		{
-			name: "FOOD"
-		}
-		]
+		name: "Almusther Room",
+		badges: [
+			{
+				name: "FOOD"
+			}
+			]
 	},
 	{
-	name: "Performanthor Room",
-	badges: [
-		{}
-		]
+		name: "Performanthor Room",
+		badges: [
+			{}
+			]
 	}
 ]);
