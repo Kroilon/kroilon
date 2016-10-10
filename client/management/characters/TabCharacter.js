@@ -33,7 +33,9 @@ Template.TabCharacter.helpers({
 });
 
 Template.TabCharacter.events({ 
-  'click #insertCharacter' (event){
+  'submit form' (event){
+
+      event.preventDefault();
 
       var user = {};
 
@@ -74,11 +76,11 @@ Template.TabCharacter.events({
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-        alert("Added user!");
-        event.preventDefault();
+        Modal.show('characterInsertModal', this);
         //var characterNB = event.target.characterNB.value;
         Meteor.call("addAcademyUser",latestAcademy._id, user); 
-        //event.target.characterNB.value = "";        
+        //event.target.characterNB.value = "";      
+        $("#addCharacter")[0].reset();  
 
   },
   'click #deleteCharacter' (event){

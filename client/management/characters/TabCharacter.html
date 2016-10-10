@@ -1,149 +1,151 @@
 <template name="TabCharacter">  
   <div class="container">        
-    <div class="form-group row">
-      <label for="characterNB" class="col-xs-2 col-form-label">NB</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="12345" id="characterNB">
+    <form id ="addCharacter"> 
+      <div class="form-group row">
+        <label for="characterNB" class="col-xs-2 col-form-label">NB</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="12345" id="characterNB" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterName" class="col-xs-2 col-form-label">Name</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="" id="characterName">
+      <div class="form-group row">
+        <label for="characterName" class="col-xs-2 col-form-label">Name</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="" id="characterName" required>
+        </div>
       </div>
-    </div>
+    
 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-12 lead">User profile<hr></div>
-              </div>
-              <div class="row">
-                <div class="col-md-4 text-center">
-                  <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
-                  display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
-                  <input id="imgInp" type="file">
-                  <br>
-                  <img id="blah" src="//placehold.it/150x150" alt="your image">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12 lead">User profile<hr></div>
                 </div>
-                <div class="col-md-8">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h1 class="only-bottom-margin">User Name</h1>
-                    </div>
+                <div class="row">
+                  <div class="col-md-4 text-center">
+                    <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
+                    display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+                    <input id="imgInp" type="file">
+                    <br>
+                    <img id="blah" src="//placehold.it/150x150" alt="your image">
                   </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <span class="text-muted">Email:</span> email@test.com<br>
-                      <span class="text-muted">Birth date:</span> 01.01.2001<br>
-                      <span class="text-muted">Gender:</span> male<br><br>
-                      <small class="text-muted">Created: 01.01.2015</small>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="activity-mini">
-                        <i class="glyphicon glyphicon-comment text-muted"></i> 500
-                      </div>
-                      <div class="activity-mini">
-                        <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h1 class="only-bottom-margin">User Name</h1>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <span class="text-muted">Email:</span> email@test.com<br>
+                        <span class="text-muted">Birth date:</span> 01.01.2001<br>
+                        <span class="text-muted">Gender:</span> male<br><br>
+                        <small class="text-muted">Created: 01.01.2015</small>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="activity-mini">
+                          <i class="glyphicon glyphicon-comment text-muted"></i> 500
+                        </div>
+                        <div class="activity-mini">
+                          <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                <div class="row">
+                  <div class="col-md-12">
+                    <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
-    <div class="form-group row">
-      <label for="characterPassword" class="col-xs-2 col-form-label">Password</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="" id="characterPassword">
+      <div class="form-group row">
+        <label for="characterPassword" class="col-xs-2 col-form-label">Password</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="" id="characterPassword" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterAvatar" class="col-xs-2 col-form-label">Avatar</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="" id="characterAvatar">
+      <div class="form-group row">
+        <label for="characterAvatar" class="col-xs-2 col-form-label">Avatar</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="" id="characterAvatar" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterEmail" class="col-xs-2 col-form-label">Email</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="email" placeholder="" id="characterEmail">
+      <div class="form-group row">
+        <label for="characterEmail" class="col-xs-2 col-form-label">Email</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="email" placeholder="" id="characterEmail" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterMBTI" class="col-xs-2 col-form-label">MBTI</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="" id="characterMBTI">
+      <div class="form-group row">
+        <label for="characterMBTI" class="col-xs-2 col-form-label">MBTI</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="" id="characterMBTI" required>
+        </div>
+      </div>    
+      <div class="form-group row">
+        <label for="characterPPLSkills" class="col-xs-2 col-form-label">People Skills</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="characterPPLSkills">          
+            {{#each possiblePoints}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>    
-    <div class="form-group row">
-      <label for="characterPPLSkills" class="col-xs-2 col-form-label">People Skills</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="characterPPLSkills">          
-          {{#each possiblePoints}}
-            <option value="{{name}}">{{value}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="characterCommunicationSkills" class="col-xs-2 col-form-label">Communication Skills</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="characterCommunicationSkills">          
+            {{#each possiblePoints}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterCommunicationSkills" class="col-xs-2 col-form-label">Communication Skills</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="characterCommunicationSkills">          
-          {{#each possiblePoints}}
-            <option value="{{name}}">{{value}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="characterProblemSolvingSkills" class="col-xs-2 col-form-label">Problem Solving Skills</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="characterProblemSolvingSkills">          
+            {{#each possiblePoints}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterProblemSolvingSkills" class="col-xs-2 col-form-label">Problem Solving Skills</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="characterProblemSolvingSkills">          
-          {{#each possiblePoints}}
-            <option value="{{name}}">{{value}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="characterManagementSkills" class="col-xs-2 col-form-label">Management Skills</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="characterManagementSkills">          
+            {{#each possiblePoints}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterManagementSkills" class="col-xs-2 col-form-label">Management Skills</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="characterManagementSkills">          
-          {{#each possiblePoints}}
-            <option value="{{name}}">{{value}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="characterAndroidSkills" class="col-xs-2 col-form-label">Android Skills</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="characterAndroidSkills">          
+            {{#each possiblePoints}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="characterAndroidSkills" class="col-xs-2 col-form-label">Android Skills</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="characterAndroidSkills">          
-          {{#each possiblePoints}}
-            <option value="{{name}}">{{value}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <input id="insertCharacter" type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" />
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-xs-3">
-        <input type="button" id="insertCharacter" class="btn btn-default btn-sm" value="Insert">
-      </div>
-    </div>
+    </form>
   </div> 
 </template>
