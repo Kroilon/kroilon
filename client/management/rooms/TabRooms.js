@@ -7,13 +7,14 @@ import { Badges } from '/imports/api/databasedriver.js';
 Template.TabRooms.helpers({
     badges(){
       var badges = Badges.find({}).fetch();
-
       return badges;
     }
 });
 
 Template.TabRooms.events({
-  'click #insertRoom' (event) {
+  'submit form' (event) {
+
+    event.preventDefault();
 
     var roomName = $("#roomName").val();
     var roomBadge = $("#roomBadge").val();
@@ -24,15 +25,15 @@ Template.TabRooms.events({
       badges: [{ badge: roomBadge }]
     };
 
-    alert("Room inserted!");
-    event.preventDefault();
+    Modal.show('roomsInsertModal', this);
     Meteor.call("insertRoom", data);
+    $("#addRoom")[0].reset(); 
   },
   'click #deleteRoom' (event) {
     var roomName = $("#roomName").val();
 
     alert("Room deleted!");
-    event.preventDefault();
+    
     Meteor.call("deleteRoom", roomName);
   }
   
