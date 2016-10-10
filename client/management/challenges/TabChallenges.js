@@ -16,7 +16,9 @@ Template.TabChallenges.helpers({
 });
 
 Template.TabChallenges.events({
-  'click #insertChallenge' (event) {
+  'submit form' (event) {
+
+    event.preventDefault();
 
     var challengeName = $("#challengeName").val();
     var challengeRoom = $("#challengeRoom").val();
@@ -32,17 +34,17 @@ Template.TabChallenges.events({
     	badges: challengeBadge
     };
 
-    alert("Challenge inserted!");
-    event.preventDefault();
+    Modal.show('challengeInsertModal', this);
     Meteor.call("insertChallenge", data);
+    $("#addChallenge")[0].reset(); 
   },
   'click #deleteChallenge' (event) {
 
     var challengeName = $("#challengeName").val();
 
     alert("Challenge deleted!");
-    event.preventDefault();
     Meteor.call("deleteChallenge", challengeName);
+    $("#addChallenge")[0].reset(); 
   }
 
 });
