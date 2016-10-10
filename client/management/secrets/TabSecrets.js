@@ -29,8 +29,8 @@ Template.TabSecrets.events({
     }
 
     Modal.show('secretInsertModal', this);
-    event.preventDefault();
     Meteor.call("insertSecret", data);
+    $("#addSecret")[0].reset(); 
   }
 
 });
