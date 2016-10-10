@@ -12,7 +12,9 @@ Template.TabSecrets.helpers({
 });
 
 Template.TabSecrets.events({  
-  'click #addSecret' (event){
+  'submit form' (event){
+
+    event.preventDefault();
 
     var secretValue = $('#secretValue').val();
     var secretPlayerNB = $('#secretPlayerNB').val();
