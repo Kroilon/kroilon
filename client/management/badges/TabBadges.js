@@ -5,14 +5,15 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
 Template.TabBadges.events({
-  'click #insertBadge' (event) {
+  'submit form' (event) {
+
+    event.preventDefault();
 
     var badgeType = $("#badgeType").val();
     var badgeName = $("#badgeName").val();
     var badgePoints = $("#badgePoints").val();
     var badgePointsType = $("#pointsType").val();
     var badgeDescription = $("#badgeDescription").val();
-
 
     var data =
     {
@@ -24,16 +25,15 @@ Template.TabBadges.events({
       date: new Date()
     };
 
-    alert("Badge inserted!");
-    event.preventDefault();
+    Modal.show('badgeInsertModal', this);
     Meteor.call("insertBadge", data);
+    $("#addBadge")[0].reset();     
   },
   'click #deleteBadge' (event) {
 
     var badgeName = $("#badgeName").val();
 
     alert("Badge deleted!");
-    event.preventDefault();
     Meteor.call("deleteBadge", badgeName);
   }
   
