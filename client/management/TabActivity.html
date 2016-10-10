@@ -1,57 +1,59 @@
 <template name="TabActivity">  
   <div class="container">        
-    <div class="form-group row">
-      <label for="badgeName" class="col-xs-2 col-form-label">Activity Name</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="" id="badgeName">
+    <form id ="addActivity">
+      <div class="form-group row">
+        <label for="badgeName" class="col-xs-2 col-form-label">Activity Name</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="" id="badgeName" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="player" class="col-xs-2 col-form-label">Player</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="player">          
-          <option selected>Team</option>
-          {{#each players}}
-            <option value="{{nb}}">{{name}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="player" class="col-xs-2 col-form-label">Player</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="player">          
+            <option selected>Team</option>
+            {{#each players}}
+              <option value="{{nb}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="activity" class="col-xs-2 col-form-label">Challenge</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="activity">          
-          <option selected>No Badge</option>
-          {{#each challs}}
-            <option value="{{nb}}">{{name}}</option>
-          {{/each}}
-        </select>
+      <div class="form-group row">
+        <label for="activity" class="col-xs-2 col-form-label">Challenge</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="activity">          
+            <option selected>No Badge</option>
+            {{#each challs}}
+              <option value="{{nb}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="points" class="col-xs-2 col-form-label">Points</label>
-      <div class="col-xs-9">
-        <input class="form-control" type="text" placeholder="0" id="points">
+      <div class="form-group row">
+        <label for="points" class="col-xs-2 col-form-label">Points</label>
+        <div class="col-xs-9">
+          <input class="form-control" type="text" placeholder="0" id="points" required>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="pointsType" class="col-xs-2 col-form-label">Point Type</label>
-      <div class="col-xs-9">
-        <select class="selectpicker form-control" id="pointsType">          
-          <option value="XP">Experience Points</option>
-          <option value="KP">Knowledge Points</option>
-          <option value="HP">Health Points</option>
-          <option value="PE">Team Points</option>
-        </select>
+      <div class="form-group row">
+        <label for="pointsType" class="col-xs-2 col-form-label">Point Type</label>
+        <div class="col-xs-9">
+          <select class="selectpicker form-control" id="pointsType">          
+            <option value="XP">Experience Points</option>
+            <option value="KP">Knowledge Points</option>
+            <option value="HP">Health Points</option>
+            <option value="PE">Team Points</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-xs-3">
-        <input type="button" id="insertActivity" class="btn btn-default btn-sm" value="Insert">
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" />
+        </div>
+        <div class="col-xs-3">
+          <input type="button" id="deleteActivity" class="btn btn-default btn-sm" value="Delete">
+        </div>
       </div>
-      <div class="col-xs-3">
-        <input type="button" id="deleteActivity" class="btn btn-default btn-sm" value="Delete">
-      </div>
-    </div>
+    </form>
   </div> 
 </template>
