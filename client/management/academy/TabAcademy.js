@@ -2,7 +2,9 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
 Template.TabAcademy.events({  
-  'click #insertAcademy' (event){
+  'submit form' (event){
+    event.preventDefault();
+
     var academyName = $('#academyName').val();
 
     var data =
@@ -11,9 +13,9 @@ Template.TabAcademy.events({
       date: new Date()
     };
 
-    alert("Academy inserted!");
-    event.preventDefault();
+    Modal.show('addAcademyModal', this);
     Meteor.call("addAcademy", data);
+    $("#addAcademy")[0].reset(); 
   }
 
 });

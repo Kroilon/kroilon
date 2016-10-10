@@ -1,15 +1,16 @@
 <template name="TabAcademy">  
   <div class="container">        
-    <form class="form-horizontal" style="padding-left:15px;">
+    <form id ="addAcademy" class="form-horizontal" style="padding-left:15px;">
       <div class="form-group">      
         <div class="col-xs-9">
           <label for="academyName">Academy Name</label>
-          <input type="text" class="form-control" id="academyName" placeholder="Insert name here...">
+          <input type="text" class="form-control" id="academyName" placeholder="Insert name here..." required>
         </div>      
       </div>
       <div class="form-group">
         <div class="col-xs-3">
-          <button type="submit" id="insertAcademy" class="btn btn-default btn-sm">Insert</button>
+          <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert"/>
+          <!-- <button type="submit" id="insertAcademy" class="btn btn-default btn-sm">Insert</button> -->
         </div>
         <!--
         <div class="col-xs-3">
@@ -18,8 +19,10 @@
         -->
       </div>
     </form>
+    <!--
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mAHC1wmmrok" style="display:block; margin: 0 auto;" allowfullscreen></iframe>
-    </div>      
+    </div>   
+    -->   
   </div> 
 </template>
