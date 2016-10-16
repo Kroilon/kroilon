@@ -1,59 +1,17 @@
 <template name="Characters">
-
   <h2>Characters</h2>
-
-  <div class="row">
-    {{#each characters}}
-    
-    {{#if isAdmin profile }} 
-
-      <!--
-
-      <div class="col-sm-6 col-md-4" style="margin-top: 20px; margin-bottom: 20px;">
-        <img style="float: left;" src="/avatar/{{avatar}}" class="img-responsive img-rounded" alt="Avatar...">
-        <div class="divCell" align="center">
-          <div class="headRow">
-            <div class="divCell">Score: {{score nb}}</div>
-            <div class="divCell">{{name}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">{{mbti}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">NB {{nb}}</div>
-          </div>
-        </div>
-        {{#each skills}}
-        <div class="divCell" align="center">
-          <div class="divRow">
-              <div class="divCell">Android {{android}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">Communication {{communication}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">Management {{manegement}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">People {{people}}</div>
-          </div>
-          <div class="divRow">
-              <div class="divCell">Problem Solving {{problemSolving}}</div>
-          </div>
-        </div>
-        {{/each}}
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          {{#each characters}} 
+            <div class="col-md-3">
+              <!--  style="margin-top: 30px; margin-bottom: 30px;" -->
+              <img src="/cards/{{card}}" class="img-responsive img-rounded"  alt="Avatar..." >
+            </div>
+          {{/each}} 
+        </div>  
       </div>
-      -->
-
-      <div class="col-sm-6 col-md-4" style="margin-top: 30px; margin-bottom: 30px;" >
-        <img src="/cards/{{card}}" class="img-responsive img-rounded" height="250px;" width="100px;" alt="Avatar..." >
-      </div>
-
-
-  {{/if}}
-
-  {{/each}} 
-
+    </div>
   </div>
-
 </template>
