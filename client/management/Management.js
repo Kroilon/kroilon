@@ -50,10 +50,10 @@ Template.Management.helpers({
     return [
         { name: 'Academy', slug: 'academy' },
         { name: 'Characters', slug: 'characters' },
-        { name: 'Activity', slug: 'activity' },
         { name: 'Badges', slug: 'badges' },
         { name: 'Rooms', slug: 'rooms' },
         { name: 'Challenges', slug: 'challenges' },
+        { name: 'Activity', slug: 'activity' },  
         { name: 'Message', slug: 'message' },
         { name: 'Segredos', slug: 'secrets' }
       ];

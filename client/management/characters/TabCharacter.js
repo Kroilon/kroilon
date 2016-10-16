@@ -15,6 +15,26 @@ Template.TabCharacter.helpers({
 
       return user[0];
     },
+    mbtiTypes: function () {
+    return [
+        { name: 'ISTJ', value: 'ISTJ' },
+        { name: 'ISFJ', value: 'ISFJ' },
+        { name: 'INFJ', value: 'INFJ' },
+        { name: 'INTJ', value: 'INTJ' },
+        { name: 'ISTP', value: 'ISTP' },
+        { name: 'ISFP', value: 'ISFP' },
+        { name: 'INFP', value: 'INFP' },
+        { name: 'INTP', value: 'INTP' },
+        { name: 'ESTP', value: 'ESTP' },
+        { name: 'ESFP', value: 'ESFP' },
+        { name: 'ENFP', value: 'ENFP' },
+        { name: 'ENTP', value: 'ENTP' },
+        { name: 'ESTJ', value: 'ESTJ' },
+        { name: 'ESFJ', value: 'ESFJ' },
+        { name: 'ENFJ', value: 'ENFJ' },
+        { name: 'ENTJ', value: 'ENTJ' }
+      ];
+    },
     possiblePoints: function () {
     return [
         { name: 'one', value: '1' },
@@ -94,6 +114,12 @@ Template.TabCharacter.events({
     alert("Character deleted!");
     event.preventDefault();
     Meteor.call("deleteCharacter",latestAcademy._id, playerId);
+
+  },
+  'click #editCharacter' (event){
+
+    event.preventDefault();
+    Modal.show('editCharacterModal', this);
 
   }
 
