@@ -1,0 +1,85 @@
+<template name="Map">
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-9">
+            <img class="map-center" src="Mapa-09(2).png" alt="map" style="position:absolute; margin:auto; overflow:hidden;">
+          </div>
+          <div class="col-md-3">
+            <div class="row">
+              <div class="col-md-12">
+                <h3>In the Land of Kroilon</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                Game Dashboard<b> / <span id="div_date_today"></span></b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h4><b>SCORE:</b></h4>
+                <h4>{{total_day.score}}</h4>
+              </div>
+            </div>
+            <!--
+            <div class="row">
+              <div class="col-md-12">
+                <h4><b>ENERGY LEVEL:</b></h4> <img id="div_energylevel" src={{total_day.img_energyLevel}} height="75" width="37,5">
+              </div>
+            </div>
+            -->
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group row">
+                  <div class="col-md-12 text-left">
+                    <h4><b>ENERGY LEVEL:</b></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <img id="div_energylevel" src={{total_day.img_energyLevel}} height="50" width="30">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h4><b>Daily message:</b></h4>
+                <h4>{{message}}</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h4><b>Decision:</b></h4>
+                <h4>Daily decision...</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+    	var d = new Date();
+    	var weekday = new Array(7);
+    	weekday[0]=  "Domingo";
+    	weekday[1] = "Segunda";
+    	weekday[2] = "Terça";
+    	weekday[3] = "Quarta";
+    	weekday[4] = "Quinta";
+    	weekday[5] = "Sexta";
+    	weekday[6] = "Sábado";
+
+    	var n = weekday[d.getDay()];
+
+      document.getElementById("div_date_today").innerHTML = n;
+
+    });
+  </script>
+</template>
