@@ -2,8 +2,8 @@
   <div class="container">    
     <form id ="addBadge"> 
       <div class="form-group row">
-        <label for="badgeType" class="col-xs-2 col-form-label">Badge Type</label>
-        <div class="col-xs-9">
+        <label for="badgeType" class="col-md-2 col-form-label">Badge Type</label>
+        <div class="col-md-9">
           <select class="selectpicker form-control" id="badgeType">          
             <option value="Team">Team</option>
             <option value="Player">Player</option>
@@ -11,20 +11,20 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="badgeName" class="col-xs-2 col-form-label">Badge Name</label>
-        <div class="col-xs-9">
+        <label for="badgeName" class="col-md-2 col-form-label">Badge Name</label>
+        <div class="col-md-9">
           <input class="form-control" type="text" placeholder="MEGASHOWBIZ WATCH" id="badgeName" required>
         </div>
       </div>
       <div class="form-group row">
-        <label for="badgePoints" class="col-xs-2 col-form-label">Badge Points</label>
-        <div class="col-xs-9">
+        <label for="badgePoints" class="col-md-2 col-form-label">Badge Points</label>
+        <div class="col-md-9">
           <input class="form-control" type="text" placeholder="0" id="badgePoints" required>
         </div>
       </div>
       <div class="form-group row">
-        <label for="pointsType" class="col-xs-2 col-form-label">Point Type</label>
-        <div class="col-xs-9">
+        <label for="pointsType" class="col-md-2 col-form-label">Point Type</label>
+        <div class="col-md-9">
           <select class="selectpicker form-control" id="pointsType">          
             <option value="XP">Experience Points</option>
             <option value="KP">Knowledge Points</option>
@@ -35,14 +35,15 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="badgeDescription" class="col-xs-2 col-form-label">Badge Description</label>
-        <div class="col-xs-9">
+        <label for="badgeDescription" class="col-md-2 col-form-label">Badge Description</label>
+        <div class="col-md-9">
           <textarea class="form-control" rows="3" maxlength="450" id="badgeDescription" placeholder="Insert description..." required></textarea>
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-xs-3">
-          <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" />
+        <div class="col-md-11">
+          <!-- <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" /> -->
+          <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
         </div>
       </div>
     </form>
