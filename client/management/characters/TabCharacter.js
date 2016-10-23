@@ -99,14 +99,18 @@ Template.TabCharacter.events({
     					people: characterCommunicationSkills,
     					communication: characterCommunicationSkills,
     					problemSolving: characterProblemSolvingSkills,
-    					manegement:characterManagementSkills,
+    					management:characterManagementSkills,
     					android:characterAndroidSkills
     				}],
+          counter: 0,
+          voted: false,
           score:[
             {
-              date: new Date(),
+              type: '',
               name: '', 
-    					points: 0
+    					points: 0,
+              pointsType: '',
+              date: new Date()
             }
           ]
     		};

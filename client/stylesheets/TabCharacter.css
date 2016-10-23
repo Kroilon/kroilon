@@ -1,0 +1,10 @@
+#addCharacter {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+  font-size: 23px;
+  line-height: 1.00;
+  border-radius: 50px;
+  margin-bottom: 0.5em;
+}

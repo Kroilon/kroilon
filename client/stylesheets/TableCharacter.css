@@ -1,0 +1,22 @@
+#content {
+  margin: 100px;
+}
+
+#table {
+  margin-top: 3em;
+}
+
+#playersTable {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+#playersTable th {
+    text-transform: initial;
+    background: #fff;
+    color: black;    
+}
+
+label {
+    font-weight: inherit;
+}

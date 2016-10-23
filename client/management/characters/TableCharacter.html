@@ -1,0 +1,12 @@
+<template name="TableCharacter">  
+  <div class="container" style="font-size:16px;"> 
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <button type="input" class="btn btn-default btn-circle" id="addCharacter" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-plus"></i></button>
+        </div>
+        {{> reactiveTable class="table table-hover table-striped table-bordered table-condensed" id="playersTable" collection=academyPlayers settings=tableSettings}}
+      </div>
+    </div>     
+  </div>
+</template>
