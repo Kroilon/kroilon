@@ -51,6 +51,16 @@
               <label for="characterDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
               <input class="form-control" type="text" placeholder="01/01/1990" id="characterDateOfBirth">
             </div>
+          </div>  
+          <div class="form-group row">
+            <div class="col-md-12">
+              <label for="characterBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
+              <select class="selectpicker form-control" id="characterBusinessUnit">          
+                {{#each businessUnitTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select>                  
+            </div>
           </div>    
           <div class="form-group row">
             <div class="col-md-12">

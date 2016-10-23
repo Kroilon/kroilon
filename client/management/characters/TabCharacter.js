@@ -35,6 +35,15 @@ Template.TabCharacter.helpers({
         { name: 'ENTJ', value: 'ENTJ' }
       ];
     },
+    businessUnitTypes: function () {
+    return [
+        { name: 'CF', value: 'CelFocus' },
+        { name: 'FSI', value: 'Financial Services' },
+        { name: 'VC', value: 'Venture Capital' },
+        { name: 'IMS', value: 'IMS' },        
+        { name: 'ITC', value: 'IT Contracting' }
+      ];
+    },
     possiblePoints: function () {
     return [
         { name: 'one', value: '1' },
@@ -59,11 +68,15 @@ Template.TabCharacter.events({
 
       var user = {};
 
-      var characterNB = $('#characterNB').val();
-      var characterName = $('#characterName').val();
       var characterAvatar = $('#characterAvatar').val();
+      var characterNB = $('#characterNB').val();
+      var characterName = $('#characterName').val();      
       var characterEmail = $('#characterEmail').val();
       var characterPassword = $('#characterPassword').val();
+      var characterBusiness = $('#characterBusiness').val();
+      var characterMobile = $('#characterMobile').val();
+      var characterDateOfBirth = $('#characterDateOfBirth').val();
+      var characterBusinessUnit = $('#characterBusinessUnit').val();      
       var characterMBTI = $('#characterMBTI').val();
       var characterPPLSkills = $('#characterPPLSkills').val();
       var characterCommunicationSkills = $('#characterCommunicationSkills').val();
@@ -78,6 +91,9 @@ Template.TabCharacter.events({
     			email: characterEmail,
           password: characterPassword,
     			profile: "Trainee",
+          contact: characterMobile,
+          dateOfBirth: characterDateOfBirth,
+          businessUnit: characterBusinessUnit,
     			mbti: characterMBTI,
     			skills:[{
     					people: characterCommunicationSkills,
@@ -89,6 +105,7 @@ Template.TabCharacter.events({
           score:[
             {
               date: new Date(),
+              name: '', 
     					points: 0
             }
           ]
@@ -105,14 +122,14 @@ Template.TabCharacter.events({
   },
   'click #deleteCharacter' (event){
 
+    event.preventDefault();
 		debugger;
 
 		var playerId = $("#characterNB").val();
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-    alert("Character deleted!");
-    event.preventDefault();
+    alert("Character deleted!");    
     Meteor.call("deleteCharacter",latestAcademy._id, playerId);
 
   },
@@ -120,7 +137,6 @@ Template.TabCharacter.events({
 
     event.preventDefault();
     Modal.show('editCharacterModal', this);
-
   }
 
 });
