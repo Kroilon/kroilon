@@ -4,10 +4,24 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+Template.TabBadges.helpers({
+    pointTypes: function () {
+    return [
+        { name: 'XP', value: 'Experience Points' },
+        { name: 'KP', value: 'Knowledge Points' },
+        { name: 'HP', value: 'Health Points' },
+        { name: 'TP', value: 'Team Points' },
+        { name: 'NP', value: 'No Points' }
+      ];
+    }
+});
+
 Template.TabBadges.events({
   'submit form' (event) {
 
     event.preventDefault();
+
+    var badgeData = {};
 
     var badgeType = $("#badgeType").val();
     var badgeName = $("#badgeName").val();
@@ -15,7 +29,7 @@ Template.TabBadges.events({
     var badgePointsType = $("#pointsType").val();
     var badgeDescription = $("#badgeDescription").val();
 
-    var data =
+    var badgeData =
     {
       type: badgeType,
       name: badgeName,
@@ -26,7 +40,7 @@ Template.TabBadges.events({
     };
 
     Modal.show('badgeInsertModal', this);
-    Meteor.call("insertBadge", data);
+    Meteor.call("insertBadge", badgeData);
     $("#addBadge")[0].reset();     
   },
   'click #deleteBadge' (event) {
