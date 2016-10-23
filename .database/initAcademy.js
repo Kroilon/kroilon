@@ -39,7 +39,7 @@ db.academy.insert({
 			name:"Pedro Crespo",
 			avatar: "",
 			email: "pedro.crespo@novabase.pt",
-			password: "academiasantarem",
+			password: "123",
 			profile: "Admin"
 		},
 		{
@@ -49,31 +49,34 @@ db.academy.insert({
 			card: "afonso_sousa.PNG",
 			email: "afonsosousa0@gmail.com",
 			password: "12345",
-			score:[
-				{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "HP",
-					points: 20
-				},
-				{
-					date: new Date(2015, 02),
-					challenge: "kahoot",
-					category: "KP",
-					points: 320
-				}
-			],
+			profile: "Player",
+			contact: "+932 123 456",
+          	dateOfBirth: "31/01/1991",
+          	businessUnit: "CF",
+    		mbti: "ENTJ",
+    		skills:[{
+				people: 7,
+				communication: 8,
+				problemSolving: 8,
+				management: 7,
+				android: 1
+			}],
 			counter: 0,
 			voted: false,
-			profile: "Trainee",
-			mbti: "ENTJ",
-			skills:[{
-					people: 7,
-					communication: 8,
-					problemSolving: 8,
-					manegement: 7,
-					android: 1
-				}]
+			score:[
+				{					
+					challenge: "Kahoot 1st",
+					points: 20,
+					pointsType: "HP",
+					date: new Date()					
+				},
+				{					
+					challenge: "Egg",					
+					points: 320,
+					pointsType: "KP",
+					date: new Date(2015, 02),
+				}
+			]			
 		},
 		{
 			nb: "21001",
@@ -82,31 +85,34 @@ db.academy.insert({
 			card: "anabela_rodrigues.PNG",			
 			email: "anabelarodrigues1993@gmail.com",
 			password: "12345",
-			score:[
-				{
-					date: new Date(),
-					challenge: "Autoavaliação",
-					category: "HP",
-					points: 50
-				},
-				{
-					date: new Date(2015, 02),
-					challenge: "Wells&Cans",
-					category: "XP",
-					points: 600
-				}
-			],
+			profile: "Player",
+			contact: "+932 897 456",
+          	dateOfBirth: "12/09/1991",
+          	businessUnit: "FSI",
+    		mbti: "ISFP",
+    		skills:[{
+				people: 7,
+				communication: 7,
+				problemSolving: 8,
+				management: 7,
+				android: 9
+			}],
 			counter: 0,
 			voted: false,
-			profile: "Trainee",
-			mbti: "ENTJ",
-			skills:[{
-					people: 7,
-					communication: 7,
-					problemSolving: 8,
-					manegement: 7,
-					android: 9
-				}]
+			score:[
+				{					
+					challenge: "Autoavaliação",					
+					points: 50,
+					pointsType: "HP",
+					date: new Date()
+				},
+				{
+					challenge: "Wells&Cans",					
+					points: 600,
+					pointsType: "XP",
+					date: new Date()
+				}
+			]			
 		},
 		{
 			nb: "21002",
@@ -115,26 +121,30 @@ db.academy.insert({
 			card: "andre_ferreira.PNG",
 			email: "andre_ferreira815@hotmail.com",
 			password: "12345",
-			score:[{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "HP",
-					points: 20
-				}
-			],
+			profile: "Player",
+			contact: "+932 497 412",
+          	dateOfBirth: "02/01/1992",
+          	businessUnit: "ITC",
+    		mbti: "ISFP",
+    		skills:[{
+				people: 10,
+				communication: 7,
+				problemSolving: 5,
+				management: 7,
+				android: 3
+			}],
 			counter: 0,
 			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[
-				{
-					people: 10,
-					communication: 7,
-					problemSolving: 5,
-					manegement: 7,
-					android: 3
+			score:[
+				{					
+					challenge: "Kahoot 2st",
+					points: 15,
+					pointsType: "HP",
+					date: new Date()					
 				}
-			]
+			],
+			
+			
 		},
 		{
 			nb: "21003",
@@ -143,31 +153,34 @@ db.academy.insert({
 			card: "andreia_alves.PNG",
 			email: "dummy@hotmail.com",
 			password: "12345",
-			score:[
-				{
-					date: new Date(),
-					challenge: "Autoavaliação",
-					category: "HP",
-					points: 50
-				},
-				{
-					date: new Date(),
-					challenge: "Kahoot-1st",
-					category: "KP",
-					points: 50
-				}
-			],
+			profile: "Player",
+			contact: "+912 497 412",
+          	dateOfBirth: "22/09/1992",
+          	businessUnit: "VC",
+    		mbti: "ISFJ",
+    		skills:[{
+				people: 8,
+				communication: 9,
+				problemSolving: 7,
+				management: 7,
+				android: 7
+			}],
 			counter: 0,
 			voted: false,
-			profile: "Trainee",
-			mbti: "ISTJ",
-			skills:[{
-					people: 8,
-					communication: 9,
-					problemSolving: 7,
-					manegement: 7,
-					android: 7
-				}]
+			score:[
+				{					
+					challenge: "Kahoot 3st",
+					points: 10,
+					pointsType: "HP",
+					date: new Date()					
+				},
+				{					
+					challenge: "Autoavaliação",
+					points: 50,
+					pointsType: "HP",
+					date: new Date()					
+				}
+			]
 		},
 		{
 			nb: "21004",
@@ -198,7 +211,7 @@ db.academy.insert({
 					people: 6,
 					communication: 9,
 					problemSolving: 7,
-					manegement: 7,
+					management: 7,
 					android: 6
 				}]
 		},
@@ -225,7 +238,7 @@ db.academy.insert({
 					people: 6,
 					communication: 7,
 					problemSolving: 9,
-					manegement: 7,
+					management: 7,
 					android: 3
 				}]
 		},
@@ -252,7 +265,7 @@ db.academy.insert({
 					people: 6,
 					communication: 9,
 					problemSolving: 7,
-					manegement: 8,
+					management: 8,
 					android: 5
 				}]
 		},
@@ -291,7 +304,7 @@ db.academy.insert({
 					people: 9,
 					communication: 9,
 					problemSolving: 7,
-					manegement: 7,
+					management: 7,
 					android: 9
 				}]
 		},
@@ -324,7 +337,7 @@ db.academy.insert({
 					people: 7,
 					communication: 6,
 					problemSolving: 3,
-					manegement: 7,
+					management: 7,
 					android: 1
 				}
 			]

@@ -90,7 +90,7 @@ Template.TabCharacter.events({
     			avatar: characterAvatar,
     			email: characterEmail,
           password: characterPassword,
-    			profile: "Trainee",
+    			profile: "Player",
           contact: characterMobile,
           dateOfBirth: characterDateOfBirth,
           businessUnit: characterBusinessUnit,

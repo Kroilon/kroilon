@@ -17,6 +17,7 @@ db.badges.insert([
 		name: "WATCH",
 		points: 20,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Três dias sem atrasos",
 		date: new Date()
@@ -26,6 +27,7 @@ db.badges.insert([
 		name: "TOP WATCH",
 		points: 50,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Dois badges WATCH",
 		date: new Date()
@@ -35,6 +37,7 @@ db.badges.insert([
 		name: "MEGASHOWBIZ WATCH",
 		points: 100,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Três badges WATCH",
 		date: new Date()
@@ -44,6 +47,7 @@ db.badges.insert([
 		name: "TEAM PLAYER",
 		points: 50,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Três vitórias em desafios de equipa",
 		date: new Date()
@@ -53,6 +57,7 @@ db.badges.insert([
 		name: "TOP TEAM PLAYER",
 		points: 100,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Dois badges TEAM PLAYER",
 		date: new Date()
@@ -62,6 +67,7 @@ db.badges.insert([
 		name: "BOSS",
 		points: 50,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Três vezes como Small Unit Leader",
 		date: new Date()
@@ -71,6 +77,7 @@ db.badges.insert([
 		name: "TOP BOSS",
 		points: 100,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Dois badges BOSS",
 		date: new Date()
@@ -80,6 +87,7 @@ db.badges.insert([
 		name: "SONECA",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 0.95,
 		description: "Três atrasos",
 		date: new Date()
@@ -89,6 +97,7 @@ db.badges.insert([
 		name: "HOUDINI",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Três dias como magician",
 		date: new Date()
@@ -98,6 +107,7 @@ db.badges.insert([
 		name: "SWORD",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Podem ser jogadas cartas de Attackers",
 		date: new Date()
@@ -107,6 +117,7 @@ db.badges.insert([
 		name: "GADALF",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Podem ser jogadas cartas de Ganfalf",
 		date: new Date()
@@ -116,6 +127,7 @@ db.badges.insert([
 		name: "BOAT",
 		points: 200,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "O grupo pode usar canais aquáticos",
 		date: new Date()
@@ -125,6 +137,7 @@ db.badges.insert([
 		name: "DOUBLE",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 2.0,
 		description: "Duplica os pontos ganhos no quarto",
 		date: new Date()
@@ -134,6 +147,7 @@ db.badges.insert([
 		name: "FOOD",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "Restaura duas barras de energia",
 		date: new Date()
@@ -143,6 +157,7 @@ db.badges.insert([
 		name: "MYSTERY",
 		points: 0,
 		pointsType: "HP",
+		image: '',
 		percentage: 1.0,
 		description: "TBD",
 		date: new Date()
