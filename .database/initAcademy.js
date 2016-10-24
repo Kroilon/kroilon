@@ -189,6 +189,20 @@ db.academy.insert({
 			card: "catarina_oliveira.PNG",
 			email: "catarina@hotmail.com",
 			password: "12345",
+			profile: "Player",
+			contact: "+932 117 456",
+          	dateOfBirth: "30/06/1991",
+          	businessUnit: "FSI",
+    		mbti: "ESTJ",
+    		skills:[{
+				people: 6,
+				communication: 9,
+				problemSolving: 7,
+				management: 7,
+				android: 6
+			}],
+			counter: 0,
+			voted: false,
 			score:[
 				{
 					date: new Date(),
@@ -202,18 +216,7 @@ db.academy.insert({
 					category: "XP",
 					points: 600
 				}
-			],
-			counter: 0,
-			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[{
-					people: 6,
-					communication: 9,
-					problemSolving: 7,
-					management: 7,
-					android: 6
-				}]
+			]			
 		},
 		{
 			nb: "21005",
@@ -222,6 +225,20 @@ db.academy.insert({
 			card: "fernando_garcia.PNG",
 			email: "someemail@hotmail.com",
 			password: "12345",
+			profile: "Player",
+			contact: "+932 897 456",
+          	dateOfBirth: "12/02/1992",
+          	businessUnit: "CF",
+    		mbti: "ISTJ",
+    		skills:[{
+				people: 6,
+				communication: 7,
+				problemSolving: 9,
+				management: 7,
+				android: 3
+			}],
+			counter: 0,
+			voted: false,
 			score:[
 				{
 					date: new Date(),
@@ -229,18 +246,7 @@ db.academy.insert({
 					category: "HP",
 					points: 50
 				}
-			],
-			counter: 0,
-			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[{
-					people: 6,
-					communication: 7,
-					problemSolving: 9,
-					management: 7,
-					android: 3
-				}]
+			]
 		},
 		{
 			nb: "21006",
@@ -249,6 +255,20 @@ db.academy.insert({
 			card: "joao_baptista.PNG",
 			email: "joao@hotmail.com",
 			password: "12345",
+			profile: "Player",
+			contact: "+912 867 634",
+          	dateOfBirth: "27/01/1992",
+          	businessUnit: "CF",
+    		mbti: "ISTJ",
+    		skills:[{
+				people: 6,
+				communication: 9,
+				problemSolving: 7,
+				management: 8,
+				android: 5
+			}],
+			counter: 0,
+			voted: false,
 			score:[
 				{
 					date: new Date(),
@@ -256,18 +276,7 @@ db.academy.insert({
 					category: "HP",
 					points: 50
 				}
-			],
-			counter: 0,
-			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[{
-					people: 6,
-					communication: 9,
-					problemSolving: 7,
-					management: 8,
-					android: 5
-				}]
+			]			
 		},
 		{
 			nb: "21007",
@@ -276,6 +285,20 @@ db.academy.insert({
 			card: "pedro_gabriel.PNG",
 			email: "pedro@hotmail.com",
 			password: "12345",
+			profile: "Player",
+			contact: "+912 441 630",
+          	dateOfBirth: "11/01/1988",
+          	businessUnit: "IMS",
+    		mbti: "ISTJ",
+    		skills:[{
+				people: 9,
+				communication: 9,
+				problemSolving: 7,
+				management: 7,
+				android: 9
+			}],
+			counter: 0,
+			voted: false,
 			score:[
 				{
 					date: new Date(),
@@ -295,18 +318,7 @@ db.academy.insert({
 					category: "XP",
 					points: 600
 				}
-			],
-			counter: 0,
-			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[{
-					people: 9,
-					communication: 9,
-					problemSolving: 7,
-					management: 7,
-					android: 9
-				}]
+			]						
 		},
 		{
 			nb: "21008",
@@ -315,6 +327,20 @@ db.academy.insert({
 			card: "rita_narciso.PNG",
 			email: "rita123@hotmail.com",
 			password: "12345",
+			profile: "Player",
+			contact: "+912 441 630",
+          	dateOfBirth: "11/01/1988",
+          	businessUnit: "IMS",
+    		mbti: "ESTJ",
+    		skills:[{
+				people: 7,
+				communication: 6,
+				problemSolving: 3,
+				management: 7,
+				android: 1
+			}],
+			counter: 0,
+			voted: false,
 			score:[
 				{
 					date: new Date(),
@@ -327,18 +353,6 @@ db.academy.insert({
 					challenge: "Atraso",
 					category: "HP",
 					points: -10
-				}
-			],
-			counter: 0,
-			voted: false,
-			profile: "Trainee",
-			mbti: "ESTJ",
-			skills:[{
-					people: 7,
-					communication: 6,
-					problemSolving: 3,
-					management: 7,
-					android: 1
 				}
 			]
 		}

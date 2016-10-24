@@ -8,3 +8,13 @@
   border-radius: 50px;
   margin-bottom: 0.5em;
 }
+
+hr { 
+    margin-top: 2.0em;
+    margin-bottom: 2.0em;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: #de4f4f;
+} 
