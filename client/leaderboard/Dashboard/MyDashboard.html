@@ -1,19 +1,38 @@
 <template name="MyDashboard">  
-  <div class="container">				
-	    <h4>Team Score {{userScores.avg}}</h4>
-	    <br>
-		{{#each userScores.users}}
-			<div class="divTable">
-			  <div class="divRow">
-				  <div class="divCell">{{@index}}</div>
-				  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
-				  <div class="divCell">{{name}}</div>
-				  <div class="divCell">{{totalScore}}</div>
-				  {{#if isLoggedIn}}
-				  <div><img class="divCell-like" src='Like_Cizento-08.png'></div>
-				  {{/if}}
-			  </div>
-			</div>
-		{{/each}}
-	</div>
+  <div class="container">	
+	  <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+            	<div class="col-md-12" style="text-align: center;">
+            		<h2>Tap my back!</h2>
+            		<h3>Team Score {{userScores.avg}}</h3>
+				    <br>
+					{{#each userScores.users}}
+						<div class="divTable">
+						  <div class="divRow">
+							  <div class="divCell">{{@index}}</div>
+							  <div class="divCell"><img src='/avatar/{{avatar}}'></div>
+							  <div class="divCell">{{name}}</div>
+							  <div class="divCell">{{totalScore}}</div>
+							  {{#if isLoggedIn}}
+							  <div><img class="divCell-like" src='Like_Cizento-08.png'></div>
+							  {{/if}}
+						  </div>
+						</div>
+					{{/each}}
+            	</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-12" style="text-align: center; margin: 60px 0px 0px 0px;">
+                <h2>Team Points</h2>
+                <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none;    display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
 </template>
