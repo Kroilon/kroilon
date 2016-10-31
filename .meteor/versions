@@ -57,6 +57,7 @@ less@2.5.7
 livedata@1.0.17
 localstorage@1.0.8
 logging@1.0.11
+maazalik:highcharts@0.4.0
 meteor@1.1.13
 meteor-base@1.0.3
 meteortoys:allthings@2.3.1

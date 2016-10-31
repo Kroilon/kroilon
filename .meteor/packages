@@ -41,7 +41,7 @@ peppelg:bootstrap-3-modal
 themeteorchef:jquery-validation
 aslagle:reactive-table  
 d3js:d3					# d3.js
-
+maazalik:highcharts
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
