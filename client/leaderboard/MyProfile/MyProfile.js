@@ -70,6 +70,8 @@ Template.MyProfile.playerSkillsChart = function() {
     };
 };
 
+
+
 Template.MyProfile.helpers({
 
 });
