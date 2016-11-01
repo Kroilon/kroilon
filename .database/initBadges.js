@@ -114,7 +114,7 @@ db.badges.insert([
 	},
 	{
 		type: "Team",
-		name: "GADALF",
+		name: "GANDALF",
 		points: 0,
 		pointsType: "HP",
 		image: '',
