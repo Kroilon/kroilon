@@ -54,6 +54,7 @@ Template.Management.helpers({
         { name: 'Rooms', slug: 'rooms' },
         { name: 'Challenges', slug: 'challenges' },
         { name: 'Activity', slug: 'activity' },  
+        { name: 'Rules', slug: 'rules' },  
         { name: 'Message', slug: 'message' },
         { name: 'Segredos', slug: 'secrets' }
       ];
