@@ -3,6 +3,15 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 
 Template.TabActivity.helpers({
+    pointTypes: function () {
+      return [
+          { name: 'XP', value: 'Experience Points' },
+          { name: 'KP', value: 'Knowledge Points' },
+          { name: 'HP', value: 'Health Points' },
+          { name: 'TP', value: 'Team Points' },
+          { name: 'NP', value: 'No Points' }
+        ];
+    },
     challs(){
       var latestChalls = Challenges.find();
       return latestChalls;

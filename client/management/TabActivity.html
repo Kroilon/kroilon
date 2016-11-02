@@ -22,7 +22,7 @@
         <label for="activity" class="col-md-2 col-form-label">Challenge</label>
         <div class="col-md-9">
           <select class="selectpicker form-control" id="activity">          
-            <option selected>No Badge</option>
+            <option selected>No Challenge</option>
             {{#each challs}}
               <option value="{{nb}}">{{name}}</option>
             {{/each}}
@@ -39,10 +39,9 @@
         <label for="pointsType" class="col-md-2 col-form-label">Point Type</label>
         <div class="col-md-9">
           <select class="selectpicker form-control" id="pointsType">          
-            <option value="XP">Experience Points</option>
-            <option value="KP">Knowledge Points</option>
-            <option value="HP">Health Points</option>
-            <option value="PE">Team Points</option>
+            {{#each pointTypes}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
           </select>
         </div>
       </div>

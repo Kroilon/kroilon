@@ -17,33 +17,34 @@
           </select>
         </div>
       </div>
-      <div class="form-group row">
-        <label for="typeName" class="col-md-2 col-form-label">Base Name</label>
+      {{#if showExtraFields}}
+        <div class="form-group row">
+        <label for="typeChallenge" class="col-md-2 col-form-label">Base Name</label>
         <div class="col-md-9">
-          <select class="selectpicker form-control" id="typeName">          
-            <option value="activity">Wells&Cans</option>
-            <option value="badge">Watch</option>
-            <option value="card">Magician</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="challengeBadge" class="col-md-2 col-form-label">Badge</label>
-        <div class="col-md-9">
-          <select class="selectpicker form-control" id="challengeBadge">  
-            <option selected>No Badge</option>
-            {{#each badges}}
-              <option value="{{name}}">{{value}}</option>
+          <select class="selectpicker form-control" id="typeChallenge">          
+            {{#each challenges}}
+              <option value="{{name}}">{{name}}</option>
             {{/each}}
           </select>
         </div>
       </div>
+      {{/if}}     
+      <div class="form-group row">
+        <label for="typeBadge" class="col-md-2 col-form-label">Base Name</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="typeBadge">          
+            {{#each badges}}
+              <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>      
       <div class="form-group row">
         <label for="ruleThreshold" class="col-md-2 col-form-label">Threshold</label>
         <div class="col-md-9">
           <select class="selectpicker form-control" id="ruleThreshold">          
             {{#each thresholdValues}}
-              <option value="{{name}}">{{value}}</option>
+              <option value="{{name}}">{{name}}</option>
             {{/each}}
           </select>
         </div>
