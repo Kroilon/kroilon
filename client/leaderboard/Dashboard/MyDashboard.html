@@ -2,8 +2,29 @@
   <div class="container">	
 	  <div class="col-md-12">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-10">
             <div class="row">
+
+
+              <div class="divTable">
+                <div class="headRow">
+                  <div class="divCell" align="center">Avatar</div>  
+                  <div class="divCell" align="center">Nome</div>  
+                  <div class="divCell" align="center">Pontos</div>  
+                  <div class="divCell" align="center">Tap my back</div>
+                </div>
+                {{#each characters}} 
+                <div class="divRow">
+                  <div class="divCell" align="center"><img src="/avatar/{{avatar}}" /></div>
+                  <div class="divCell">{{name}}</div>
+                  <div class="divCell" align="center">{{score nb}}</div>
+                  <div class="divCell" align="center"><img id="tapMyBack" src='/like2.png' onclick=diffImage(this) /> </div>
+                </div>
+                {{/each}} 
+              </div>
+
+
+
             	<div class="col-md-12" style="text-align: center;">
             		<h2>Tap my back!</h2>
             		<h3>Team Score {{userScores.avg}}</h3>
@@ -24,7 +45,7 @@
             	</div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class="row">
               <div class="col-md-12" style="text-align: center; margin: 60px 0px 0px 0px;">
                 <h2>Team Points</h2>
@@ -35,4 +56,18 @@
         </div>
       </div>
    </div>
+
+<script>
+function diffImage(img)
+{
+  // Switch like image if the player hasn't voted yet
+  {{#unless voted}}
+    if(img.src.match(/like2/)) img.src = "/like1.png";
+    else img.src = "/like2.png"; 
+  {{/unless}}
+}
+</script>
+
 </template>
+
+

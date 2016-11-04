@@ -17,6 +17,16 @@ Meteor.methods({
 
     },
 
+    updateVoted: function(id, playerId) {
+      var currentUserId = Meteor.userId();
+      Academy.update(
+          { _id: id, 'users.nb': playerId },
+          {$push: {'users.$.voted': true}},
+          {updatedBy: currentUserId}
+      );
+
+    },
+
     insertChallenge: function(data) {
 
       console.log(data);

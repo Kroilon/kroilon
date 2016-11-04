@@ -61,7 +61,7 @@ db.academy.insert({
 				management: 7,
 				android: 1
 			}],
-			counter: 0,
+			counter: 8,
 			voted: false,
 			score:[
 				{					

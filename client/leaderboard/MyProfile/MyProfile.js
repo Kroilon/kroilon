@@ -74,6 +74,14 @@ Template.MyProfile.playerSkillsChart = function() {
 
 Template.MyProfile.helpers({
 
+    tapMyBackScore(nb)
+    {
+        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].counter;
+    }
+
 });
 
 Template.MyProfile.events({
