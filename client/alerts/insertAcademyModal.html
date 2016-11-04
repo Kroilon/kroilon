@@ -1,0 +1,27 @@
+<template name="insertAcademyModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Insert New Academy</h4>
+                </div>
+
+                <div class="modal-body">         
+                    <form id ="addAcademy" class="form-horizontal" style="padding-left:15px;">
+                      <div class="form-group">      
+                        <div class="col-xs-11">
+                          <label for="academyName">Academy Name</label>
+                          <input type="text" class="form-control" id="academyName" placeholder="Insert name here..." required>
+                        </div>      
+                      </div>
+                    </form> 
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default btn-circle" data-dismiss="modal" id="insertAcademy" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                  <button type="button" class="btn btn-default btn-circle" data-dismiss="modal" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-remove"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

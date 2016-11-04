@@ -51,8 +51,21 @@ Meteor.methods({
     },
 
     addAcademy : function(data) {
+
+      console.log(data);
+
       Academy.insert(data);
+      
     },
+
+    removeAcademy : function(id) {
+
+      Academy.remove(
+          { _id: id }
+      );
+            
+    },
+
 	  deleteCharacter: function (id,playerId) {
 
       Academy.update(
