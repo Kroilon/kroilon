@@ -23,7 +23,7 @@ Template.HomeLogin.events({
 		Session.set("loggedUser", user);
 		console.log(Session.get("loggedUser"));
 		//$('#loginPage').html('<h3>LOGIN DONE</h3>');
-		FlowRouter.go('/dashboard');
+		FlowRouter.go('/map');
 		}
   	}
 });
