@@ -74,8 +74,9 @@ Template.MyProfile.playerSkillsChart = function() {
 
 Template.MyProfile.helpers({
 
-    tapMyBackScore(nb)
+    tapMyBackScore()
     {
+        var nb = Session.get("loggedUser")[0].nb;
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
         var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
@@ -106,8 +107,75 @@ Template.MyProfile.helpers({
 
         var average_points = (total_points/total_users - 1);
 		return parseInt(average_points);
-	}
+	},
 
+
+    tapSkillsPeople(){
+        var nb = Session.get("loggedUser")[0].nb;
+        console.log("MEULOG " + nb)
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].people;
+    },
+
+    tapSkillsCommunication(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].communication;
+    },
+    
+    tapSkillsProblemSolving(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].problemSolving;
+    },
+    
+    tapSkillsManagement(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].management;
+    },
+    
+    tapSkillsAndroid(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].android;
+    },
+    
+   	score()
+  	{
+        var nb = Session.get("loggedUser")[0].nb
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+		var user_points = 0;
+
+		$.each(user[0].score, function(index, value){
+			user_points += value.points;
+		});
+
+		return user_points;
+  	},
+
+    name()
+  	{
+        var nb = Session.get("loggedUser")[0].nb
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        var name = user[0].name;
+
+		return name;
+  	},
 });
 
 Template.MyProfile.events({
