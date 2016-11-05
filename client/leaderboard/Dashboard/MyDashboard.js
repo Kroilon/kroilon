@@ -5,6 +5,27 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
 Template.MyDashboard.helpers({
+
+	characters() {
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+		return latestAcademy.users;
+	},
+
+  	score(nb)
+  	{
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+		var user_points = 0;
+
+		$.each(user[0].score, function(index, value){
+			user_points += value.points;
+		});
+
+		return user_points;
+  	},
+
 	userScores() {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -38,7 +59,21 @@ Template.MyDashboard.helpers({
 
 Template.MyDashboard.events({
 
-  
+    'click #tapMyBack' (event){
+	    event.preventDefault();
+		
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == 21000; });
+        var voted = user[0].voted;
+		// Switch like image if the player hasn't voted yet
+	  	if (!voted)
+	  	{
+			console.log("Nao votei");	
+			Meteor.call("updateVoted", latestAcademy, 21000);
+	  	}
+	  	else console.log("Votei");	 
+  	}
+
 });
 
 function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
