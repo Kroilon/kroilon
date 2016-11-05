@@ -80,8 +80,33 @@ Template.MyProfile.helpers({
         var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
         return user[0].counter;
-    }
+    },
 
+   	score()
+  	{
+        var nb = Session.get("loggedUser")[0].nb
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+		var user_points = 0;
+
+		$.each(user[0].score, function(index, value){
+			user_points += value.points;
+		});
+
+		return user_points;
+  	},
+
+    name()
+  	{
+        var nb = Session.get("loggedUser")[0].nb
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        var name = user[0].name;
+
+		return name;
+  	},
 });
 
 Template.MyProfile.events({
