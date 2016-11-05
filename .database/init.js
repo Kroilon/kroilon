@@ -62,14 +62,14 @@ db.academy.insert({
 				{					
 					date: new Date(),
 					CountType: 1,
-					Activity/Badge: "Kahoot 1st",
+					Activity_Badge: "Kahoot 1st",
 					points: 20,
 					pointsType: "HP"										
 				},
 				{					
 					date: new Date(2015, 02),
 					CountType: 1,
-					Activity/Badge: "Egg",					
+					Activity_Badge: "Egg",					
 					points: 320,
 					pointsType: "KP"					
 				}
@@ -101,14 +101,14 @@ db.academy.insert({
 				{	
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Autoavaliação",					
+					Activity_Badge: "Autoavaliação",					
 					points: 50,
 					pointsType: "HP"					
 				},
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Wells&Cans",					
+					Activity_Badge: "Wells&Cans",					
 					points: 600,
 					pointsType: "XP"
 				}
@@ -140,7 +140,7 @@ db.academy.insert({
 				{					
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Kahoot 1st",
+					Activity_Badge: "Kahoot 1st",
 					points: 15,
 					pointsType: "HP"					
 				}

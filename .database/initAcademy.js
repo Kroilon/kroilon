@@ -61,14 +61,14 @@ db.academy.insert({
 				{					
 					date: new Date(),
 					CountType: 1,
-					Activity/Badge: "Kahoot 1st",
+					Activity_Badge: "Kahoot 2st",
 					points: 20,
 					pointsType: "HP"										
 				},
 				{					
 					date: new Date(2015, 02),
 					CountType: 1,
-					Activity/Badge: "Egg",					
+					Activity_Badge: "Egg",					
 					points: 320,
 					pointsType: "KP"					
 				}
@@ -100,14 +100,14 @@ db.academy.insert({
 				{	
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Autoavaliação",					
+					Activity_Badge: "Autoavaliação",					
 					points: 50,
 					pointsType: "HP"					
 				},
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Wells&Cans",					
+					Activity_Badge: "Wells&Cans",					
 					points: 600,
 					pointsType: "XP"
 				}
@@ -139,7 +139,7 @@ db.academy.insert({
 				{					
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Kahoot 1st",
+					Activity_Badge: "Kahoot 1st",
 					points: 15,
 					pointsType: "HP"					
 				}
@@ -173,14 +173,14 @@ db.academy.insert({
 				{					
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Kahoot 3st",
+					Activity_Badge: "Kahoot 3st",
 					points: 10,
 					pointsType: "HP"					
 				},
 				{					
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Autoavaliação",
+					Activity_Badge: "Autoavaliação",
 					points: 50,
 					pointsType: "HP"			
 				}
@@ -212,14 +212,14 @@ db.academy.insert({
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Kahoot-2nd",
+					Activity_Badge: "Kahoot-2nd",
 					category: "KP",
 					points: 40
 				},
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Wells&Cans",
+					Activity_Badge: "Wells&Cans",
 					category: "XP",
 					points: 600
 				}
@@ -251,7 +251,7 @@ db.academy.insert({
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Voluntário LipSync Battle",
+					Activity_Badge: "Voluntário LipSync Battle",
 					category: "HP",
 					points: 50
 				}
@@ -283,7 +283,7 @@ db.academy.insert({
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Voluntário Android",
+					Activity_Badge: "Voluntário Android",
 					category: "HP",
 					points: 50
 				}
@@ -315,21 +315,21 @@ db.academy.insert({
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Voluntário Medley",
+					Activity_Badge: "Voluntário Medley",
 					category: "HP",
 					points: 50
 				},
 				{
 					date: new Date(),			
 					CountType: 0,
-					Activity/Badge: "Penalizacao",
+					Activity_Badge: "Penalizacao",
 					category: "HP",
 					points: -10
 				},
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Wells&Cans",
+					Activity_Badge: "Wells&Cans",
 					category: "XP",
 					points: 600
 				}
@@ -361,14 +361,14 @@ db.academy.insert({
 				{
 					date: new Date(),			
 					CountType: 1,
-					Activity/Badge: "Kahoot-2nd",
+					Activity_Badge: "Kahoot-2nd",
 					category: "KP",
 					points: 40
 				},
 				{
 					date: new Date(),			
 					CountType: 0,
-					Activity/Badge: "Soneca",
+					Activity_Badge: "Soneca",
 					category: "HP",
 					points: -50
 				}
