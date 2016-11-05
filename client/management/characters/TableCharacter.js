@@ -126,8 +126,10 @@ Template.TableCharacter.helpers({
           }
         ]
       };
-    }
+    },
 
 });
+
+
 
 

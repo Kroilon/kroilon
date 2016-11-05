@@ -7,11 +7,15 @@ import { Session } from 'meteor/session';
 
 Template.Home.helpers({
   ficaadica() {
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
     return latestAcademy.homeMessage;
   },
   isLoggedIn() {
-	return Session.get("loggedUser")!='' && Session.get("loggedUser")!=null && Session.get("loggedUser") != undefined;
+    var abc = Session.get("loggedUser");
+
+    var cond = abc != '' && Session.get("loggedUser")[0].nb != undefined;
+    debugger;
+    return cond;
   }
 
 });

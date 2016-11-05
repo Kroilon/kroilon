@@ -31,7 +31,7 @@ db.academy.insert({
 
 //Challenges
 db.challenges.drop();
-db.createCollection("challenges");
+db.createCollection("activity");
 
 
 //Badges

@@ -17,175 +17,153 @@ db.challenges.insert([
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Autoavaliação",
 		points: 50,
 		type: "KP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Kahoot-1st",
 		points: 50,
 		type: "KP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Kahoot-2nd",
 		points: 40,
 		type: "KP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Kahoot-3rd",
 		points: 25,
 		type: "KP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Voluntário Medley",
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Voluntário Android",
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Voluntário LipSync Battle",
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Team Balance",
 		points: 200,
 		type: "TP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "The Marshmallow Ladder",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Avatar",
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Ninja MF Vencedor",
 		points: 25,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Daily scrum",
 		points: 50,
 		type: "TP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Avatar",
 		points: 50,
 		type: "HP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "The Chain of Claws",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "The Landing Project",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "The Blind Quest",
 		points: 200,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "The Chain of Claws",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Wells & Cans",
 		points: 600,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Lunch",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Divide & Conquer",
 		points: 500,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	},
 	{
 		name: "Lunch",
 		points: 400,
 		type: "XP",
 		room: "",
-		date: new Date(),
-		badges: ""
+		description: ""
 	}
 ]);

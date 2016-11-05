@@ -5,20 +5,21 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
 Template.TeamPerformance.playerSkillsChart = function() {
+
     return {
-    	colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
-      		'#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+        colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+            '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
         chart: {
             polar: true,
             type: 'line',
 
             //Edit chart margin
             margin: [0, 0, 0, 0],
-             //Edit chart spacing
-	        spacingTop: 0,
-	        spacingBottom: 0,
-	        spacingLeft: 0,
-	        spacingRight: 0
+            //Edit chart spacing
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingLeft: 0,
+            spacingRight: 0
 
 
         },
@@ -29,12 +30,12 @@ Template.TeamPerformance.playerSkillsChart = function() {
         },
 
         pane: {
-            size: '80%'
+            size: '60%'
         },
 
         xAxis: {
             categories: ['People', 'Communication', 'Problem Solving', 'Management',
-                    'Android'],
+                'Android'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -51,134 +52,183 @@ Template.TeamPerformance.playerSkillsChart = function() {
         },
 
         legend: {
-            align: 'right',
+            align: 'center',
             verticalAlign: 'top',
-            y: 70,
+            y: 40,
             layout: 'vertical'
         },
 
         credits: {
-		    enabled: false
-		},
+            enabled: false
+        },
 
         series: [{
-        	showInLegend: false,
+            showInLegend: false,
             name: 'Skills',
-            data: [5, 9, 6, 9, 2],
-            pointPlacement: 'on'
+            data: [
+                tapSkillsPeople(),
+                tapSkillsCommunication(),
+                tapSkillsProblemSolving(),
+                tapSkillsManagement(),
+                tapSkillsAndroid()
+            ],
+            pointPlacement: 'on',
+            padding: 0
         }]
     };
 };
 
 
-
 Template.TeamPerformance.helpers({
 
-    tapMyBackScore()
-    {
+    tapMyBackScore() {
         var nb = Session.get("loggedUser")[0].nb;
-        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
 
         return user[0].counter;
     },
     TeamScore() {
 
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var users = latestAcademy.users;
-		var total_users = users.length;
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var users = latestAcademy.users;
+        var total_users = users.length;
         var total_points = 0;
 
-        $.each(users, function(index_users, value_users){
+        $.each(users, function (index_users, value_users) {
 
-			var user_points = 0;
+            var user_points = 0;
 
-            if(value_users.score != undefined)
-            {
-                $.each(value_users.score, function(index_score, value_score){
-				    user_points += value_score.points;
-			    });
+            if (value_users.score != undefined) {
+                $.each(value_users.score, function (index_score, value_score) {
+                    user_points += value_score.points;
+                });
             }
-			
-			value_users.totalScore = user_points;
-			total_points += user_points;
-           
-		});
 
-        var average_points = (total_points/total_users - 1);
-		return parseInt(average_points);
-	},
+            value_users.totalScore = user_points;
+            total_points += user_points;
 
+        });
 
-    tapSkillsPeople(){
-        var nb = Session.get("loggedUser")[0].nb;
-        console.log("MEULOG " + nb)
-         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
-
-        return user[0].skills[0].people;
+        var average_points = (total_points / total_users - 1);
+        return parseInt(average_points);
     },
 
-    tapSkillsCommunication(){
-         var nb = Session.get("loggedUser")[0].nb;
-         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
-        return user[0].skills[0].communication;
-    },
-    
-    tapSkillsProblemSolving(){
-         var nb = Session.get("loggedUser")[0].nb;
-         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+    tapSkillsPeople,
 
-        return user[0].skills[0].problemSolving;
-    },
-    
-    tapSkillsManagement(){
-         var nb = Session.get("loggedUser")[0].nb;
-         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+    tapSkillsCommunication,
 
-        return user[0].skills[0].management;
-    },
-    
-    tapSkillsAndroid(){
-         var nb = Session.get("loggedUser")[0].nb;
-         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+    tapSkillsProblemSolving,
 
-        return user[0].skills[0].android;
-    },
-    
-   	score()
-  	{
+    tapSkillsManagement,
+
+    tapSkillsAndroid,
+
+    score() {
         var nb = Session.get("loggedUser")[0].nb
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
 
-		var user_points = 0;
+        var user_points = 0;
 
-		$.each(user[0].score, function(index, value){
-			user_points += value.points;
-		});
+        $.each(user[0].score, function (index, value) {
+            user_points += value.points;
+        });
 
-		return user_points;
-  	},
+        return user_points;
+    },
 
-    name()
-  	{
+    name() {
         var nb = Session.get("loggedUser")[0].nb
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
 
         var name = user[0].name;
 
-		return name;
-  	},
+        return name;
+    },
+    myBadges() {
+        var nb = Session.get("loggedUser")[0].nb
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+        var badges = new Array();
+
+        user[0].score.forEach( function(score){
+            if(score.type === "badge"){
+                var badgeName = score.name;
+                var badge = Badges.find( {"name":badgeName} ).fetch();
+
+                if(badge !== undefined && badge.name !== ""){
+                    if(badges.length>0){
+                        var check = false;
+                        badges.forEach(function(n){
+                            if(n.name === badge[0].name){
+                                var count = parseInt(n.count);
+                                count++;
+                                n.count = count;
+                                check = true;
+                            }
+                        });
+
+                        if(!check){
+                            var newBadge = {'name':badge[0].name,'image':badge[0].image,'count':1};
+                            badges.push(newBadge);
+                        }
+                    } else{
+                        var newBadge = {'name':badge[0].name,'image':badge[0].image,'count':1};
+                        badges.push(newBadge);
+                    }
+                }
+            }
+        });
+
+        return badges;
+    }
 });
 
 Template.TeamPerformance.events({
+/*
+Helpers came outside in order to be used inside other configurations
+like "playerSkillsChart".
+ */
 
-  
-});
+function tapSkillsPeople() {
+    var nb = Session.get("loggedUser")[0].nb;
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+
+    return user[0].skills[0].people;
+}
+
+function tapSkillsAndroid() {
+    var nb = Session.get("loggedUser")[0].nb;
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+
+    return user[0].skills[0].android;
+}
+
+function tapSkillsManagement() {
+    var nb = Session.get("loggedUser")[0].nb;
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+
+    return user[0].skills[0].management;
+}
+
+function tapSkillsProblemSolving() {
+    var nb = Session.get("loggedUser")[0].nb;
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+
+    return user[0].skills[0].problemSolving;
+}
+
+function tapSkillsCommunication() {
+    var nb = Session.get("loggedUser")[0].nb;
+    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+
+    return user[0].skills[0].communication;
+}

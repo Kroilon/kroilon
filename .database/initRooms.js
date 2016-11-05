@@ -14,12 +14,14 @@ db.createCollection("rooms");
 db.rooms.insert([
 	{
 		name: "Coachroach Entry",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Project Room",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "BOAT"
@@ -28,24 +30,28 @@ db.rooms.insert([
 	},
 	{
 		name: "Wandering Wall",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Nowayout Corridor",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Death Corridor",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Adolph Room",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "BOAT"
@@ -54,6 +60,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Stormillor Hall",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "SWORD"
@@ -62,12 +69,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Diaz Krez Arena",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Kalu Hall",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "FOOD"
@@ -76,6 +85,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Ristar Room",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "FOOD"
@@ -84,6 +94,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Stormillor Dungeons",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "MYSTERY"
@@ -92,12 +103,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Normingor Room A",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Diktaur Room",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "DOUBLE"
@@ -106,12 +119,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Normingor Room B",
+		DailyDescription:"",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Almusther Room",
+		DailyDescription:"",
 		badges: [
 			{
 				name: "FOOD"
@@ -120,6 +135,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Performanthor Room",
+		DailyDescription:"",
 		badges: [
 			{}
 			]

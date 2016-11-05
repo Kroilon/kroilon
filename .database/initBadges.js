@@ -19,8 +19,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Três dias sem atrasos",
-		date: new Date()
+		description: "Três dias sem atrasos"
 	},
 	{
 		type: "Player",
@@ -29,8 +28,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Dois badges WATCH",
-		date: new Date()
+		description: "Dois badges WATCH"
 	},
 	{
 		type: "Player",
@@ -39,8 +37,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Três badges WATCH",
-		date: new Date()
+		description: "Três badges WATCH"
 	},
 	{
 		type: "Player",
@@ -49,8 +46,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Três vitórias em desafios de equipa",
-		date: new Date()
+		description: "Três vitórias em desafios de equipa"
 	},
 	{
 		type: "Player",
@@ -59,8 +55,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Dois badges TEAM PLAYER",
-		date: new Date()
+		description: "Dois badges TEAM PLAYER"
 	},
 	{
 		type: "Player",
@@ -69,8 +64,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Três vezes como Small Unit Leader",
-		date: new Date()
+		description: "Três vezes como Small Unit Leader"
 	},
 	{
 		type: "Player",
@@ -79,8 +73,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Dois badges BOSS",
-		date: new Date()
+		description: "Dois badges BOSS"
 	},
 	{
 		type: "Player",
@@ -89,8 +82,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 0.95,
-		description: "Três atrasos",
-		date: new Date()
+		description: "Três atrasos"
 	},
 	{
 		type: "Player",
@@ -99,8 +91,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Três dias como magician",
-		date: new Date()
+		description: "Três dias como magician"
 	},
 	{
 		type: "Team",
@@ -109,8 +100,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Podem ser jogadas cartas de Attackers",
-		date: new Date()
+		description: "Podem ser jogadas cartas de Attackers"
 	},
 	{
 		type: "Team",
@@ -119,8 +109,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Podem ser jogadas cartas de Ganfalf",
-		date: new Date()
+		description: "Podem ser jogadas cartas de Ganfalf"
 	},
 	{
 		type: "Team",
@@ -129,8 +118,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "O grupo pode usar canais aquáticos",
-		date: new Date()
+		description: "O grupo pode usar canais aquáticos"
 	},
 	{
 		type: "Team",
@@ -139,8 +127,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 2.0,
-		description: "Duplica os pontos ganhos no quarto",
-		date: new Date()
+		description: "Duplica os pontos ganhos no quarto"
 	},
 	{
 		type: "Team",
@@ -149,8 +136,7 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "Restaura duas barras de energia",
-		date: new Date()
+		description: "Restaura duas barras de energia"
 	},
 	{
 		type: "Team",
@@ -159,7 +145,6 @@ db.badges.insert([
 		pointsType: "HP",
 		image: '',
 		percentage: 1.0,
-		description: "TBD",
-		date: new Date()
+		description: "TBD"
 	}
 ]);
