@@ -10,8 +10,8 @@ Step 3-> load(".database/initChallenges.js")
 
 //Challenges
 db.challenges.drop();
-db.createCollection("activity");
-db.activity.insert([
+db.createCollection("challenges");
+db.challenges.insert([
 	{
 		name: "Avatar",
 		points: 50,

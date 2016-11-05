@@ -153,8 +153,8 @@ db.academy.insert({
 
 //Challenges
 db.challenges.drop();
-db.createCollection("activity");
-db.activity.insert({
+db.createCollection("challenges");
+db.challenges.insert({
 	name: "kahoot",
 	points: 100,
 	pointType: "XP"
