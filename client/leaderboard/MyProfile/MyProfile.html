@@ -48,17 +48,55 @@
                       <h4>My Badges</h4>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 3.5em;">     
-                   {{#each myBadges}}         
-                   <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                <div class="row" style="margin-top: 3.5em;">                 
+                  <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
                       <div class="row">
-                        <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto;" src='{{this.image}}' alt="Avatar...">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
                       </div>
                       <div class="row">
-                        <h3>{{this.count}}</h3>
+                        <h3>1</h3>
                       </div>                      
                     </div>
-                    {{/each}}
+                    <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>0</h3>
+                      </div>         
+                    </div>
+                    <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>2</h3>
+                      </div>         
+                    </div>
+                    <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>0</h3>
+                      </div>         
+                    </div>
+                    <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>3</h3>
+                      </div>         
+                    </div>
+                    <div class="col-md-2" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/60x60" alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>0</h3>
+                      </div>         
+                    </div>
                 </div>
               </div>
               <div class="col-md-3">
@@ -69,10 +107,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-7" style="padding-right: 0px;">
-                      <img class="img avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto; height: 75px; width: 75px;" src="/like2.svg" alt="Avatar...">
+                      <img class="img avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto; height: 75px; width: 75px;" src="/like2.svg" alt="Avatar...">
                     </div>
                     <div class="col-md-5" style="text-align: center; padding-left: 0px; margin-top: 1.0em;">
-                      <h3>123</h3>
+                      <h3>{{tapMyBackScore 21000}}</h3>
                     </div>
                 </div>
               </div>
@@ -84,13 +122,13 @@
               <!-- 
               {{> highchartsHelper chartId="playerSkills" chartWidth="80%" charHeight="80%" chartObject=playerSkillsChart}}
               -->
-               <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;     display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+               <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none;     display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
               </div>
             </div>
             <div class="row">
               <div class="col-md-12" style="text-align: center;">
                 <h2>Team Points</h2>
-                <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;    display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+                <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none;    display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
               </div>
             </div>
           </div>
