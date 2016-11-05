@@ -49,9 +49,9 @@ Template.MyDashboard.helpers({
 
 		sortArrOfObjectsByParam(users, "totalScore", false);
 
-		var average_points = (total_points/total_users);
+		var average_points = (total_points/total_users - 1); //-1 por causa do formador
 
-		var userScores = {users:users, avg: parseInt(average_points)};
+		var userScores = {users: users, avg: parseInt(average_points)};
 
 		return userScores;
 	}
