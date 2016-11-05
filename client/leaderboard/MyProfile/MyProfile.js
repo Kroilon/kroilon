@@ -74,14 +74,57 @@ Template.MyProfile.playerSkillsChart = function() {
 
 Template.MyProfile.helpers({
 
-    tapMyBackScore(nb)
+    tapMyBackScore()
     {
+        var nb = Session.get("loggedUser")[0].nb;
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
         var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
 
         return user[0].counter;
     },
 
+
+    tapSkillsPeople(){
+        var nb = Session.get("loggedUser")[0].nb;
+        console.log("MEULOG " + nb)
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].people;
+    },
+
+    tapSkillsCommunication(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].communication;
+    },
+    
+    tapSkillsProblemSolving(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].problemSolving;
+    },
+    
+    tapSkillsManagement(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].management;
+    },
+    
+    tapSkillsAndroid(){
+         var nb = Session.get("loggedUser")[0].nb;
+         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+        var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+        return user[0].skills[0].android;
+    },
+    
    	score()
   	{
         var nb = Session.get("loggedUser")[0].nb
