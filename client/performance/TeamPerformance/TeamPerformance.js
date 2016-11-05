@@ -187,7 +187,6 @@ Template.TeamPerformance.helpers({
     }
 });
 
-Template.TeamPerformance.events({
 /*
 Helpers came outside in order to be used inside other configurations
 like "playerSkillsChart".

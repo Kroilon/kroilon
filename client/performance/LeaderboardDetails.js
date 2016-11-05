@@ -158,6 +158,20 @@ Template.LeaderboardDetails.helpers({
 		// If you don't provide an active tab, the first one is selected by default.
 		// See the `advanced use` section below to learn about dynamic tabs.
 		return Session.get('activeTab'); // Returns "people", "places", or "things".
+	},
+	isShowing: function(tab)
+	{
+		var session = Session.get('showingTab');
+		if(session === undefined){
+
+			Session.set('showingTab', 'search');
+			return true;
+		}
+		else 
+		{
+
+			return true;
+		}
 	}
 });
 

@@ -1,0 +1,15 @@
+<template name="LeaderboardPersonalGraph">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> highchartsHelper chartId="test" chartWidth="80%" charHeight="100%" chartObject=playerChart}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Team Score - {{ TeamScore }} </h2>
+            </div>
+        </div>
+    </div>
+</template>
