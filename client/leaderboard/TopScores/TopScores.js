@@ -5,88 +5,93 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
 Template.TopScores.helpers({
-	userHealthScores() {
 
+	characters() {
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var users = latestAcademy.users;
 
-		var total_points = 0;
-
-		$.each(users, function(index_users, value_users){
-
-			var user_points = 0;
-
-			$.each(value_users.score, function(index_score, value_score){
-
-				if(value_score.category=="HP"){
-					user_points += value_score.points;
-				}
-
-			});
-
-			value_users.totalHealthScore = user_points;
-			total_points += user_points;
-		});
-
-		sortArrOfObjectsByParam(users, "totalHealthScore", false);
-
-		return users;
+		return latestAcademy.users;
 	},
-	userKnowledgeScores() {
+
+	score(nb)
+  	{
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+
+		var user_points = 0;
+
+		$.each(user[0].score, function(index, value){
+			user_points += value.points;
+		});
+
+		return user_points;
+  	},
+
+	userHealthScores(nb) {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var users = latestAcademy.users;
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+		
+		var user_points = 0;
 
-		var total_points = 0;
+		$.each(user[0].score, function(index, value){
 
-		$.each(users, function(index_users, value_users){
-
-			var user_points = 0;
-
-			$.each(value_users.score, function(index_score, value_score){
-
-				if(value_score.category=="KP"){
-					user_points += value_score.points;
+			if(value.pointsType=="HP"){
+					user_points += value.points;
 				}
 
 			});
 
-			value_users.totalKnowledgeScore = user_points;
-			total_points += user_points;
-		});
+		
 
-		sortArrOfObjectsByParam(users, "totalKnowledgeScore", false);
-
-		return users;
+		return user_points;
 	},
-	userExperienceScores() {
+	userKnowledgeScores(nb) {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var users = latestAcademy.users;
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+		
+		var user_points = 0;
 
-		var total_points = 0;
+		$.each(user[0].score, function(index, value){
 
-		$.each(users, function(index_users, value_users){
-
-			var user_points = 0;
-
-			$.each(value_users.score, function(index_score, value_score){
-
-				if(value_score.category=="XP"){
-					user_points += value_score.points;
+			if(value.pointsType=="KP"){
+					user_points += value.points;
 				}
 
 			});
 
-			value_users.totalExperienceScore = user_points;
-			total_points += user_points;
-		});
+		sortArrOfObjectsByParam(user, "totalKnowledgeScore", false);
 
-		sortArrOfObjectsByParam(users, "totalExperienceScore", false);
+		return user_points;
+	},
+	userExperienceScores(nb) {
 
-		return users;
-	}
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+		
+		var user_points = 0;
+
+		$.each(user[0].score, function(index, value){
+
+			if(value.pointsType=="XP"){
+					user_points += value.points;
+				}
+
+			});
+		sortArrOfObjectsByParam(user, "totalExperienceScore", false);
+
+		return user_points;
+	},
+
+	sorting_value: function(){
+	return_.chain(latestAcademy.find().fetch())
+	.sortBy('points')
+	.value();
+
+}
 });
+
+
 
 Template.TopScores.events({
 

@@ -143,4 +143,6 @@ Template.TabCharacter.events({
     Modal.show('editCharacterModal', this);
   }
 
+
+
 });
