@@ -15,7 +15,7 @@ db.academy.insert({
 	name: "Kroilon Test",
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
-	date:new Date(),
+	date: new Date(),
 	energyLevel: 5,
 	teamChallengeScore: [{
 		date: new Date(),
@@ -23,22 +23,22 @@ db.academy.insert({
 		points: "2979"
 	}],
 	teamScore: [{
-		date:new Date(),
+		date: new Date(),
 		points: "3534"
 	}],
 	pe: [{
-			challenge: "All in Time",
-			value: 50,
-			badge: ""
+		challenge: "All in Time",
+		value: 50,
+		badge: ""
 		}],
-	users:[
+	users: [
 		{
 			nb: "nb22634",
-			name:"Afonso Correia Sousa",
+			name: "Afonso Correia Sousa",
 			avatar: "AfonsoSousa.jpg",
 			email: "afonsosousa0@gmail.com",
 			password: "12345",
-			score:[
+			score: [
 				{
 					date: new Date(),
 					challenge: "kahoot",
@@ -54,29 +54,37 @@ db.academy.insert({
 			],
 			profile: "Trainee",
 			mbti: "ENTJ",
-			skills:[{
-					people: 7,
-					communication: 8,
-					problemSolving: 8,
-					manegement:7,
-					android:1
-				}]
+			skills: [{
+				people: 7,
+				communication: 8,
+				problemSolving: 8,
+				manegement: 7,
+				android: 1
+			}]
 		},
 		{
 			nb: "formador",
-			name:"admin",
+			name: "admin",
 			avatar: "",
 			email: "",
-			password: "academiasantarem",
+			password: "123",
+			profile: "Admin"
+		},
+		{
+			nb: "formador1",
+			name: "admin",
+			avatar: "",
+			email: "",
+			password: "123",
 			profile: "Admin"
 		},
 		{
 			nb: "nb22756",
-			name:"Anabela Araújo Rodrigues",
+			name: "Anabela Araújo Rodrigues",
 			avatar: "Anabela.jpg",
 			email: "anabelarodrigues1993@gmail.com",
 			password: "12345",
-			score:[
+			score: [
 				{
 					date: new Date(),
 					challenge: "kahoot",
@@ -84,7 +92,7 @@ db.academy.insert({
 					points: 20
 				},
 				{
-					date: new Date(2017,09),
+					date: new Date(2017, 09),
 					challenge: "daily coiso",
 					category: "KP",
 					points: 50
@@ -92,35 +100,35 @@ db.academy.insert({
 			],
 			profile: "Trainee",
 			mbti: "ENTJ",
-			skills:[{
-					people: 7,
-					communication: 7,
-					problemSolving: 8,
-					manegement:7,
-					android:9
-				}]
+			skills: [{
+				people: 7,
+				communication: 7,
+				problemSolving: 8,
+				manegement: 7,
+				android: 9
+			}]
 		},
 		{
 			nb: "nb22758",
-			name:"André Gonçalo Ferreira",
+			name: "André Gonçalo Ferreira",
 			avatar: "AndreFerreira.jpg",
 			email: "andre_ferreira815@hotmail.com",
 			password: "12345",
-			score:[{
-					date: new Date(),
-					challenge: "kahoot",
-					category: "HP",
-					points: 20
-				}],
+			score: [{
+				date: new Date(),
+				challenge: "kahoot",
+				category: "HP",
+				points: 20
+			}],
 			profile: "Trainee",
 			mbti: "ESTJ",
-			skills:[{
-					people: 7,
-					communication: 9,
-					problemSolving: 7,
-					manegement:7,
-					android:1
-				}]
+			skills: [{
+				people: 7,
+				communication: 9,
+				problemSolving: 7,
+				manegement: 7,
+				android: 1
+			}]
 		}
 	]
 });

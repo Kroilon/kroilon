@@ -6,13 +6,9 @@
         <!--<div class="btn-group">
             <a class="btn">Login</a>
 		</div> -->
-    </div>	
+    </div>
 
-    {{#if isLoggedIn}}
-
-    {{else}}
-	   {{> HomeLogin}}
-	<!-- {{> HomeFooter}}-->
+    {{#if isLoggedIn}} {{else}} {{> HomeLogin}}
+    <!-- {{> HomeFooter}}-->
     {{/if}}
-    
 </template>
