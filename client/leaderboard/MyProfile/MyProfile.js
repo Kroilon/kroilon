@@ -29,7 +29,7 @@ Template.MyProfile.playerSkillsChart = function () {
         },
 
         pane: {
-            size: '80%'
+            size: '60%'
         },
 
         xAxis: {
@@ -51,9 +51,9 @@ Template.MyProfile.playerSkillsChart = function () {
         },
 
         legend: {
-            align: 'right',
+            align: 'center',
             verticalAlign: 'top',
-            y: 70,
+            y: 40,
             layout: 'vertical'
         },
 
@@ -64,13 +64,18 @@ Template.MyProfile.playerSkillsChart = function () {
         series: [{
             showInLegend: false,
             name: 'Skills',
-            data: [5, 9, 6, 9, 2],
-            pointPlacement: 'on'
+            data: [
+                tapSkillsPeople(),
+                tapSkillsCommunication(),
+                tapSkillsProblemSolving(),
+                tapSkillsManagement(),
+                tapSkillsAndroid()
+            ],
+            pointPlacement: 'on',
+            padding: 0
         }]
     };
 };
-
-
 
 Template.MyProfile.helpers({
 
