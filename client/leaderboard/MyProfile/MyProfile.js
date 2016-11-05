@@ -146,6 +146,43 @@ Template.MyProfile.helpers({
 
         return name;
     },
+    myBadges() {
+        var nb = Session.get("loggedUser")[0].nb
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var user = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+        var badges = new Array();
+
+        user[0].score.forEach( function(score){
+            if(score.type === "badge"){
+                var badgeName = score.name;
+                var badge = Badges.find( {"name":badgeName} ).fetch();
+
+                if(badge !== undefined && badge.name !== ""){
+                    if(badges.length>0){
+                        var check = false;
+                        badges.forEach(function(n){
+                            if(n.name === badge[0].name){
+                                var count = parseInt(n.count);
+                                count++;
+                                n.count = count;
+                                check = true;
+                            }
+                        });
+
+                        if(!check){
+                            var newBadge = {'name':badge[0].name,'image':badge[0].image,'count':1};
+                            badges.push(newBadge);
+                        }
+                    } else{
+                        var newBadge = {'name':badge[0].name,'image':badge[0].image,'count':1};
+                        badges.push(newBadge);
+                    }
+                }
+            }
+        });
+
+        return badges;
+    }
 });
 
 /*
