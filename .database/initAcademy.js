@@ -13,26 +13,19 @@ db.academy.drop();
 db.createCollection("academy");
 db.academy.insert({
 	name: "Academy Setembro 2016",
+	date:new Date(),
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
 	currentRoom: "Coachroach Entry",
-	date:new Date(),
+	countDays: 4,
 	energyLevel: 5,
-	teamChallengeScore: [{
-		date: new Date(),
-		challenge: "CH_001_01",
-		description: "On-boarding",
-		points: "100"
-	}],
-	teamScore: [{
+	TeamScore: [{
 		date:new Date(),
-		points: "100"
+		TeamChallenge: "CH_001_01",
+		TeamPoints: "100",
+		Badge: "",
+		Room: "Coachroach Entry"
 	}],
-	pe: [{
-			challenge: "All in Time",
-			value: 50,
-			badge: ""
-		}],
 	users:[
 		{
 			nb: "formador",
@@ -63,18 +56,21 @@ db.academy.insert({
 			}],
 			counter: 8,
 			voted: false,
+			atrasos: 2,
 			score:[
 				{					
-					challenge: "Kahoot 1st",
+					date: new Date(),
+					CountType: 1,
+					Activity/Badge: "Kahoot 1st",
 					points: 20,
-					pointsType: "HP",
-					date: new Date()					
+					pointsType: "HP"										
 				},
 				{					
-					challenge: "Egg",					
-					points: 320,
-					pointsType: "KP",
 					date: new Date(2015, 02),
+					CountType: 1,
+					Activity/Badge: "Egg",					
+					points: 320,
+					pointsType: "KP"					
 				}
 			]			
 		},
@@ -99,18 +95,21 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos: 0,
 			score:[
-				{					
-					challenge: "Autoavaliação",					
+				{	
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Autoavaliação",					
 					points: 50,
-					pointsType: "HP",
-					date: new Date()
+					pointsType: "HP"					
 				},
 				{
-					challenge: "Wells&Cans",					
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Wells&Cans",					
 					points: 600,
-					pointsType: "XP",
-					date: new Date()
+					pointsType: "XP"
 				}
 			]			
 		},
@@ -135,12 +134,14 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos: 1,
 			score:[
 				{					
-					challenge: "Kahoot 2st",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Kahoot 1st",
 					points: 15,
-					pointsType: "HP",
-					date: new Date()					
+					pointsType: "HP"					
 				}
 			],
 			
@@ -167,18 +168,21 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:0,
 			score:[
 				{					
-					challenge: "Kahoot 3st",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Kahoot 3st",
 					points: 10,
-					pointsType: "HP",
-					date: new Date()					
+					pointsType: "HP"					
 				},
 				{					
-					challenge: "Autoavaliação",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Autoavaliação",
 					points: 50,
-					pointsType: "HP",
-					date: new Date()					
+					pointsType: "HP"			
 				}
 			]
 		},
@@ -203,16 +207,19 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:1,
 			score:[
 				{
-					date: new Date(),
-					challenge: "Kahoot-2nd",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Kahoot-2nd",
 					category: "KP",
 					points: 40
 				},
 				{
-					date: new Date(2015, 02),
-					challenge: "Wells&Cans",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Wells&Cans",
 					category: "XP",
 					points: 600
 				}
@@ -239,10 +246,12 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:0,
 			score:[
 				{
-					date: new Date(),
-					challenge: "Voluntário LipSync Battle",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Voluntário LipSync Battle",
 					category: "HP",
 					points: 50
 				}
@@ -269,10 +278,12 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:0,
 			score:[
 				{
-					date: new Date(),
-					challenge: "Voluntário Android",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Voluntário Android",
 					category: "HP",
 					points: 50
 				}
@@ -299,22 +310,26 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:0,
 			score:[
 				{
-					date: new Date(),
-					challenge: "Voluntário Medley",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Voluntário Medley",
 					category: "HP",
 					points: 50
 				},
 				{
-					date: new Date(),
-					challenge: "Penalizacao",
+					date: new Date(),			
+					CountType: 0,
+					Activity/Badge: "Penalizacao",
 					category: "HP",
 					points: -10
 				},
 				{
-					date: new Date(2015, 02),
-					challenge: "Wells&Cans",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Wells&Cans",
 					category: "XP",
 					points: 600
 				}
@@ -341,18 +356,21 @@ db.academy.insert({
 			}],
 			counter: 0,
 			voted: false,
+			atrasos:3,
 			score:[
 				{
-					date: new Date(),
-					challenge: "Kahoot-2nd",
+					date: new Date(),			
+					CountType: 1,
+					Activity/Badge: "Kahoot-2nd",
 					category: "KP",
 					points: 40
 				},
 				{
-					date: new Date(),
-					challenge: "Atraso",
+					date: new Date(),			
+					CountType: 0,
+					Activity/Badge: "Soneca",
 					category: "HP",
-					points: -10
+					points: -50
 				}
 			]
 		}
