@@ -2,7 +2,9 @@
 FlowRouter.route('/', {
     name: 'home',
     action() {
-        BlazeLayout.render("HomeLayout", {main: "Home"});
+        BlazeLayout.render("HomeLayout", {
+            main: "Home"
+        });
     }
 });
 
@@ -10,34 +12,44 @@ FlowRouter.route('/', {
 FlowRouter.route('/dashboard', {
     name: 'dashboard',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Dashboard"});
+        BlazeLayout.render("AppLayout", {
+            main: "Dashboard"
+        });
     }
 });
 
 FlowRouter.route('/login', {
     name: 'login',
     action() {
-        BlazeLayout.render("LoginLayout", {main: "Login"});
+        BlazeLayout.render("LoginLayout", {
+            main: "Login"
+        });
     }
 });
 
 // Characters
 FlowRouter.route('/characters/:page', {
     name: 'characters',
-    action: function(params, queryParams){
-      BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    action: function (params, queryParams) {
+        BlazeLayout.render("CharactersLayout", {
+            main: "Characters"
+        });
     }
 });
 FlowRouter.route('/character/:nb', {
     name: 'character',
-    action: function(params, queryParams){
-      BlazeLayout.render("CharacterLayout", {main: "Character"});
+    action: function (params, queryParams) {
+        BlazeLayout.render("CharacterLayout", {
+            main: "Character"
+        });
     }
 });
 FlowRouter.route('/characters', {
     name: 'characters',
-    action(){
-      BlazeLayout.render("CharactersLayout", {main: "Characters"});
+    action() {
+        BlazeLayout.render("CharactersLayout", {
+            main: "Characters"
+        });
     }
 });
 
@@ -45,41 +57,18 @@ FlowRouter.route('/characters', {
 FlowRouter.route('/map', {
     name: 'map',
     action() {
-      BlazeLayout.render("MapLayout", {main: "Map"});
+        BlazeLayout.render("MapLayout", {
+            main: "Map"
+        });
     }
 });
 
-// Leaderboard_dash Page
-FlowRouter.route('/leaderboard_dash', {
-    name: '/leaderboard_dash',
-	waitOn: function () {
-        return Meteor.subscribe('academy');
-    },
+FlowRouter.route('/performance', {
+    name: '/performance',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Leaderboard_dash"});
-    }
-});
-
-// Leaderboard_tops Page
-FlowRouter.route('/leaderboard_tops', {
-    name: '/leaderboard_tops',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "Leaderboard_tops"});
-    }
-});
-
-FlowRouter.route('/leaderboard', {
-    name: '/leaderboard',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "Leaderboard"});
-    }
-});
-
-// Leaderboard_tops Page
-FlowRouter.route('/test', {
-    name: '/test',
-    action() {
-        BlazeLayout.render("TestLayout", {main: "Test"});
+        BlazeLayout.render("AppLayout", {
+            main: "LeaderboardDetails"
+        });
     }
 });
 
@@ -87,40 +76,52 @@ FlowRouter.route('/test', {
 FlowRouter.route('/addactivity', {
     name: 'addactivity',
     action() {
-        BlazeLayout.render("AppLayout", {main: "AddActivity"});
+        BlazeLayout.render("AppLayout", {
+            main: "AddActivity"
+        });
     }
 });
 
 FlowRouter.route('/management', {
     name: 'management',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Management"});
+        BlazeLayout.render("AppLayout", {
+            main: "Management"
+        });
     }
 });
 
 FlowRouter.route('/kahoot', {
     name: 'kahoot',
     action() {
-        BlazeLayout.render("KahootLayout", {main: "Kahoot"});
+        BlazeLayout.render("KahootLayout", {
+            main: "Kahoot"
+        });
     }
 });
 FlowRouter.route('/story', {
     name: '/story',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Story"});
+        BlazeLayout.render("AppLayout", {
+            main: "Story"
+        });
     }
 });
 
 FlowRouter.route('/rules', {
     name: '/rules',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Rules"});
+        BlazeLayout.render("AppLayout", {
+            main: "Rules"
+        });
     }
 });
 
 FlowRouter.route('/secrets', {
     name: '/secrets',
     action() {
-        BlazeLayout.render("AppLayout", {main: "Secrets"});
+        BlazeLayout.render("AppLayout", {
+            main: "Secrets"
+        });
     }
 });

@@ -1,0 +1,23 @@
+<template name="LeaderboardDetails">
+	<h2 style="font-weight: 100;">Performance Overall</h2>
+	<br>
+	{{#basicTabs name="" tabs=tabs}}
+
+        {{#tabContent slug="leaderboard"}}
+            {{> Leaderboard}}
+        {{/tabContent}}
+
+        {{#tabContent slug="teamPerformance"}}
+            {{> TeamPerformance}}
+        {{/tabContent}}
+
+        {{#tabContent slug="topScores"}}
+            {{> TopScores}}
+        {{/tabContent}}
+
+        {{#tabContent slug="playerPoints"}}
+            {{> TablePlayerPoints}}
+        {{/tabContent}}
+
+    {{/basicTabs}}
+</template>

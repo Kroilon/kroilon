@@ -46,6 +46,18 @@ db.academy.insert({
 					points: 20
 				},
 				{
+					date: new Date(),
+					challenge: "kahoot",
+					category: "HP",
+					points: 23
+				},
+				{
+					date: new Date(2015, 02),
+					challenge: "kahoot",
+					category: "HP",
+					points: 40
+				},
+				{
 					date: new Date(2015, 02),
 					challenge: "kahoot",
 					category: "KP",
