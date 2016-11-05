@@ -8,6 +8,14 @@ Template.TableAcademy.helpers({
     return academies;
   },
 
+  totalPlayers: function (data) {
+    if (data.length === 0) {
+      return 0;
+    } else {
+      return data.length;
+    }
+  },
+
   isActive: function (flag) {
       return flag !== true
   }
@@ -30,6 +38,12 @@ Template.TableAcademy.events({
     } else {
       Modal.show('deleteAcademyModal', this);
     }
+  },
+
+  'click #activateAcademy' (event){    
+    event.preventDefault();  
+
+    alert('Academy activated');
 
   }
 

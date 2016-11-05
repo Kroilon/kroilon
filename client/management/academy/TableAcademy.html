@@ -16,7 +16,7 @@
                     <th class="col-md-4"><span style="color:black;">Academy</span></th>
                     <th class="col-md-2"><span style="color:black;">Players</span></th>
                     <th class="col-md-2"><span style="color:black;">Score</span></th>
-                    <th class="col-md-2"><span style="color:black;">Active</span></th>
+                    <th class="col-md-2"><span style="color:black;">Activate</span></th>
                     <th class="col-md-2"><span style="color:black;">Remove</span></th>
                   </tr>
                 </thead>
@@ -24,7 +24,7 @@
                   {{#each academies}}
                     <tr class="divRow">
                       <td id="descriptionSecret">{{name}}</td>
-                      <td>36</td>
+                      <td>{{totalPlayers users}}</td>
                       <td>5679</td>
                       <td>
                         <a style="color: #de4f4f" href="" id="activateAcademy">
