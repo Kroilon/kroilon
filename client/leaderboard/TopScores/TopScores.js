@@ -6,89 +6,61 @@ import { Badges } from '/imports/api/databasedriver.js';
 
 Template.TopScores.helpers({
 
-	characters() {
+	userHealthScores() {
+
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
-		return latestAcademy.users;
-	},
-
-	score(nb)
-  	{
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
-
-		var user_points = 0;
-
-		$.each(user[0].score, function(index, value){
-			user_points += value.points;
+		var users = latestAcademy.users;
+		var userHealthScores = [];
+		var totalHealthPoints = 0;
+		$.each(users, function(idx_players, val_players)
+		{
+			var scores = users[idx_players].score;
+			var nb = users[idx_players].nb;
+			if (scores != undefined) {
+				totalHealthPoints = calc_HP_KP_XP(nb, "HP");
+				userHealthScores.push({"name":val_players.name, "avatar":val_players.avatar, "points":totalHealthPoints});
+				userHealthScores.sort(function(a,b){return b.points-a.points});
+			}			
 		});
-
-		return user_points;
-  	},
-
-	userHealthScores(nb) {
-
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
-		
-		var user_points = 0;
-
-		$.each(user[0].score, function(index, value){
-
-			if(value.pointsType=="HP"){
-					user_points += value.points;
-				}
-
-			});
-
-		
-
-		return user_points;
-	},
-	userKnowledgeScores(nb) {
-
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
-		
-		var user_points = 0;
-
-		$.each(user[0].score, function(index, value){
-
-			if(value.pointsType=="KP"){
-					user_points += value.points;
-				}
-
-			});
-
-		sortArrOfObjectsByParam(user, "totalKnowledgeScore", false);
-
-		return user_points;
-	},
-	userExperienceScores(nb) {
-
-		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
-		
-		var user_points = 0;
-
-		$.each(user[0].score, function(index, value){
-
-			if(value.pointsType=="XP"){
-					user_points += value.points;
-				}
-
-			});
-		sortArrOfObjectsByParam(user, "totalExperienceScore", false);
-
-		return user_points;
+		return userHealthScores;
 	},
 
-	sorting_value: function(){
-	return_.chain(latestAcademy.find().fetch())
-	.sortBy('points')
-	.value();
+	userKnowledgeScores() {
 
-}
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var users = latestAcademy.users;
+		var userKnowledgeScores = [];
+		var totalKnowledgePoints = 0;
+		$.each(users, function(idx_players, val_players)
+		{
+			var scores = users[idx_players].score;
+			var nb = users[idx_players].nb;
+			if (scores != undefined) {
+				totalKnowledgePoints = calc_HP_KP_XP(nb, "KP");
+				userKnowledgeScores.push({"name":val_players.name, "avatar":val_players.avatar, "points":totalKnowledgePoints});
+				userKnowledgeScores.sort(function(a,b){return b.points-a.points});
+			}			
+		});
+		return userKnowledgeScores;
+	},
+	userExperienceScores() {
+
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var users = latestAcademy.users;
+		var userExperienceScores = [];
+		var totalExperiencePoints = 0;
+		$.each(users, function(idx_players, val_players)
+		{
+			var scores = users[idx_players].score;
+			var nb = users[idx_players].nb;
+			if (scores != undefined) {
+				totalExperiencePoints = calc_HP_KP_XP(nb, "XP");
+				userExperienceScores.push({"name":val_players.name, "avatar":val_players.avatar, "points":totalExperiencePoints});
+				userExperienceScores.sort(function(a,b){return b.points-a.points});
+			}			
+		});
+		return userExperienceScores;
+	},
 });
 
 
@@ -97,6 +69,20 @@ Template.TopScores.events({
 
   
 });
+
+function calc_HP_KP_XP(nb, pointsType){
+
+	var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+	var user = $.grep(latestAcademy.users, function(e){ return e.nb == nb; });
+	var user_points = 0;
+
+	$.each(user[0].score, function(index, value){
+		if(value.pointsType==pointsType){
+				user_points += value.points;
+			}
+	});
+	return user_points;
+}
 
 function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
     if(sortAscending == undefined) sortAscending = true;  // default to true
