@@ -4,20 +4,7 @@
 	{{#basicTabs name="" tabs=tabs}}
 
         {{#tabContent slug="leaderboard"}}
-        
-        {{#if isShowing search}}
             {{> Leaderboard}}
-
-        {{else}}
-            {{#if isShowing details}}
-                {{> LeaderboardPerformance}}
-
-            {{else}} 
-            <!-- {{#if isShowing graph}} -->
-                {{> LeaderboardPersonalGraph}}
-            {{/if}}
-        {{/if}}
-
         {{/tabContent}}
 
         {{#tabContent slug="teamPerformance"}}

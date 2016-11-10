@@ -4,15 +4,16 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+
 function getUniqueValuesOfKey(array, key) {
-    return array.reduce(function (carry, item) {
+    return array.reduce(function(carry, item) {
         if (item[key] && !~carry.indexOf(item[key])) carry.push(item[key]);
         return carry;
     }, []);
 }
 
 
-Template.Leaderboard.playerChart = function () {
+Template.Leaderboard.playerChart = function() {
 
     var userSession = Session.get('loggedUser');
     var currentUser = userSession[0];
@@ -41,7 +42,7 @@ Template.Leaderboard.playerChart = function () {
                 text: 'Points'
             },
             labels: {
-                formatter: function () {
+                formatter: function() {
                     return this.value;
                 }
             },
@@ -93,8 +94,8 @@ Template.Leaderboard.helpers({
         var result = [];
         var sum = 0;
 
-        $.each(users, function (index, user) {
-            $.each(user.score, function (index, score) {
+        $.each(users, function(index, user) {
+            $.each(user.score, function(index, score) {
                 sum += score.points;
             });
             result.push({
@@ -103,7 +104,7 @@ Template.Leaderboard.helpers({
                     name: user.name
                 },
                 totalScore: sum
-            })
+            });
             sum = 0;
         });
         return result;
@@ -115,12 +116,12 @@ Template.Leaderboard.helpers({
         var total_users = users.length;
         var total_points = 0;
 
-        $.each(users, function (index_users, value_users) {
+        $.each(users, function(index_users, value_users) {
 
             var user_points = 0;
 
             if (value_users.score != undefined) {
-                $.each(value_users.score, function (index_score, value_score) {
+                $.each(value_users.score, function(index_score, value_score) {
                     user_points += value_score.points;
                 });
             }
@@ -132,23 +133,43 @@ Template.Leaderboard.helpers({
 
         var average_points = (total_points / total_users - 1);
         return parseInt(average_points);
-    },
-    setTab(value) {
-
-        Session.set('showingTab', value);
     }
+});
+
+
+ // Register a function to be called 
+ // when an instance of this template 
+ //is inserted into the DOM.
+Template.Leaderboard.onRendered(function () {
+  $('.LeaderboardPerformance').hide();
+  $('.LeaderboardPersonalGraph').hide();
 
 });
 
-Template.Leaderboard.events({
-    '.profile click': function (event) {
 
-		Session.set('showingTab', 'details');
-	},
-    '.graph click': function (event) {
-		Session.set('showingTab', 'graph');
-     },
-     '.back click': function (event) {
-		Session.set('showingTab', 'search');
-     }
+Template.Leaderboard.events({
+
+    //Act when the personal performance board icon is clicked
+    "click .profile": (event) => {
+        $('.LeaderboardPerformance').show();
+        $('.LeaderboardPersonalGraph').hide();
+        $('.MainBoard').hide();
+        $(".lead_into_leaderboard").show();
+    },
+
+    //Act when the personal performance graph icon is clicked
+    "click .graph": (event) => {
+        $('.LeaderboardPersonalGraph').show();
+        $('.LeaderboardPerformance').hide();
+        $('.MainBoard').hide();
+        $(".lead_into_leaderboard").show();
+    },
+    
+    //go back to the start - the main board
+    "click .lead_into_leaderboard": (event) => {
+        $('.LeaderboardPerformance').hide();
+        $('.LeaderboardPersonalGraph').hide();
+        $(".lead_into_leaderboard").hide();
+        $('.MainBoard').show();
+    }
 });

@@ -159,21 +159,16 @@ Template.LeaderboardDetails.helpers({
 		// See the `advanced use` section below to learn about dynamic tabs.
 		return Session.get('activeTab'); // Returns "people", "places", or "things".
 	},
-	isShowing: function(tab)
-	{
-		var session = Session.get('showingTab');
-		if(session === undefined){
-
-			Session.set('showingTab', 'search');
-			return true;
-		}
-		else 
-		{
-
-			return true;
-		}
+	isShowing: function (tab) {
+		return Session.equals('showingTab', tab);
 	}
 });
+
+
+//default state when the template is created
+Template.LeaderboardDetails.onCreated = function () {
+	Session.setDefault('showingTab', 'search');
+};
 
 
 Template.LeaderboardDetails.events({

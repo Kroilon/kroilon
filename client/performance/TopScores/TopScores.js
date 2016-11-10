@@ -88,8 +88,7 @@ function calc_HP_KP_XP(nb, pointsType) {
 	return user_points;
 }
 
-function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
-	if (sortAscending == undefined) sortAscending = true;  // default to true
+function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending = true) {
 
 	if (sortAscending) {
 		arrToSort.sort(function (a, b) {
