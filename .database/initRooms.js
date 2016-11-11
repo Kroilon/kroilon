@@ -14,14 +14,14 @@ db.createCollection("rooms");
 db.rooms.insert([
 	{
 		name: "Coachroach Entry",
-		DailyDescription:"",
+		dailyDecision:"Coachroach Entry decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Project Room",
-		DailyDescription:"",
+		dailyDecision:"Project Room decision...",
 		badges: [
 			{
 				name: "BOAT"
@@ -30,28 +30,28 @@ db.rooms.insert([
 	},
 	{
 		name: "Wandering Wall",
-		DailyDescription:"",
+		dailyDecision:"Wandering Wall decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Nowayout Corridor",
-		DailyDescription:"",
+		dailyDecision:"Nowayout Corridor decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Death Corridor",
-		DailyDescription:"",
+		dailyDecision:"Death Corridor decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Adolph Room",
-		DailyDescription:"",
+		dailyDecision:"Adolph Room decision...",
 		badges: [
 			{
 				name: "BOAT"
@@ -60,7 +60,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Stormillor Hall",
-		DailyDescription:"",
+		dailyDecision:"Stormillor Hall decision...",
 		badges: [
 			{
 				name: "SWORD"
@@ -69,14 +69,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Diaz Krez Arena",
-		DailyDescription:"",
+		dailyDecision:"Diaz Krez Arena decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Kalu Hall",
-		DailyDescription:"",
+		dailyDecision:"Kalu Hall decision...",
 		badges: [
 			{
 				name: "FOOD"
@@ -85,7 +85,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Ristar Room",
-		DailyDescription:"",
+		dailyDecision:"Ristar Room decision...",
 		badges: [
 			{
 				name: "FOOD"
@@ -94,7 +94,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Stormillor Dungeons",
-		DailyDescription:"",
+		dailyDecision:"Stormillor Dungeons decision...",
 		badges: [
 			{
 				name: "MYSTERY"
@@ -103,14 +103,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Normingor Room A",
-		DailyDescription:"",
+		dailyDecision:"Normingor Room A decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Diktaur Room",
-		DailyDescription:"",
+		dailyDecision:"Diktaur Room decision...",
 		badges: [
 			{
 				name: "DOUBLE"
@@ -119,14 +119,14 @@ db.rooms.insert([
 	},
 	{
 		name: "Normingor Room B",
-		DailyDescription:"",
+		dailyDecision:"Normingor Room B decision...",
 		badges: [
 			{}
 			]
 	},
 	{
 		name: "Almusther Room",
-		DailyDescription:"",
+		dailyDecision:"Almusther Room decision...",
 		badges: [
 			{
 				name: "FOOD"
@@ -135,7 +135,7 @@ db.rooms.insert([
 	},
 	{
 		name: "Performanthor Room",
-		DailyDescription:"",
+		dailyDecision:"Performanthor Room decision...",
 		badges: [
 			{}
 			]

@@ -13,99 +13,100 @@ db.secrets.drop();
 db.createCollection("secrets");
 db.secrets.insert([
 	{
-		description: "Primeiro segredo",
+		date: new Date(),
 		nb: "nb21000",
 		name:"Afonso Correia Sousa",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Primeiro segredo",
+		challenge: "Submit secret",
+		discovered: false
 	},
 	{
-		description: "Segundo segredo",
+		date: new Date(),
 		nb: "nb21001",
 		name:"Anabela Araújo Rodrigues",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Segundo segredo",
+		challenge: "Submit secret",
+		discovered: false
 	},
 	{
-		description: "Terceiro segredo",
+		date: new Date(),
 		nb: "nb21002",
 		name:"André Gonçalo Ferreira",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Terceiro segredo",
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Quarto segredo",
+		date: new Date(),
 		nb: "nb21003",
 		name:"Andreia Alves",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Quarto segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Quinto segredo",
+		date: new Date(), 
 		nb: "nb21004",
 		name:"Catarina Oliveira",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Quinto segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Sexto segredo",
+		date: new Date(), 
 		nb: "nb21005",
 		name:"Fernando Garcia",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Sexto segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Sétimo segredo",
+		
+		date: new Date(),
 		nb: "nb21001",
 		name:"Anabela Araújo Rodrigues",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Sétimo segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Oitavo segredo",
+		date: new Date(), 
 		nb: "nb21001",
 		name:"Anabela Araújo Rodrigues",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Oitavo segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Nono segredo",
+		date: new Date(), 
 		nb: "nb21003",
 		name:"Andreia Alves",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Nono segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Décimo segredo",
+		date: new Date(),
 		nb: "nb21004",
 		name:"Catarina Oliveira",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Décimo segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Décimo primeiro segredo",
+		date: new Date(), 
 		nb: "nb21000",
 		name:"Afonso Correia Sousa",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Décimo primeiro segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	},
 	{
-		description: "Décimo segundo segredo",
+		date: new Date(), 
 		nb: "nb21004",
 		name:"Catarina Oliveira",
-		challenge: "Submeter Segredo",
-		discovered: false,
-		date:new Date()
+		description: "Décimo segundo segredo",		
+		challenge: "Submit secret",
+		discovered: false		
 	}]
 );

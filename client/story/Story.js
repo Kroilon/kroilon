@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
+import { KroilonHistory } from '/imports/api/databasedriver.js';
 
 Template.Story.helpers({
 	currentDay() {
@@ -20,8 +21,18 @@ Template.Story.helpers({
 	openBriefing(){
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 		var today = latestAcademy.countDays;
-		var text="";
+		var text = "";
+
 		//BUSCAR À BD
+		var history = KroilonHistory.findOne({fields: {day: today} }).fetch();		
+		text = "<h3>Mission day #" + today + " briefing:</h3>" + 
+				"<br><p class='lead'>" + history.description + "</p>"; 
+
+		// TO DO
+		// check if showing correct 
+		//click on button changes the daily briefing
+
+		/*
 		switch(today){
 			case 1:
 				text = "<h3>Mission day #1 briefing:</h3>"+
@@ -95,6 +106,7 @@ Template.Story.helpers({
 				"There’s a pit across the room stopping your from ";
 			break;
 		}
+		*/
 		return text;
 	}
 });

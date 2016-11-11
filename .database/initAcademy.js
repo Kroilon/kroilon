@@ -12,20 +12,22 @@ Step 3-> load(".database/initAcademy.js")
 db.academy.drop();
 db.createCollection("academy");
 db.academy.insert({
-	name: "Academy Setembro 2016",
-	date:new Date(),
+	name: "Academia Setembro 2016",
+	date: new Date(),
+	energyLevel: 5,	
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
 	currentRoom: "Coachroach Entry",
-	countDays: 4,
-	energyLevel: 5,
-	TeamScore: [{
-		date:new Date(),
-		TeamChallenge: "CH_001_01",
-		TeamPoints: "100",
-		Badge: "",
-		Room: "Coachroach Entry"
-	}],
+	countDays: 1,	
+	teamScore: [
+		{
+			date: new Date(),
+			teamChallenge: "Team Balance",
+			teamPoints: "100",
+			badge: "",
+			room: "Coachroach Entry"
+		}
+	],
 	users:[
 		{
 			nb: "formador",
@@ -42,33 +44,32 @@ db.academy.insert({
 			card: "afonso_sousa.PNG",
 			email: "afonsosousa0@gmail.com",
 			password: "12345",
-			profile: "Player",
+			dateOfBirth: "31/01/1991",
 			contact: "+932 123 456",
-          	dateOfBirth: "31/01/1991",
-          	businessUnit: "CF",
+			businessUnit: "CF",  
     		mbti: "ENTJ",
+    		counter: 8,
+			voted: false,
+			tardiness: 4,
     		skills:[{
 				people: 7,
 				communication: 8,
 				problemSolving: 8,
 				management: 7,
 				android: 1
-			}],
-			counter: 8,
-			voted: false,
-			atrasos: 2,
+			}],			
 			score:[
 				{					
 					date: new Date(),
-					CountType: 1,
-					Activity_Badge: "Kahoot 2st",
+					countType: "BADGE",
+					name: "WATCH",
 					points: 20,
 					pointsType: "HP"										
 				},
 				{					
 					date: new Date(2015, 02),
-					CountType: 1,
-					Activity_Badge: "Egg",					
+					countType: "ACTIVITY",
+					name: "KP Challenge",					
 					points: 320,
 					pointsType: "KP"					
 				}
@@ -81,33 +82,32 @@ db.academy.insert({
 			card: "anabela_rodrigues.PNG",			
 			email: "anabelarodrigues1993@gmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+932 897 456",
-          	dateOfBirth: "12/09/1991",
+			dateOfBirth: "12/09/1991",
+			contact: "+932 897 456",          	
           	businessUnit: "FSI",
     		mbti: "ISFP",
+    		counter: 0,
+			voted: false,
+			tardiness: 0,
     		skills:[{
 				people: 7,
 				communication: 7,
 				problemSolving: 8,
 				management: 7,
 				android: 9
-			}],
-			counter: 0,
-			voted: false,
-			atrasos: 0,
+			}],			
 			score:[
 				{	
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Autoavaliação",					
+					countType: "BADGE",
+					name: "BOSS",					
 					points: 50,
-					pointsType: "HP"					
+					pointsType: "XP"					
 				},
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Wells&Cans",					
+					countType: "ACTIVITY",
+					name: "Wells&Cans",					
 					points: 600,
 					pointsType: "XP"
 				}
@@ -120,32 +120,30 @@ db.academy.insert({
 			card: "andre_ferreira.PNG",
 			email: "andre_ferreira815@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+932 497 412",
-          	dateOfBirth: "02/01/1992",
+			dateOfBirth: "02/01/1992",
+			contact: "+932 497 412",          	
           	businessUnit: "ITC",
     		mbti: "ISFP",
+    		counter: 0,
+			voted: false,
+			tardiness: 1,
     		skills:[{
 				people: 10,
 				communication: 7,
 				problemSolving: 5,
 				management: 7,
 				android: 3
-			}],
-			counter: 0,
-			voted: false,
-			atrasos: 1,
+			}],			
 			score:[
 				{					
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Kahoot 1st",
+					countType: "ACTIVITY",
+					name: "Kahoot",
 					points: 15,
 					pointsType: "HP"					
 				}
-			],
-			
-			
+			]
+
 		},
 		{
 			nb: "21003",
@@ -154,33 +152,32 @@ db.academy.insert({
 			card: "andreia_alves.PNG",
 			email: "dummy@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+912 497 412",
-          	dateOfBirth: "22/09/1992",
+			dateOfBirth: "22/09/1992",
+			contact: "+912 497 412",          	
           	businessUnit: "VC",
     		mbti: "ISFJ",
+    		counter: 0,
+			voted: false,
+			tardiness: 0,
     		skills:[{
 				people: 8,
 				communication: 9,
 				problemSolving: 7,
 				management: 7,
 				android: 7
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:0,
+			}],			
 			score:[
 				{					
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Kahoot 3st",
+					countType: "ACTIVITY",
+					name: "Kahoot",
 					points: 10,
 					pointsType: "HP"					
 				},
 				{					
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Autoavaliação",
+					countType: "BADGE",
+					name: "WATCH",
 					points: 50,
 					pointsType: "HP"			
 				}
@@ -193,35 +190,41 @@ db.academy.insert({
 			card: "catarina_oliveira.PNG",
 			email: "catarina@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+932 117 456",
-          	dateOfBirth: "30/06/1991",
+			dateOfBirth: "30/06/1991",
+			contact: "+932 117 456",          	
           	businessUnit: "FSI",
     		mbti: "ESTJ",
+    		counter: 0,
+			voted: false,
+			tardiness: 1,
     		skills:[{
 				people: 6,
 				communication: 9,
 				problemSolving: 7,
 				management: 7,
 				android: 6
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:1,
+			}],			
 			score:[
-				{
+				{					
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Kahoot-2nd",
-					category: "KP",
-					points: 40
+					countType: "ACTIVITY",
+					name: "Kahoot",
+					points: 10,
+					pointsType: "HP"					
+				},
+				{					
+					date: new Date(),			
+					countType: "BADGE",
+					name: "WATCH",
+					points: 50,
+					pointsType: "HP"			
 				},
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Wells&Cans",
-					category: "XP",
-					points: 600
+					countType: 1,
+					name: "Wells&Cans",					
+					points: 600,
+					pointsType: "XP"
 				}
 			]			
 		},
@@ -232,28 +235,27 @@ db.academy.insert({
 			card: "fernando_garcia.PNG",
 			email: "someemail@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+932 897 456",
-          	dateOfBirth: "12/02/1992",
+			dateOfBirth: "12/02/1992",
+			contact: "+932 897 456",          	
           	businessUnit: "CF",
     		mbti: "ISTJ",
+    		counter: 0,
+			voted: false,
+			tardiness: 0,
     		skills:[{
 				people: 6,
 				communication: 7,
 				problemSolving: 9,
 				management: 7,
 				android: 3
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:0,
+			}],			
 			score:[
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Voluntário LipSync Battle",
-					category: "HP",
-					points: 50
+					countType: "ACTIVITY",
+					name: "Volunteer LipSync Battle",
+					points: 50,
+					pointsType: "HP"
 				}
 			]
 		},
@@ -263,29 +265,28 @@ db.academy.insert({
 			avatar: "JoaoBaptista.jpg",
 			card: "joao_baptista.PNG",
 			email: "joao@hotmail.com",
-			password: "12345",
-			profile: "Player",
-			contact: "+912 867 634",
-          	dateOfBirth: "27/01/1992",
+			password: "12345",			
+			dateOfBirth: "27/01/1992",
+			contact: "+912 867 634",          	
           	businessUnit: "CF",
     		mbti: "ISTJ",
+    		counter: 0,
+			voted: false,
+			tardiness: 0,
     		skills:[{
 				people: 6,
 				communication: 9,
 				problemSolving: 7,
 				management: 8,
 				android: 5
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:0,
+			}],			
 			score:[
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Voluntário Android",
-					category: "HP",
-					points: 50
+					countType: "ACTIVITY",
+					name: "Volunteer Android",
+					points: 50,
+					pointsType: "HP"
 				}
 			]			
 		},
@@ -296,42 +297,41 @@ db.academy.insert({
 			card: "pedro_gabriel.PNG",
 			email: "pedro@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+912 441 630",
-          	dateOfBirth: "11/01/1988",
+			dateOfBirth: "11/01/1988",			
+			contact: "+912 441 630",          	
           	businessUnit: "IMS",
     		mbti: "ISTJ",
+			counter: 0,
+			voted: false,
+			tardiness: 0,
     		skills:[{
 				people: 9,
 				communication: 9,
 				problemSolving: 7,
 				management: 7,
 				android: 9
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:0,
+			}],			
 			score:[
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Voluntário Medley",
-					category: "HP",
-					points: 50
+					countType: "ACTIVITY",
+					name: "Volunteer Medley",
+					points: 50,
+					pointsType: "HP"
 				},
 				{
 					date: new Date(),			
-					CountType: 0,
-					Activity_Badge: "Penalizacao",
-					category: "HP",
-					points: -10
+					countType: "ACTIVITY",
+					name: "Penalty",
+					points: -10, 
+					pointsType: "HP"					
 				},
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Wells&Cans",
-					category: "XP",
-					points: 600
+					countType: "ACTIVITY",
+					name: "Wells & Cans",
+					points: 600,
+					pointsType: "XP"		
 				}
 			]						
 		},
@@ -342,35 +342,48 @@ db.academy.insert({
 			card: "rita_narciso.PNG",
 			email: "rita123@hotmail.com",
 			password: "12345",
-			profile: "Player",
-			contact: "+912 441 630",
-          	dateOfBirth: "11/01/1988",
+			dateOfBirth: "11/01/1988",
+			contact: "+912 441 630",          	
           	businessUnit: "IMS",
     		mbti: "ESTJ",
+    		counter: 0,
+			voted: false,
+			tardiness: 3,
     		skills:[{
 				people: 7,
 				communication: 6,
 				problemSolving: 3,
 				management: 7,
 				android: 1
-			}],
-			counter: 0,
-			voted: false,
-			atrasos:3,
+			}],			
 			score:[
 				{
 					date: new Date(),			
-					CountType: 1,
-					Activity_Badge: "Kahoot-2nd",
-					category: "KP",
-					points: 40
+					countType: "ACTIVITY",
+					name: "Penalty",
+					points: -10, 
+					pointsType: "HP"					
 				},
 				{
 					date: new Date(),			
-					CountType: 0,
-					Activity_Badge: "Soneca",
-					category: "HP",
-					points: -50
+					countType: "ACTIVITY",
+					name: "Penalty",
+					points: -10, 
+					pointsType: "HP"					
+				},
+				{
+					date: new Date(),			
+					countType: "ACTIVITY",
+					name: "Penalty",
+					points: -10, 
+					pointsType: "HP"					
+				},
+				{
+					date: new Date(),			
+					countType: "ACTIVITY",
+					name: "SONECA",					
+					points: -50,
+					pointsType: "HP"	
 				}
 			]
 		}

@@ -21,10 +21,11 @@ Template.TabSecrets.events({
     var secretPlayerName = $('#secretPlayerNB').find(":selected").text();
 
     var data = {
-      description: secretValue,
+      date: new Date(),
       nb: secretPlayerNB,
       name: secretPlayerName,
-      challenge: "Submeter Segredo",
+      description: secretValue,
+      challenge: "Submit secret",
       discovered: 0
     }
 

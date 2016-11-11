@@ -1,33 +1,32 @@
-<template name="TabChallenges">  
+<template name="TabActivities">  
   <div class="container">        
     <form id ="addChallenge">
       <div class="form-group row">
-        <label for="challengeName" class="col-md-2 col-form-label">Challenge Name</label>
+        <label for="activityeName" class="col-md-2 col-form-label">Activity Name</label>
         <div class="col-md-9">
-          <input class="form-control" type="text" placeholder="Wells and Cans" id="challengeName" required>
+          <input class="form-control" type="text" placeholder="Wells and Cans" id="activityName" required>
         </div>
       </div>
       <div class="form-group row">
-        <label for="challengePoints" class="col-md-2 col-form-label">Points</label>
+        <label for="activityPoints" class="col-md-2 col-form-label">Activity Points</label>
         <div class="col-md-9">
-          <input class="form-control" type="text" placeholder="0" id="challengePoints" required>
+          <input class="form-control" type="text" placeholder="0" id="activityPoints" required>
         </div>
       </div>
       <div class="form-group row">
         <label for="pointsType" class="col-md-2 col-form-label">Point Type</label>
         <div class="col-md-9">
           <select class="selectpicker form-control" id="pointsType">          
-            <option value="XP">Experience Points</option>
-            <option value="KP">Knowledge Points</option>
-            <option value="HP">Health Points</option>
-            <option value="PE">Team Points</option>
-          </select>
+            {{#each pointTypes}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select> 
         </div>
       </div>
       <div class="form-group row">
-        <label for="challengePoints" class="col-md-2 col-form-label">Room</label>
+        <label for="activityPoints" class="col-md-2 col-form-label">Activity Room</label>
         <div class="col-md-9">
-          <select class="selectpicker form-control" id="challengeRoom">
+          <select class="selectpicker form-control" id="activityRoom">
             <option selected>No Room</option>
             {{#each rooms}}
               <option value="{{name}}">{{name}}</option>
@@ -36,14 +35,9 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="challengeBadge" class="col-md-2 col-form-label">Badge</label>
+        <label for="activityDescription" class="col-md-2 col-form-label">Activity Description</label>
         <div class="col-md-9">
-          <select class="selectpicker form-control" id="challengeBadge">  
-            <option selected>No Badge</option>
-            {{#each badges}}
-              <option value="{{name}}">{{name}}</option>
-            {{/each}}
-          </select>
+          <textarea class="form-control" rows="3" maxlength="450" id="activityDescription" placeholder="Insert description..."></textarea>
         </div>
       </div>
       <div class="form-group row">

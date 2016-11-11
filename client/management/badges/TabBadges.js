@@ -30,11 +30,11 @@ Template.TabBadges.events({
     var badgeDescription = $("#badgeDescription").val();
 
     var badgeData =
-    {
-      type: badgeType,
+    {      
       name: badgeName,
       points: badgePoints,
       pointsType: badgePointsType,
+      type: badgeType,
       description: badgeDescription,
       date: new Date()
     };

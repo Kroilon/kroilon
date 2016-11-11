@@ -16,15 +16,15 @@ Template.TabRooms.events({
 
     event.preventDefault();
 
-    var roomName = $("#roomName").val();
-    var roomBadge = $("#roomBadge").val();
+    var roomName = $("#roomName").val();    
     var roomDecision = $("#roomDecision").val();
+    var roomBadge = $("#roomBadge").val();
 
     var data =
     {
       name: roomName,
-      badges: [{ badge: roomBadge }],
-      decision: roomDecision
+      dailyDecision: roomDecision,
+      badges: [{ badge: roomBadge }]      
     };
 
     Modal.show('roomsInsertModal', this);
