@@ -18,7 +18,7 @@ db.academy.insert({
 	dailyMessage: "Bem Vindos a Kroilon",
 	homeMessage: "#ficaadica",
 	currentRoom: "Coachroach Entry",
-	countDays: 1,	
+	countDays: 3,	
 	teamScore: [
 		{
 			date: new Date(),
