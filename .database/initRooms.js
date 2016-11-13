@@ -16,7 +16,14 @@ db.rooms.insert([
 		name: "Coachroach Entry",
 		dailyDecision:"Coachroach Entry decision...",
 		badges: [
-			{}
+			{
+				name: "BOAT",
+				locked: true
+			},
+			{
+				name: "DOUBLE",
+				locked: true
+			}
 			]
 	},
 	{
@@ -24,7 +31,16 @@ db.rooms.insert([
 		dailyDecision:"Project Room decision...",
 		badges: [
 			{
-				name: "BOAT"
+				name: "BOAT",
+				locked: true
+			},
+			{
+				name: "DOUBLE",
+				locked: true
+			},
+			{
+				name: "MYSTERY",
+				locked: true
 			}
 			]
 	},
@@ -54,7 +70,8 @@ db.rooms.insert([
 		dailyDecision:"Adolph Room decision...",
 		badges: [
 			{
-				name: "BOAT"
+				name: "BOAT",
+				locked: true
 			}
 			]
 	},
@@ -63,7 +80,8 @@ db.rooms.insert([
 		dailyDecision:"Stormillor Hall decision...",
 		badges: [
 			{
-				name: "SWORD"
+				name: "SWORD",
+				locked: true
 			}
 			]
 	},
@@ -79,7 +97,8 @@ db.rooms.insert([
 		dailyDecision:"Kalu Hall decision...",
 		badges: [
 			{
-				name: "FOOD"
+				name: "FOOD",
+				locked: true
 			}
 			]
 	},
@@ -88,7 +107,8 @@ db.rooms.insert([
 		dailyDecision:"Ristar Room decision...",
 		badges: [
 			{
-				name: "FOOD"
+				name: "FOOD",
+				locked: true
 			}
 			]
 	},
@@ -97,7 +117,8 @@ db.rooms.insert([
 		dailyDecision:"Stormillor Dungeons decision...",
 		badges: [
 			{
-				name: "MYSTERY"
+				name: "MYSTERY",
+				locked: true
 			}
 			]
 	},
@@ -113,7 +134,8 @@ db.rooms.insert([
 		dailyDecision:"Diktaur Room decision...",
 		badges: [
 			{
-				name: "DOUBLE"
+				name: "DOUBLE",
+				locked: true
 			}
 			]
 	},
@@ -129,7 +151,8 @@ db.rooms.insert([
 		dailyDecision:"Almusther Room decision...",
 		badges: [
 			{
-				name: "FOOD"
+				name: "FOOD",
+				locked: true
 			}
 			]
 	},

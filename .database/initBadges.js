@@ -98,7 +98,7 @@ db.badges.insert([
 		points: 0,
 		pointsType: "HP",
 		type: "Team",
-		image: '',
+		image: '/teamBadges/gandalf.png',
 		percentage: 1.0,
 		description: "Podem ser jogadas cartas de Attackers"
 	},
@@ -107,7 +107,7 @@ db.badges.insert([
 		points: 0,
 		pointsType: "HP",
 		type: "Team",
-		image: '',
+		image: '/teamBadges/gandalf.png',
 		percentage: 1.0,
 		description: "Podem ser jogadas cartas de Ganfalf"
 	},
@@ -116,7 +116,7 @@ db.badges.insert([
 		points: 200,
 		pointsType: "HP",
 		type: "Team",
-		image: '',
+		image: '/teamBadges/boat.png',
 		percentage: 1.0,
 		description: "O grupo pode usar canais aquáticos"
 	},
@@ -125,7 +125,7 @@ db.badges.insert([
 		points: 0,
 		pointsType: "HP",
 		type: "Team",
-		image: '',
+		image: '/teamBadges/double.png',
 		percentage: 2.0,
 		description: "Duplica os pontos ganhos no quarto"
 	},
@@ -143,7 +143,7 @@ db.badges.insert([
 		points: 0,
 		pointsType: "HP",
 		type: "Team",
-		image: '',
+		image: '/teamBadges/mystery.png',
 		percentage: 1.0,
 		description: "TBD"
 	}

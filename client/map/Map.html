@@ -3,33 +3,77 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-8">
             <img class="map-center" src="Mapa-09(2).png" alt="map" style="position:absolute; margin:auto; overflow:hidden;">
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="row">
               <div class="col-md-12">
-                <h3>In the Land of Kroilon</h3>
+                <h3 style="font-size: 2.3em; font-weight: 201;">In the Land of Kroilon</h3>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                Game Dashboard<b> / <span id="div_date_today"></span></b>
+                <p class="lead" style="margin-top: 0.0em; white-space: nowrap;">
+                  Game Dashboard / <span id="div_date_today" style="font-weight: 201;"></span>
+                </p>
               </div>
             </div>
+            <div class="row" style="margin-top: 0.0em;">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 style="margin-bottom: 0.0em"><b>SCORE:</b></h4>
+                    <h3 style="margin-top: 0.3em">{{total_day.score}}</h3>
+                  </div>
+                </div>                
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <div class="col-md-12 text-left">
+                        <h4><b>ENERGY LEVEL:</b></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <div class="col-md-12" style="padding-top: 0.6em">
+                        <img id="div_energylevel" src={{total_day.img_energyLevel}} height="42" width="25">
+                      </div>
+                    </div>
+                  </div>    
+                </div>          
+              </div>
+            </div>
+            <!-- BADGES -->            
             <div class="row">
               <div class="col-md-12">
-                <h4><b>SCORE:</b></h4>
-                <h4>{{total_day.score}}</h4>
+                <div class="row">
+                  {{#each currentRoomBadges}} 
+                    <div class="col-md-3">
+                      <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin-top: 0.5em; " src='{{this.image}}' height="60" width="60" alt="Room Badge">
+                      <p class="lead" style="margin-bottom: 0.1em; ">
+                        <h4>{{this.status}}</h4>
+                      </p>
+                    </div>  
+                  {{/each}}
+                  <div class="col-md-3">
+                    <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin-top: 0.5em; " src='/teamBadges/gandalf.png' height="60" width="60" alt="Gandalf Badge">
+                    <p class="lead" style="margin-bottom: 0.1em; ">
+                      {{#if badgeGandalfLocked}}
+                        <h4>Locked</h4>
+                      {{else}}
+                        <h4>Unlocked</h4>
+                      {{/if}} 
+                    </p>
+                  </div>  
+
+                </div>
               </div>
             </div>
             <!--
-            <div class="row">
-              <div class="col-md-12">
-                <h4><b>ENERGY LEVEL:</b></h4> <img id="div_energylevel" src={{total_day.img_energyLevel}} height="75" width="37,5">
-              </div>
-            </div>
-            -->
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group row">
@@ -46,16 +90,40 @@
                 </div>
               </div>
             </div>
+            -->
+            <!--
             <div class="row">
               <div class="col-md-12">
-                <h4><b>Daily message:</b></h4>
-                <h4>{{message}}</h4>
+                <p class="lead" style="margin-bottom: 0.1em; ">
+                  <h4><b>Daily message:</b></h4>
+                  <h4>{{message}}</h4>
+                </p>
+              </div>
+            </div>
+            -->
+            {{#with decisionExists}}   
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="lead" style="font-size: 18px; margin-bottom: 0.1em; margin-top: 0.5em;"><b>Decision</b></p>
+                  <p class="lead" style="font-size: 18px; margin-bottom: 0.3em; font-weight: 201;">
+                    {{dailyDecision}}
+                  </p>
+                </div>
+              </div>
+            {{/with}}
+            <div class="row">
+              <div class="col-md-12">
+                <h5><b>Secrets</b></h5>
+                <h5>Guess <b>+/-200 HP</b></h5>
+                <h5>Miss <b>-/+50 HP</b></h5>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <h4><b>Decision:</b></h4>
-                <h4>Daily decision...</h4>
+                <h5><b>Punctuality</b></h5>
+                <h5>Everyone on time <b>+50 TP</b></h5>
+                <h5>5 or more delays <b>-50 TP</b></h5>
+                <h5>1 delay <b>-10 HP</b></h5>
               </div>
             </div>
           </div>
@@ -68,13 +136,13 @@
 
     	var d = new Date();
     	var weekday = new Array(7);
-    	weekday[0]=  "Domingo";
-    	weekday[1] = "Segunda";
-    	weekday[2] = "Terça";
-    	weekday[3] = "Quarta";
-    	weekday[4] = "Quinta";
-    	weekday[5] = "Sexta";
-    	weekday[6] = "Sábado";
+    	weekday[0]=  "Sunday";
+    	weekday[1] = "Monday";
+    	weekday[2] = "Tuesday";
+    	weekday[3] = "Wednesday";
+    	weekday[4] = "Thursday";
+    	weekday[5] = "Friday";
+    	weekday[6] = "Saturday";
 
     	var n = weekday[d.getDay()];
 
