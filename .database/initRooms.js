@@ -23,6 +23,10 @@ db.rooms.insert([
 			{
 				name: "DOUBLE",
 				locked: true
+			},
+			{
+				name: "MYSTERY",
+				locked: true
 			}
 			]
 	},

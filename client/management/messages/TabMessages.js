@@ -1,5 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
+import { Rooms } from '/imports/api/databasedriver.js';
+import { Badges } from '/imports/api/databasedriver.js';
 
 Template.TabMessages.helpers({
     dailyMessage() {
@@ -9,8 +11,67 @@ Template.TabMessages.helpers({
     homeMessage() {
       var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
       return latestAcademy.homeMessage;
-    }
+    },
+    currentRoom() {
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      var myCurrentRoom = latestAcademy.currentRoom;
+      return myCurrentRoom;
+    },
+    rooms(){
+      return Rooms.find({}).fetch();
+    },
+    roomHasBadges(){
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      var currentRoom = latestAcademy.currentRoom; 
+      var mapRoom = Rooms.find({'name': currentRoom }).fetch();
+      var cntr = 0;
 
+      mapRoom[0].badges.forEach( function(badges){
+
+        if (badges.name !== undefined) { 
+          cntr++;
+        }
+         
+      });
+      //console.log("cntr: " + cntr); 
+      return (cntr > 0);
+      
+    },    
+    currentRoomBadges() {
+
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      var currentRoom = latestAcademy.currentRoom; 
+      //console.log("CurrentRoom: " + currentRoom);   
+
+      var mapRoom = Rooms.find({'name': currentRoom }).fetch();
+
+      var roomBadges = new Array();
+
+      mapRoom[0].badges.forEach( function(badges){
+
+        var badgeName = badges.name; 
+        //console.log("BadgeName: " + badgeName);
+
+        var badge = Badges.find({'name': badgeName }).fetch();
+        var badgeImage = badge[0].image; 
+        //console.log("BadgeImage: " + badgeImage);   
+        var badgeStatus = "";
+        //console.log("badgelocked: " + badges.locked);
+
+        if (badges.locked === true) { 
+          badgeStatus = "Locked";
+          var newBadge = {'name': badgeName, 'image': badgeImage, 'status': badgeStatus, 'locked': true};
+        } else {
+          badgeStatus = "Unlocked";
+          var newBadge = {'name': badgeName, 'image': badgeImage, 'status': badgeStatus, 'unlocked': true};
+        }
+
+        //var newBadge = {'name': badgeName, 'image': badgeImage, 'status': badgeStatus };
+        roomBadges.push(newBadge);
+      });   
+
+      return roomBadges;
+    }
 });
 
 Template.TabMessages.events({  
@@ -22,13 +83,6 @@ Template.TabMessages.events({
     Meteor.call("updateDailyMessage", latestAcademy, message);
 
   },
-  'click #resetDailyMessage' (event){
-
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-    event.preventDefault();
-    Meteor.call("resetDailyMessage", latestAcademy);
-
-  },
   'click #updateHomeMessage' (event){
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -36,28 +90,31 @@ Template.TabMessages.events({
     event.preventDefault();
     Meteor.call("updateHomeMessage", latestAcademy, messageHome);
   },
-  'click #resetHomeMessage' (event){
+  'click #nextDay' (event){
 
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     event.preventDefault();
-    Meteor.call("resetHomeMessage", latestAcademy);
-  },
-  'click #terminateDay' (event){
+    //change currentRoom to value of nextDay
+    //reduce one energy bar
+    //if new room has badge food, add two energy bars
+    //change field voted of every user to false
 
-    //var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     Modal.show('endDayModal', this); 
     //alert("Day terminated!");
     //event.preventDefault();
     //Meteor.call("terminateDay", latestAcademy);
   },
-  'click #addCheese' (event){
+  'click .unlockBadge' (event){
 
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-    var burgerCount = $('#burgerCount').val();
-
-    Modal.show('addCheeseModal', this);
     event.preventDefault();
-    Meteor.call("addCheese", latestAcademy, burgerCount);
+    var badgeName = this.name;
+    console.log("UnlockBadge: " + badgeName);
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var currentRoom = latestAcademy.currentRoom; 
+
+    var rooms = Rooms.findOne({}, {sort: {date: -1, limit: 1}});
+
+    Meteor.call("updateBadgeStatus", rooms, currentRoom, badgeName, false);   
+
   }
   
 });

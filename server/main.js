@@ -105,10 +105,6 @@ Meteor.methods({
 		{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
 		},
-    resetDailyMessage : function(latestAcademy)
-    {
-      Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : "" }});
-    },
 		terminateDay : function(latestAcademy)
 		{
 			var energyLevel = parseInt(latestAcademy.energyLevel) - 1;
@@ -123,9 +119,6 @@ Meteor.methods({
 		updateHomeMessage : function(latestAcademy, messageHome) {
 			Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : messageHome }});
 		},
-    resetHomeMessage : function(latestAcademy) {
-      Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : "" }});
-    },
 		insertSecret : function(data) {
 			Secrets.insert(data);
 		},
@@ -135,6 +128,12 @@ Meteor.methods({
     deleteSecret : function(id) {
       Secrets.remove(
           { _id: id }
+      );
+    },
+    updateBadgeStatus : function( rooms, currentRoom, badgeName, booleanValue) {
+      Rooms.update(
+        {_id: rooms._id, "name": currentRoom, "badges.name": badgeName}, 
+        {$set : {'badges.locked': booleanValue }}
       );
     }
 
