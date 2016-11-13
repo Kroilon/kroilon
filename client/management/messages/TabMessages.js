@@ -52,7 +52,7 @@ Template.TabMessages.helpers({
         var badgeName = badges.name; 
         //console.log("BadgeName: " + badgeName);
 
-        var badge = Badges.find({'name': badgeName }, {"name" : 1, "locked" : 1}).fetch();
+        var badge = Badges.find({'name': badgeName }).fetch();
         var badgeImage = badge[0].image; 
         //console.log("BadgeImage: " + badgeImage);   
         var badgeStatus = "";
@@ -103,5 +103,18 @@ Template.TabMessages.events({
     //event.preventDefault();
     //Meteor.call("terminateDay", latestAcademy);
   },
+  'click .unlockBadge' (event){
+
+    event.preventDefault();
+    var badgeName = this.name;
+    console.log("UnlockBadge: " + badgeName);
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var currentRoom = latestAcademy.currentRoom; 
+
+    var rooms = Rooms.findOne({}, {sort: {date: -1, limit: 1}});
+
+    Meteor.call("updateBadgeStatus", rooms, currentRoom, badgeName, false);   
+
+  }
   
 });

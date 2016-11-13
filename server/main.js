@@ -129,6 +129,12 @@ Meteor.methods({
       Secrets.remove(
           { _id: id }
       );
+    }.
+    updateBadgeStatus : function( rooms, currentRoom, badgeName, booleanValue) {
+      Rooms.update(
+        {_id: rooms._id}, 
+        {$set :'users.locked': booleanValue }}
+      );
     }
 
 });

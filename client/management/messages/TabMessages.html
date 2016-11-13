@@ -55,11 +55,11 @@
               <h4>{{this.status}}</h4>
             </p>  
             {{#if this.locked}}           
-              <button type="" class="btn btn-default btn-circle" data-toggle="tooltip" data-placement="bottom" title="Unlock badge" style="padding: 0px 0px 0px 0px;">
+              <button  class="btn btn-default btn-circle unlockBadge" data-toggle="tooltip" data-placement="bottom" title="Unlock badge" style="padding: 0px 0px 0px 0px;">
                 <i class="fa fa-unlock" aria-hidden="true" style="color: #ffffff; font-size: 1.2em;"></i>
               </button>
             {{else}}
-              <button type="" class="btn btn-default btn-circle" data-toggle="tooltip" data-placement="bottom" title="Lock badge" style="padding: 0px 0px 0px 0px;">
+              <button  class="btn btn-default btn-circle lockBadge" data-toggle="tooltip" data-placement="bottom" title="Lock badge" style="padding: 0px 0px 0px 0px;">
                 <i class="fa fa-lock" aria-hidden="true" style="color: #ffffff; font-size: 1.2em;"></i>
               </button>
             {{/if}} 
