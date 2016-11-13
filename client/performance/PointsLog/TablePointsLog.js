@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
-Template.TablePlayerPoints.helpers({
+Template.TablePointsLog.helpers({
 
 	playerPoints() {
 

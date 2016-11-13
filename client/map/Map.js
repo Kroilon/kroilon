@@ -65,11 +65,11 @@ Template.Map.helpers({
 
 			var badge = Badges.find({'name': badgeName }, {"name" : 1, "locked" : 1}).fetch();
 			var badgeImage = badge[0].image; 
-			console.log("BadgeImage: " + badgeImage);			
-			console.log("badgelocked: " + badge[0].locked);
+			//console.log("BadgeImage: " + badgeImage);		
 			var badgeStatus = "";
+			//console.log("badgelocked: " + badges.locked);
 
-			if (badge[0].locked === true) { 
+			if (badges.locked === true) { 
 				badgeStatus = "Locked";
 				console.log("badgeStatus: " + badgeStatus);
 			} else {
@@ -83,16 +83,6 @@ Template.Map.helpers({
 
 		return roomBadges;
 	},	
-	badgeLocked() {
-	    
-		//var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		//var currentRoom = latestAcademy.currentRoom; 
-		//console.log("CurrentRoom: " + currentRoom);
-		//var mapRoom = Rooms.find({'name': currentRoom }).fetch();
-
-		return true;
-
-	},
 	badgeGandalfLocked() {
 	    
 		var secrets = Secrets.find({'discovered': true}).count() < 3;

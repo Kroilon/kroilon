@@ -151,7 +151,7 @@ Template.LeaderboardDetails.helpers({
 			{ name: 'Leaderboard', slug: 'leaderboard' },
 			{ name: 'Team Performance', slug: 'teamPerformance' },
 			{ name: 'Top Scores', slug: 'topScores' },
-			{ name: 'Player Points', slug: 'playerPoints' }
+			{ name: 'Points Log', slug: 'pointsLog' }
 		];
 	},
 	activeTab: function () {
