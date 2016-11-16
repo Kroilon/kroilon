@@ -1,19 +1,12 @@
 <template name="TableAcademy">  
-  <div class="container"> 
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-4">
-          <button type="input" class="btn btn-default btn-circle" id="addAcademy" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-plus"></i></button>
-        </div>        
-      </div>
-    </div>  
-    <div class="col-md-12">
+  <div class="container">   
+    <div class="col-md-11">
       <div class="row">
           <div class="container" style="font-size:16px;">
             <table class="table table-hover table-striped table-bordered table-condensed" id="secretsTable">
                 <thead>
                   <tr>
-                    <th class="col-md-4"><span style="color:black;">Academy</span></th>
+                    <th class="col-md-3"><span style="color:black;">Academy</span></th>
                     <th class="col-md-2"><span style="color:black;">Players</span></th>
                     <th class="col-md-2"><span style="color:black;">Score</span></th>
                     <th class="col-md-2"><span style="color:black;">Activate</span></th>
@@ -24,8 +17,8 @@
                   {{#each academies}}
                     <tr class="divRow">
                       <td id="descriptionSecret">{{name}}</td>
-                      <td>{{totalPlayers users}}</td>
-                      <td>5679</td>
+                      <td>{{academyPlayers}}</td>
+                      <td>{{teamScore}}</td>
                       <td>
                         <a style="color: #de4f4f" href="" id="activateAcademy">
                           <span class="glyphicon glyphicon-ok"></span>
