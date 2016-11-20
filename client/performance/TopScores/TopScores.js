@@ -30,7 +30,23 @@ Template.TopScores.helpers({
 	return userHealthScores;
 },
 */
+	userHealthScores() {
 
+		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+		var users = latestAcademy.users;
+		var userHealthScores = [];
+		var totalHealthPoints = 0;
+		$.each(users, function (idx_players, val_players) {
+			var scores = users[idx_players].score;
+			var nb = users[idx_players].nb;
+			if (scores != undefined) {
+				totalHealthPoints = calc_HP_KP_XP(nb, "HP");
+				userHealthScores.push({ "name": val_players.name, "avatar": val_players.avatar, "points": totalHealthPoints });
+				userHealthScores.sort(function (a, b) { return b.points - a.points });
+			}
+		});
+		return userHealthScores;
+	},
 	userKnowledgeScores() {
 
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
@@ -64,7 +80,7 @@ Template.TopScores.helpers({
 			}
 		});
 		return userExperienceScores;
-	},
+	}
 });
 
 

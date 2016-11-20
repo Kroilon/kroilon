@@ -5,105 +5,150 @@
         	<div class="col-md-4">
             	<div class="row" style="margin-top: 2.0em;">
             		<div class="col-md-12">
-            			<p style="display:inline;"><span class="glyphicon glyphicon-heart" style="color: #de4f4f; margin-right:1.0em;"></span><b>Top Health</b></p>
-									<table class="table table-hover table-striped table-bordered table-condensed" style="width:80%">
-										<colgroup>
-											<col style="width: 20%;">
-											<col style="width: 60%;">
-											<col style="width: 20%;">
-										</colgroup>
-										<thead>
-											<tr>
-												<th class="col-md-1"><span style="color:black;">Player</span></th>
-												<th class="col-md-1"><span style="color:black;"></span></th>
-												<th class="col-md-1"><span style="color:black;">Score</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											{{#each userHealthScores}}
-														<tr class="divRow">
-															<td><div class="col-md-1" align="center"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-12" align="left">{{name}}</div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-1" align="center">{{points}}</div>
-														</td>
-														</tr>
-											{{/each}}
-										</tbody>
-									</table>
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_health.svg" alt="TopHealth">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Health</p>
+	                            </div>
+	                        </div>
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" style="width:100% border-top-style: none; border-left-style: none; border-right-style: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none; box-shadow: none;">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userHealthScores}}
+										<tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; ">
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
             		</div>
             	</div>
         	</div>
         	<div class="col-md-4">
             	<div class="row" style="margin-top: 2.0em;">
             		<div class="col-md-12">
-            			<p style="display:inline;"><span class="glyphicon glyphicon-book" style="color: #de4f4f; margin-right:1.0em;"></span><b>Top Knowledge</b></p>
-									<table class="table table-hover table-striped table-bordered table-condensed" style="width:80%">
-										<colgroup>
-											<col style="width: 20%;">
-											<col style="width: 60%;">
-											<col style="width: 20%;">
-										</colgroup>
-										<thead>
-											<tr>
-												<th class="col-md-1"><span style="color:black;">Player</span></th>
-												<th class="col-md-1"><span style="color:black;"></span></th>
-												<th class="col-md-1"><span style="color:black;">Score</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											{{#each userKnowledgeScores}}
-														<tr class="divRow">
-															<td><div class="col-md-3" align="center"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-12" align="left">{{name}}</div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-1" align="center">{{points}}</div>
-														</td>
-														</tr>
-											{{/each}}
-										</tbody>
-									</table>
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_knowledge.svg" alt="TopKnowledge">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Knowledge</p>
+	                            </div>
+	                        </div>
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" style="width:100% border-top-style: none; border-left-style: none; border-right-style: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none; box-shadow: none;">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userKnowledgeScores}}
+										<tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; ">
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
             		</div>
             	</div>
         	</div>
         	<div class="col-md-4">
             	<div class="row" style="margin-top: 2.0em;">
             		<div class="col-md-12">
-            			<p style="display:inline;"><span class="glyphicon glyphicon-knight" style="color: #de4f4f; margin-right:1.0em;"></span><b>Top Experience</b></p>
-									<table class="table table-hover table-striped table-bordered table-condensed" style="width:80%">
-										<colgroup>
-											<col style="width: 20%;">
-											<col style="width: 60%;">
-											<col style="width: 20%;">
-										</colgroup>
-										<thead>
-											<tr>
-												<th class="col-md-1"><span style="color:black;">Player</span></th>
-												<th class="col-md-1"><span style="color:black;"></span></th>
-												<th class="col-md-1"><span style="color:black;">Score</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											{{#each userExperienceScores}}
-														<tr class="divRow">
-															<td><div class="col-md-3" align="center"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-12" align="left">{{name}}</div>
-														</td>
-														<td valign="middle">
-															<div class="col-md-1" align="center">{{points}}</div>
-														</td>
-														</tr>
-											{{/each}}
-										</tbody>
-									</table>
+        				<div class="row">
+        					<div class="col-md-12 col-sm-12 col-xs-12">
+	                            <div class="col-md-3 col-sm-3 col-xs-3" style="text-align:left;">
+	                                <img class="img avatar avatar-original" height="30px" width="30px" style="-webkit-user-select:none; display:block; margin:auto;" src="/topScores/icon_experience.svg" alt="TopExperience">
+	                            </div>
+	                            <div class="col-md-9 col-sm-9 col-xs-9" style="text-align:left; padding: 0px;">
+	                                <p class="lead">Top Experience</p>
+	                            </div>
+	                        </div> 
+                        </div> 
+            			<div class="panel-body" style="padding: 0px;">
+							<table class="table table-hover table-bordered table-condensed" style="width:100% border-top-style: none; border-left-style: none; border-right-style: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none; box-shadow: none;">
+								<!--
+								<colgroup>
+									<col style="width: 15%;">
+									<col style="width: 70%;">
+									<col style="width: 15%;">
+								</colgroup>
+								
+								<thead>
+									<tr>
+										<th class="col-md-1"><span style="color:black;">Player</span></th>
+										<th class="col-md-1"><span style="color:black;"></span></th>
+										<th class="col-md-1"><span style="color:black;">Score</span></th>
+									</tr>
+								</thead>
+								-->
+								<tbody>
+									{{#each userExperienceScores}} 
+										<tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; ">
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;"><img src="/avatar/{{avatar}}" height="40px" width="40px"/></div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">{{name}}</div>
+											</td>
+											<td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #de4f4f;">
+												<div class="col-md-12" style="text-align: left;">Points {{points}}</div>
+											</td> 
+										</tr> 
+									{{/each}}
+								</tbody>
+							</table> 
+						</div>
             		</div>
             	</div>
         	</div>
