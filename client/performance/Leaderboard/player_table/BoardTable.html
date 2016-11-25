@@ -1,0 +1,39 @@
+<template name="BoardTable">
+  <!-- Leaderboard main table part -->
+    <div class="container table-responsive MainBoard" style="font-size:16px" width="100%">
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th class="text-center"><span style="color:black;">Name</span></th>
+                    <th class="text-center"><span style="color:black;">Score</span></th>
+                    <th class="text-center"><span style="color:black;">Tap My Back</span></th>
+                    <th class="text-center"><span style="color:black;">&nbsp;</span></th>
+                    <th class="text-center"><span style="color:black;">&nbsp;</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr class="divRow">
+                    <td class="text-center">{{user.name}}</td>
+                    <td class="text-center">{{totalScore}}</td>
+                    <td class="text-center">
+                        <a href="#" class="tap_my_back">
+                            <img src="icon_like.png" />
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/{{user.nb}}" class="profile_dashboard">
+                            <img src="icon_profile.png" />
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/{{user.nb}}" class="personal_performance">
+                            <img src="icon_graph.png" />
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

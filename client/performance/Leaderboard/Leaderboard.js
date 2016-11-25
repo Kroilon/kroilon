@@ -4,172 +4,65 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+/**
+ * Use this key to save or retrieve the dynamic
+ * template active at a certain time.
+ */
+export const DYNAMIC_ACTIVE_ELEMENT_KEY = "DynamicActiveElement";
+
+/**
+ * This key retrieves the nb of the player chosen
+ * by some click in the dashboard icon or in the 
+ * performance icon.
+ */
+export const CURRENT_PLAYER_NB = "CurrentPlayerNB";
+
+
+/**
+ * Executed before the DOM elements are rendered.
+ * Helpful when we want to set a default value 
+ * to a variable.
+ */
+Template.Leaderboard.created = function(){
+    //default template - Table
+    Session.setDefault(DYNAMIC_ACTIVE_ELEMENT_KEY, "BoardTable");
+    //Default nb is from the logged in user
+    Session.setDefault(CURRENT_PLAYER_NB, Session.get("loggedUser")[0].nb);
+}
+
+
+Template.Leaderboard.helpers({
+    tableTemplateName(){
+        return "BoardTable";
+    },
+    dashboardTemplateName(){
+        return "PlayerDashboard";
+    },
+    performanceTemplateName(){
+        return "PlayerPerformance";
+    },
+    isElementActive(elementName){
+        return Session.get(DYNAMIC_ACTIVE_ELEMENT_KEY) === elementName;
+    }
+});
+
+
+
+function _getUserByNB(nb) {
+    let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+    let users = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+    return users[0];
+}
+
+
+/*************************************************
+ ***** Utilities Private Functions ***************
+ *************************************************/
+
 
 function getUniqueValuesOfKey(array, key) {
-    return array.reduce(function(carry, item) {
+    return array.reduce(function (carry, item) {
         if (item[key] && !~carry.indexOf(item[key])) carry.push(item[key]);
         return carry;
     }, []);
 }
-
-
-Template.Leaderboard.playerChart = function() {
-
-    var userSession = Session.get('loggedUser');
-    var currentUser = userSession[0];
-
-    var scores = currentUser.score;
-
-    var weekPoints = getUniqueValuesOfKey(scores, 'points');
-
-
-    return {
-        colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
-            '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
-        title: {
-            text: "Player Points"
-        },
-        xAxis: {
-            crosshair: {
-                color: '#ffcccc'
-            },
-            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                'Friday']
-        },
-        yAxis: {
-            title: {
-                text: 'Points'
-            },
-            labels: {
-                formatter: function() {
-                    return this.value;
-                }
-            },
-            min: 0
-        },
-        tooltip: {
-            crosshair: {
-                color: '#de4f4f'
-            },
-            shared: true,
-            valueSuffix: ' Points'
-        },
-        plotOptions: {
-            area: {
-                fillOpacity: 0.5
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        legend: {
-        },
-        series: [{
-            showInLegend: false,
-            name: currentUser.name,
-            data: weekPoints,
-            zIndex: 1,
-            marker: {
-                fillColor: 'white',
-                lineWidth: 3,
-                lineColor: '#de4f4f'
-            }
-        }]
-    };
-};
-
-Template.Leaderboard.helpers({
-    users() {
-
-        var latestAcademy = Academy.findOne({}, {
-            sort: {
-                date: -1,
-                limit: 1
-            }
-        });
-        var users = latestAcademy.users;
-        users.splice(0, 1);
-
-        var result = [];
-        var sum = 0;
-
-        $.each(users, function(index, user) {
-            $.each(user.score, function(index, score) {
-                sum += score.points;
-            });
-            result.push({
-                user: {
-                    nb: user.nb,
-                    name: user.name
-                },
-                totalScore: sum
-            });
-            sum = 0;
-        });
-        return result;
-    },
-    TeamScore() {
-
-        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-        var users = latestAcademy.users;
-        var total_users = users.length;
-        var total_points = 0;
-
-        $.each(users, function(index_users, value_users) {
-
-            var user_points = 0;
-
-            if (value_users.score != undefined) {
-                $.each(value_users.score, function(index_score, value_score) {
-                    user_points += value_score.points;
-                });
-            }
-
-            value_users.totalScore = user_points;
-            total_points += user_points;
-
-        });
-
-        var average_points = (total_points / total_users - 1);
-        return parseInt(average_points);
-    }
-});
-
-
- // Register a function to be called 
- // when an instance of this template 
- //is inserted into the DOM.
-Template.Leaderboard.onRendered(function () {
-  $('.LeaderboardPerformance').hide();
-  $('.LeaderboardPersonalGraph').hide();
-
-});
-
-
-Template.Leaderboard.events({
-
-    //Act when the personal performance board icon is clicked
-    "click .profile": (event) => {
-        $('.LeaderboardPerformance').show();
-        $('.LeaderboardPersonalGraph').hide();
-        $('.MainBoard').hide();
-        $(".lead_into_leaderboard").show();
-    },
-
-    //Act when the personal performance graph icon is clicked
-    "click .graph": (event) => {
-        $('.LeaderboardPersonalGraph').show();
-        $('.LeaderboardPerformance').hide();
-        $('.MainBoard').hide();
-        $(".lead_into_leaderboard").show();
-    },
-    
-    //go back to the start - the main board
-    "click .lead_into_leaderboard": (event) => {
-        $('.LeaderboardPerformance').hide();
-        $('.LeaderboardPersonalGraph').hide();
-        $(".lead_into_leaderboard").hide();
-        $('.MainBoard').show();
-    }
-});
