@@ -118,3 +118,11 @@ Template.Map.helpers({
 	}
 
 });
+
+Template.Map.events({  
+  'click #adolphRoom' (event){   
+  	event.preventDefault();
+    Modal.show('showRoomInfoModal', "Adolph Room");	
+  }
+  
+});
