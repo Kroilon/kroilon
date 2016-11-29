@@ -38,6 +38,9 @@ Template.BoardTable.helpers({
     }
 });
 
+const PLAYER_DASHBOARD_ACTIVE_TEMPLATE_NAME = "PlayerDashboard";
+const PLAYER_PERFORMANCE_ACTIVE_TEMPLATE_NAME = "PlayerPerformance";
+const PLAYERS_TABLE_ACTIVE_TEMPLATE_NAME = "BoardTable";
 
 
 Template.Leaderboard.events({
@@ -46,7 +49,7 @@ Template.Leaderboard.events({
     "click .profile_dashboard": (event) => {
         event.preventDefault();
 
-        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, "PlayerDashboard");
+        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, PLAYER_DASHBOARD_ACTIVE_TEMPLATE_NAME);
 
         let img = $(event.target);
         let anchor = img.parent();
@@ -57,7 +60,7 @@ Template.Leaderboard.events({
     "click .personal_performance": (event) => {
         event.preventDefault();
 
-        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, "PlayerPerformance");
+        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, PLAYER_PERFORMANCE_ACTIVE_TEMPLATE_NAME);
         Session.set(CURRENT_PLAYER_NB, _getUserNbFromLink($(event.target).parent()));
     },
 
@@ -65,7 +68,7 @@ Template.Leaderboard.events({
     "click .lead_into_leaderboard": (event) => {
         event.preventDefault();
 
-        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, "BoardTable");
+        Session.set(DYNAMIC_ACTIVE_ELEMENT_KEY, PLAYERS_TABLE_ACTIVE_TEMPLATE_NAME);
         Session.set(CURRENT_PLAYER_NB, Session.get("loggedUser")[0].nb);
     }
 });

@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
+import { Badges } from '/imports/api/databasedriver.js';
 
 import { DYNAMIC_ACTIVE_ELEMENT_KEY,
          CURRENT_PLAYER_NB    
@@ -125,6 +126,47 @@ Template.PlayerDashboard.helpers({
         .map((elem) => elem.points)
         .reduce((a, b) =>  a + b, 0);
 
+    },
+    myBadges() {
+        let user = _getUserByNb();
+        var badges = [];
+
+        user.score.forEach(function (score) {
+            if (score.type === "BADGE") {
+                var badgeName = score.name;
+                var badge = Badges.find({ "name": badgeName }).fetch();
+
+                if (badge !== undefined && badge.name !== "") {
+                    if (badges.length > 0) {
+                        var check = false;
+                        badges.forEach(function (n) {
+                            if (n.name === badge[0].name) {
+                                var count = parseInt(n.count);
+                                count++;
+                                n.count = count;
+                                check = true;
+                            }
+                        });
+
+                        if (!check) {
+                            badges.push({
+                                'name': badge[0].name, 
+                                'image': badge[0].image, 
+                                'count': 1
+                            });
+                        }
+                    } else {
+                        badges.push({
+                                'name': badge[0].name, 
+                                'image': badge[0].image, 
+                                'count': 1
+                            });
+                    }
+                }
+            }
+        });
+
+        return badges;
     }
 });
 
