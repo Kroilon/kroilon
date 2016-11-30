@@ -1,23 +1,32 @@
-# Level Up Tutorials Meteor Blaze Base
-
+# KroilonApp
+Repository of the official Kroilon App :) 
 
 ## How To Use
 
-Clone or download this repo. Browse to wherever downloaded in your terminal.
+Clone or download this repository. 
+
+Open a Terminal (in Linux) or Command Prompt (in Windows) and navigate to the repository where you downloaded the code.
+
+After navigating to the repository run the command "meteor".
 
 ```
-cd base-blaze
+cd KroilotGIT
 meteor
 ```
 
-Open up http://localhost:3000 and see this.
+Note: In the case this is the first time you are running the application (or if the database has been altered), after starting meteor, open a new terminal window (or command prompt) in the same directory and run the following commands:
 
-![Topics In Meteor](/public/topics.png)
+```
+meteor mongo
+use meteor
+load(".database/initAcademy.js");
+load(".database/initRooms.js");
+load(".database/initBadges.js");
+load(".database/initSecrets.js");
+load(".database/initHistory.js");
+load(".database/init.Activitiesjs");
+```
 
-## What is this?
 
-This is the base repo for starting any of the Meteor Blaze Topics Tutorials 
 
-## What this is not
 
-This is not a starter theme, base theme, or UI framework.
