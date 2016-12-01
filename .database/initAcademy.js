@@ -233,7 +233,7 @@ db.academy.insert({
 				},
 				{
 					date: new Date(),			
-					countType: 1,
+					countType: "ACTIVITY",
 					name: "Wells&Cans",					
 					points: 600,
 					pointsType: "XP"
