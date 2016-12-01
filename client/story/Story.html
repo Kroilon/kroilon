@@ -1,15 +1,15 @@
 <template name="Story">	
-	<div class="container">
+	<div class="container" style="width: inherit;">
 		<h2>Story</h2>
 		<br>
-			<p class="lead">In the year of 2069 Kroilon, a land far far away, was a strange and dangerous place to be. A place where freedom had no friends. A place of suffering and disbelief. A place where an evil wizard ruled everything and everyone. This warlord, Diaz Krez, was eager for blood and conquers.<br>
+			<p class="lead" style="text-align: justify; text-justify: inter-word;">In the year of 2069 Kroilon, a land far far away, was a strange and dangerous place to be. A place where freedom had no friends. A place of suffering and disbelief. A place where an evil wizard ruled everything and everyone. This warlord, Diaz Krez, was eager for blood and conquers.<br>
 			The people of Kroilon were unable to fight back, but there was a group of soldiers who was.
 			This is the story of Kroilon’s invasion, the story of when Diaz Krez went down on his people’s knees. Join in the platoon of braves that put an end to this oppression. Join the horde of magicians, healers, builders and unit leaders. Help stop Diaz Krez from invading other lands and stopping the blood shed.<br>
 			Enter the warlord fortress, capture him and destroy the island where the fortress was built. Maintain your stealth mode until you reach Diaz Krez headquarter’s (Performanthor Room) and escape on time, avoiding the explosion.</p>
 		<div class="col-sm-12 col-md-12 col-lg-12">
 	        <div class="row" >     
-	            <div class="col-sm-1 col-md-1 col-lg-1" style="text-align: center; padding-left: 0em; padding-right: 2em; padding-bottom: 0.5em; display: inline-block;">
-	                <div class="row">
+	            <div class="col-sm-1 col-md-1 col-lg-1" style="text-align: center; padding-left: 0em; padding-right: 2em; padding-bottom: 0.5em; display: inline-block; ">
+	                <div class="row" >
 	                {{#if checkIfEqualOrLarger currentDay 1}}
 	                <a href="" id="dayOne">
 	                	<img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto;" src='/icons/level1.png' alt="Avatar...">
@@ -144,7 +144,7 @@
 
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-12" id="briefing">{{{openBriefing}}}</div>
+        <div class="col-sm-12 col-md-12 col-lg-12" id="briefing" style="width: inherit; padding-left: 0px; text-align: justify; text-justify: inter-word;">{{{openBriefing}}}</div>
 
 	</div>
 </template> 
