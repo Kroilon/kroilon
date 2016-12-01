@@ -1,37 +1,57 @@
 <template name="BoardTable">
   <!-- Leaderboard main table part -->
-    <div class="container table-responsive MainBoard" style="font-size:16px" width="100%">
-        <table class="table table-striped table-bordered table-condensed">
+    <div class="container table-responsive MainBoard" style="font-size: 16px; width: inherit;">
+       <table class="table table-hover table-bordered table-condensed" style="width:100% border-top-style: none; border-left-style: none; border-right-style: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none; box-shadow: none;">
             <thead>
                 <tr>
-                    <th class="text-center"><span style="color:black;">Name</span></th>
-                    <th class="text-center"><span style="color:black;">Score</span></th>
-                    <th class="text-center"><span style="color:black;">Tap My Back</span></th>
-                    <th class="text-center"><span style="color:black;">&nbsp;</span></th>
-                    <th class="text-center"><span style="color:black;">&nbsp;</span></th>
+                    <th class="col-md-2 col-sm-2 col-xs-2" style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #de4f4f;">
+                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Name</p>
+                    </th>
+                    <th class="col-md-2 col-sm-2 col-xs-2" style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #de4f4f;">
+                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Score</p>
+                    </th>
+                    <th class="col-md-2 col-sm-2 col-xs-2" style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #de4f4f;">
+                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Tap My Back</p>
+                    </th>
+                    <th class="col-md-2 col-sm-2 col-xs-2" style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #de4f4f;">
+                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Dashboard</p>
+                    </th>
+                    <th class="col-md-2 col-sm-2 col-xs-2" style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #de4f4f;">
+                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Performance</p>
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 {{#each users}}
-                <tr class="divRow">
-                    <td class="text-center">{{user.name}}</td>
-                    <td class="text-center">{{totalScore}}</td>
-                    <td class="text-center">
-                        <a href="#" class="tap_my_back">
-                            <img src="icon_like.png" />
-                        </a>
+                <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
+                    <td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #ddd;">
+                        <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
                     </td>
-                    <td class="text-center">
-                        <a href="/{{user.nb}}" class="profile_dashboard">
-                            <img src="icon_profile.png" />
-                        </a>
+                    <td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #ddd;">
+                        <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
                     </td>
-                    <td class="text-center">
-                        <a href="/{{user.nb}}" class="personal_performance">
-                            <img src="icon_graph.png" />
-                        </a>
+                    <td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #ddd;">
+                        <div class="col-md-12" style="text-align: left;">
+                            <a href="#" class="tap_my_back">
+                                <img src="/leaderboard/like_.svg" height="18px" width="18px" style="padding-left: 40px;" alt="Like"/>
+                            </a>
+                        </div>
                     </td>
-                </tr>
+                    <td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #ddd;">
+                        <div class="col-md-12" style="text-align: left;">
+                            <a href="/{{user.nb}}" class="profile_dashboard">
+                                <img src="/leaderboard/user_.svg" height="18px" width="18px" style="padding-left: 40px;" alt="Dashboard"/>
+                            </a>
+                        </div>
+                    </td>
+                    <td style="vertical-align: middle; border-top-style: none; border-left-style: none; border-right-style: none; border-bottom-style: solid; border-bottom-width:1px; border-bottom-color: #ddd;">
+                        <div class="col-md-12" style="text-align: left;">
+                            <a href="/{{user.nb}}" class="personal_performance">
+                                <img src="/leaderboard/graph_.svg" height="18px" width="18px" style="padding-left: 45px;" alt="Graph"/>
+                            </a>
+                        </div>
+                    </td>
+                </tr> 
                 {{/each}}
             </tbody>
         </table>

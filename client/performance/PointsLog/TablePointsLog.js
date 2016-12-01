@@ -2,6 +2,10 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
+Template.registerHelper('formatDate', function(date) {
+  return date.toDateString();
+});
+
 Template.TablePointsLog.helpers({
 
 	playerPoints() {
@@ -18,7 +22,7 @@ Template.TablePointsLog.helpers({
 			{
 				$.each(scores, function(idx_scores, val_scores)
 				{
-					points.push({"name":val_players.name, "challenge":val_scores.challenge, "category":val_scores.category, "points":val_scores.points, "date":val_scores.date});
+					points.push({"player":val_players.name, "category":val_scores.countType, "name":val_scores.name, "points":val_scores.points, "type":val_scores.pointsType,  "date":val_scores.date});
 				//	console.log(points_a);
 				//	console.log(points[0]);
 				});
