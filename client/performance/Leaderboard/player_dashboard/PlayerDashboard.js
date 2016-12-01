@@ -2,9 +2,13 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
-import { DYNAMIC_ACTIVE_ELEMENT_KEY,
-         CURRENT_PLAYER_NB    
-     } from '/client/performance/Leaderboard/Leaderboard.js';
+import { getUserByNB, getUniqueValuesOfKey } from '../../PerformanceGlobalHelpers.js';
+
+
+import {
+    DYNAMIC_ACTIVE_ELEMENT_KEY,
+    CURRENT_PLAYER_NB
+} from '/client/performance/Leaderboard/Leaderboard.js';
 
 
 Template.PlayerDashboard.helpers({
@@ -23,8 +27,6 @@ Template.PlayerDashboard.helpers({
                 spacingBottom: 0,
                 spacingLeft: 0,
                 spacingRight: 0
-
-
             },
 
             title: {
@@ -115,33 +117,33 @@ Template.PlayerDashboard.helpers({
         return parseInt(average_points);
     },
 
-    name(){
-      let user = _getUserByNb();
-      return user.name;
+    name() {
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
+        return user.name;
     },
-    score(){
-      let user = _getUserByNb();
-      console.dir(user)
-      return user.score
-        .map((elem) => elem.points)
-        .reduce((a, b) =>  a + b, 0);
+    score() {
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
+        return user.score
+            .map((elem) => elem.points)
+            .reduce((a, b) => a + b, 0);
 
     },
     myBadges() {
-        var nb = Session.get(CURRENT_PLAYER_NB);
-        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-        var user = $.grep(latestAcademy.users, function(e) { return e.nb == nb; });
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
         var badges = new Array();
 
-        user[0].score.forEach(function (score) {            
+        user.score.forEach(function (score) {
             if (score.countType === "BADGE") {
                 var badgeName = score.name;
-                var badge = Badges.find( {"name":badgeName} ).fetch();
+                var badge = Badges.find({ "name": badgeName }).fetch();
 
                 if (badge !== undefined && badge.name !== "") {
                     if (badges.length > 0) {
                         var check = false;
-                        badges.forEach(function(n){
+                        badges.forEach(function (n) {
                             if (n.name === badge[0].name) {
                                 var count = parseInt(n.count);
                                 count++;
@@ -151,19 +153,17 @@ Template.PlayerDashboard.helpers({
                         });
 
                         if (!check) {
-                            var newBadge = {'name':badge[0].name, 'image':badge[0].image, 'count':1};
+                            var newBadge = { 'name': badge[0].name, 'image': badge[0].image, 'count': 1 };
                             badges.push(newBadge);
                         }
 
                     } else {
-                        var newBadge = {'name':badge[0].name, 'image':badge[0].image, 'count':1};
+                        var newBadge = { 'name': badge[0].name, 'image': badge[0].image, 'count': 1 };
                         badges.push(newBadge);
                     }
                 }
             }
         });
-
-        console.log("Before return badges");
         return badges;
     }
 });
@@ -173,34 +173,37 @@ Template.PlayerDashboard.helpers({
 Helpers came outside in order to be used inside other configurations
 like "playerSkillsChart".
  */
-
-function _getUserByNb(){
-    let nb = Session.get(CURRENT_PLAYER_NB);
-    let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-    return $.grep(latestAcademy.users, function (e) { return e.nb == nb; })[0];
-}
-
 function tapSkillsPeople() {
-    let user = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let user = getUserByNB(nb);
+
     return user.skills[0].people;
 }
 
 function tapSkillsAndroid() {
-    let user = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let user = getUserByNB(nb);
+
     return user.skills[0].android;
 }
 
 function tapSkillsManagement() {
-    let user = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let user = getUserByNB(nb);
+
     return user.skills[0].management;
 }
 
 function tapSkillsProblemSolving() {
-    let user = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let user = getUserByNB(nb);
+
     return user.skills[0].problemSolving;
 }
 
 function tapSkillsCommunication() {
-    let user = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let user = getUserByNB(nb);
+
     return user.skills[0].communication;
 }

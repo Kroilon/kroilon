@@ -46,23 +46,3 @@ Template.Leaderboard.helpers({
     }
 });
 
-
-
-function _getUserByNB(nb) {
-    let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-    let users = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
-    return users[0];
-}
-
-
-/*************************************************
- ***** Utilities Private Functions ***************
- *************************************************/
-
-
-function getUniqueValuesOfKey(array, key) {
-    return array.reduce(function (carry, item) {
-        if (item[key] && !~carry.indexOf(item[key])) carry.push(item[key]);
-        return carry;
-    }, []);
-}

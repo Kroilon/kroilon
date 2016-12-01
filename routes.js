@@ -67,7 +67,7 @@ FlowRouter.route('/performance', {
     name: '/performance',
     action() {
         BlazeLayout.render("AppLayout", {
-            main: "LeaderboardDetails"
+            main: "LeaderboardMainTabs"
         });
     }
 });

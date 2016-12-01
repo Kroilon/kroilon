@@ -10,7 +10,7 @@ ReactiveTabs.createInterface({
 	}
 });
 
-Template.LeaderboardDetails.helpers({
+Template.LeaderboardMainTabs.helpers({
 
 	playerPoints() {
 
@@ -166,12 +166,12 @@ Template.LeaderboardDetails.helpers({
 
 
 //default state when the template is created
-Template.LeaderboardDetails.onCreated = function () {
+Template.LeaderboardMainTabs.onCreated = function () {
 	Session.setDefault('showingTab', 'search');
 };
 
 
-Template.LeaderboardDetails.events({
+Template.LeaderboardMainTabs.events({
 	'click .divCell-like': function (event, instance) {
 		$(event.currentTarget).prop('src', 'Like-07.png');
 	}

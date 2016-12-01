@@ -4,6 +4,7 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+import { getUniqueValuesOfKey } from '../../PerformanceGlobalHelpers.js';
 
 import { DYNAMIC_ACTIVE_ELEMENT_KEY,
          CURRENT_PLAYER_NB    
@@ -36,11 +37,12 @@ Template.PlayerPerformance.helpers({
     return parseInt(average_points);
   },
   PlayerPerformanceChart() {
-    var currentUser = _getUserByNb();
+    let nb = Session.get(CURRENT_PLAYER_NB);
+    let currentUser = getUserByNB(nb);
 
-    var scores = currentUser.score;
+    let scores = currentUser.score;
 
-    var weekPoints = getUniqueValuesOfKey(scores, 'points');
+    let weekPoints = getUniqueValuesOfKey(scores, 'points');
 
     return {
       colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
@@ -98,17 +100,3 @@ Template.PlayerPerformance.helpers({
     };
   }
 });
-
-
-function _getUserByNb(){
-    let nb = Session.get(CURRENT_PLAYER_NB);
-    let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-    return $.grep(latestAcademy.users, function (e) { return e.nb == nb; })[0];
-}
-
-function getUniqueValuesOfKey(array, key) {
-    return array.reduce(function (carry, item) {
-        if (item[key] && !~carry.indexOf(item[key])) carry.push(item[key]);
-        return carry;
-    }, []);
-}
