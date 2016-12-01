@@ -130,6 +130,12 @@ Template.PlayerDashboard.helpers({
             .reduce((a, b) => a + b, 0);
 
     },
+    tapMyBackScore() {
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
+        return user.counter;
+
+    },
     myBadges() {
         let nb = Session.get(CURRENT_PLAYER_NB);
         let user = getUserByNB(nb);

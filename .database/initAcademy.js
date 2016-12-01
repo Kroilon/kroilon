@@ -68,6 +68,13 @@ db.academy.insert({
 					pointsType: "HP"										
 				},
 				{					
+					date: new Date(),
+					countType: "BADGE",
+					name: "WATCH",
+					points: 30,
+					pointsType: "HP"										
+				}, 
+				{					
 					date: new Date(2015, 02),
 					countType: "ACTIVITY",
 					name: "KP Challenge",					
