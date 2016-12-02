@@ -1,0 +1,28 @@
+#topScores {
+	width: 100%; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none; 
+    -o-box-shadow: none; 
+    box-shadow: none;
+}
+
+#topScores tr {
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border: 1px solid #fff; 
+    background: #fff;
+}
+
+#topScores td {
+    vertical-align: middle; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border-bottom-style: solid; 
+    border-bottom-width:1px; 
+    border-bottom-color: #ddd;
+}

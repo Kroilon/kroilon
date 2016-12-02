@@ -1,0 +1,38 @@
+#tablePointsLog {
+	width: 100%; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    -webkit-box-shadow: none; 
+    -moz-box-shadow: none; 
+    -o-box-shadow: none; 
+    box-shadow: none;
+}
+
+#tablePointsLog th {
+    vertical-align: middle; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border-bottom-style: solid; 
+    border-bottom-width: 1px; 
+    border-bottom-color: #de4f4f;
+}
+
+#tablePointsLog tr {
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border: 1px solid #fff; 
+    background: #fff;
+}
+
+#tablePointsLog td {
+    vertical-align: middle; 
+    border-top-style: none; 
+    border-left-style: none; 
+    border-right-style: none; 
+    border-bottom-style: solid; 
+    border-bottom-width:1px; 
+    border-bottom-color: #ddd;
+}
