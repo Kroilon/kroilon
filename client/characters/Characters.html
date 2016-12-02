@@ -1,17 +1,10 @@
 <template name="Characters">
   <h2>Characters</h2>
-  <div class="container"> 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          {{#each characters}} 
-            <div class="col-md-3">
-              <!--  style="margin-top: 30px; margin-bottom: 30px;" -->
-              <img src="/cards/{{card}}" class="img-responsive img-rounded"  alt="Avatar..." >
-            </div>
-          {{/each}} 
-        </div>  
+  <div class="container" style="width: inherit;"> 
+    <div class="col-md-12">
+      <div class="row">
+        {{> reactiveTable class="table table-hover table-striped table-bordered table-condensed" id="playersTable" collection=academyPlayers settings=tableSettings}}
       </div>
-    </div>
+    </div>  
   </div>
 </template>
