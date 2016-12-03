@@ -73,7 +73,7 @@ Template.TableAcademy.events({
     event.preventDefault();  
 
     if (Academy.find().count() === 1) {
-      alert('Not possible to delete last academy!');
+      Modal.show('deleteOnlyAcademyModal', this);
     } else {
       Modal.show('deleteAcademyModal', this);
     }
