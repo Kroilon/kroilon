@@ -1,24 +1,52 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
-Template.TableAcademy.helpers({
+Template.registerHelper('getScore', function(academy) {
   
-  academies() {
-    var academies = Academy.find({}).fetch();
-    return academies;
-  },
+  var users = academy.users;
+  var total_users = users.length;
+  var total_points = 0;
 
-  totalPlayers: function (data) {
-    if (data.length === 0) {
-      return 0;
-    } else {
-      return data.length;
+  $.each(users, function(index_users, value_users) {
+
+    var user_points = 0;
+
+    if (value_users.score != undefined) {
+          $.each(value_users.score, function(index_score, value_score) {
+              user_points += value_score.points;
+          });
+      }
+
+    value_users.totalScore = user_points;
+    total_points += user_points;
+
+  });
+
+  var average_points = (total_points / total_users - 1);
+  //console.log("average_points: " + average_points);
+
+  var teamScore = academy.teamScore;
+  var total_team_score = teamScore.length;
+  var total_team_points = 0;
+
+  $.each(teamScore, function(index_scores, value_scores) {
+
+    if (value_scores.points != undefined) {
+        total_team_points += value_scores.points;
     }
-  },
-  academyPlayers() {
 
-    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-    var users = latestAcademy.users;
+  });
+
+  var average_team_points = (total_team_points / total_team_score);
+  //console.log("average_team_points: " + average_team_points);
+
+  return parseInt(average_points + average_team_points);
+
+});
+
+Template.registerHelper('getPlayers', function(academy) {
+  
+    var users = academy.users;
     var total_users = 0;
 
     $.each(users, function(index_users, value_users) {
@@ -28,35 +56,41 @@ Template.TableAcademy.helpers({
         }
     });   
 
-    console.log("total_users: " + total_users); 
+    console.log("total_users: " + total_users);
     return total_users;
+});
+
+
+Template.TableAcademy.helpers({
+  
+  academies() {
+    var academies = Academy.find({}).fetch();
+    return academies;
   },
+
+  latestAcademy: function (academy) {
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    if (academy._id === latestAcademy._id) {
+      return true;
+    }
+    else {
+      return false;
+    } 
+
+  },
+
+  totalPlayers: function (data) {
+    if (data.length === 0) {
+      return 0;
+    } else {
+      return data.length;
+    }
+  },
+
   isActive: function (flag) {
       return flag !== true
-  },
-  teamScore() {
-    var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-    var users = latestAcademy.users;
-    var total_users = users.length;
-    var total_points = 0;
-
-    $.each(users, function(index_users, value_users) {
-
-        var user_points = 0;
-
-        if (value_users.score != undefined) {
-            $.each(value_users.score, function(index_score, value_score) {
-                user_points += value_score.points;
-            });
-        }
-
-        value_users.totalScore = user_points;
-        total_points += user_points;
-    });
-
-    var average_points = (total_points / total_users - 1);
-    //console.log("team_points: " + average_points); 
-    return parseInt(average_points);
   }
 
 });
@@ -81,9 +115,7 @@ Template.TableAcademy.events({
 
   'click #activateAcademy' (event){    
     event.preventDefault();  
-
-    alert('Academy activated');
-
+    Modal.show('activateAcademyModal', this);
   }
 
 });

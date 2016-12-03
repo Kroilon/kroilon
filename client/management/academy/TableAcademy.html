@@ -17,13 +17,19 @@
                   {{#each academies}}
                     <tr class="divRow">
                       <td id="descriptionSecret">{{name}}</td>
-                      <td>{{academyPlayers}}</td>
-                      <td>{{teamScore}}</td>
-                      <td>
-                        <a style="color: #de4f4f" href="" id="activateAcademy">
-                          <span class="glyphicon glyphicon-ok"></span>
-                        </a>
-                      </td>
+                      <td>{{getPlayers this}}</td>
+                      <td>{{getScore this}}</td>
+                      {{#if latestAcademy this}}
+                        <td>
+                          ACTIVE
+                        </td>
+                      {{else}}
+                        <td>
+                          <a style="color: #de4f4f" href="" id="activateAcademy">
+                            <span class="glyphicon glyphicon-ok"></span>
+                          </a>
+                        </td>
+                      {{/if}}
                       <td>
                         <a style="color: #de4f4f" href="" id="deleteAcademy">
                           <span class="glyphicon glyphicon-remove"></span>

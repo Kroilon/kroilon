@@ -22,8 +22,8 @@ db.academy.insert({
 	teamScore: [
 		{
 			date: new Date(),
-			teamChallenge: "Team Balance",
-			teamPoints: "100",
+			name: "Team Balance",
+			points: "100",
 			badge: "",
 			room: "Coachroach Entry"
 		}

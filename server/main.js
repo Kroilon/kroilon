@@ -135,6 +135,9 @@ Meteor.methods({
         {_id: rooms._id, "name": currentRoom, "badges.name": badgeName}, 
         {$set : {'badges.locked': booleanValue }}
       );
+    },
+    activateAcademy : function(id) {
+      Academy.update({_id: id}, {$set :{'date' : new Date() }});
     }
 
 });
