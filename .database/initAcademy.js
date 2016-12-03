@@ -50,7 +50,7 @@ db.academy.insert({
 			businessUnit: "CF",  
     		mbti: "ENTJ",
     		counter: 8,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 4,
     		skills:[{
 				people: 7,
@@ -96,7 +96,7 @@ db.academy.insert({
           	businessUnit: "FSI",
     		mbti: "ISFP",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 0,
     		skills:[{
 				people: 7,
@@ -135,7 +135,7 @@ db.academy.insert({
           	businessUnit: "ITC",
     		mbti: "ISFP",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 1,
     		skills:[{
 				people: 10,
@@ -168,7 +168,7 @@ db.academy.insert({
           	businessUnit: "VC",
     		mbti: "ISFJ",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 0,
     		skills:[{
 				people: 8,
@@ -207,7 +207,7 @@ db.academy.insert({
           	businessUnit: "FSI",
     		mbti: "ESTJ",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 1,
     		skills:[{
 				people: 6,
@@ -253,7 +253,7 @@ db.academy.insert({
           	businessUnit: "CF",
     		mbti: "ISTJ",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 0,
     		skills:[{
 				people: 6,
@@ -285,7 +285,7 @@ db.academy.insert({
           	businessUnit: "CF",
     		mbti: "ISTJ",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 0,
     		skills:[{
 				people: 6,
@@ -317,7 +317,7 @@ db.academy.insert({
           	businessUnit: "IMS",
     		mbti: "ISTJ",
 			counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 0,
     		skills:[{
 				people: 9,
@@ -363,7 +363,7 @@ db.academy.insert({
           	businessUnit: "IMS",
     		mbti: "ESTJ",
     		counter: 0,
-			voted: false,
+			voted: "Nobody",
 			tardiness: 3,
     		skills:[{
 				people: 7,
