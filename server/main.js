@@ -7,7 +7,6 @@ import { Secrets } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
 	  updateScore: function (id,playerId,score) {
-
       var currentUserId = Meteor.userId();
       Academy.update(
           { _id: id, 'users.nb': playerId },
@@ -51,15 +50,6 @@ Meteor.methods({
 
     },
 
-    addAcademyUser:function(id,user){
-      var currentUserId = Meteor.userId();
-      Academy.update(
-          { _id: id},
-          {$push: {'users': user}},
-          {createdBy: currentUserId}
-      );
-    },
-
     addAcademy : function(data) {
 
       console.log(data);
@@ -83,58 +73,75 @@ Meteor.methods({
           {$pull: {'users': {nb:playerId}}}
       );
 	  },
+
 	  deleteBadge: function (badgename) {
 
       Badges.remove(
           { name: badgename }
       );
 	  },
+
 	  deleteRoom: function (roomname) {
 
       Rooms.remove(
           { name: roomname }
       );
 	  },
+
 	  deleteChallenge: function (challengename) {
 
       Challenges.remove(
           { name: challengename }
       );
 	  },
-		updateDailyMessage : function(latestAcademy, message)
-		{
+
+		updateDailyMessage : function(latestAcademy, message)	{
 			Academy.update({_id: latestAcademy._id}, {$set :{'dailyMessage' : message }});
 		},
-		terminateDay : function(latestAcademy)
-		{
+		
+    terminateDay : function(latestAcademy) {
 			var energyLevel = parseInt(latestAcademy.energyLevel) - 1;
 
 			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : energyLevel }});
 		},
-		addCheese : function(latestAcademy, burgerCount)
-		{
+
+		addCheese : function(latestAcademy, burgerCount) {
 			//var newValue = parseInt(latestAcademy.energyLevel) + parseInt(burgerCount);
 			Academy.update({_id: latestAcademy._id}, {$set :{'energyLevel' : burgerCount }});
 		},
+
 		updateHomeMessage : function(latestAcademy, messageHome) {
 			Academy.update({_id: latestAcademy._id}, {$set :{'homeMessage' : messageHome }});
 		},
+
 		insertSecret : function(data) {
 			Secrets.insert(data);
 		},
+
     discoverSecret : function(id) {
       Secrets.update({_id: id}, {$set :{'discovered' : true }});
     },
+
     deleteSecret : function(id) {
       Secrets.remove(
           { _id: id }
       );
     },
+
     activateAcademy : function(id) {
       Academy.update({_id: id}, {$set :{'date' : new Date() }});
     },
+
     updateBadgeStatus : function( roomName, badgeName, newStatus) {      
       Rooms.update({_id: roomName._id, 'badges.name': badgeName}, {$set:{'badges.$.locked': newStatus}});
+    },
+
+    insertAcademyPlayer: function( academy, user) {
+      //Academy.insert({'users': user});
+      //Academy.insert({'users': user});
+      //Academy.insert({ _id: academy.id }, {'users': user })
+      console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id }, { $push: { 'users': user } });
     }
 
 });

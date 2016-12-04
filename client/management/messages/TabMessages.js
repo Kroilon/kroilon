@@ -90,19 +90,6 @@ Template.TabMessages.events({
     event.preventDefault();
     Meteor.call("updateHomeMessage", latestAcademy, messageHome);
   },
-  'click #nextDay' (event){
-
-    event.preventDefault();
-    //change currentRoom to value of nextDay
-    //reduce one energy bar
-    //if new room has badge food, add two energy bars
-    //change field voted of every user to false
-
-    Modal.show('endDayModal', this); 
-    //alert("Day terminated!");
-    //event.preventDefault();
-    //Meteor.call("terminateDay", latestAcademy);
-  },
   'click #unlockBadge' (event){
 
     event.preventDefault();
@@ -127,6 +114,17 @@ Template.TabMessages.events({
     var mapRoom = Rooms.findOne({'name': currentRoom });
     Meteor.call("updateBadgeStatus", mapRoom, badgeName, true);   
 
+  },
+  'click #nextDay' (event){
+
+    event.preventDefault();
+    //change currentRoom to value of nextDay
+    //reduce one energy bar
+    //if new room has badge food, add two energy bars
+    //change field voted of every user to false
+    //run rules and attribute points
+    Modal.show('endDayModal', this); 
+    //Meteor.call("terminateDay", latestAcademy);
   },
   
 });

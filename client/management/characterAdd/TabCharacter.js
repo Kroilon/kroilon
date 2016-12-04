@@ -37,25 +37,26 @@ Template.TabCharacter.helpers({
     },
     businessUnitTypes: function () {
     return [
-        { name: 'CF', value: 'CelFocus' },
+        { name: 'CF', value: 'Celfocus' },
+        { name: 'GTE', value: 'Government, Transport and Energy' },
         { name: 'FSI', value: 'Financial Services' },
         { name: 'VC', value: 'Venture Capital' },
-        { name: 'IMS', value: 'IMS' },        
-        { name: 'ITC', value: 'IT Contracting' }
+        { name: 'NT', value: 'NeoTalent' },
+        { name: 'IMS', value: 'IMS' }        
       ];
     },
     possiblePoints: function () {
     return [
-        { name: 'one', value: '1' },
-        { name: 'two', value: '2' },
-        { name: 'three', value: '3' },
-        { name: 'four', value: '4' },
-        { name: 'five', value: '5' },
-        { name: 'six', value: '6' },
-        { name: 'seven', value: '7' },
-        { name: 'eight', value: '8' },
-        { name: 'nine', value: '9' },
-        { name: 'ten', value: '10' }
+        { name: '1', value: '1' },
+        { name: '2', value: '2' },
+        { name: '3', value: '3' },
+        { name: '4', value: '4' },
+        { name: '5', value: '5' },
+        { name: '6', value: '6' },
+        { name: '7', value: '7' },
+        { name: '8', value: '8' },
+        { name: '9', value: '9' },
+        { name: '10', value: '10' } 
       ];
     }
 
@@ -68,60 +69,64 @@ Template.TabCharacter.events({
 
       var user = {};
 
-      var characterAvatar = $('#characterAvatar').val();
+      //var characterAvatar = $('#characterAvatar').val();
       var characterNB = $('#characterNB').val();
-      var characterName = $('#characterName').val();      
+      console.log("characterNB: " + characterNB);
       var characterEmail = $('#characterEmail').val();
-      var characterPassword = $('#characterPassword').val();
-      var characterBusiness = $('#characterBusiness').val();
-      var characterMobile = $('#characterMobile').val();
-      var characterDateOfBirth = $('#characterDateOfBirth').val();
-      var characterBusinessUnit = $('#characterBusinessUnit').val();      
+      console.log("characterEmail: " + characterEmail);
       var characterMBTI = $('#characterMBTI').val();
-      var characterPPLSkills = $('#characterPPLSkills').val();
+      console.log("characterMBTI: " + characterMBTI);
+      var characterName = $('#characterName').val();
+      console.log("characterName: " + characterName);      
+      var characterPassword = $('#characterPassword').val();
+      console.log("characterPassword: " + characterPassword);
+      var characterMobile = $('#characterMobile').val();
+      console.log("characterMobile: " + characterMobile);
+      var characterDateOfBirth = $('#characterDateOfBirth').val();
+      console.log("characterDateOfBirth: " + characterDateOfBirth);
+      var characterBusinessUnit = $('#characterBusinessUnit').val(); 
+      console.log("characterBusinessUnit: " + characterBusinessUnit);
+      var characterPeopleSkills = $('#characterPeopleSkills').val();
+      console.log("characterPeopleSkills: " + characterPeopleSkills);
       var characterCommunicationSkills = $('#characterCommunicationSkills').val();
+      console.log("characterCommunicationSkills: " + characterCommunicationSkills);
       var characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
+      console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
       var characterManagementSkills = $('#characterManagementSkills').val();
+      console.log("characterManagementSkills: " + characterManagementSkills);
       var characterAndroidSkills = $('#characterAndroidSkills').val();
+      console.log("characterAndroidSkills: " + characterAndroidSkills);
 
-      var user = 	{
-    			nb: characterNB,
-    			name:characterName,
-    			avatar: characterAvatar,
-    			email: characterEmail,
-          password: characterPassword,
-    			profile: "Player",
-          contact: characterMobile,
-          dateOfBirth: characterDateOfBirth,
-          businessUnit: characterBusinessUnit,
-    			mbti: characterMBTI,
-    			skills:[{
-    					people: characterCommunicationSkills,
-    					communication: characterCommunicationSkills,
-    					problemSolving: characterProblemSolvingSkills,
-    					management:characterManagementSkills,
-    					android:characterAndroidSkills
-    				}],
-          counter: 0,
-          voted: false,
-          score:[
-            {
-              type: '',
-              name: '', 
-    					points: 0,
-              pointsType: '',
-              date: new Date()
-            }
-          ]
-    		};
+      user = 	{
+  			nb: characterNB,
+  			name:characterName,
+  			//avatar: characterAvatar,
+  			email: characterEmail,
+        password: characterPassword,
+  			profile: "Player",
+        dateOfBirth: characterDateOfBirth,
+        contact: characterMobile,          
+        businessUnit: characterBusinessUnit,
+  			mbti: characterMBTI,
+        counter: 0,
+        voted: "Nobody",
+        tardiness: 0,
+  			skills:[{
+  					people: characterPeopleSkills,
+  					communication: characterCommunicationSkills,
+  					problemSolving: characterProblemSolvingSkills,
+  					management: characterManagementSkills,
+  					android: characterAndroidSkills
+  				}]
+  		};
 
-        var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
-        Modal.show('characterInsertModal', this);
-        //var characterNB = event.target.characterNB.value;
-        Meteor.call("addAcademyUser",latestAcademy._id, user); 
-        //event.target.characterNB.value = "";      
-        $("#addCharacter")[0].reset();  
+      Modal.show('characterInsertModal', this);
+      //var characterNB = event.target.characterNB.value;
+      Meteor.call("insertAcademyPlayer", latestAcademy, user); 
+      //event.target.characterNB.value = "";      
+      $("#addCharacter")[0].reset();  
 
   },
   'click #deleteCharacter' (event){
