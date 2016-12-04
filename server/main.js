@@ -137,10 +137,7 @@ Meteor.methods({
     },
 
     insertAcademyPlayer: function( academy, user) {
-      //Academy.insert({'users': user});
-      //Academy.insert({'users': user});
-      //Academy.insert({ _id: academy.id }, {'users': user })
-      console.log("academyID: " + academy._id);
+      //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id }, { $push: { 'users': user } });
     }
 
