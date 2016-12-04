@@ -23,7 +23,7 @@
     </div>
   </div>  
   -->
-  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">   
+  <div class="container" style="width: inherit; border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;">   
     <div class="form-group row">
       <label for="message2" class="col-xs-2 col-form-label">Current Message</label>
       <div class="col-xs-9">
@@ -43,7 +43,7 @@
     </div>
   </div> 
   {{#if roomHasBadges}} 
-    <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;"> 
+    <div class="container" style="width: inherit; border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;"> 
       <div class="form-group row">
         {{#each currentRoomBadges}} 
           <div class="col-md-3">
@@ -55,11 +55,11 @@
               <h4>{{this.status}}</h4>
             </p>  
             {{#if this.locked}}           
-              <button  class="btn btn-default btn-circle unlockBadge" data-toggle="tooltip" data-placement="bottom" title="Unlock badge" style="padding: 0px 0px 0px 0px;">
+              <button  class="btn btn-default btn-circle" id="unlockBadge" data-toggle="tooltip" data-placement="bottom" title="Unlock badge" style="padding: 0px 0px 0px 0px;">
                 <i class="fa fa-unlock" aria-hidden="true" style="color: #ffffff; font-size: 1.2em;"></i>
               </button>
             {{else}}
-              <button  class="btn btn-default btn-circle lockBadge" data-toggle="tooltip" data-placement="bottom" title="Lock badge" style="padding: 0px 0px 0px 0px;">
+              <button  class="btn btn-default btn-circle" id="lockBadge" data-toggle="tooltip" data-placement="bottom" title="Lock badge" style="padding: 0px 0px 0px 0px;">
                 <i class="fa fa-lock" aria-hidden="true" style="color: #ffffff; font-size: 1.2em;"></i>
               </button>
             {{/if}} 
@@ -68,13 +68,13 @@
       </div>
     </div>  
   {{else}}
-    <div class="container" style="border: solid #f7f7f9; border-width: .3rem; margin-bottom: 0.5rem;"> 
+    <div class="container" style="width: inherit; border: solid #f7f7f9; border-width: .3rem; margin-bottom: 0.5rem;"> 
       <div class="form-group row">
-        <p class="lead" style=" margin-top: 1.0em; margin-left: 1.0em;">There are no badges to unlock!</p>
+        <p class="lead" style="margin-top: 1.0em; margin-left: 1.0em;">There are no badges to unlock!</p>
       </div>
     </div>
   {{/if}} 
-  <div class="container" style="border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;"> 
+  <div class="container" style="width: inherit; border: solid #f7f7f9; padding: 1.8rem; border-width: .3rem; margin-bottom: 1.5rem;"> 
     <div class="form-group row">
       <label for="message2" class="col-xs-2 col-form-label">Current Room</label>
       <div class="col-xs-9">

@@ -103,7 +103,7 @@ Template.TabMessages.events({
     //event.preventDefault();
     //Meteor.call("terminateDay", latestAcademy);
   },
-  'click .unlockBadge' (event){
+  'click #unlockBadge' (event){
 
     event.preventDefault();
     var badgeName = this.name;
@@ -111,10 +111,22 @@ Template.TabMessages.events({
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var currentRoom = latestAcademy.currentRoom; 
 
-    var rooms = Rooms.findOne({}, {sort: {date: -1, limit: 1}});
+    var mapRoom = Rooms.findOne({'name': currentRoom });
+    //console.log("RoomId: " + mapRoom._id);
+    Meteor.call("updateBadgeStatus", mapRoom, badgeName, false);   
 
-    Meteor.call("updateBadgeStatus", rooms, currentRoom, badgeName, false);   
+  },
+  'click #lockBadge' (event){
 
-  }
+    event.preventDefault();
+    var badgeName = this.name;
+    console.log("LockBadge: " + badgeName);
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var currentRoom = latestAcademy.currentRoom; 
+    
+    var mapRoom = Rooms.findOne({'name': currentRoom });
+    Meteor.call("updateBadgeStatus", mapRoom, badgeName, true);   
+
+  },
   
 });

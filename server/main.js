@@ -130,14 +130,11 @@ Meteor.methods({
           { _id: id }
       );
     },
-    updateBadgeStatus : function( rooms, currentRoom, badgeName, booleanValue) {
-      Rooms.update(
-        {_id: rooms._id, "name": currentRoom, "badges.name": badgeName}, 
-        {$set : {'badges.locked': booleanValue }}
-      );
-    },
     activateAcademy : function(id) {
       Academy.update({_id: id}, {$set :{'date' : new Date() }});
+    },
+    updateBadgeStatus : function( roomName, badgeName, newStatus) {      
+      Rooms.update({_id: roomName._id, 'badges.name': badgeName}, {$set:{'badges.$.locked': newStatus}});
     }
 
 });
