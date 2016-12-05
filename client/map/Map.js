@@ -39,7 +39,7 @@ Template.Map.helpers({
 				img_energyLevel = "/energyLevels/energyLevels_5.png";
 				break;
 			default:
-				img_energyLevel = "/energyLevels/energyLevels_0.png";
+				img_energyLevel = "/energyLevels/energyLevels_5.png";
 				break;
 		}
 

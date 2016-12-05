@@ -118,13 +118,33 @@ Template.TabMessages.events({
   'click #nextDay' (event){
 
     event.preventDefault();
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
     //change currentRoom to value of nextDay
+    var nextRoom = $('#nextRoom').val(); 
+    Meteor.call("changeRoom", latestAcademy, nextRoom);   
+
     //reduce one energy bar
-    //if new room has badge food, add two energy bars
+    var energyLevel = latestAcademy.energyLevel;
+    energyLevel = energyLevel - 1;
+    Meteor.call("setEnergyLevel", latestAcademy, energyLevel);
+
+    //if new room has badge FOOD, add two energy bars
+    var currentRoom = latestAcademy.currentRoom; 
+    var mapRoom = Rooms.find({'name': currentRoom }).fetch();
+    mapRoom[0].badges.forEach( function(badges){
+      if (badges.name === "FOOD") { 
+        var newEnergyLevel = latestAcademy.energyLevel;
+        newEnergyLevel = energyLevel + 2; 
+        Meteor.call("setEnergyLevel", latestAcademy, newEnergyLevel);
+      }
+    }); 
+
     //change field voted of every user to false
-    //run rules and attribute points
-    Modal.show('endDayModal', this); 
-    //Meteor.call("terminateDay", latestAcademy);
+    Meteor.call("setVotedStatus", latestAcademy, "Nobody");
+
+    //run rules and attribute points 
   },
   
 });

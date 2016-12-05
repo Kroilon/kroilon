@@ -149,6 +149,21 @@ Meteor.methods({
     updateAcademyPlayer: function( academy, user) {
       //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id, 'users.nb': user.nb }, { $set: {'users.$': user }} );
-    }
+    },
+
+    changeRoom: function( academy, room) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id }, { $set: {'currentRoom': room }} );
+    },
+
+    setEnergyLevel: function( academy, energyLevel) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id }, { $set: {'energyLevel': energyLevel }} );
+    },
+
+    setVotedStatus: function( academy, status) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id }, { $set: {'users.voted': status } }, {multi: true} );
+    }   
 
 });

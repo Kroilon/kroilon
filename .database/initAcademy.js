@@ -50,7 +50,7 @@ db.academy.insert({
 			businessUnit: "CF",  
     		mbti: "ENTJ",
     		counter: 8,
-			voted: "Nobody",
+			voted: "1111",
 			tardiness: 4,
     		skills:[{
 				people: 7,
@@ -96,7 +96,7 @@ db.academy.insert({
           	businessUnit: "FSI",
     		mbti: "ISFP",
     		counter: 0,
-			voted: "Nobody",
+			voted: "12",
 			tardiness: 0,
     		skills:[{
 				people: 7,
