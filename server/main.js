@@ -163,7 +163,7 @@ Meteor.methods({
 
     setVotedStatus: function( academy, status) {
       //console.log("academyID: " + academy._id);
-      Academy.update( { _id: academy._id }, { $set: {'users.voted': status } }, {multi: true} );
+      Academy.update( { _id: academy._id }, { $set: {'users.$.voted': status } }, {multi: true} );
     }   
 
 });
