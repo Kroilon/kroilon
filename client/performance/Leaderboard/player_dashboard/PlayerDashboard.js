@@ -114,7 +114,25 @@ Template.PlayerDashboard.helpers({
         });
 
         let average_points = (total_points / total_users - 1);
-        return parseInt(average_points);
+        //console.log("average_points: " + average_points);
+
+        let teamScore = latestAcademy.teamScore;
+        let total_team_score = teamScore.length;
+        let total_team_points = 0;
+
+        $.each(teamScore, function(index_scores, value_scores) {
+
+            if (value_scores.points != undefined) {
+                total_team_points += value_scores.points;
+        }
+
+        });
+
+        let average_team_points = (total_team_points / total_team_score);
+        //console.log("average_team_points: " + average_team_points);
+
+        return parseInt(average_points + average_team_points);
+
     },
 
     name() {
