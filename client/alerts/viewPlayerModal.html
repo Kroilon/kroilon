@@ -1,0 +1,112 @@
+<template name="viewPlayerModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Player Info</h4>
+                </div>
+                <div class="modal-body">                 
+                    <div class="container" style="width: inherit;"> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row" style="margin-top: 1.5em;">
+                                    <div class="col-md-4 text-center">
+                                      <br>
+                                      <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">                                      
+                                      <hr>
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="form-group row">
+                                        <div class="col-md-12">
+                                          <label for="characterNB" class="col-form-label" style="font-weight: normal">NB</label>
+                                          <input class="form-control" type="text" placeholder="{{nb}}" id="characterNB" readonly>
+                                        </div> 
+                                      </div>               
+                                      <div class="form-group row">
+                                        <div class="col-md-12">
+                                          <label for="characterEmail" class="col-form-label" style="font-weight: normal">Email</label>
+                                          <input class="form-control" type="email" placeholder="{{email}}" id="characterEmail" readonly>
+                                        </div>
+                                      </div>  
+                                      <div class="form-group row">
+                                        <div class="col-md-12">
+                                          <label for="characterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
+                                          <input class="form-control" type="text" placeholder="{{mbti}}" id="characterMBTI" readonly>               
+                                        </div>
+                                      </div>                   
+                                    </div>            
+                                </div> 
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterName" class="col-form-label" style="font-weight: normal">Name</label>
+                                      <input class="form-control" type="text" placeholder="{{name}}" id="characterName" readonly>
+                                    </div>
+                                </div> 
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterPassword" class="col-form-label" style="font-weight: normal">Password</label>
+                                      <input class="form-control" type="password" placeholder="{{password}}" id="characterPassword" readonly>
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
+                                      <input class="form-control" type="text" placeholder="{{contact}}" id="characterMobile" readonly>
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
+                                      <input class="form-control" type="date" placeholder="{{dateOfBirth}}" id="characterDateOfBirth" readonly>
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
+                                      <input class="form-control" type="text" placeholder="{{getBusinessUnit businessUnit}}" id="characterBusinessUnit" readonly>                                                      
+                                    </div>
+                                </div>    
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
+                                      <input class="form-control" type="text" placeholder="{{skills.[0].people}}" id="characterPeopleSkills" readonly>      
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
+                                      <input class="form-control" type="text" placeholder="{{skills.[0].communication}}" id="characterCommunicationSkills" readonly>  
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
+                                      <input class="form-control" type="text" placeholder="{{skills.[0].problemSolving}}" id="characterProblemSolvingSkills" readonly> 
+                                    </div>
+                                </div>  
+                                <div class="form-group row"> 
+                                    <div class="col-md-12">
+                                      <label for="characterManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
+                                      <input class="form-control" type="text" placeholder="{{skills.[0].management}}" id="characterManagementSkills" readonly> 
+                                    </div>
+                                </div>  
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                      <label for="characterAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
+                                      <input class="form-control" type="text" placeholder="{{skills.[0].android}}" id="characterAndroidSkills" readonly> 
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-default btn-circle" data-dismiss="modal" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

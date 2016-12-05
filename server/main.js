@@ -133,12 +133,22 @@ Meteor.methods({
     },
 
     updateBadgeStatus : function( roomName, badgeName, newStatus) {      
-      Rooms.update({_id: roomName._id, 'badges.name': badgeName}, {$set:{'badges.$.locked': newStatus}});
+      Rooms.update({_id: roomName._id, 'badges.name': badgeName}, { $set:{'badges.$.locked': newStatus }} );
     },
 
     insertAcademyPlayer: function( academy, user) {
       //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id }, { $push: { 'users': user } });
+    },
+
+    removePlayer: function( academy, user) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id}, { $pull: { 'users': user } });
+    },
+
+    updateAcademyPlayer: function( academy, user) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': user.nb }, { $set: {'users.$': user }} );
     }
 
 });

@@ -132,7 +132,7 @@ db.academy.insert({
 			profile: "Player",
 			dateOfBirth: "02/01/1992",
 			contact: "+932 497 412",          	
-          	businessUnit: "ITC",
+          	businessUnit: "NT",
     		mbti: "ISFP",
     		counter: 0,
 			voted: "Nobody",

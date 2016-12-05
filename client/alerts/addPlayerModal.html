@@ -1,0 +1,151 @@
+<template name="addPlayerModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Player Info</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="width: inherit;"> 
+                        <div class="row">
+                            <div class="col-md-12">
+                              <form id ="addCharacter"> 
+                                <div class="row" style="margin-top: 1.5em;">
+                                  <div class="col-md-4 text-center">
+                                    <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+                                    <!--
+                                    <img class="avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+                                    -->
+                                    <br>
+                                    <input id="imageInput" style="display:block; margin:auto;" type="file"> 
+                                    <hr>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="form-group row">
+                                      <div class="col-md-12">
+                                        <label for="characterNB" class="col-form-label" style="font-weight: normal">NB</label>
+                                        <input class="form-control" type="text" placeholder="12345" id="characterNB" required>
+                                      </div> 
+                                    </div>               
+                                    <div class="form-group row">
+                                      <div class="col-md-12">
+                                        <label for="characterEmail" class="col-form-label" style="font-weight: normal">Email</label>
+                                        <input class="form-control" type="email" placeholder="" id="characterEmail" required>
+                                      </div>
+                                    </div>  
+                                    <div class="form-group row">
+                                      <div class="col-md-12">
+                                        <label for="characterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
+                                        <select class="selectpicker form-control" id="characterMBTI" required>          
+                                          {{#each mbtiTypes}}
+                                            <option value="{{name}}">{{value}}</option>
+                                          {{/each}}
+                                        </select>                  
+                                      </div>
+                                    </div>                   
+                                  </div>            
+                                </div> 
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterName" class="col-form-label" style="font-weight: normal">Name</label>
+                                    <input class="form-control" type="text" placeholder="" id="characterName" required>
+                                  </div>
+                                </div> 
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterPassword" class="col-form-label" style="font-weight: normal">Password</label>
+                                    <input class="form-control" type="password" placeholder="" id="characterPassword" required>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
+                                    <input class="form-control" type="text" placeholder="912 345 678" id="characterMobile">
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
+                                    <input class="form-control" type="date" placeholder="YYYY-MM-DD" id="characterDateOfBirth" required>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
+                                    <select class="selectpicker form-control" id="characterBusinessUnit" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each businessUnitTypes}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select>                  
+                                  </div>
+                                </div>    
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
+                                    <select class="selectpicker form-control" id="characterPeopleSkills" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each possiblePoints}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select>        
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
+                                    <select class="selectpicker form-control" id="characterCommunicationSkills" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each possiblePoints}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select>     
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
+                                    <select class="selectpicker form-control" id="characterProblemSolvingSkills" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each possiblePoints}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
+                                    <select class="selectpicker form-control" id="characterManagementSkills" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each possiblePoints}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select> 
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="characterAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
+                                    <select class="selectpicker form-control" id="characterAndroidSkills" required>          
+                                      <option value="" disabled selected>Select your option</option>
+                                      {{#each possiblePoints}}
+                                        <option value="{{name}}">{{value}}</option>
+                                      {{/each}}
+                                    </select>
+                                  </div>
+                                </div>                                
+                              </form>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default btn-circle" id="editPlayer" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                    <button type="button" class="btn btn-default btn-circle" data-dismiss="modal" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-remove"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
