@@ -1,5 +1,7 @@
 # KroilonApp
-Repository of the official Kroilon App :) 
+Repository of the official Kroilon App :)
+
+https://kroilonapp.herokuapp.com/ (temporarily)
 
 ## How To Use
 
