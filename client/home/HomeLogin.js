@@ -29,8 +29,9 @@ Template.HomeLogin.events({
 			//$('#loginPage').html('<h3>LOGIN DONE</h3>');
 			FlowRouter.go('/map');
 		} else {
-			debugger;
+			$('#loginPageMessage').show();
 			$('#loginPageMessage').text('Username ou password inválidos.');
+			$('#loginPageMessage').fadeOut(10000);
 		}
 	}
 });
