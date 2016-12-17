@@ -4,7 +4,6 @@ Template.MainNav.helpers({
 	},
 	firstName() {
 		var selectedPlayer = Session.get("loggedUser")[0].name;
-		console.log(selectedPlayer);
 		return selectedPlayer;
 	},
 });
