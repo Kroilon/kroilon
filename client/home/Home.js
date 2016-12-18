@@ -14,7 +14,6 @@ Template.Home.helpers({
     var abc = Session.get("loggedUser");
 
     var cond = abc != '' && Session.get("loggedUser")[0].nb != undefined;
-    debugger;
     return cond;
   }
 

@@ -2,6 +2,9 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Session } from 'meteor/session';
 
+
+const WRONG_USERNAME_PASSWORD_MESSAGE = 'Username ou password inválidos.';
+
 Template.HomeLogin.events({
 	'submit form'(event) {
 
@@ -12,8 +15,6 @@ Template.HomeLogin.events({
 
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 
-		//console.log(latestAcademy.name);
-
 		var user = $.grep(latestAcademy.users, function (e) {
 			return e.nb == playerNb;
 		});
@@ -22,15 +23,13 @@ Template.HomeLogin.events({
 		if (supposedlyLoggedUser
 			&& supposedlyLoggedUser.nb == playerNb
 			&& playerPass == supposedlyLoggedUser.password) {
-			debugger;
 
 			Session.set("loggedUser", user);
-			console.log(Session.get("loggedUser"));
-			//$('#loginPage').html('<h3>LOGIN DONE</h3>');
+
 			FlowRouter.go('/map');
 		} else {
 			$('#loginPageMessage').show();
-			$('#loginPageMessage').text('Username ou password inválidos.');
+			$('#loginPageMessage').text(WRONG_USERNAME_PASSWORD_MESSAGE);
 			$('#loginPageMessage').fadeOut(10000);
 		}
 	}

@@ -1,13 +1,14 @@
-/**
- * This file contains the css styles for the partials
- * package inside the 'client' folder. 
- */
-
-
 .app-nav {
   ul{
     li:hover{
       font-weight: bold;
     }
   }
+}
+
+//Bootstrap adds margin to the nav bar. We dont like it !
+.navbar,
+.navbar-default{
+  margin-bottom: 0px;
+  padding-bottom: 10px;
 }
