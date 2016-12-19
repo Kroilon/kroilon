@@ -27,20 +27,14 @@ Template.TablePlayerInfo.helpers({
 Template.TablePlayerInfo.events({   
 
   //Act when the personal performance board icon is clicked
-  "click #addPlayer": (event) => {
+  "click #addPlayer" (event){
       event.preventDefault();
-
       Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, NEW_PLAYER_ACTIVE_TEMPLATE_NAME);
-
-      let img = $(event.target);
-      let anchor = img.parent();
-      Session.set(CURRENT_PLAYER_NB, _getUserNbFromLink(anchor));
   },
 
   //Act when the personal performance graph icon is clicked
-  "click #editPlayer": (event) => {
+  "click #editPlayer" (event){
       event.preventDefault();
-
       Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, EDIT_PLAYER_ACTIVE_TEMPLATE_NAME);
       Session.set(CURRENT_PLAYER_NB, _getUserNbFromLink($(event.target).parent()));
   },
