@@ -23,7 +23,63 @@ db.academy.insert({
 		{
 			"date": "Sat Dec 17 2016 15:55:21",
 			"name": "Team Balance",
-			"points": "100",
+			"points": 100,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 18 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 200,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 19 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 10,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 20 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 300,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 21 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 330,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 22 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 400,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 23 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 350,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 24 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 420,
+			"badge": "",
+			"room": "Coachroach Entry"
+		},
+		{
+			"date": "Sat Dec 25 2016 15:55:21",
+			"name": "Team Balance",
+			"points": 440,
 			"badge": "",
 			"room": "Coachroach Entry"
 		}
@@ -87,7 +143,7 @@ db.academy.insert({
 		{
 			"date": "Sat Dec 17 2016 15:55:21",
 			"name": "Team Balance",
-			"points": "100",
+			"points": 100,
 			"badge": "",
 			"room": "Coachroach Entry"
 		}

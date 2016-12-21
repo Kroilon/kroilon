@@ -4,8 +4,84 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+import { getUniqueValuesOfKey } from '../PerformanceGlobalHelpers.js';
+import { getUserByNB } from '../PerformanceGlobalHelpers.js';
+
+import { DYNAMIC_ACTIVE_ELEMENT_KEY,
+         CURRENT_PLAYER_NB    
+     } from '/client/performance/Leaderboard/Leaderboard.js';
+
 
 Template.TeamPerformance.helpers({
+    TeamPerformanceChart() {
+       
+    let academy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+
+    let totalScore = [];
+
+
+    // TODO : Adicionar função para fazer somatório de pontos por cada dia
+    academy.teamScore.forEach(function(element) {
+        //element.date;
+        totalScore.push(element.points);
+    }, this);
+    debugger;
+
+    return {
+      colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+        '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+      title: {
+        text: "Team Points"
+      },
+      xAxis: {
+        crosshair: {
+          color: '#ffcccc'
+        },
+        categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+          'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+          'Friday']
+      },
+      yAxis: {
+        title: {
+          text: 'Points'
+        },
+        labels: {
+          formatter: function () {
+            return this.value;
+          }
+        },
+        min: 0
+      },
+      tooltip: {
+        crosshair: {
+          color: '#de4f4f'
+        },
+        shared: true,
+        valueSuffix: ' Points'
+      },
+      plotOptions: {
+        area: {
+          fillOpacity: 0.5
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      legend: {
+      },
+      series: [{
+        showInLegend: false,
+        name: "Team Score",
+        data: totalScore,
+        zIndex: 1,
+        marker: {
+          fillColor: 'white',
+          lineWidth: 3,
+          lineColor: '#de4f4f'
+        }
+      }]
+    };
+  },
     playerSkillsChart() {
         return {
             colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',

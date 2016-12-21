@@ -40,9 +40,11 @@ Template.PlayerPerformance.helpers({
     let nb = Session.get(CURRENT_PLAYER_NB);
     let currentUser = getUserByNB(nb);
 
-    let scores = currentUser.score;
+    let totalScore = [];
 
-    let weekPoints = getUniqueValuesOfKey(scores, 'points');
+    currentUser.score.forEach(function(element) {
+        totalScore.push(element.points);
+    }, this);
 
     return {
       colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
@@ -89,7 +91,7 @@ Template.PlayerPerformance.helpers({
       series: [{
         showInLegend: false,
         name: currentUser.name,
-        data: weekPoints,
+        data: totalScore,
         zIndex: 1,
         marker: {
           fillColor: 'white',
