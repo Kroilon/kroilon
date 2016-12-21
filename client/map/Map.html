@@ -109,7 +109,7 @@
             <div class="row">
               <div class="col-md-12">
                 <p class="lead" style="margin-top: 0.0em; white-space: nowrap;">
-                  Game Dashboard / <span id="div_date_today" style="font-weight: 201;"></span>
+                  Game Dashboard / <span style="font-weight: 201;">{{currentDay}}</span>
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@
 
     	var n = weekday[d.getDay()];
 
-      document.getElementById("div_date_today").innerHTML = n;
+      //document.getElementById("div_date_today").innerHTML = n;
 
     });
 	
