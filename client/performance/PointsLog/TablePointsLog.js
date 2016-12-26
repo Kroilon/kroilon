@@ -12,6 +12,7 @@ Template.TablePointsLog.helpers({
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var players = latestAcademy.users;
+		players.splice(0, 3);
 		var points = [];
 		$.each(players, function(idx_players, val_players)
 		{

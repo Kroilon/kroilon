@@ -10,7 +10,7 @@ Template.TopScores.helpers({
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 
 		var users = latestAcademy.users;
-		users.splice(0, 1);
+		users.splice(0, 3);
 		return users;
 	},
 	/*var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -34,6 +34,7 @@ Template.TopScores.helpers({
 
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 		var users = latestAcademy.users;
+		users.splice(0, 3);
 		var userHealthScores = [];
 		var totalHealthPoints = 0;
 		$.each(users, function (idx_players, val_players) {
@@ -51,6 +52,7 @@ Template.TopScores.helpers({
 
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 		var users = latestAcademy.users;
+		users.splice(0, 3);
 		var userKnowledgeScores = [];
 		var totalKnowledgePoints = 0;
 		$.each(users, function (idx_players, val_players) {
@@ -68,6 +70,7 @@ Template.TopScores.helpers({
 
 		var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 		var users = latestAcademy.users;
+		users.splice(0, 3);
 		var userExperienceScores = [];
 		var totalExperiencePoints = 0;
 		$.each(users, function (idx_players, val_players) {

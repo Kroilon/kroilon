@@ -14,8 +14,9 @@ Template.Characters.helpers({
 
         var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
         var users = latestAcademy.users;
-        users.splice(0, 1);
-        return users;
+        users.splice(0, 3); 
+        
+        return users; 
     },
     tableSettings : function () {
       return {
