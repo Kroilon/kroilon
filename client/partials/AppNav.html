@@ -1,30 +1,30 @@
 <template name="AppNav">
-    <div class="app-nav" style="min-width:120px;">
+    <div class="app-nav" style="min-width:100px;">
         <ul class="list-group">
             <li>
-                <a class="list-group-item" style="border: none" href="/performance"><img src="/sidebar/performance.svg" width="45" height="25" style="margin-left:15px;"> <span>Performance</span></a>
+                <a class="list-group-item" style="border: none" href="/performance"><img src="/sidebar/performance.svg" class="sidebar-icon" > <span>Performance</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/story"><img src="/sidebar/story.svg" width="75" height="25"> <span>Story</span></a>
+                <a class="list-group-item" style="border: none" href="/story"><img src="/sidebar/story.svg" class="sidebar-icon"> <span>Story</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/rules"><img src="/sidebar/rules.svg" width="75" height="25"> <span>Rules</span></a>
+                <a class="list-group-item" style="border: none" href="/rules"><img src="/sidebar/rules.svg" class="sidebar-icon"> <span>Rules</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/map"><img src="/sidebar/map.svg" width="75" height="25"> <span>Map</span></a>
+                <a class="list-group-item" style="border: none" href="/map"><img src="/sidebar/map.svg" class="sidebar-icon"> <span>Map</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/characters"><img src="/sidebar/characters_icon.svg" width="75" height="25"> <span>Character info</span></a>
+                <a class="list-group-item" style="border: none" href="/characters"><img src="/sidebar/characters_icon.svg" class="sidebar-icon"> <span>Character info</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/secrets"><img src="/sidebar/secrets_icon.svg" width="75" height="25"> <span>Secrets</span></a>
+                <a class="list-group-item" style="border: none" href="/secrets"><img src="/sidebar/secrets_icon.svg" class="sidebar-icon"> <span>Secrets</span></a>
             </li>
             <li>
-                <a class="list-group-item" style="border: none" href="/kahoot"><img src="/sidebar/kahoot.svg" width="75" height="25"> <span>Kahoot</span></a>
+                <a class="list-group-item" style="border: none" href="/kahoot"><img src="/sidebar/kahoot.svg" class="sidebar-icon"> <span>Kahoot</span></a>
             </li>
             {{#if isLoggedInAsAdmin}}
             <li>
-                <a class="list-group-item" style="border: none" href="/management"><img src="/sidebar/management.svg" width="75" height="28"> <span>Management</span></a>
+                <a class="list-group-item" style="border: none" href="/management"><img src="/sidebar/management.svg" class="sidebar-icon"> <span>Management</span></a>
             </li>
             {{/if}}
         </ul>
