@@ -5,21 +5,20 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
 Template.Map.helpers({
-	total_day() {
+	energyLevel() {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-		var scores = latestAcademy.teamScore;
 		var energy_level = latestAcademy.energyLevel;
-		var total_score = 0;
-
-		$.each(scores, function(index, value){
-
-			total_score += value.teamPoints;
-		});
 
 		var img_energyLevel = "/energyLevels/energyLevels_5.png";
 
-		switch(energy_level) {			
+		switch(energy_level) {	
+			case -2:
+				img_energyLevel = "/energyLevels/energyLevels_0.png";
+				break;
+			case -1:
+				img_energyLevel = "/energyLevels/energyLevels_0.png";
+				break;		
 			case 0:
 				img_energyLevel = "/energyLevels/energyLevels_0.png";
 				break;
@@ -37,17 +36,57 @@ Template.Map.helpers({
 				break;
 			case 5:
 				img_energyLevel = "/energyLevels/energyLevels_5.png";
-				break;
+				break;			
 			default:
 				img_energyLevel = "/energyLevels/energyLevels_5.png";
 				break;
 		}
 
-		//return total score without leading zeros
-		var total = {score:total_score.replace(/^0+/, ''), img_energyLevel:img_energyLevel};
-
-		return total;
+		return img_energyLevel;
 	},
+	teamScore() {
+        let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        let users = latestAcademy.users;
+        users.splice(0, 3);
+        let total_users = users.length;
+        let total_points = 0;
+
+        $.each(users, function (index_users, value_users) {
+
+            let user_points = 0;
+
+            if (value_users.score != undefined) {
+                $.each(value_users.score, function (index_score, value_score) {
+                    user_points += value_score.points;
+                });
+            }
+
+            value_users.totalScore = user_points;
+            total_points += user_points;
+
+        });
+
+        let average_points = (total_points / total_users - 1);
+        //console.log("average_points: " + average_points);
+
+        let teamScore = latestAcademy.teamScore;
+        let total_team_score = teamScore.length;
+        let total_team_points = 0;
+
+        $.each(teamScore, function(index_scores, value_scores) {
+
+            if (value_scores.points != undefined) {
+                total_team_points += value_scores.points;
+        }
+
+        });
+
+        let average_team_points = (total_team_points / total_team_score);
+        //console.log("average_team_points: " + average_team_points);
+
+        return parseInt(average_points + average_team_points);
+
+    },
 	currentRoomBadges() {
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});

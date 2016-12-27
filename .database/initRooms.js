@@ -15,6 +15,8 @@ db.rooms.insert([
 	{
 		"name": "Coachroach Entry",
 		"dailyDecision":"Coachroach Entry decision...",
+		"description": "Coachroach Entry room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "BOAT",
@@ -33,6 +35,8 @@ db.rooms.insert([
 	{
 		"name": "Project Room",
 		"dailyDecision":"Project Room decision...",
+		"description": "Project Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "BOAT",
@@ -51,6 +55,8 @@ db.rooms.insert([
 	{
 		"name": "Wandering Wall",
 		"dailyDecision":"Wandering Wall decision...",
+		"description": "Wandering Wall room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -58,6 +64,8 @@ db.rooms.insert([
 	{
 		"name": "Nowayout Corridor",
 		"dailyDecision":"Nowayout Corridor decision...",
+		"description": "Nowayout Corridor room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -65,6 +73,8 @@ db.rooms.insert([
 	{
 		"name": "Death Corridor",
 		"dailyDecision":"Death Corridor decision...",
+		"description": "Death Corridor room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -72,6 +82,8 @@ db.rooms.insert([
 	{
 		"name": "Adolph Room",
 		"dailyDecision":"Adolph Room decision...",
+		"description": "Adolph Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "BOAT",
@@ -82,6 +94,8 @@ db.rooms.insert([
 	{
 		"name": "Stormillor Hall",
 		"dailyDecision":"Stormillor Hall decision...",
+		"description": "Stormillor Hall room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "SWORD",
@@ -92,6 +106,8 @@ db.rooms.insert([
 	{
 		"name": "Diaz Krez Arena",
 		"dailyDecision":"Diaz Krez Arena decision...",
+		"description": "Diaz Krez Arena room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -99,6 +115,8 @@ db.rooms.insert([
 	{
 		"name": "Kalu Hall",
 		"dailyDecision":"Kalu Hall decision...",
+		"description": "Kalu Hall room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "FOOD",
@@ -109,6 +127,8 @@ db.rooms.insert([
 	{
 		"name": "Ristar Room",
 		"dailyDecision":"Ristar Room decision...",
+		"description": "Ristar Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "FOOD",
@@ -119,6 +139,8 @@ db.rooms.insert([
 	{
 		"name": "Stormillor Dungeons",
 		"dailyDecision":"Stormillor Dungeons decision...",
+		"description": "Stormillor Dungeons room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "MYSTERY",
@@ -129,6 +151,8 @@ db.rooms.insert([
 	{
 		"name": "Normingor Room A",
 		"dailyDecision":"Normingor Room A decision...",
+		"description": "Normingor Room A room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -136,6 +160,8 @@ db.rooms.insert([
 	{
 		"name": "Diktaur Room",
 		"dailyDecision":"Diktaur Room decision...",
+		"description": "Diktaur Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "DOUBLE",
@@ -146,6 +172,8 @@ db.rooms.insert([
 	{
 		"name": "Normingor Room B",
 		"dailyDecision":"Normingor Room B decision...",
+		"description": "Normingor Room B room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
@@ -153,6 +181,8 @@ db.rooms.insert([
 	{
 		"name": "Almusther Room",
 		"dailyDecision":"Almusther Room decision...",
+		"description": "Almusther Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
 				"name": "FOOD",
@@ -163,6 +193,8 @@ db.rooms.insert([
 	{
 		"name": "Performanthor Room",
 		"dailyDecision":"Performanthor Room decision...",
+		"description": "Performanthor Room room description HERE...",
+		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{}
 			]
