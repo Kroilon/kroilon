@@ -59,35 +59,22 @@ Template.addPlayerModal.events({
 
       event.preventDefault();
 
-      var user = {};
+      let user = {};
 
-      //var characterAvatar = $('#characterAvatar').val();
-      var characterNB = $('#characterNB').val();
-      console.log("characterNB: " + characterNB);
-      var characterEmail = $('#characterEmail').val();
-      console.log("characterEmail: " + characterEmail);
-      var characterMBTI = $('#characterMBTI').val();
-      console.log("characterMBTI: " + characterMBTI);
-      var characterName = $('#characterName').val();
-      console.log("characterName: " + characterName);      
-      var characterPassword = $('#characterPassword').val();
-      console.log("characterPassword: " + characterPassword);
-      var characterMobile = $('#characterMobile').val();
-      console.log("characterMobile: " + characterMobile);
-      var characterDateOfBirth = $('#characterDateOfBirth').val();
-      console.log("characterDateOfBirth: " + characterDateOfBirth);
-      var characterBusinessUnit = $('#characterBusinessUnit').val(); 
-      console.log("characterBusinessUnit: " + characterBusinessUnit);
-      var characterPeopleSkills = $('#characterPeopleSkills').val();
-      console.log("characterPeopleSkills: " + characterPeopleSkills);
-      var characterCommunicationSkills = $('#characterCommunicationSkills').val();
-      console.log("characterCommunicationSkills: " + characterCommunicationSkills);
-      var characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
-      console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
-      var characterManagementSkills = $('#characterManagementSkills').val();
-      console.log("characterManagementSkills: " + characterManagementSkills);
-      var characterAndroidSkills = $('#characterAndroidSkills').val();
-      console.log("characterAndroidSkills: " + characterAndroidSkills);
+      //let characterAvatar = $('#characterAvatar').val();
+      let characterNB = $('#characterNB').val();
+      let characterEmail = $('#characterEmail').val();
+      let characterMBTI = $('#characterMBTI').val();
+      let characterName = $('#characterName').val();
+      let characterPassword = $('#characterPassword').val();
+      let characterMobile = $('#characterMobile').val();
+      let characterDateOfBirth = $('#characterDateOfBirth').val();
+      let characterBusinessUnit = $('#characterBusinessUnit').val(); 
+      let characterPeopleSkills = $('#characterPeopleSkills').val();
+      let characterCommunicationSkills = $('#characterCommunicationSkills').val();
+      let characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
+      let characterManagementSkills = $('#characterManagementSkills').val();
+      let characterAndroidSkills = $('#characterAndroidSkills').val();
 
       user = 	{
   			nb: characterNB,
@@ -112,7 +99,7 @@ Template.addPlayerModal.events({
   				}]
   		};
 
-      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
       Meteor.call("insertAcademyPlayer", latestAcademy, user);
 
       Modal.hide('addPlayerModal');
