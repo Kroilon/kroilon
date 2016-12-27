@@ -27,6 +27,7 @@ if (Meteor.isClient) {
   /**
    * Get a specific user based upon the given NB.
    */
+
   Template.registerHelper('getUserByNB', getUserByNB);
 
   Template.registerHelper('getUniqueValuesOfKey', getUniqueValuesOfKey);

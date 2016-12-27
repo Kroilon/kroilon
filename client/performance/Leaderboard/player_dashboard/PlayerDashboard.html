@@ -98,17 +98,19 @@
                   </div>
                 </div>
                 <div class="row" style="margin-top: 3.5em;">
-                  {{#each myBadges}}
-                  <div class="col-md-12" style="text-align: center; padding-left: 0px; padding-right: 0px;">
-                    <div class="row">
-                      <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto; height: 75px; width: 75px;" data-toggle="tooltip" data-placement="bottom" title='Badge {{this.name}}' src='{{this.image}}'
-                        alt="Avatar...">
+                  <div class="col-md-10 col-sm-10" style="float: none; margin: 0 auto;">
+                    {{#each myBadges}}
+                    <div class="col-md-3 col-sm-3" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+                      <div class="row">
+                        <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto; height: 75px; width: 75px;" data-toggle="tooltip" data-placement="bottom" title='Badge {{this.name}}' src='{{this.image}}'
+                          alt="Avatar...">
+                      </div>
+                      <div class="row">
+                        <h3>{{this.count}}</h3>
+                      </div>
                     </div>
-                    <div class="row">
-                      <h3>{{this.count}}</h3>
-                    </div>
+                    {{/each}}
                   </div>
-                  {{/each}}
                 </div>
               </div>
               <div class="col-md-2">

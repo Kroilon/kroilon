@@ -164,6 +164,14 @@ Meteor.methods({
     setVotedStatus: function( academy, status) {
       //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id }, { $set: {'users.$.voted': status } }, {multi: true} );
-    }   
+    },
+
+    updateUserThatVoted : function( academy, user, votedFor) {      
+      Academy.update( { _id: academy._id, 'users.nb': user.nb}, { $set: {'users.$.voted': votedFor } });
+    },   
+
+    updateVotedCounter : function( academy, votedFor) {      
+      Academy.update( { _id: academy._id, 'users.nb': votedFor}, { $inc:{"users.$.counter": 1 } });
+    }
 
 });

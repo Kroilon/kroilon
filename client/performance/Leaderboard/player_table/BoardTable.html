@@ -23,35 +23,101 @@
             </thead>
             <tbody>
                 {{#each users}}
-                <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
-                    <td>
-                        <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
-                    </td>
-                    <td >
-                        <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
-                    </td>
-                    <td>
-                        <div class="col-md-12" style="text-align: left;">
-                            <a href="#" class="tap_my_back">
-                                <img src="/leaderboard/like_black.svg" height="18px" width="18px" style="padding-left: 40px;" alt="Like"/>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-md-12" style="text-align: left;">
-                            <a href="/{{user.nb}}" class="profile_dashboard">
-                                <img src="/leaderboard/user_.svg" height="18px" width="18px" style="padding-left: 40px;" alt="Dashboard"/>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-md-12" style="text-align: left;">
-                            <a href="/{{user.nb}}" class="personal_performance">
-                                <img src="/leaderboard/graph_.svg" height="18px" width="18px" style="padding-left: 45px;" alt="Graph"/>
-                            </a>
-                        </div>
-                    </td>
-                </tr> 
+                    {{#if isLoggedInAsAdmin}}
+                        <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
+                            <td>
+                                <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                            </td>
+                            <td >
+                                <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
+                            </td>
+                            <td>
+                                <div class="col-md-12" style="text-align: left; margin-left: 40px;">{{user.counter}}</div>
+                            </td>
+                            <td>
+                                <div class="col-md-12" style="text-align: left;">
+                                    <a href="/{{user.nb}}" class="profile_dashboard">
+                                        <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-12" style="text-align: left;">
+                                    <a href="/{{user.nb}}" class="personal_performance">
+                                        <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{else}}
+                        {{#if hasVoted}}
+                            <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                                </td>
+                                <td >
+                                    <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
+                                </td>
+                                    {{#if hasVotedFor this.user.nb}}
+                                        <td>
+                                            <div class="col-md-12" style="text-align: left;">                                
+                                                <img src="/boardTable/like_grey.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
+                                            </div>
+                                        </td>
+                                    {{else}} 
+                                        <td>
+                                            <div class="col-md-12" style="text-align: left;">                                
+                                                <img src="/boardTable/like_black.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
+                                            </div>
+                                        </td>
+                                    {{/if}}
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">
+                                        <a href="/{{user.nb}}" class="profile_dashboard">
+                                            <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">
+                                        <a href="/{{user.nb}}" class="personal_performance">
+                                            <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {{else}}
+                            <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                                </td>
+                                <td >
+                                    <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
+                                </td>
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">
+                                        <a href="" class="tap_my_back" id="tapMyBack">
+                                            <img src="/boardTable/like_grey.svg" onMouseOver="this.src='/boardTable/like_black.svg'" onMouseOut="this.src='/boardTable/like_grey.svg'" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">
+                                        <a href="/{{user.nb}}" class="profile_dashboard">
+                                            <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-12" style="text-align: left;">
+                                        <a href="/{{user.nb}}" class="personal_performance">
+                                            <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {{/if}}
+                    {{/if}}
                 {{/each}}
             </tbody>
         </table>

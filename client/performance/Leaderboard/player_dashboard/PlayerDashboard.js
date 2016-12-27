@@ -95,6 +95,7 @@ Template.PlayerDashboard.helpers({
     TeamScore() {
         let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
         let users = latestAcademy.users;
+        users.splice(0, 3);
         let total_users = users.length;
         let total_points = 0;
 

@@ -12,12 +12,13 @@ Template.TablePointsLog.helpers({
 
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var players = latestAcademy.users;
+		players.splice(0, 3);
 		var points = [];
 		$.each(players, function(idx_players, val_players)
 		{
 			var scores = players[idx_players].score;
-			console.log(players);
-			console.log(scores);
+			// console.log(players);
+			// console.log(scores);
 			if (scores != undefined)
 			{
 				$.each(scores, function(idx_scores, val_scores)
