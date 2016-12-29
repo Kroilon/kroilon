@@ -3,41 +3,43 @@ import { Academy } from '/imports/api/databasedriver.js';
 
 Template.registerHelper('getScore', function(academy) {
   
-  var users = academy.users;
-  var total_users = users.length;
-  var total_points = 0;
+  let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+  let users = latestAcademy.users;
+  users.splice(0, 3);
+  let total_users = users.length;
+  let total_points = 0;
 
-  $.each(users, function(index_users, value_users) {
+  $.each(users, function (index_users, value_users) {
 
-    var user_points = 0;
+      let user_points = 0;
 
-    if (value_users.score != undefined) {
-          $.each(value_users.score, function(index_score, value_score) {
+      if (value_users.score != undefined) {
+          $.each(value_users.score, function (index_score, value_score) {
               user_points += value_score.points;
           });
       }
 
-    value_users.totalScore = user_points;
-    total_points += user_points;
+      value_users.totalScore = user_points;
+      total_points += user_points;
 
   });
 
-  var average_points = (total_points / total_users - 1);
+  let average_points = (total_points / total_users - 1);
   //console.log("average_points: " + average_points);
 
-  var teamScore = academy.teamScore;
-  var total_team_score = teamScore.length;
-  var total_team_points = 0;
+  let teamScore = latestAcademy.teamScore;
+  let total_team_score = teamScore.length;
+  let total_team_points = 0;
 
   $.each(teamScore, function(index_scores, value_scores) {
 
-    if (value_scores.points != undefined) {
-        total_team_points += value_scores.points;
-    }
+      if (value_scores.points != undefined) {
+          total_team_points += value_scores.points;
+  }
 
   });
 
-  var average_team_points = (total_team_points / total_team_score);
+  let average_team_points = (total_team_points / total_team_score);
   //console.log("average_team_points: " + average_team_points);
 
   return parseInt(average_points + average_team_points);

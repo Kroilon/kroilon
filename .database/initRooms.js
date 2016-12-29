@@ -14,22 +14,11 @@ db.createCollection("rooms");
 db.rooms.insert([
 	{
 		"name": "Cockroach Entry",
-		"dailyDecision":"Coachroach Entry decision...",
-		"description": "Coachroach Entry room description HERE...",
+		"dailyDecision":"Cockroach Entry decision...",
+		"description": "Cockroach Entry room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
-			{
-				"name": "BOAT",
-				"locked": true
-			},
-			{
-				"name": "DOUBLE",
-				"locked": true
-			},
-			{
-				"name": "MYSTERY",
-				"locked": true
-			}
+			{}
 			]
 	},
 	{
@@ -93,8 +82,8 @@ db.rooms.insert([
 	},
 	{
 		"name": "Stormilor Hall",
-		"dailyDecision":"Stormillor Hall decision...",
-		"description": "Stormillor Hall room description HERE...",
+		"dailyDecision":"Stormilor Hall decision...",
+		"description": "Stormilor Hall room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
@@ -111,7 +100,7 @@ db.rooms.insert([
 		"badges": [
 			{
 				"name": "FOOD",
-				"locked": true
+				"locked": false
 			}
 			]
 	},
@@ -123,7 +112,7 @@ db.rooms.insert([
 		"badges": [
 			{
 				"name": "FOOD",
-				"locked": true
+				"locked": false
 			}
 			]
 	},
@@ -135,14 +124,14 @@ db.rooms.insert([
 		"badges": [
 			{
 				"name": "FOOD",
-				"locked": true
+				"locked": false
 			}
 			]
 	},
 	{
 		"name": "Stormillor Dungeon",
-		"dailyDecision":"Stormillor Dungeons decision...",
-		"description": "Stormillor Dungeons room description HERE...",
+		"dailyDecision":"Stormillor Dungeon decision...",
+		"description": "Stormillor Dungeon room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
 			{
@@ -189,7 +178,7 @@ db.rooms.insert([
 		"badges": [
 			{
 				"name": "FOOD",
-				"locked": true
+				"locked": false
 			}
 			]
 	},

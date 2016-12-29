@@ -64,38 +64,38 @@ Template.NewPlayerInfo.helpers({
 
 Template.NewPlayerInfo.events({   
 
-  'submit form' (event){
+  'click #testNewPlayer' (event){
 
     event.preventDefault();
 
     var user = {};
 
     //var characterAvatar = $('#characterAvatar').val();
-    var characterNB = $('#characterNB').val();
+    let characterNB = $('#characterNB').val();
     console.log("characterNB: " + characterNB);
-    var characterEmail = $('#characterEmail').val();
+    let characterEmail = $('#characterEmail').val();
     console.log("characterEmail: " + characterEmail);
-    var characterMBTI = $('#characterMBTI').val();
+    let characterMBTI = $('#characterMBTI').val();
     console.log("characterMBTI: " + characterMBTI);
-    var characterName = $('#characterName').val();
+    let characterName = $('#characterName').val();
     console.log("characterName: " + characterName);      
-    var characterPassword = $('#characterPassword').val();
+    let characterPassword = $('#characterPassword').val();
     console.log("characterPassword: " + characterPassword);
-    var characterMobile = $('#characterMobile').val();
+    let characterMobile = $('#characterMobile').val();
     console.log("characterMobile: " + characterMobile);
-    var characterDateOfBirth = $('#characterDateOfBirth').val();
+    let characterDateOfBirth = $('#characterDateOfBirth').val();
     console.log("characterDateOfBirth: " + characterDateOfBirth);
-    var characterBusinessUnit = $('#characterBusinessUnit').val(); 
+    let characterBusinessUnit = $('#characterBusinessUnit').val(); 
     console.log("characterBusinessUnit: " + characterBusinessUnit);
-    var characterPeopleSkills = $('#characterPeopleSkills').val();
+    let characterPeopleSkills = $('#characterPeopleSkills').val();
     console.log("characterPeopleSkills: " + characterPeopleSkills);
-    var characterCommunicationSkills = $('#characterCommunicationSkills').val();
+    let characterCommunicationSkills = $('#characterCommunicationSkills').val();
     console.log("characterCommunicationSkills: " + characterCommunicationSkills);
-    var characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
+    let characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
     console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
-    var characterManagementSkills = $('#characterManagementSkills').val();
+    let characterManagementSkills = $('#characterManagementSkills').val();
     console.log("characterManagementSkills: " + characterManagementSkills);
-    var characterAndroidSkills = $('#characterAndroidSkills').val();
+    let characterAndroidSkills = $('#characterAndroidSkills').val();
     console.log("characterAndroidSkills: " + characterAndroidSkills);
 
     user =  {
@@ -121,18 +121,18 @@ Template.NewPlayerInfo.events({
         }]
     };
 
-    Modal.show('characterInsertModal', this);
+    //Modal.show('characterInsertModal', this);
     //var characterNB = event.target.characterNB.value;
     Meteor.call("insertAcademyPlayer", latestAcademy, user); 
     //event.target.characterNB.value = "";      
-    $("#addCharacter")[0].reset();  
+    //$("#addCharacter")[0].reset();  
 
     //Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
   },
 
   'click #nopCharacter' (event){
     event.preventDefault();
-    Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
+    //Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
   }
 
 });
