@@ -13,7 +13,7 @@ db.rooms.drop();
 db.createCollection("rooms");
 db.rooms.insert([
 	{
-		"name": "Coachroach Entry",
+		"name": "Cockroach Entry",
 		"dailyDecision":"Coachroach Entry decision...",
 		"description": "Coachroach Entry room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
@@ -92,7 +92,7 @@ db.rooms.insert([
 			]
 	},
 	{
-		"name": "Stormillor Hall",
+		"name": "Stormilor Hall",
 		"dailyDecision":"Stormillor Hall decision...",
 		"description": "Stormillor Hall room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
@@ -137,7 +137,7 @@ db.rooms.insert([
 			]
 	},
 	{
-		"name": "Stormillor Dungeons",
+		"name": "Stormillor Dungeon",
 		"dailyDecision":"Stormillor Dungeons decision...",
 		"description": "Stormillor Dungeons room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",

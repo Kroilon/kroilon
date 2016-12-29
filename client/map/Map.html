@@ -7,93 +7,88 @@
             <svg id="mysvg" onload="init(evt)">
 	<!--  ROOMS -->	  
 	<!-- COCKROACH ENTRY -->
-    <polygon id="p1" points="203,166 265,139 288,191 223,217" style="fill:transparent;" onclick="alert('Cockroach Entry')"
-	onmousemove="ShowTooltip(evt, 'Cockroach Entry')" onmouseout="HideTooltip()"/>
+  <polygon id="Cockroach Entry" class="roomPolygon" points="203,166 265,139 288,191 223,217" style="fill:transparent;" onmousemove="ShowTooltip(evt, 'Cockroach Entry')" onmouseout="HideTooltip()"/>
 	
 	<!-- PROJECT ROOM -->
-	<polygon points="290,134 367,130 374,194 293,195" style="fill:transparent;" onclick="alert('Project Room')"
+	<polygon id="Project Room" class="roomPolygon" points="290,134 367,130 374,194 293,195" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Project Room')" onmouseout="HideTooltip()"/>
 		
 	<!-- WANDERING WALL -->
-	<circle r="27" cx="463" cy="173" style="fill:transparent;" onclick="alert('Wandering Wall')"
-	onmousemove="ShowTooltip(evt, 'Wandering Wall')" onmouseout="HideTooltip()"/>
+	<circle id="Wandering Wall" class="roomPolygon" r="27" cx="463" cy="173" style="fill:transparent;" onmousemove="ShowTooltip(evt, 'Wandering Wall')" onmouseout="HideTooltip()"/>
 		
 	<!-- ADOLPH ROOM -->
-	<polygon id="adolphRoom" points="495,75 577,104 521,145 475,118" style="fill:transparent;"
+	<polygon id="Adolph Room" class="roomPolygon" points="495,75 577,104 521,145 475,118" style="fill:transparent;"
 	onmousemove="ShowTooltip(evt, 'Adolph Room')" onmouseout="HideTooltip()"/>
 
 	<!-- STORMILOR HALL -->
-	<polygon points="578,103 617,205 557,218 521,145" style="fill:transparent;" onclick="alert('Stormilor Hall')"
+	<polygon id="Stormilor Hall" class="roomPolygon" points="578,103 617,205 557,218 521,145" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Stormilor Hall')" onmouseout="HideTooltip()"/>
 
 	<!-- DIAZ KREZ ARENA -->
-	<ellipse cx="664" cy="183" rx="37.1" ry="53" style="fill:transparent;" onclick="alert('Diaz Krez Arena')"
+	<ellipse id="Diaz Krez Arena" class="roomPolygon" cx="664" cy="183" rx="37.1" ry="53" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Diaz Krez Arena')" onmouseout="HideTooltip()"/>
 
     <!-- KALU HALL -->
-	<polygon points="556,218 615,206 627,285 576,302 542,270" style="fill:transparent;" onclick="alert('Kalu Hall')"
-	onmousemove="ShowTooltip(evt, 'Kalu Hall')" onmouseout="HideTooltip()"/>
+	<polygon id="Kalu Hall" class="roomPolygon" points="556,218 615,206 627,285 576,302 542,270" style="fill:transparent;" onmousemove="ShowTooltip(evt, 'Kalu Hall')" onmouseout="HideTooltip()"/>
 
 	<!-- NORMINGOR ROOM A -->
-	<polygon points="411,239 431,231 474,244 456,290 403,267" style="fill:transparent;" onclick="alert('Normingor Room A')"
-	onmousemove="ShowTooltip(evt, 'Normingor Room A')" onmouseout="HideTooltip()"/>
+	<polygon id="Normingor Room A" class="roomPolygon" points="411,239 431,231 474,244 456,290 403,267" style="fill:transparent;" onmousemove="ShowTooltip(evt, 'Normingor Room A')" onmouseout="HideTooltip()"/>
 
 	<!-- RISTAR ROOM -->
-	<polygon points="475,244 541,270 576,303 571,325 457,290" style="fill:transparent;" onclick="alert('Ristar Room')"
-	onmousemove="ShowTooltip(evt, 'Ristar Room')" onmouseout="HideTooltip()"/>
+	<polygon id="Ristar Room" class="roomPolygon" points="475,244 541,270 576,303 571,325 457,290" style="fill:transparent;" onmousemove="ShowTooltip(evt, 'Ristar Room')" onmouseout="HideTooltip()"/>
 		
 	<!-- STORMILLOR DUNGEON -->
-	<polygon points="577,303 627,286 647,375 572,325" style="fill:transparent;" onclick="alert('Stormillor Dungeon')"
+	<polygon id="Stormillor Dungeon" class="roomPolygon" points="577,303 627,286 647,375 572,325" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Stormillor Dungeon')" onmouseout="HideTooltip()"/>
 		
 	<!-- DIKTAUR ROOM -->
-	<polygon points="405,268 456,291 425,388 393,327" style="fill:transparent;" onclick="alert('Diktaur Room')"
+	<polygon id="Diktaur Room" class="roomPolygon" points="405,268 456,291 425,388 393,327" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Diktaur Room')" onmouseout="HideTooltip()"/>
 
 	<!-- NORMINGOR ROOM B -->
-	<polygon points="457,291 571,326 555,385 437,350" style="fill:transparent;" onclick="alert('Normingor Room B')"
+	<polygon id="Normingor Room B" class="roomPolygon" points="457,291 571,326 555,385 437,350" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Normingor Room B')" onmouseout="HideTooltip()"/>
 		
 	<!-- PERFORMANTHOR ROOM -->
-	<polygon points="437,351 555,386 575,421 426,388" style="fill:transparent;" onclick="alert('Performanthor Room')"
+	<polygon id="Performanthor Room" class="roomPolygon" points="437,351 555,386 575,421 426,388" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Performanthor Room')" onmouseout="HideTooltip()"/>
 		
 	<!-- ALMUSTHER ROOM -->
-	<polygon points="572,326 647,376 576,421 556,386" style="fill:transparent;" onclick="alert('Almusther Room')"
+	<polygon id="Almusther Room" class="roomPolygon" points="572,326 647,376 576,421 556,386" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Almusther Room')" onmouseout="HideTooltip()"/>
 
 	<!-- BADGES -->
-	<circle r="15" cx="357" cy="190" style="fill:transparent;" onclick="alert('Boat unlock spot')"
+	<circle id="BOAT" class="badgePolygon" r="15" cx="357" cy="190" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Boat unlock spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="555" cy="95" style="fill:transparent;" onclick="alert('Boat unlock spot')"
+	<circle id="BOAT" class="badgePolygon" r="15" cx="555" cy="95" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Boat unlock spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="610" cy="185" style="fill:transparent;" onclick="alert('Attackers unlock spot')"
+	<circle id="SWORD" class="badgePolygon" r="15" cx="610" cy="185" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Attackers unlock spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="527" cy="240" style="fill:transparent;" onclick="alert('Double points spot')"
+	<circle id="DOUBLE" class="badgePolygon" r="15" cx="527" cy="240" style="fill:transparent;"
 	onmousemove="ShowTooltip(evt, 'Double points spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="420" cy="347" style="fill:transparent;" onclick="alert('Double points spot')"
+	<circle id="DOUBLE" class="badgePolygon" r="15" cx="420" cy="347" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Double points spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="310" cy="361" style="fill:transparent;" onclick="alert('Mystery spot')"
+	<circle id="MYSTERY" class="badgePolygon" r="15" cx="310" cy="361" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Mystery spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="648" cy="341" style="fill:transparent;" onclick="alert('Mystery spot')"
+	<circle id="MYSTERY" class="badgePolygon" r="15" cx="648" cy="341" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Mystery spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="671" cy="151" style="fill:transparent;" onclick="alert('Food spot')"
+	<circle id="FOOD" class="badgePolygon" r="15" cx="671" cy="151" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Food spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="615" cy="271" style="fill:transparent;" onclick="alert('Food spot')"
+	<circle id="FOOD" class="badgePolygon" r="15" cx="615" cy="271" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Food spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="545" cy="302" style="fill:transparent;" onclick="alert('Food spot')"
+	<circle id="FOOD" class="badgePolygon" r="15" cx="545" cy="302" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Food spot')" onmouseout="HideTooltip()"/>
 	
-	<circle r="15" cx="625" cy="392" style="fill:transparent;" onclick="alert('Food spot')"
+	<circle id="FOOD" class="badgePolygon" r="15" cx="625" cy="392" style="fill:transparent;" 
 	onmousemove="ShowTooltip(evt, 'Food spot')" onmouseout="HideTooltip()"/>
 	
 	<rect class="tooltip_bg" id="tooltip_bg" x="0" y="0" rx="4" ry="4" width="52" height="16" visibility="hidden"/>
@@ -226,66 +221,65 @@
     </div>
   </div>
   <script type="text/javascript">
-    $(document).ready(function init(evt)
-  {
-    if ( window.svgDocument == null )
-    {
-      svgDocument = evt.target.ownerDocument;
+    function init(evt){
+      if ( window.svgDocument == null ){
+        svgDocument = evt.target.ownerDocument;
+      }
+      tooltip = svgDocument.getElementById('tooltip');
+	    tooltip_bg = svgDocument.getElementById('tooltip_bg');
+	    popup = svgDocument.getElementById('popup');
     }
-    tooltip = svgDocument.getElementById('tooltip');
-	tooltip_bg = svgDocument.getElementById('tooltip_bg');
-	popup = svgDocument.getElementById('popup');
-  }
   
-  function ShowTooltip(evt, mouseovertext)
-{
-  tooltip.setAttributeNS(null,"x",evt.clientX-170);
-  tooltip.setAttributeNS(null,"y",evt.clientY-110);
-  tooltip.firstChild.data = mouseovertext;
-  tooltip.setAttributeNS(null,"visibility","visible");
-  
-  tooltip_bg.setAttributeNS(null,"x",evt.clientX-170);
-tooltip_bg.setAttributeNS(null,"y",evt.clientY-123);
-tooltip_bg.setAttributeNS(null,"visibility","visible");
+    function ShowTooltip(evt, mouseovertext){
 
-length = tooltip.getComputedTextLength();
-tooltip_bg.setAttributeNS(null,"width",length+5);
-}
+      tooltip.setAttributeNS(null,"x",evt.clientX-170);
+      tooltip.setAttributeNS(null,"y",evt.clientY-110);
+      tooltip.firstChild.data = mouseovertext;
+      tooltip.setAttributeNS(null,"visibility","visible");
+    
+      tooltip_bg.setAttributeNS(null,"x",evt.clientX-170);
+      tooltip_bg.setAttributeNS(null,"y",evt.clientY-123);
+      tooltip_bg.setAttributeNS(null,"visibility","visible");
 
-function HideTooltip()
-{
-  tooltip.setAttributeNS(null,"visibility","hidden");
-  tooltip_bg.setAttributeNS(null,"visibility","hidden");
-}
+      length = tooltip.getComputedTextLength();
+      tooltip_bg.setAttributeNS(null,"width",length+5);
+    }
+
+    function HideTooltip(){
+
+      tooltip.setAttributeNS(null,"visibility","hidden");
+      tooltip_bg.setAttributeNS(null,"visibility","hidden");
+    }
   </script>
-<script type="text/javascript">
-  $('map').imageMapResize();
+
+  <script type="text/javascript">
+    $('map').imageMapResize();
   </script>
-  
+    
   <style>
-svg {
-  background:url(Mapa_Kroilon.svg);
-  background-repeat:no-repeat;
-  width: 100%;
-  height: 1000px;
-  margin-left: -35px;
-  float: left;
-}
+    svg {
+      background:url(Mapa_Kroilon.svg);
+      background-repeat:no-repeat;
+      width: 100%;
+      height: 1000px;
+      margin-left: -35px;
+      float: left;
+    }
 
-body {
-  margin-left:auto;
-  margin-right:auto;
-}
+    body {
+      margin-left:auto;
+      margin-right:auto;
+    }
 
-#tooltip {
-	color:white;
-}
+    #tooltip {
+    	color:white;
+    }
 
-.tooltip_bg{
-  fill: white;
-  stroke: black;
-  stroke-width: 1;
-  opacity: 0.85;
-}
+    .tooltip_bg{
+      fill: white;
+      stroke: black;
+      stroke-width: 1;
+      opacity: 0.85;
+    }
   </style>
 </template>

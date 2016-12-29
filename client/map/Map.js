@@ -176,9 +176,40 @@ Template.Map.helpers({
 });
 
 Template.Map.events({  
-  'click #adolphRoom' (event){   
+  'click .roomPolygon' (event){   
   	event.preventDefault();
-    Modal.show('showRoomInfoModal', "Adolph Room");	
+  	//console.log("Room: " + event.currentTarget.id); 
+
+  	var rooms = new Array();
+    var roomName = event.currentTarget.id;
+    var room = Rooms.find({ "name": roomName }).fetch();
+
+    //console.log("RoomName: " + room[0].name);
+    //console.log("RoomImage: " + room[0].image);
+    //console.log("RoomDescription: " + room[0].description);
+
+    var newRoom = { 'name': room[0].name, 'image': room[0].image, 'description': room[0].description };
+    rooms.push(newRoom);
+
+    Modal.show('showRoomInfoModal', rooms);	
+  },
+
+  'click .badgePolygon' (event){   
+  	event.preventDefault();
+  	//console.log("Badge: " + event.currentTarget.id);
+
+  	var badges = new Array();
+    var badgeName = event.currentTarget.id;
+    var badge = Badges.find({ "name": badgeName }).fetch();
+
+    //console.log("BadgeName: " + badge[0].name);
+    //console.log("BadgeImage: " + badge[0].image);
+    //console.log("BadgeDescription: " + badge[0].description);
+
+    var newBadge = { 'name': badge[0].name, 'image': badge[0].image, 'description': badge[0].description };
+    badges.push(newBadge);
+
+    Modal.show('showBadgeInfoModal', badges);	
   }
   
 });

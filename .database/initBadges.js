@@ -98,7 +98,7 @@ db.badges.insert([
 		"points": 0,
 		"pointsType": "HP",
 		"type": "Team",
-		"image": "/teamBadges/gandalf.png",
+		"image": "/teamBadges/sword.png",
 		"percentage": 1.0,
 		"description": "Podem ser jogadas cartas de Attackers"
 	},
