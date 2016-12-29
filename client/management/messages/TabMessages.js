@@ -123,28 +123,44 @@ Template.TabMessages.events({
 
     //change currentRoom to value of nextDay
     var nextRoom = $('#nextRoom').val(); 
-    Meteor.call("changeRoom", latestAcademy, nextRoom);   
+    Meteor.call("changeRoom", latestAcademy, nextRoom, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
 
     //reduce one energy bar
-    var energyLevel = latestAcademy.energyLevel;
-    energyLevel = energyLevel - 1;
-    Meteor.call("setEnergyLevel", latestAcademy, energyLevel);
+    Meteor.call("incrementEnergyLevel", latestAcademy, -1, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    }); 
+        
 
     //if new room has badge FOOD, add two energy bars
     var currentRoom = latestAcademy.currentRoom; 
     var mapRoom = Rooms.find({'name': currentRoom }).fetch();
     mapRoom[0].badges.forEach( function(badges){
       if (badges.name === "FOOD") { 
-        var newEnergyLevel = latestAcademy.energyLevel;
-        newEnergyLevel = energyLevel + 2; 
-        Meteor.call("setEnergyLevel", latestAcademy, newEnergyLevel);
+          Meteor.call("incrementEnergyLevel", latestAcademy, 2, function(error, result) {
+            if (error) {
+              alert(error);
+            } 
+          }); 
       }
     }); 
 
     //change field voted of every user to false
-    Meteor.call("setVotedStatus", latestAcademy, "Nobody");
+    var users = latestAcademy.users;
+    users.splice(0, 3);
+    users.forEach( function(player){
+      //console.log("Player name: " + player.name);
+      //console.log("Player NB: " + player.nb);
+      Meteor.call("setVotedStatus", latestAcademy, player.nb, "Nobody");
+    }); 
 
     //run rules and attribute points 
+    // STILL TO BE IMPLEMENTED!!!
   },
   
 });

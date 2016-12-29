@@ -109,7 +109,10 @@ db.rooms.insert([
 		"description": "Diaz Krez Arena room description HERE...",
 		"image":"/roomImages/imageRoomExample.jpg",
 		"badges": [
-			{}
+			{
+				"name": "FOOD",
+				"locked": true
+			}
 			]
 	},
 	{

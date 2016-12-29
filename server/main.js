@@ -156,14 +156,14 @@ Meteor.methods({
       Academy.update( { _id: academy._id }, { $set: {'currentRoom': room }} );
     },
 
-    setEnergyLevel: function( academy, energyLevel) {
+    incrementEnergyLevel: function( academy, energyLevel) {
       //console.log("academyID: " + academy._id);
-      Academy.update( { _id: academy._id }, { $set: {'energyLevel': energyLevel }} );
+      Academy.update( { _id: academy._id }, { $inc: {'energyLevel': energyLevel }} );
     },
 
-    setVotedStatus: function( academy, status) {
+    setVotedStatus: function( academy, nb, status) {
       //console.log("academyID: " + academy._id);
-      Academy.update( { _id: academy._id }, { $set: {'users.$.voted': status } }, {multi: true} );
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.voted': status}} );
     },
 
     updateUserThatVoted : function( academy, user, votedFor) {      
