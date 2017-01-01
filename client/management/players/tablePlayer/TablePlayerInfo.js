@@ -5,13 +5,7 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
-import { PLAYERS_ACTIVE_ELEMENT_KEY,
-         CURRENT_PLAYER_NB    
-     } from '/client/management/players/TablePlayers.js';
-
-const TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME = "TablePlayerInfo";
-const NEW_PLAYER_ACTIVE_TEMPLATE_NAME = "NewPlayerInfo";
-const EDIT_PLAYER_ACTIVE_TEMPLATE_NAME = "EditPlayerInfo";
+import { PLAYERS_ACTIVE_ELEMENT_KEY } from '/client/management/players/TablePlayers.js';
 
 Template.TablePlayerInfo.helpers({
 
@@ -23,6 +17,10 @@ Template.TablePlayerInfo.helpers({
   }   
 
 });
+
+const TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME = "TablePlayerInfo";
+const NEW_PLAYER_ACTIVE_TEMPLATE_NAME = "NewPlayerInfo";
+const EDIT_PLAYER_ACTIVE_TEMPLATE_NAME = "EditPlayerInfo";
 
 Template.TablePlayerInfo.events({   
 

@@ -5,7 +5,7 @@
           <form id ="addNewPlayer" class="form-horizontal"> 
             <div class="row" style="margin-top: 1.5em;">
               <div class="col-md-4 text-center">
-                <img class="img-circle avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+                <img class="img-circle avatar avatar-original" id="formCharacterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
                 <!--
                 <img class="avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
                 -->
@@ -16,20 +16,20 @@
               <div class="col-md-8">
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="characterNB" class="col-form-label" style="font-weight: normal">NB</label>
-                    <input class="form-control" type="text" placeholder="12345" id="characterNB" required>
+                    <label for="formCharacterNB" class="col-form-label" style="font-weight: normal">NB</label>
+                    <input class="form-control" type="text" placeholder="12345" id="formCharacterNB" required>
                   </div> 
                 </div>               
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="characterEmail" class="col-form-label" style="font-weight: normal">Email</label>
-                    <input class="form-control" type="email" placeholder="" id="characterEmail" required>
+                    <label for="formCharacterEmail" class="col-form-label" style="font-weight: normal">Email</label>
+                    <input class="form-control" type="email" placeholder="" id="formCharacterEmail" required>
                   </div>
                 </div>  
                 <div class="form-group row">
                   <div class="col-md-12">
-                    <label for="characterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
-                    <select class="selectpicker form-control" id="characterMBTI" required>          
+                    <label for="formCharacterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
+                    <select class="selectpicker form-control" id="formCharacterMBTI" required>          
                       {{#each mbtiTypes}}
                         <option value="{{name}}">{{value}}</option>
                       {{/each}}
@@ -40,32 +40,32 @@
             </div> 
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterName" class="col-form-label" style="font-weight: normal">Name</label>
-                <input class="form-control" type="text" placeholder="" id="characterName" required>
+                <label for="formCharacterName" class="col-form-label" style="font-weight: normal">Name</label>
+                <input class="form-control" type="text" placeholder="" id="formCharacterName" required>
               </div>
             </div> 
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterPassword" class="col-form-label" style="font-weight: normal">Password</label>
-                <input class="form-control" type="password" placeholder="" id="characterPassword" required>
+                <label for="formCharacterPassword" class="col-form-label" style="font-weight: normal">Password</label>
+                <input class="form-control" type="password" placeholder="" id="formCharacterPassword" required>
               </div>
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
-                <input class="form-control" type="text" placeholder="912 345 678" id="characterMobile">
+                <label for="formCharacterMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
+                <input class="form-control" type="text" placeholder="912 345 678" id="formCharacterMobile">
               </div>
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
-                <input class="form-control" type="date" placeholder="YYYY-MM-DD" id="characterDateOfBirth" required>
+                <label for="formCharacterDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
+                <input class="form-control" type="date" placeholder="YYYY-MM-DD" id="formCharacterDateOfBirth" required>
               </div>
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
-                <select class="selectpicker form-control" id="characterBusinessUnit" required>          
+                <label for="formCharacterBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
+                <select class="selectpicker form-control" id="formCharacterBusinessUnit" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each businessUnitTypes}}
                     <option value="{{name}}">{{value}}</option>
@@ -75,8 +75,8 @@
             </div>    
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
-                <select class="selectpicker form-control" id="characterPeopleSkills" required>          
+                <label for="formCharacterPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
+                <select class="selectpicker form-control" id="formCharacterPeopleSkills" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each possiblePoints}}
                     <option value="{{name}}">{{value}}</option>
@@ -86,8 +86,8 @@
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
-                <select class="selectpicker form-control" id="characterCommunicationSkills" required>          
+                <label for="formCharacterCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
+                <select class="selectpicker form-control" id="formCharacterCommunicationSkills" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each possiblePoints}}
                     <option value="{{name}}">{{value}}</option>
@@ -97,8 +97,8 @@
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
-                <select class="selectpicker form-control" id="characterProblemSolvingSkills" required>          
+                <label for="formCharacterProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
+                <select class="selectpicker form-control" id="formCharacterProblemSolvingSkills" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each possiblePoints}}
                     <option value="{{name}}">{{value}}</option>
@@ -108,8 +108,8 @@
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
-                <select class="selectpicker form-control" id="characterManagementSkills" required>          
+                <label for="formCharacterManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
+                <select class="selectpicker form-control" id="formCharacterManagementSkills" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each possiblePoints}}
                     <option value="{{name}}">{{value}}</option>
@@ -119,8 +119,8 @@
             </div>  
             <div class="form-group row">
               <div class="col-md-12">
-                <label for="characterAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
-                <select class="selectpicker form-control" id="characterAndroidSkills" required>          
+                <label for="formCharacterAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
+                <select class="selectpicker form-control" id="formCharacterAndroidSkills" required>          
                   <option value="" disabled selected>Select your option</option>
                   {{#each possiblePoints}}
                     <option value="{{name}}">{{value}}</option>
@@ -130,10 +130,8 @@
             </div> 
             <div class="form-group row">
               <div class="col-md-12">
-                <!--
-                <button type="button" id="testNewPlayer" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
                 <button type="button" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" id="nopCharacter"><i class="glyphicon glyphicon-remove"></i></button>
-              -->
               </div>
             </div>                               
           </form>

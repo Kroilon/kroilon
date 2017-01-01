@@ -5,13 +5,7 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
-import { PLAYERS_ACTIVE_ELEMENT_KEY,
-         CURRENT_PLAYER_NB    
-     } from '/client/management/players/TablePlayers.js';
-
-const TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME = "TablePlayerInfo";
-const NEW_PLAYER_ACTIVE_TEMPLATE_NAME = "NewPlayerInfo";
-const EDIT_PLAYER_ACTIVE_TEMPLATE_NAME = "EditPlayerInfo";
+import { PLAYERS_ACTIVE_ELEMENT_KEY } from '/client/management/players/TablePlayers.js';
 
 Template.NewPlayerInfo.helpers({
 
@@ -62,40 +56,46 @@ Template.NewPlayerInfo.helpers({
 
 });
 
+const TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME = "TablePlayerInfo";
+const NEW_PLAYER_ACTIVE_TEMPLATE_NAME = "NewPlayerInfo";
+const EDIT_PLAYER_ACTIVE_TEMPLATE_NAME = "EditPlayerInfo";
+
 Template.NewPlayerInfo.events({   
 
-  'click #testNewPlayer' (event){
+  'submit form' (event){
 
     event.preventDefault();
+
+    let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
     var user = {};
 
     //var characterAvatar = $('#characterAvatar').val();
-    let characterNB = $('#characterNB').val();
+    let characterNB = $('#formCharacterNB').val();
     console.log("characterNB: " + characterNB);
-    let characterEmail = $('#characterEmail').val();
+    let characterEmail = $('#formCharacterEmail').val();
     console.log("characterEmail: " + characterEmail);
-    let characterMBTI = $('#characterMBTI').val();
+    let characterMBTI = $('#formCharacterMBTI').val();
     console.log("characterMBTI: " + characterMBTI);
-    let characterName = $('#characterName').val();
+    let characterName = $('#formCharacterName').val();
     console.log("characterName: " + characterName);      
-    let characterPassword = $('#characterPassword').val();
+    let characterPassword = $('#formCharacterPassword').val();
     console.log("characterPassword: " + characterPassword);
-    let characterMobile = $('#characterMobile').val();
+    let characterMobile = $('#formCharacterMobile').val();
     console.log("characterMobile: " + characterMobile);
-    let characterDateOfBirth = $('#characterDateOfBirth').val();
+    let characterDateOfBirth = $('#formCharacterDateOfBirth').val();
     console.log("characterDateOfBirth: " + characterDateOfBirth);
-    let characterBusinessUnit = $('#characterBusinessUnit').val(); 
+    let characterBusinessUnit = $('#formCharacterBusinessUnit').val(); 
     console.log("characterBusinessUnit: " + characterBusinessUnit);
-    let characterPeopleSkills = $('#characterPeopleSkills').val();
+    let characterPeopleSkills = $('#formCharacterPeopleSkills').val();
     console.log("characterPeopleSkills: " + characterPeopleSkills);
-    let characterCommunicationSkills = $('#characterCommunicationSkills').val();
+    let characterCommunicationSkills = $('#formCharacterCommunicationSkills').val();
     console.log("characterCommunicationSkills: " + characterCommunicationSkills);
-    let characterProblemSolvingSkills = $('#characterProblemSolvingSkills').val();
+    let characterProblemSolvingSkills = $('#formCharacterProblemSolvingSkills').val();
     console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
-    let characterManagementSkills = $('#characterManagementSkills').val();
+    let characterManagementSkills = $('#formCharacterManagementSkills').val();
     console.log("characterManagementSkills: " + characterManagementSkills);
-    let characterAndroidSkills = $('#characterAndroidSkills').val();
+    let characterAndroidSkills = $('#formCharacterAndroidSkills').val();
     console.log("characterAndroidSkills: " + characterAndroidSkills);
 
     user =  {
@@ -125,9 +125,9 @@ Template.NewPlayerInfo.events({
     //var characterNB = event.target.characterNB.value;
     Meteor.call("insertAcademyPlayer", latestAcademy, user); 
     //event.target.characterNB.value = "";      
-    //$("#addCharacter")[0].reset();  
+    $("#addCharacter")[0].reset();  
 
-    //Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
+    Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
   },
 
   'click #nopCharacter' (event){

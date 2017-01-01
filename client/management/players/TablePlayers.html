@@ -1,12 +1,12 @@
 <template name="TablePlayers">  
 
-  {{#if (isElementActive "TablePlayerInfo")}}
+  {{#if isPlayersElementActive playersTemplateName}}
     
-        {{> Template.dynamic template = tableTemplateName }}
+        {{> Template.dynamic template = playersTemplateName }}
     
     {{else}}
         
-        {{#if (isElementActive "NewPlayer")}}
+        {{#if isPlayersElementActive newTemplateName}}
 
             {{> Template.dynamic template = newTemplateName }}
         
