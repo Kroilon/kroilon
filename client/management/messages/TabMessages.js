@@ -129,6 +129,13 @@ Template.TabMessages.events({
       } 
     });
 
+    //increase var countDays by one
+    Meteor.call("incrementCounDays", latestAcademy, 1, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    }); 
+
     //reduce one energy bar
     Meteor.call("incrementEnergyLevel", latestAcademy, -1, function(error, result) {
       if (error) {

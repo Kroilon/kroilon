@@ -161,6 +161,11 @@ Meteor.methods({
       Academy.update( { _id: academy._id }, { $inc: {'energyLevel': energyLevel }} );
     },
 
+    incrementCounDays: function( academy, level) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id }, { $inc: {'countDays': level }} );
+    },
+
     setVotedStatus: function( academy, nb, status) {
       //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.voted': status}} );
