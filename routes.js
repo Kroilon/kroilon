@@ -8,26 +8,7 @@ FlowRouter.route('/', {
     }
 });
 
-// Home Page
-FlowRouter.route('/dashboard', {
-    name: 'dashboard',
-    action() {
-        BlazeLayout.render("AppLayout", {
-            main: "Dashboard"
-        });
-    }
-});
-
-FlowRouter.route('/login', {
-    name: 'login',
-    action() {
-        BlazeLayout.render("LoginLayout", {
-            main: "Login"
-        });
-    }
-});
-
-// Characters
+// Character Table
 FlowRouter.route('/characters/:page', {
     name: 'characters',
     action: function (params, queryParams) {
@@ -36,14 +17,17 @@ FlowRouter.route('/characters/:page', {
         });
     }
 });
-FlowRouter.route('/character/:nb', {
-    name: 'character',
+
+FlowRouter.route('/characters/:nb', {
+    name: 'characters',
     action: function (params, queryParams) {
-        BlazeLayout.render("CharacterLayout", {
-            main: "Character"
+        BlazeLayout.render("CharactersLayout", {
+            main: "Characters"
         });
     }
 });
+
+// Characters
 FlowRouter.route('/characters', {
     name: 'characters',
     action() {
@@ -57,31 +41,23 @@ FlowRouter.route('/characters', {
 FlowRouter.route('/map', {
     name: 'map',
     action() {
-        BlazeLayout.render("MapLayout", {
+        BlazeLayout.render("AppLayout", {
             main: "Map"
         });
     }
 });
 
+// Performance
 FlowRouter.route('/performance', {
     name: '/performance',
     action() {
-        BlazeLayout.render("AppLayout", {
+        BlazeLayout.render("PerformanceLayout", {
             main: "LeaderboardMainTabs"
         });
     }
 });
 
-//Adicionar Actividade
-FlowRouter.route('/addactivity', {
-    name: 'addactivity',
-    action() {
-        BlazeLayout.render("AppLayout", {
-            main: "AddActivity"
-        });
-    }
-});
-
+// Management
 FlowRouter.route('/management', {
     name: 'management',
     action() {
@@ -91,6 +67,7 @@ FlowRouter.route('/management', {
     }
 });
 
+// Kahoot
 FlowRouter.route('/kahoot', {
     name: 'kahoot',
     action() {
@@ -99,6 +76,8 @@ FlowRouter.route('/kahoot', {
         });
     }
 });
+
+// Story
 FlowRouter.route('/story', {
     name: '/story',
     action() {
@@ -108,6 +87,7 @@ FlowRouter.route('/story', {
     }
 });
 
+// Rules
 FlowRouter.route('/rules', {
     name: '/rules',
     action() {
@@ -117,6 +97,7 @@ FlowRouter.route('/rules', {
     }
 });
 
+// Secrets
 FlowRouter.route('/secrets', {
     name: '/secrets',
     action() {

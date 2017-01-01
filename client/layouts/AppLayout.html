@@ -1,7 +1,13 @@
 <template name="AppLayout">
-    {{> Header}}
-    {{> AppNav}}
-    <main class="app-layout">
-        {{> Template.dynamic template=main}}
-    </main>
+	<div style="width: inherit;">
+		{{#if isLoggedIn}}
+			{{> Header}}
+		    {{> AppNav}}
+		    <main class="app-layout">
+		        {{> Template.dynamic template=main}}
+	    	</main>
+		{{else}}
+		    {{> NotFound}}
+	    {{/if}}
+	</div>
 </template>

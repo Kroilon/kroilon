@@ -18,7 +18,7 @@ db.academy.insert({
 	"dailyMessage": "Bem Vindos a Kroilon",
 	"homeMessage": "#ficaadica",
 	"currentRoom": "Cockroach Entry",
-	"countDays": 3,	
+	"countDays": 1,	
 	"teamScore": [
 		{
 			"date": "Sat Dec 17 2016 15:55:21",
