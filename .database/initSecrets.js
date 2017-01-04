@@ -14,7 +14,7 @@ db.createCollection("secrets");
 db.secrets.insert([
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21000",
+		"nb": "21000",
 		"name":"Afonso Correia Sousa",
 		"description": "Primeiro segredo",
 		"challenge": "Submit secret",
@@ -22,7 +22,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21001",
+		"nb": "21001",
 		"name":"Anabela Araújo Rodrigues",
 		"description": "Segundo segredo",
 		"challenge": "Submit secret",
@@ -30,7 +30,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21002",
+		"nb": "21002",
 		"name":"André Gonçalo Ferreira",
 		"description": "Terceiro segredo",
 		"challenge": "Submit secret",
@@ -38,7 +38,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21003",
+		"nb": "21003",
 		"name":"Andreia Alves",
 		"description": "Quarto segredo",		
 		"challenge": "Submit secret",
@@ -46,7 +46,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21004",
+		"nb": "21004",
 		"name":"Catarina Oliveira",
 		"description": "Quinto segredo",		
 		"challenge": "Submit secret",
@@ -54,7 +54,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21005",
+		"nb": "21005",
 		"name":"Fernando Garcia",
 		"description": "Sexto segredo",		
 		"challenge": "Submit secret",
@@ -63,7 +63,7 @@ db.secrets.insert([
 	{
 		
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21001",
+		"nb": "21001",
 		"name":"Anabela Araújo Rodrigues",
 		"description": "Sétimo segredo",		
 		"challenge": "Submit secret",
@@ -71,7 +71,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21001",
+		"nb": "21001",
 		"name":"Anabela Araújo Rodrigues",
 		"description": "Oitavo segredo",		
 		"challenge": "Submit secret",
@@ -79,7 +79,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21003",
+		"nb": "21003",
 		"name":"Andreia Alves",
 		"description": "Nono segredo",		
 		"challenge": "Submit secret",
@@ -87,7 +87,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21",
-		"nb": "nb21004",
+		"nb": "21004",
 		"name":"Catarina Oliveira",
 		"description": "Décimo segredo",		
 		"challenge": "Submit secret",
@@ -95,7 +95,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21000",
+		"nb": "21000",
 		"name":"Afonso Correia Sousa",
 		"description": "Décimo primeiro segredo",		
 		"challenge": "Submit secret",
@@ -103,7 +103,7 @@ db.secrets.insert([
 	},
 	{
 		"date": "Sat Dec 17 2016 15:55:21", 
-		"nb": "nb21004",
+		"nb": "21004",
 		"name":"Catarina Oliveira",
 		"description": "Décimo segundo segredo",		
 		"challenge": "Submit secret",

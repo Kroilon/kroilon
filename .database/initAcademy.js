@@ -86,11 +86,11 @@ db.academy.insert({
 	],
 	"users":[
 		{
-			"nb": "formador",
+			"nb": "13417",
 			"name":"Pedro Crespo",
 			"avatar": "",
 			"email": "pedro.crespo@novabase.pt",
-			"password": "123",
+			"password": "321",
 			"profile": "Admin"
 		},
 		{

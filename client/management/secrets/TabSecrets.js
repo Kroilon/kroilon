@@ -5,7 +5,6 @@ import { Secrets } from '/imports/api/databasedriver.js';
 Template.TabSecrets.helpers({
     players(){
       var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-
       return latestAcademy.users;
     }
 
@@ -26,7 +25,7 @@ Template.TabSecrets.events({
       name: secretPlayerName,
       description: secretValue,
       challenge: "Submit secret",
-      discovered: 0
+      discovered: false
     }
 
     Modal.show('secretInsertModal', this);
