@@ -28,11 +28,11 @@ Template.searchSecretModal.events({
     event.preventDefault();
 
     let player1 = $("#playerPointing").val();
-    console.log("player1: " + player1);
+    //console.log("player1: " + player1);
     let player2 = $("#playerPointed").val();
-    console.log("player2: " + player2);
+    //console.log("player2: " + player2);
     let secret1 = $("#secretPointed").val();
-    console.log("secret1: " + secret1);
+    //console.log("secret1: " + secret1);
 
     if (player2 === secret1) {
       //console.log("SECRET MATCH!!!");
@@ -40,7 +40,7 @@ Template.searchSecretModal.events({
       let user2 = getUserByNB(player2);
 
       if (user2.profile === "Player") { 
-      	console.log("Profile is PLAYER!");
+      	//console.log("Profile is PLAYER!");
       	// DEDUCT CONST HP points from player2
       }
 
@@ -48,7 +48,7 @@ Template.searchSecretModal.events({
 
   	  // Discover secret
   	  let secretId = getSecretByNB(secret1);
-  	  console.log("secret1: " + secretId._id);
+  	  //console.log("secret1: " + secretId._id);
   	  Meteor.call('discoverSecret', secretId._id, function(error, result) {
 	    if (error) {
 	      alert(error);
@@ -59,7 +59,7 @@ Template.searchSecretModal.events({
       //console.log("NOP!!!");
 
       if (user2.profile === "Player") { 
-      	console.log("Profile is PLAYER!");
+      	//console.log("Profile is PLAYER!");
       	// ADD CONST HP points to player2
       }
 
