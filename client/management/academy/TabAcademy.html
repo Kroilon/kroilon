@@ -1,17 +1,17 @@
 <template name="TabAcademy">  
-  <div class="container" style="width: inherit; margin-top: 1.5em;">        
-    <form id ="addAcademy" class="form-horizontal">
-      <div class="form-group">      
-        <div class="col-xs-9">
-          <label for="academyName">Academy Name</label>
-          <input type="text" class="form-control" id="academyName" placeholder="Insert name here..." required>
-        </div>      
-      </div>
-      <div class="form-group">
-        <div class="col-xs-3">
-          <button type="submit" class="btn btn-default btn-circle" style="margin-top: 0.3em; padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
-        </div>
-      </div>
-    </form> 
-  </div> 
+
+  {{#if isAcademiesElementActive academiesTable}}
+    
+    {{> Template.dynamic template = academiesTable }}
+    
+  {{else}}
+
+    {{#if isAcademiesElementActive newAcademy}}
+
+      {{> Template.dynamic template = newAcademy }}
+
+    {{/if}}
+
+  {{/if}}
+
 </template>

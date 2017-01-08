@@ -1,10 +1,11 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 
+import { ACADEMIES_ACTIVE_ELEMENT_KEY } from '/client/management/academy/TabAcademy.js';
+
 Template.registerHelper('getScore', function(academy) {
   
-  let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
-  let users = latestAcademy.users;
+  let users = academy.users;
   users.splice(0, 3);
   let total_users = users.length;
   let total_points = 0;
@@ -27,7 +28,7 @@ Template.registerHelper('getScore', function(academy) {
   let average_points = (total_points / total_users - 1);
   //console.log("average_points: " + average_points);
 
-  let teamScore = latestAcademy.teamScore;
+  let teamScore = academy.teamScore;
   let total_team_score = teamScore.length;
   let total_team_points = 0;
 
@@ -97,12 +98,15 @@ Template.TableAcademy.helpers({
 
 });
 
+const TABLE_ACADEMIES_ACTIVE_ELEMENT_KEY = "TableAcademies";
+const NEW_ACADEMIES_ACTIVE_ELEMENT_KEY = "NewAcademy";
 
 Template.TableAcademy.events({ 
 
   'click #addAcademy' (event){    
     event.preventDefault();  
-    Modal.show('insertAcademyModal', this);
+    Session.set(ACADEMIES_ACTIVE_ELEMENT_KEY, NEW_ACADEMIES_ACTIVE_ELEMENT_KEY);
+    //Modal.show('insertAcademyModal', this);
   },  
 
   'click #deleteAcademy' (event){    
