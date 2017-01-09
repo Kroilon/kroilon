@@ -132,7 +132,7 @@ Template.NewPlayerInfo.events({
 
   'click #nopCharacter' (event){
     event.preventDefault();
-    //Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
+    Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
   }
 
 });

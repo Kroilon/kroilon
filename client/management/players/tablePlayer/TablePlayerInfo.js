@@ -5,14 +5,14 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
-import { PLAYERS_ACTIVE_ELEMENT_KEY } from '/client/management/players/TablePlayers.js';
+import { PLAYERS_ACTIVE_ELEMENT_KEY,  NB_ACTIVE_ELEMENT_KEY  } from '/client/management/players/TablePlayers.js';
 
 Template.TablePlayerInfo.helpers({
 
   players() {
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var users = latestAcademy.users;
-    users.splice(0, 1);
+    users.splice(0, 3);
     return users;
   }   
 
@@ -33,13 +33,23 @@ Template.TablePlayerInfo.events({
   //Act when the personal performance graph icon is clicked
   "click #editPlayer" (event){
       event.preventDefault();
+      Session.set(NB_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
       Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, EDIT_PLAYER_ACTIVE_TEMPLATE_NAME);
-      Session.set(CURRENT_PLAYER_NB, _getUserNbFromLink($(event.target).parent()));
+
   },
 
   'click #viewPlayer' (event){
     event.preventDefault();
-    Modal.show('viewPlayerModal', this);
+
+    if (this.profile === "Player") { 
+        //console.log("Profile type: " + this.profile);
+        Modal.show('viewPlayerModal', this);
+    } 
+    else if (this.profile === "Admin") { 
+        //console.log("Profile type: " + this.profile);
+        Modal.show('viewAdminModal', this);
+    }
+    
   },
 
   'click #deletePlayer' (event){

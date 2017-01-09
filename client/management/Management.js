@@ -49,7 +49,7 @@ Template.Management.helpers({
     // Every tab object MUST have a name and a slug!
     return [
         { name: 'Academy', slug: 'academy' },
-        { name: 'Add Character', slug: 'characterAdd' },
+        // { name: 'Add Character', slug: 'characterAdd' },
         { name: 'Players', slug: 'players' },
         { name: 'Characters List', slug: 'charactersList' },
         { name: 'Badges', slug: 'badges' },

@@ -19,35 +19,35 @@
                     <label for="formCharacterNB" class="col-form-label" style="font-weight: normal">NB</label>
                     <input class="form-control" type="text" placeholder="12345" id="formCharacterNB" required>
                   </div> 
-                </div>               
+                </div>       
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="formCharacterName" class="col-form-label" style="font-weight: normal">Name</label>
+                    <input class="form-control" type="text" placeholder="" id="formCharacterName" required>
+                  </div>
+                </div>         
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="formCharacterEmail" class="col-form-label" style="font-weight: normal">Email</label>
                     <input class="form-control" type="email" placeholder="" id="formCharacterEmail" required>
                   </div>
-                </div>  
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="formCharacterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
-                    <select class="selectpicker form-control" id="formCharacterMBTI" required>          
-                      {{#each mbtiTypes}}
-                        <option value="{{name}}">{{value}}</option>
-                      {{/each}}
-                    </select>                  
-                  </div>
-                </div>                   
+                </div>                                   
               </div>            
-            </div> 
-            <div class="form-group row">
-              <div class="col-md-12">
-                <label for="formCharacterName" class="col-form-label" style="font-weight: normal">Name</label>
-                <input class="form-control" type="text" placeholder="" id="formCharacterName" required>
-              </div>
-            </div> 
+            </div>             
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="formCharacterPassword" class="col-form-label" style="font-weight: normal">Password</label>
                 <input class="form-control" type="password" placeholder="" id="formCharacterPassword" required>
+              </div>
+            </div>  
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="formCharacterMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
+                <select class="selectpicker form-control" id="formCharacterMBTI" required>          
+                  {{#each mbtiTypes}}
+                    <option value="{{name}}">{{value}}</option>
+                  {{/each}}
+                </select>                  
               </div>
             </div>  
             <div class="form-group row">

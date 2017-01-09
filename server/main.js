@@ -146,9 +146,9 @@ Meteor.methods({
       Academy.update( { _id: academy._id}, { $pull: { 'users': user } });
     },
 
-    updateAcademyPlayer: function( academy, user) {
+    updateAcademyPlayer: function( academy, nb, player) {
       //console.log("academyID: " + academy._id);
-      Academy.update( { _id: academy._id, 'users.nb': user.nb }, { $set: {'users.$': user }} );
+      Academy.update( { _id: academy._id, 'users.nb': nb }, { $set: {'users.$': player }} );
     },
 
     changeRoom: function( academy, room) {

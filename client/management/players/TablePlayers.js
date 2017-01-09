@@ -10,6 +10,8 @@ import { Badges } from '/imports/api/databasedriver.js';
  */
 export const PLAYERS_ACTIVE_ELEMENT_KEY = "PlayersActiveElement";
 
+export const NB_ACTIVE_ELEMENT_KEY = "EditActiveElement";
+
 /**
  * Executed before the DOM elements are rendered.
  * Helpful when we want to set a default value 
@@ -18,6 +20,7 @@ export const PLAYERS_ACTIVE_ELEMENT_KEY = "PlayersActiveElement";
 Template.TablePlayers.created = function(){
     //default template - Table
     Session.setDefault(PLAYERS_ACTIVE_ELEMENT_KEY, "TablePlayerInfo");
+    Session.setDefault(NB_ACTIVE_ELEMENT_KEY, "EditActiveElement");
 }
 
 
