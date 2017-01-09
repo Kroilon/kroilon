@@ -12,7 +12,7 @@ Template.TablePlayerInfo.helpers({
   players() {
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var users = latestAcademy.users;
-    users.splice(0, 3);
+    users.splice(0, 1);
     return users;
   }   
 

@@ -36,96 +36,98 @@
                       <label for="academyPlayerPassword" class="col-form-label" style="font-weight: normal">Password</label>
                       <input class="form-control" type="text" value="{{academyPlayer.password}}" id="academyPlayerPassword" required>
                     </div>
-                </div>  
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="academyPlayerMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
-                    <select class="selectpicker form-control" id="academyPlayerMBTI" required>   
-                      <option selected>{{academyPlayer.mbti}}</option>        
-                      {{#each mbtiTypes}}
-                        <option value="{{name}}">{{value}}</option>
-                      {{/each}}
-                    </select>                  
-                  </div>
-                </div> 
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
-                      <input class="form-control" type="text" value="{{academyPlayer.contact}}" id="academyPlayerMobile">
+                </div>   
+                {{#if isPlayerProfile}}               
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <label for="academyPlayerMBTI" class="col-form-label" style="font-weight: normal">MBTI</label>
+                        <select class="selectpicker form-control" id="academyPlayerMBTI" required>   
+                          <option selected>{{academyPlayer.mbti}}</option>        
+                          {{#each mbtiTypes}}
+                            <option value="{{name}}">{{value}}</option>
+                          {{/each}}
+                        </select>                  
+                      </div>
+                    </div> 
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerMobile" class="col-form-label" style="font-weight: normal">Mobile</label>
+                          <input class="form-control" type="text" value="{{academyPlayer.contact}}" id="academyPlayerMobile">
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
+                          <input class="form-control" type="date" value="{{academyPlayer.dateOfBirth}}" id="academyPlayerDateOfBirth" required>
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
+                          <select class="selectpicker form-control" id="academyPlayerBusinessUnit" required>
+                            <option selected>{{getBusinessUnit academyPlayer.businessUnit}}</option>          
+                            {{#each businessUnitTypes}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select>                  
+                        </div>
+                    </div>    
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
+                          <select class="selectpicker form-control" id="academyPlayerPeopleSkills" required>         
+                            <option selected>{{academyPlayer.skills.[0].people}}</option> 
+                            {{#each possiblePoints}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select>        
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
+                          <select class="selectpicker form-control" id="academyPlayerCommunicationSkills" required>
+                            <option selected>{{academyPlayer.skills.[0].communication}}</option> 
+                            {{#each possiblePoints}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select>     
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
+                          <select class="selectpicker form-control" id="academyPlayerProblemSolvingSkills" required>
+                            <option selected>{{academyPlayer.skills.[0].problemSolving}}</option> 
+                            {{#each possiblePoints}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select>
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
+                          <select class="selectpicker form-control" id="academyPlayerManagementSkills" required>
+                            <option selected>{{academyPlayer.skills.[0].management}}</option> 
+                            {{#each possiblePoints}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select> 
+                        </div>
+                    </div>  
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                          <label for="academyPlayerAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
+                          <select class="selectpicker form-control" id="academyPlayerAndroidSkills" required>
+                            <option selected>{{academyPlayer.skills.[0].problemSolving}}</option> 
+                            {{#each possiblePoints}}
+                              <option value="{{name}}">{{value}}</option>
+                            {{/each}}
+                          </select>
+                        </div>
                     </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerDateOfBirth" class="col-form-label" style="font-weight: normal">Date of Birth</label>
-                      <input class="form-control" type="date" value="{{academyPlayer.dateOfBirth}}" id="academyPlayerDateOfBirth" required>
-                    </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerBusinessUnit" class="col-form-label" style="font-weight: normal">Business Unit</label>
-                      <select class="selectpicker form-control" id="academyPlayerBusinessUnit" required>
-                        <option selected>{{getBusinessUnit academyPlayer.businessUnit}}</option>          
-                        {{#each businessUnitTypes}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select>                  
-                    </div>
-                </div>    
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerPeopleSkills" class="col-form-label" style="font-weight: normal">People Skills</label>
-                      <select class="selectpicker form-control" id="academyPlayerPeopleSkills" required>         
-                        <option selected>{{academyPlayer.skills.[0].people}}</option> 
-                        {{#each possiblePoints}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select>        
-                    </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerCommunicationSkills" class="col-form-label" style="font-weight: normal">Communication Skills</label>
-                      <select class="selectpicker form-control" id="academyPlayerCommunicationSkills" required>
-                        <option selected>{{academyPlayer.skills.[0].communication}}</option> 
-                        {{#each possiblePoints}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select>     
-                    </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerProblemSolvingSkills" class="col-form-label" style="font-weight: normal">Problem Solving Skills</label>
-                      <select class="selectpicker form-control" id="academyPlayerProblemSolvingSkills" required>
-                        <option selected>{{academyPlayer.skills.[0].problemSolving}}</option> 
-                        {{#each possiblePoints}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select>
-                    </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerManagementSkills" class="col-form-label" style="font-weight: normal">Management Skills</label>
-                      <select class="selectpicker form-control" id="academyPlayerManagementSkills" required>
-                        <option selected>{{academyPlayer.skills.[0].management}}</option> 
-                        {{#each possiblePoints}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select> 
-                    </div>
-                </div>  
-                <div class="form-group row">
-                    <div class="col-md-12">
-                      <label for="academyPlayerAndroidSkills" class="col-form-label" style="font-weight: normal">Android Programming Skills</label>
-                      <select class="selectpicker form-control" id="academyPlayerAndroidSkills" required>
-                        <option selected>{{academyPlayer.skills.[0].problemSolving}}</option> 
-                        {{#each possiblePoints}}
-                          <option value="{{name}}">{{value}}</option>
-                        {{/each}}
-                      </select>
-                    </div>
-                </div>
+                {{/if}}
                 <div class="form-group row">
                   <div class="col-md-12">
                     <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;" id="insertCharacter"><i class="glyphicon glyphicon-ok"></i></button>

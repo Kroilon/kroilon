@@ -93,6 +93,21 @@ Template.EditPlayerInfo.helpers({
         let nb = Session.get(NB_ACTIVE_ELEMENT_KEY);
         let user = getUserByNB(nb);
         return user;
+    },
+
+    isPlayerProfile() {
+        let playerNB = Session.get(NB_ACTIVE_ELEMENT_KEY);
+        let player = getUserByNB(playerNB);
+        let profile = player.profile; 
+        //console.log("profile: " + profile);
+
+        if (profile === "Player") { 
+          return true; 
+        } 
+        else { 
+          return false;
+        }
+
     }
 
 });
@@ -105,79 +120,101 @@ Template.EditPlayerInfo.events({
 
     var academyPlayer = {};
 
+    let userNB = Session.get(NB_ACTIVE_ELEMENT_KEY);
+    let user = getUserByNB(userNB);
+    let profile = user.profile;
+    //console.log("profile: " + profile);
+
     //var academyPlayerAvatar = $('#academyPlayerAvatar').val();
+    //console.log("academyPlayerAvatar: " + academyPlayerAvatar);
     let academyPlayerNB = $('#academyPlayerNB').val();
     console.log("academyPlayerNB: " + academyPlayerNB);
     let academyPlayerEmail = $('#academyPlayerEmail').val();
     console.log("academyPlayerEmail: " + academyPlayerEmail);
-    let academyPlayerMBTI = $('#academyPlayerMBTI').val();
-    console.log("academyPlayerMBTI: " + academyPlayerMBTI);
     let academyPlayerName = $('#academyPlayerName').val();
     console.log("academyPlayerName: " + academyPlayerName);      
     let academyPlayerPassword = $('#academyPlayerPassword').val();
     console.log("academyPlayerPassword: " + academyPlayerPassword);
-    let academyPlayerMobile = $('#academyPlayerMobile').val();
-    console.log("academyPlayerMobile: " + academyPlayerMobile);
-    let academyPlayerDateOfBirth = $('#academyPlayerDateOfBirth').val();
-    console.log("academyPlayerDateOfBirth: " + academyPlayerDateOfBirth);
-    let academyPlayerBusinessUnit = $('#academyPlayerBusinessUnit').val(); 
-    console.log("academyPlayerBusinessUnit: " + academyPlayerBusinessUnit);
-    let academyPlayerPeopleSkills = $('#academyPlayerPeopleSkills').val();
-    console.log("academyPlayerPeopleSkills: " + academyPlayerPeopleSkills);
-    let academyPlayerCommunicationSkills = $('#academyPlayerCommunicationSkills').val();
-    console.log("academyPlayerCommunicationSkills: " + academyPlayerCommunicationSkills);
-    let academyPlayerProblemSolvingSkills = $('#academyPlayerProblemSolvingSkills').val();
-    console.log("academyPlayerProblemSolvingSkills: " + academyPlayerProblemSolvingSkills);
-    let academyPlayerManagementSkills = $('#academyPlayerManagementSkills').val();
-    console.log("academyPlayerManagementSkills: " + academyPlayerManagementSkills);
-    let academyPlayerAndroidSkills = $('#academyPlayerAndroidSkills').val();
-    console.log("academyPlayerAndroidSkills: " + academyPlayerAndroidSkills);
 
-    // Convert business unit value
-    switch (academyPlayerBusinessUnit) {
-        case "Celfocus":
-            academyPlayerBusinessUnit = "CF";
-            break;
-        case "Government, Transport and Energy":
-            academyPlayerBusinessUnit = "GTE";
-            break;
-        case "Financial Services":
-            academyPlayerBusinessUnit = "FSI";
-            break;
-        case "Venture Capital":
-            academyPlayerBusinessUnit = "VC";
-            break;
-        case "NeoTalent":
-            academyPlayerBusinessUnit = "NT";
-            break;
-        case "IMS":
-            academyPlayerBusinessUnit = "IMS";
-            break;
+    if (profile === "Player") { 
+       
+        let academyPlayerMBTI = $('#academyPlayerMBTI').val();
+        console.log("academyPlayerMBTI: " + academyPlayerMBTI);        
+        let academyPlayerMobile = $('#academyPlayerMobile').val();
+        console.log("academyPlayerMobile: " + academyPlayerMobile);
+        let academyPlayerDateOfBirth = $('#academyPlayerDateOfBirth').val();
+        console.log("academyPlayerDateOfBirth: " + academyPlayerDateOfBirth);
+        let academyPlayerBusinessUnit = $('#academyPlayerBusinessUnit').val(); 
+        console.log("academyPlayerBusinessUnit: " + academyPlayerBusinessUnit);
+        let academyPlayerPeopleSkills = $('#academyPlayerPeopleSkills').val();
+        console.log("academyPlayerPeopleSkills: " + academyPlayerPeopleSkills);
+        let academyPlayerCommunicationSkills = $('#academyPlayerCommunicationSkills').val();
+        console.log("academyPlayerCommunicationSkills: " + academyPlayerCommunicationSkills);
+        let academyPlayerProblemSolvingSkills = $('#academyPlayerProblemSolvingSkills').val();
+        console.log("academyPlayerProblemSolvingSkills: " + academyPlayerProblemSolvingSkills);
+        let academyPlayerManagementSkills = $('#academyPlayerManagementSkills').val();
+        console.log("academyPlayerManagementSkills: " + academyPlayerManagementSkills);
+        let academyPlayerAndroidSkills = $('#academyPlayerAndroidSkills').val();
+        console.log("academyPlayerAndroidSkills: " + academyPlayerAndroidSkills);
+
+        // Convert business unit value
+        switch (academyPlayerBusinessUnit) {
+            case "Celfocus":
+                academyPlayerBusinessUnit = "CF";
+                break;
+            case "Government, Transport and Energy":
+                academyPlayerBusinessUnit = "GTE";
+                break;
+            case "Financial Services":
+                academyPlayerBusinessUnit = "FSI";
+                break;
+            case "Venture Capital":
+                academyPlayerBusinessUnit = "VC";
+                break;
+            case "NeoTalent":
+                academyPlayerBusinessUnit = "NT";
+                break;
+            case "IMS":
+                academyPlayerBusinessUnit = "IMS";
+                break;
+        } 
+
+        academyPlayer =  {
+          nb: academyPlayerNB,
+          name: academyPlayerName,  
+          avatar: "",       
+          email: academyPlayerEmail,
+          password: academyPlayerPassword,
+          profile: "Player",
+          dateOfBirth: academyPlayerDateOfBirth,
+          contact: academyPlayerMobile,          
+          businessUnit: academyPlayerBusinessUnit,
+          mbti: academyPlayerMBTI,
+          counter: 0,
+          voted: "Nobody",
+          tardiness: 0,
+          skills:[{
+              people: academyPlayerPeopleSkills,
+              communication: academyPlayerCommunicationSkills,
+              problemSolving: academyPlayerProblemSolvingSkills,
+              management: academyPlayerManagementSkills,
+              android: academyPlayerAndroidSkills
+            }]
+        };
     } 
+    else if (profile === "Admin") { 
 
-    academyPlayer =  {
-      nb: academyPlayerNB,
-      name: academyPlayerName,      
-      email: academyPlayerEmail,
-      password: academyPlayerPassword,
-      profile: "Player",
-      dateOfBirth: academyPlayerDateOfBirth,
-      contact: academyPlayerMobile,          
-      businessUnit: academyPlayerBusinessUnit,
-      mbti: academyPlayerMBTI,
-      counter: 0,
-      voted: "Nobody",
-      tardiness: 0,
-      skills:[{
-          people: academyPlayerPeopleSkills,
-          communication: academyPlayerCommunicationSkills,
-          problemSolving: academyPlayerProblemSolvingSkills,
-          management: academyPlayerManagementSkills,
-          android: academyPlayerAndroidSkills
-        }]
-    };
+        academyPlayer =  {
+          nb: academyPlayerNB,
+          name: academyPlayerName,   
+          avatar: "",   
+          email: academyPlayerEmail,
+          password: academyPlayerPassword,
+          profile: "Admin"          
+        };
 
-    //var characterNB = event.target.characterNB.value;
+    }
+
     Meteor.call("updateAcademyPlayer", latestAcademy, academyPlayerNB, academyPlayer, function(error, result) {
       if (error) {
         alert(error);
