@@ -117,7 +117,7 @@ db.academy.insert({
 			"email": "afonsosousa0@gmail.com",
 			"password": "12345",
 			"profile": "Player",
-			"dateOfBirth": "31/01/1991",
+			"dateOfBirth": "31/01/1991", 
 			"contact": "+932 123 456",
 			"businessUnit": "CF",  
     		"mbti": "ENTJ",
