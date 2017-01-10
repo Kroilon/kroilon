@@ -4,7 +4,7 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
-import { BADGES_ACTIVE_ELEMENT_KEY, ID_BADGE_ACTIVE_ELEMENT_KEY } from '/client/management/badges/TabBadges.js';
+import { BADGES_ACTIVE_ELEMENT_KEY } from '/client/management/badges/TabBadges.js';
 
 Template.NewBadgeInfo.helpers({
     pointTypes: function () {
@@ -49,12 +49,10 @@ Template.NewBadgeInfo.events({
     Meteor.call("insertBadge", badgeData);
     $("#addBadge")[0].reset();     
   },
-  'click #deleteBadge' (event) {
-
-    var badgeName = $("#badgeName").val();
-
-    alert("Badge deleted!");
-    Meteor.call("deleteBadge", badgeName);
+  
+  'click #nopBadge' (event){
+    event.preventDefault();
+    Session.set(BADGES_ACTIVE_ELEMENT_KEY, TABLE_BADGES_ACTIVE_TEMPLATE_NAME);
   }
   
 });

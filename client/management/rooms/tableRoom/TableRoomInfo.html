@@ -1,4 +1,4 @@
-<template name="TableBadgeInfo">  
+<template name="TableRoomInfo">  
   <div class="container" style="width: inherit;">   
     <div class="col-md-12">
       <div class="row">
@@ -14,17 +14,17 @@
               <thead>
                 <tr>
                   <th class="col-md-3"><span style="color:black;">Name</span></th>
-                  <th class="col-md-2"><span style="color:black;">Type</span></th>
+                  <th class="col-md-2"><span style="color:black;">Badges</span></th>
                   <th class="col-md-2"><span style="color:black;">View</span></th>
                   <th class="col-md-2"><span style="color:black;">Edit</span></th>
                   <th class="col-md-2"><span style="color:black;">Remove</span></th>
                 </tr>
               </thead>
               <tbody>
-                {{#each academyBadges}}
+                {{#each academyRooms}}
                   <tr class="divRow">
                     <td>{{name}}</td>
-                    <td>{{type}}</td>
+                    <td>{{name}}</td>
                     <td>
                       <a style="color: #de4f4f" href="" id="viewBadge">
                         <span class="glyphicon glyphicon-search"></span> 

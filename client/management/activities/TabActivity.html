@@ -1,0 +1,20 @@
+<template name="TabActivity">  
+
+  {{#if isActivityElementActive activitiesTemplateName}}
+    
+        {{> Template.dynamic template = activitiesTemplateName }}
+    
+    {{else}}
+        
+        {{#if isActivityElementActive newActivityName}}
+
+            {{> Template.dynamic template = newActivityName }}
+        
+        {{else}}
+        
+            {{> Template.dynamic template = editActivityName }}
+        
+        {{/if}}        
+    {{/if}}
+    
+</template>

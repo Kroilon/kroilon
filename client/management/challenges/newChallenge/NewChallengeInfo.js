@@ -4,7 +4,7 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
-Template.TabActivities.helpers({
+Template.NewChallengeInfo.helpers({
     pointTypes: function () {
     return [
         { name: 'XP', value: 'Experience Points' },
@@ -24,7 +24,7 @@ Template.TabActivities.helpers({
     }
 });
 
-Template.TabActivities.events({
+Template.NewChallengeInfo.events({
   'submit form' (event) {
 
     event.preventDefault();

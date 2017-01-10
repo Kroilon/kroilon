@@ -17,14 +17,14 @@ export const ID_ROOM_ACTIVE_ELEMENT_KEY = "EditRoomElement";
  * Helpful when we want to set a default value 
  * to a variable.
  */
-Template.TabRooms.created = function(){
+Template.TabChallenges.created = function(){
     //default template - Table
     Session.setDefault(ROOMS_ACTIVE_ELEMENT_KEY, "TableRoomInfo");
     Session.setDefault(ID_ROOM_ACTIVE_ELEMENT_KEY, "EditRoomElement");
 }
 
 
-Template.TabRooms.helpers({
+Template.TabChallenges.helpers({
     roomsTemplateName(){
         return "TableBadgeInfo";
     },
@@ -34,7 +34,7 @@ Template.TabRooms.helpers({
     editRoomName(){
         return "EditBadgeInfo";
     },
-    isRoomsElementActive(elementName){
+    isChallengeElementActive(elementName){
         return Session.get(ROOMS_ACTIVE_ELEMENT_KEY) === elementName;
     }
 });

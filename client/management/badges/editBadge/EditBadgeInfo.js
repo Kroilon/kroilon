@@ -49,12 +49,10 @@ Template.EditBadgeInfo.events({
     Meteor.call("insertBadge", badgeData);
     $("#addBadge")[0].reset();     
   },
-  'click #deleteBadge' (event) {
-
-    var badgeName = $("#badgeName").val();
-
-    alert("Badge deleted!");
-    Meteor.call("deleteBadge", badgeName);
+  
+  'click #nopBadge' (event){
+    event.preventDefault();
+    Session.set(BADGES_ACTIVE_ELEMENT_KEY, TABLE_BADGES_ACTIVE_TEMPLATE_NAME);
   }
   
 });

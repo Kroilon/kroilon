@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
 
-Template.TabActivity.helpers({
+Template.NewActivityInfo.helpers({
     pointTypes: function () {
       return [
           { name: 'XP', value: 'Experience Points' },
@@ -23,7 +23,7 @@ Template.TabActivity.helpers({
 
 });
 
-Template.TabActivity.events({
+Template.NewActivityInfo.events({
   'submit form' (event)  {
 
     event.preventDefault();
