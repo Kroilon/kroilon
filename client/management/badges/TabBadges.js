@@ -4,51 +4,37 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+/**
+ * Use this key to save or retrieve the dynamic
+ * template active at a certain time.
+ */
+export const BADGES_ACTIVE_ELEMENT_KEY = "BadgesActiveElement";
+
+export const ID_BADGE_ACTIVE_ELEMENT_KEY = "EditBadgeElement";
+
+/**
+ * Executed before the DOM elements are rendered.
+ * Helpful when we want to set a default value 
+ * to a variable.
+ */
+Template.TabBadges.created = function(){
+    //default template - Table
+    Session.setDefault(BADGES_ACTIVE_ELEMENT_KEY, "TableBadgeInfo");
+    Session.setDefault(ID_BADGE_ACTIVE_ELEMENT_KEY, "EditBadgeElement");
+}
+
+
 Template.TabBadges.helpers({
-    pointTypes: function () {
-    return [
-        { name: 'XP', value: 'Experience Points' },
-        { name: 'KP', value: 'Knowledge Points' },
-        { name: 'HP', value: 'Health Points' },
-        { name: 'TP', value: 'Team Points' },
-        { name: 'NP', value: 'No Points' }
-      ];
+    badgesTemplateName(){
+        return "TableBadgeInfo";
+    },
+    newBadgeName(){
+        return "NewBadgeInfo";
+    },
+    editBadgeName(){
+        return "EditBadgeInfo";
+    },
+    isBadgesElementActive(elementName){
+        return Session.get(BADGES_ACTIVE_ELEMENT_KEY) === elementName;
     }
-});
-
-Template.TabBadges.events({
-  'submit form' (event) {
-
-    event.preventDefault();
-
-    var badgeData = {};
-
-    var badgeType = $("#badgeType").val();
-    var badgeName = $("#badgeName").val();
-    var badgePoints = $("#badgePoints").val();
-    var badgePointsType = $("#pointsType").val();
-    var badgeDescription = $("#badgeDescription").val();
-
-    var badgeData =
-    {      
-      name: badgeName,
-      points: badgePoints,
-      pointsType: badgePointsType,
-      type: badgeType,
-      description: badgeDescription,
-      date: new Date()
-    };
-
-    Modal.show('badgeInsertModal', this);
-    Meteor.call("insertBadge", badgeData);
-    $("#addBadge")[0].reset();     
-  },
-  'click #deleteBadge' (event) {
-
-    var badgeName = $("#badgeName").val();
-
-    alert("Badge deleted!");
-    Meteor.call("deleteBadge", badgeName);
-  }
-  
 });
