@@ -14,8 +14,9 @@ db.createCollection("activities");
 db.activities.insert([
 	{
 		"name": "Avatar",
+		"type": "BADGE",
 		"points": 50,
-		"type": "HP",
+		"pointsType": "HP",
 		"room": "",
 		"description": ""
 	},

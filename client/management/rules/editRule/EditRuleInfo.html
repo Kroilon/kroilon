@@ -1,0 +1,76 @@
+<template name="EditRuleInfo">  
+  <div class="container">    
+    <form id ="addChallenge">
+      <div class="form-group row">
+        <label for="ruleName" class="col-md-2 col-form-label">Rule Name</label>
+        <div class="col-md-9">
+          <input class="form-control" type="text" placeholder="Wells and Cans" id="ruleName" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="ruleType" class="col-md-2 col-form-label">Rule Base</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="ruleType">          
+            {{#each ruleTypes}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      {{#if showExtraFields}}
+        <div class="form-group row">
+        <label for="typeChallenge" class="col-md-2 col-form-label">Base Name</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="typeChallenge">          
+            {{#each challenges}}
+              <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      {{/if}}     
+      <div class="form-group row">
+        <label for="typeBadge" class="col-md-2 col-form-label">Base Name</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="typeBadge">          
+            {{#each badges}}
+              <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>      
+      <div class="form-group row">
+        <label for="ruleThreshold" class="col-md-2 col-form-label">Threshold</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="ruleThreshold">          
+            {{#each thresholdValues}}
+              <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="rulePoints" class="col-md-2 col-form-label">Points</label>
+        <div class="col-md-9">
+          <input class="form-control" type="text" placeholder="0" id="rulePoints" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="pointsType" class="col-md-2 col-form-label">Point Type</label>
+        <div class="col-md-9">
+          <select class="selectpicker form-control" id="pointsType">          
+            {{#each pointTypes}}
+              <option value="{{name}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>          
+      <div class="form-group row">
+        <div class="col-md-11">
+          <!-- <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" /> -->
+          <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+        </div>
+      </div>
+    </form>
+  </div> 
+</template>

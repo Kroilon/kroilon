@@ -22,13 +22,15 @@ Template.NewRoomInfo.events({
 
     event.preventDefault();
 
-    var roomName = $("#roomName").val();    
-    var roomDecision = $("#roomDecision").val();
-    var roomDescription = $("#roomDescription").val();
-    var roomBadge = $("#roomBadge").val();
+    let data = {};
+
+    let roomName = $("#roomName").val();    
+    let roomDecision = $("#roomDecision").val();
+    let roomDescription = $("#roomDescription").val();
+    let roomBadge = $("#roomBadge").val();
 
 
-    var data =
+    data =
     {
       name: roomName,
       dailyDecision: roomDecision,

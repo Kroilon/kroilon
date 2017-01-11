@@ -4,6 +4,8 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
+import { CHALLENGE_ACTIVE_ELEMENT_KEY, ID_CHALLENGE_ACTIVE_ELEMENT_KEY } from '/client/management/challenges/TabChallenges.js';
+
 Template.NewChallengeInfo.helpers({
     pointTypes: function () {
     return [
@@ -14,48 +16,52 @@ Template.NewChallengeInfo.helpers({
         { name: 'NP', value: 'No Points' }
       ];
     },
-    rooms(){
-      return Rooms.find({}).fetch();
-    },
-    badges(){
-      var badges = Badges.find({}).fetch();
-
-      return badges;
+    challengeTypes: function () {
+    return [
+        { name: 'BADGE', value: 'BADGE' },
+        { name: 'CHALLENGE', value: 'CHALLENGE' }
+      ];
     }
+    
 });
+
+
+const TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME = "TableChallengeInfo";
+const NEW_CHALLENGE_ACTIVE_TEMPLATE_NAME = "NewChallengeInfo";
+const EDIT_CHALLENGE_ACTIVE_TEMPLATE_NAME = "EditChallengeInfo";
 
 Template.NewChallengeInfo.events({
   'submit form' (event) {
 
     event.preventDefault();
 
-    var activityName = $("#activityName").val();
-    var activityPoints = $("#activityPoints").val();
-    var activityPointsType = $("#pointsType").val();
-    var activityRoom = $("#activityRoom").val();
-    var activityDescription = $("#activityDescription").val();
+    let data = {};
 
-    var data =
+    let challengeName = $("#challengeName").val();
+    let challengeType = $("#challengeType").val();
+    let challengePoints = $("#challengePoints").val();
+    let pointsType = $("#pointsType").val();
+    let challengeDescription = $("#challengeDescription").val();
+
+    data =
     {
-      name: activityName,
-    	points: activityPoints,
-      pointsType: activityPointsType,
-    	room: activityRoom,
-    	description: activityDescription
+      name: challengeName,
+      type: challengeType,
+    	points: challengePoints,
+      pointsType: pointsType,
+    	description: challengeDescription
     };
 
-    Modal.show('challengeInsertModal', this);
+    //Modal.show('challengeInsertModal', this);
     Meteor.call("insertChallenge", data);
     $("#addChallenge")[0].reset(); 
+    Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME);
+
   },
   
-  'click #deleteChallenge' (event) {
-
-    var activityName = $("#activityName").val();
-
-    alert("Challenge deleted!");
-    Meteor.call("deleteChallenge", activityName);
-    $("#addChallenge")[0].reset(); 
+  'click #nopChallenge' (event){
+    event.preventDefault();
+    Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME);
   }
 
 });

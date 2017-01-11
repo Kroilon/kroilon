@@ -8,9 +8,9 @@ import { Badges } from '/imports/api/databasedriver.js';
  * Use this key to save or retrieve the dynamic
  * template active at a certain time.
  */
-export const ROOMS_ACTIVE_ELEMENT_KEY = "RoomsActiveElement";
+export const CHALLENGE_ACTIVE_ELEMENT_KEY = "ChallengeActiveElement";
 
-export const ID_ROOM_ACTIVE_ELEMENT_KEY = "EditRoomElement";
+export const ID_CHALLENGE_ACTIVE_ELEMENT_KEY = "EditChallengeElement";
 
 /**
  * Executed before the DOM elements are rendered.
@@ -19,22 +19,22 @@ export const ID_ROOM_ACTIVE_ELEMENT_KEY = "EditRoomElement";
  */
 Template.TabChallenges.created = function(){
     //default template - Table
-    Session.setDefault(ROOMS_ACTIVE_ELEMENT_KEY, "TableRoomInfo");
-    Session.setDefault(ID_ROOM_ACTIVE_ELEMENT_KEY, "EditRoomElement");
+    Session.setDefault(ROOMS_ACTIVE_ELEMENT_KEY, "TableChallengeInfo");
+    Session.setDefault(ID_ROOM_ACTIVE_ELEMENT_KEY, "EditChallengeElement");
 }
 
 
 Template.TabChallenges.helpers({
-    roomsTemplateName(){
-        return "TableBadgeInfo";
+    challengesTemplateName(){
+        return "TableChallengeInfo";
     },
-    newRoomName(){
-        return "NewBadgeInfo";
+    newChallengeName(){
+        return "NewChallengeInfo";
     },
-    editRoomName(){
-        return "EditBadgeInfo";
+    editChallengeName(){
+        return "EditChallengeInfo";
     },
     isChallengeElementActive(elementName){
-        return Session.get(ROOMS_ACTIVE_ELEMENT_KEY) === elementName;
+        return Session.get(CHALLENGE_ACTIVE_ELEMENT_KEY) === elementName;
     }
 });

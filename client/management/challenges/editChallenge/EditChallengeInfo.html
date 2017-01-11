@@ -1,0 +1,56 @@
+<template name="EditChallengeInfo">  
+  <div class="container" style="width: inherit;"> 
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="addChallenge">  
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="challengeName" class="col-form-label" style="font-weight: normal">Name</label>
+              <input class="form-control" type="text" value="{{academyChallenge.[0].name}}" id="challengeName" required>
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="challengeType" class="col-form-label" style="font-weight: normal">Type</label>
+              <select class="selectpicker form-control" id="challengeType">    
+                <option selected>{{academyChallenge.[0].type}}</option>      
+                {{#each challengeTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="challengePoints" class="col-form-label" style="font-weight: normal">Points</label>
+              <input class="form-control" type="text" value="{{academyChallenge.[0].points}}" id="challengePoints" required>
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+              <select class="selectpicker form-control" id="pointsType">
+                <option selected>{{academyChallenge.[0].pointsType}}</option>          
+                {{#each pointTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>            
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="challengeDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="3" maxlength="450" id="challengeDescription" value="{{academyChallenge.[0].description}}" ></textarea>
+            </div>
+          </div>          
+          <div class="form-group row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+              <button type="button" id="nopChallenge" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" ><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div> 
+        </form>
+      </div> 
+    </div> 
+  </div> 
+</template>

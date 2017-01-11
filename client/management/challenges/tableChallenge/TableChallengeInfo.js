@@ -5,47 +5,47 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
-import { ROOMS_ACTIVE_ELEMENT_KEY, ID_ROOM_ACTIVE_ELEMENT_KEY } from '/client/management/rooms/TabRooms.js';
+import { CHALLENGE_ACTIVE_ELEMENT_KEY, ID_CHALLENGE_ACTIVE_ELEMENT_KEY } from '/client/management/challenges/TabChallenges.js';
 
 Template.TableChallengeInfo.helpers({
 
-  academyRooms() {  
-    var rooms = Rooms.find({}).fetch();
-    return rooms;
+  academyChallenges() {  
+    let challenges = Challenges.find({}).fetch();
+    return challenges;
     
   }   
 
 });
 
-const TABLE_ROOMS_ACTIVE_TEMPLATE_NAME = "TableRoomInfo";
-const NEW_ROOM_ACTIVE_TEMPLATE_NAME = "NewRoomInfo";
-const EDIT_ROOM_ACTIVE_TEMPLATE_NAME = "EditRoomInfo";
+const TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME = "TableChallengeInfo";
+const NEW_CHALLENGE_ACTIVE_TEMPLATE_NAME = "NewChallengeInfo";
+const EDIT_CHALLENGE_ACTIVE_TEMPLATE_NAME = "EditChallengeInfo";
 
 Template.TableChallengeInfo.events({   
 
   //Act when the personal performance board icon is clicked
-  "click #addBadge" (event){
+  "click #addChallenge" (event){
       event.preventDefault();
-      Session.set(ROOMS_ACTIVE_ELEMENT_KEY, NEW_ROOM_ACTIVE_TEMPLATE_NAME);
+      Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, NEW_CHALLENGE_ACTIVE_TEMPLATE_NAME);
   },
 
   //Act when the personal performance graph icon is clicked
-  "click #editBadge" (event){
+  "click #editChallenge" (event){
       event.preventDefault();
-      Session.set(ID_ROOM_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
-      Session.set(ROOMS_ACTIVE_ELEMENT_KEY, EDIT_ROOM_ACTIVE_TEMPLATE_NAME);
+      Session.set(ID_CHALLENGE_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
+      Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, EDIT_CHALLENGE_ACTIVE_TEMPLATE_NAME);
 
   },
 
-  'click #viewBadge' (event){
+  'click #viewChallenge' (event){
     event.preventDefault();
-    //Modal.show('viewRoomModal', this);
+    Modal.show('viewChallengeModal', this);
     
   },
 
-  'click #deleteBadge' (event){
+  'click #deleteChallenge' (event){
     event.preventDefault();
-    //Modal.show('deleteRoomModal', this); 
+    Modal.show('deleteChallengeModal', this); 
   } 
 
 });

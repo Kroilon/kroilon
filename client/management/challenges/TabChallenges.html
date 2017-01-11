@@ -1,18 +1,18 @@
 <template name="TabChallenges">  
 
-  {{#if isRoomsElementActive roomsTemplateName}}
+  {{#if isChallengeElementActive challengesTemplateName}}
     
-        {{> Template.dynamic template = roomsTemplateName }}
+        {{> Template.dynamic template = challengesTemplateName }}
     
     {{else}}
         
-        {{#if isRoomsElementActive newRoomName}}
+        {{#if isChallengeElementActive newChallengeName}}
 
-            {{> Template.dynamic template = newRoomName }}
+            {{> Template.dynamic template = newChallengeName }}
         
         {{else}}
         
-            {{> Template.dynamic template = editRoomName }}
+            {{> Template.dynamic template = editChallengeName }}
         
         {{/if}}        
     {{/if}}
