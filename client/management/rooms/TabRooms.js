@@ -26,13 +26,13 @@ Template.TabRooms.created = function(){
 
 Template.TabRooms.helpers({
     roomsTemplateName(){
-        return "TableBadgeInfo";
+        return "TableRoomInfo";
     },
     newRoomName(){
-        return "NewBadgeInfo";
+        return "NewRoomInfo";
     },
     editRoomName(){
-        return "EditBadgeInfo";
+        return "EditRoomInfo";
     },
     isRoomsElementActive(elementName){
         return Session.get(ROOMS_ACTIVE_ELEMENT_KEY) === elementName;

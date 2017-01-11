@@ -3,14 +3,14 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-xs-3">
-          <button type="button" id="addBadge" class="btn btn-default btn-circle" style="margin-top: 0.3em; padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-plus"></i></button>
+          <button type="button" id="addRoom" class="btn btn-default btn-circle" style="margin-top: 0.3em; padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-plus"></i></button>
         </div>
       </div>
     </div>
     <div class="col-md-11">
       <div class="row">
           <div class="container" style="font-size:16px;">
-            <table class="table table-hover table-striped table-bordered table-condensed" id="badgesTable">
+            <table class="table table-hover table-striped table-bordered table-condensed" id="secretsTable">
               <thead>
                 <tr>
                   <th class="col-md-3"><span style="color:black;">Name</span></th>
@@ -21,22 +21,22 @@
                 </tr>
               </thead>
               <tbody>
-                {{#each academyRooms}}
+                {{#each academyRoom}}
                   <tr class="divRow">
                     <td>{{name}}</td>
-                    <td>{{name}}</td>
+                    <td>{{badgesCount name}}</td>
                     <td>
-                      <a style="color: #de4f4f" href="" id="viewBadge">
+                      <a style="color: #de4f4f" href="" id="viewRoom">
                         <span class="glyphicon glyphicon-search"></span> 
                       </a>
                     </td>
                     <td>
-                      <a href="/{{name}}" style="color: #de4f4f" id="editBadge">
+                      <a href="/{{name}}" style="color: #de4f4f" id="editRoom">
                         <span class="glyphicon glyphicon-pencil"></span>
                       </a>
                     </td>
                     <td>
-                      <a style="color: #de4f4f" href="" id="deleteBadge">
+                      <a style="color: #de4f4f" href="" id="deleteRoom">
                         <span class="glyphicon glyphicon-remove"></span>
                       </a>
                     </td>
@@ -48,4 +48,4 @@
       </div>
     </div>   
   </div> 
-</template>	
+</template> 

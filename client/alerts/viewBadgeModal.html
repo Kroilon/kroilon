@@ -1,0 +1,68 @@
+<template name="viewBadgeModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Badge Info</h4>
+                </div>
+                <div class="modal-body">                 
+                    <div class="container" style="width: inherit;"> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row" style="margin-top: 1.5em;">
+                                  <div class="col-md-4 text-center">
+                                    <img class="img-circle avatar avatar-original" id="formBadgeAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="{{image}}" alt="Avatar...">
+                                    <!--
+                                    <img class="avatar avatar-original" id="characterAvatar" style="-webkit-user-select:none; display:block; margin:auto;" src="//placehold.it/150x150" alt="Avatar...">
+                                    -->
+                                    <br>
+                                    <input id="imageInput" style="display:block; margin:auto;" type="file"> 
+                                    <hr>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="form-group row">                
+                                      <div class="col-md-12">
+                                        <label for="badgeName" class="col-form-label" style="font-weight: normal">Name</label>
+                                        <input class="form-control" type="text" placeholder="{{name}}" id="badgeName" readonly>
+                                      </div>
+                                    </div> 
+                                       
+                                    <div class="form-group row">                
+                                      <div class="col-md-12">
+                                        <label for="badgePoints" class="col-form-label" style="font-weight: normal">Points</label>
+                                        <input class="form-control" type="text" placeholder="{{points}}" id="badgePoints" readonly>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">                
+                                      <div class="col-md-12">
+                                        <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+                                        <input class="form-control" type="text" placeholder="{{pointsType}}" id="pointsType" readonly> 
+                                      </div>
+                                    </div>               
+                                  </div>  
+                                </div> 
+                                <div class="form-group row">                
+                                  <div class="col-md-12">
+                                    <label for="badgeType" class="col-form-label" style="font-weight: normal">Type</label>
+                                    <input class="form-control" type="text" placeholder="{{type}}" id="badgeType" readonly> 
+                                  </div>
+                                </div> 
+                                <div class="form-group row">                
+                                  <div class="col-md-12">
+                                    <label for="badgeDescription" class="col-form-label" style="font-weight: normal">Description</label>
+                                    <textarea class="form-control" rows="3" maxlength="450" id="badgeDescription" placeholder="{{description}}" readonly></textarea>
+                                  </div>
+                                </div> 
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-default btn-circle pull-right" data-dismiss="modal" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

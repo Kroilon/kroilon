@@ -7,13 +7,32 @@ import { Secrets } from '/imports/api/databasedriver.js';
 
 import { ROOMS_ACTIVE_ELEMENT_KEY, ID_ROOM_ACTIVE_ELEMENT_KEY } from '/client/management/rooms/TabRooms.js';
 
+Template.registerHelper('badgesCount', function(name) {
+  
+  let mapRoom = Rooms.find({'name': name }).fetch();
+  let cntr = 0;
+
+  mapRoom[0].badges.forEach( function(badges){
+
+    if (badges.name !== undefined) { 
+      cntr++;
+    }
+     
+  });
+
+  //console.log("cntr: " + cntr); 
+  return cntr;  
+
+});
+
 Template.TableRoomInfo.helpers({
 
-  academyRooms() {  
+  academyRoom() {  
     var rooms = Rooms.find({}).fetch();
     return rooms;
     
-  }   
+  }
+
 
 });
 
@@ -24,28 +43,28 @@ const EDIT_ROOM_ACTIVE_TEMPLATE_NAME = "EditRoomInfo";
 Template.TableRoomInfo.events({   
 
   //Act when the personal performance board icon is clicked
-  "click #addBadge" (event){
+  "click #addRoom" (event){
       event.preventDefault();
       Session.set(ROOMS_ACTIVE_ELEMENT_KEY, NEW_ROOM_ACTIVE_TEMPLATE_NAME);
   },
 
   //Act when the personal performance graph icon is clicked
-  "click #editBadge" (event){
+  "click #editRoom" (event){
       event.preventDefault();
       Session.set(ID_ROOM_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
       Session.set(ROOMS_ACTIVE_ELEMENT_KEY, EDIT_ROOM_ACTIVE_TEMPLATE_NAME);
 
   },
 
-  'click #viewBadge' (event){
+  'click #viewRoom' (event){
     event.preventDefault();
-    //Modal.show('viewRoomModal', this);
+    Modal.show('viewRoomModal', this);
     
   },
 
-  'click #deleteBadge' (event){
+  'click #deleteRoom' (event){
     event.preventDefault();
-    //Modal.show('deleteRoomModal', this); 
+    Modal.show('deleteRoomModal', this); 
   } 
 
 });

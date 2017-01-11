@@ -24,18 +24,22 @@ Template.NewRoomInfo.events({
 
     var roomName = $("#roomName").val();    
     var roomDecision = $("#roomDecision").val();
+    var roomDescription = $("#roomDescription").val();
     var roomBadge = $("#roomBadge").val();
+
 
     var data =
     {
       name: roomName,
       dailyDecision: roomDecision,
+      description: roomDescription,
       badges: [{ badge: roomBadge }]      
     };
 
-    Modal.show('roomsInsertModal', this);
+    //Modal.show('roomsInsertModal', this);
     Meteor.call("insertRoom", data);
     $("#addRoom")[0].reset(); 
+    Session.set(ROOMS_ACTIVE_ELEMENT_KEY, TABLE_ROOMS_ACTIVE_TEMPLATE_NAME);
   },
   
   'click #nopRoom' (event){

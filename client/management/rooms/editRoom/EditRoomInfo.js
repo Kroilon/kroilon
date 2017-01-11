@@ -4,12 +4,16 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 
-import { ROOMS_ACTIVE_ELEMENT_KEY } from '/client/management/rooms/TabRooms.js';
+import { ROOMS_ACTIVE_ELEMENT_KEY, ID_ROOM_ACTIVE_ELEMENT_KEY } from '/client/management/rooms/TabRooms.js';
 
 Template.EditRoomInfo.helpers({
-    badges(){
-      var badges = Badges.find({}).fetch();
-      return badges;
+    
+    academyRoom() {
+        let roomId = Session.get(ID_ROOM_ACTIVE_ELEMENT_KEY).trim();
+        //console.log("ROOM ID: " + roomId);
+        let room = Rooms.find({ "name": roomId }).fetch();  
+        //console.log("ROOM NAME: " + room[0].name);
+        return room;
     }
 });
 
@@ -22,20 +26,26 @@ Template.EditRoomInfo.events({
 
     event.preventDefault();
 
-    var roomName = $("#roomName").val();    
-    var roomDecision = $("#roomDecision").val();
-    var roomBadge = $("#roomBadge").val();
+    var roomName = $("#editRoomName").val();    
+    var roomDecision = $("#editRoomDecision").val();
+    var roomDescription = $("#editRoomDescription").val();
+    var roomBadge = $("#editRoomBadge").val();
 
     var data =
     {
       name: roomName,
       dailyDecision: roomDecision,
+      description: roomDescription,
       badges: [{ badge: roomBadge }]      
     };
 
-    Modal.show('roomsInsertModal', this);
-    Meteor.call("insertRoom", data);
+    let roomId = Session.get(ID_ROOM_ACTIVE_ELEMENT_KEY).trim();
+    let room = Rooms.find({ "name": roomId }).fetch();
+
+    //Modal.show('roomsInsertModal', this);
+    Meteor.call("updateAcademyRoom", room[0], data);
     $("#addRoom")[0].reset(); 
+    Session.set(ROOMS_ACTIVE_ELEMENT_KEY, TABLE_ROOMS_ACTIVE_TEMPLATE_NAME);
   },
   
   'click #nopRoom' (event){

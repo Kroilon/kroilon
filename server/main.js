@@ -177,6 +177,14 @@ Meteor.methods({
 
     updateVotedCounter : function( academy, votedFor) {      
       Academy.update( { _id: academy._id, 'users.nb': votedFor}, { $inc:{"users.$.counter": 1 } });
+    },
+
+    updateAcademyBadge: function( badge, data) {
+      Badges.update({_id: badge._id}, { $set: {'name': data.name, 'points': data.points, 'pointsType': data.pointsType, 'type': data.type, 'description': data.description }} );
+    },
+
+    updateAcademyRoom: function( room, data) {
+      Badges.update({_id: room._id}, { $set: {'name': data.name, 'dailyDecision': data.dailyDecision, 'description': data.description, 'image': data.image }} );
     }
 
 });

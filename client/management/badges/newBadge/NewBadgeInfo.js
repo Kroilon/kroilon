@@ -15,6 +15,13 @@ Template.NewBadgeInfo.helpers({
         { name: 'TP', value: 'Team Points' },
         { name: 'NP', value: 'No Points' }
       ];
+    },
+
+    badgeType: function () {
+      return [
+        { name: 'Player', value: 'Player' },
+        { name: 'Team', value: 'Team' }      
+      ];
     }
 });
 
@@ -45,9 +52,11 @@ Template.NewBadgeInfo.events({
       date: new Date()
     };
 
-    Modal.show('badgeInsertModal', this);
+    //Modal.show('badgeInsertModal', this);
     Meteor.call("insertBadge", badgeData);
     $("#addBadge")[0].reset();     
+    Session.set(BADGES_ACTIVE_ELEMENT_KEY, TABLE_BADGES_ACTIVE_TEMPLATE_NAME);
+
   },
   
   'click #nopBadge' (event){

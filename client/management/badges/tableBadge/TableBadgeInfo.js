@@ -13,7 +13,7 @@ Template.TableBadgeInfo.helpers({
     var badges = Badges.find({}).fetch();
     return badges;
     
-  }   
+  }
 
 });
 
@@ -39,13 +39,13 @@ Template.TableBadgeInfo.events({
 
   'click #viewBadge' (event){
     event.preventDefault();
-    //Modal.show('viewBadgeModal', this);
+    Modal.show('viewBadgeModal', this);
     
   },
 
   'click #deleteBadge' (event){
     event.preventDefault();
-    //Modal.show('deleteBadgeModal', this); 
+    Modal.show('deleteBadgeModal', this); 
   } 
 
 });
