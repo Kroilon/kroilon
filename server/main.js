@@ -4,6 +4,7 @@ import { Challenges } from '/imports/api/databasedriver.js';
 import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
+import { Rules } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
 	  updateScore: function (id,playerId,score) {
@@ -50,6 +51,14 @@ Meteor.methods({
 
     },
 
+    insertRule: function(data) {
+
+      console.log(data);
+
+      Rules.insert(data);
+
+    },
+
     addAcademy : function(data) {
 
       console.log(data);
@@ -87,6 +96,13 @@ Meteor.methods({
           { name: roomname }
       );
 	  },
+
+    deleteRule: function (ruleName) {
+
+      Rules.remove(
+          { name: ruleName }
+      );
+    },
 
 	  deleteChallenge: function (challengename) {
 
@@ -184,7 +200,15 @@ Meteor.methods({
     },
 
     updateAcademyRoom: function( room, data) {
-      Badges.update({_id: room._id}, { $set: {'name': data.name, 'dailyDecision': data.dailyDecision, 'description': data.description, 'image': data.image }} );
+      Rooms.update({_id: room._id}, { $set: {'name': data.name, 'dailyDecision': data.dailyDecision, 'description': data.description, 'image': data.image }} );
+    },
+
+    updateAcademyChallenge: function( challenge, data) {
+      Challenges.update({_id: challenge._id}, { $set: {'name': data.name, 'points': data.points, 'pointsType': data.pointsType, 'description': data.description }} );
+    },
+
+    updateAcademyRules: function( rules, data) {
+      Rules.update({_id: rules._id}, { $set: {'name': data.name, 'type': data.type, 'typeName': data.typeName, 'threshold': data.threshold, 'points': data.points, 'pointsType': data.pointsType, 'description': data.description }} );
     }
 
 });

@@ -11,3 +11,5 @@ export const Secrets = new Mongo.Collection('secrets');
 export const Badges = new Mongo.Collection('badges');
 
 export const KroilonHistory = new Mongo.Collection('history');
+
+export const Rules = new Mongo.Collection('rules');
