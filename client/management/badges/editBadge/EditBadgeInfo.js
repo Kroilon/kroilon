@@ -78,7 +78,11 @@ Template.EditBadgeInfo.events({
     let badge = Badges.find({ "name": badgeId }).fetch();
 
     //Modal.show('badgeInsertModal', this);
-    Meteor.call("updateAcademyBadge", badge[0], badgeData);
+    Meteor.call("updateAcademyBadge", badge[0], badgeData, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addBadge")[0].reset();     
     Session.set(BADGES_ACTIVE_ELEMENT_KEY, TABLE_BADGES_ACTIVE_TEMPLATE_NAME);
 

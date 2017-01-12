@@ -80,7 +80,11 @@ Template.TabMessages.events({
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var message = $("#message").val();
     event.preventDefault();
-    Meteor.call("updateDailyMessage", latestAcademy, message);
+    Meteor.call("updateDailyMessage", latestAcademy, message, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
 
   },
   'click #updateHomeMessage' (event){
@@ -88,7 +92,11 @@ Template.TabMessages.events({
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var messageHome = $('#messageHome').val();
     event.preventDefault();
-    Meteor.call("updateHomeMessage", latestAcademy, messageHome);
+    Meteor.call("updateHomeMessage", latestAcademy, messageHome, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
   },
   'click #unlockBadge' (event){
 
@@ -100,7 +108,11 @@ Template.TabMessages.events({
 
     var mapRoom = Rooms.findOne({'name': currentRoom });
     //console.log("RoomId: " + mapRoom._id);
-    Meteor.call("updateBadgeStatus", mapRoom, badgeName, false);   
+    Meteor.call("updateBadgeStatus", mapRoom, badgeName, false, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });  
 
   },
   'click #lockBadge' (event){
@@ -112,7 +124,11 @@ Template.TabMessages.events({
     var currentRoom = latestAcademy.currentRoom; 
     
     var mapRoom = Rooms.findOne({'name': currentRoom });
-    Meteor.call("updateBadgeStatus", mapRoom, badgeName, true);   
+    Meteor.call("updateBadgeStatus", mapRoom, badgeName, true, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });   
 
   },
   'click #nextDay' (event){
@@ -163,7 +179,11 @@ Template.TabMessages.events({
     users.forEach( function(player){
       //console.log("Player name: " + player.name);
       //console.log("Player NB: " + player.nb);
-      Meteor.call("setVotedStatus", latestAcademy, player.nb, "Nobody");
+      Meteor.call("setVotedStatus", latestAcademy, player.nb, "Nobody", function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
     }); 
 
     //run rules and attribute points 

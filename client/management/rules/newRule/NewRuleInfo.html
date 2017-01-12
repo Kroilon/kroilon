@@ -1,0 +1,84 @@
+<template name="NewRuleInfo">  
+  <div class="container" style="width: inherit;"> 
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="addRule">  
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="ruleName" class="col-form-label" style="font-weight: normal">Name</label>
+              <input class="form-control" type="text" placeholder="Wells and Cans" id="ruleName" required>
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="ruleType" class="col-form-label" style="font-weight: normal">Type</label>
+              <select class="selectpicker form-control" id="ruleType">          
+                {{#each ruleType}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="idBadge" class="col-form-label" style="font-weight: normal">Badge</label>
+              <select class="selectpicker form-control" id="idBadge">          
+                {{#each badges}}
+                  <option value="{{name}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="idChallenge" class="col-form-label" style="font-weight: normal">Challenge</label>
+              <select class="selectpicker form-control" id="idChallenge">          
+                {{#each challenges}}
+                  <option value="{{name}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="ruleThreshold" class="col-form-label" style="font-weight: normal">Threshold</label>
+              <select class="selectpicker form-control" id="ruleThreshold">          
+                {{#each tresholdValues}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="rulePoints" class="col-form-label" style="font-weight: normal">Points</label>
+              <input class="form-control" type="text" placeholder="0" id="rulePoints" required>
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+              <select class="selectpicker form-control" id="pointsType">          
+                {{#each pointTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>            
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="ruleDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="3" maxlength="450" id="ruleDescription" placeholder="Insert description..."></textarea>
+            </div>
+          </div>          
+          <div class="form-group row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+              <button type="button" id="nopRules" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" ><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div> 
+        </form>
+      </div> 
+    </div> 
+  </div> 
+</template>

@@ -14,7 +14,6 @@ db.createCollection("activities");
 db.activities.insert([
 	{
 		"name": "Avatar",
-		"type": "BADGE",
 		"points": 50,
 		"pointsType": "HP",
 		"room": "",
@@ -23,105 +22,105 @@ db.activities.insert([
 	{
 		"name": "Autoevaluation",
 		"points": 50,
-		"type": "KP",
+		"pointsType": "KP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Kahoot",
 		"points": 50,
-		"type": "KP",
+		"pointsType": "KP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Volunteer Medley",
 		"points": 50,
-		"type": "HP",
+		"pointsType": "HP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Volunteer Android",
 		"points": 50,
-		"type": "HP",
+		"pointsType": "HP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Volunteer LipSync Battle",
 		"points": 50,
-		"type": "HP",
+		"pointsType": "HP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Team Balance",
 		"points": 200,
-		"type": "TP",
+		"pointsType": "TP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Marshmallow Ladder",
 		"points": 400,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Ninja MF Winner",
 		"points": 25,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Daily Scrum",
 		"points": 50,
-		"type": "TP",
+		"pointsType": "TP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Chain of Claws",
 		"points": 400,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Landing Project",
 		"points": 400,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Blind Quest",
 		"points": 200,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Wells & Cans",
 		"points": 600,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Lunch",
 		"points": 400,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	},
 	{
 		"name": "Divide & Conquer",
 		"points": 500,
-		"type": "XP",
+		"pointsType": "XP",
 		"room": "",
 		"description": ""
 	}

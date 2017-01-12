@@ -43,7 +43,11 @@ Template.EditRoomInfo.events({
     let room = Rooms.find({ "name": roomId }).fetch();
 
     //Modal.show('roomsInsertModal', this);
-    Meteor.call("updateAcademyRoom", room[0], data);
+    Meteor.call("updateAcademyRoom", room[0], data, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addRoom")[0].reset(); 
     Session.set(ROOMS_ACTIVE_ELEMENT_KEY, TABLE_ROOMS_ACTIVE_TEMPLATE_NAME);
   },

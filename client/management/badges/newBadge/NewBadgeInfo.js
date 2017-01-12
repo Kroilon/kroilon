@@ -53,7 +53,11 @@ Template.NewBadgeInfo.events({
     };
 
     //Modal.show('badgeInsertModal', this);
-    Meteor.call("insertBadge", badgeData);
+    Meteor.call("insertBadge", badgeData, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addBadge")[0].reset();     
     Session.set(BADGES_ACTIVE_ELEMENT_KEY, TABLE_BADGES_ACTIVE_TEMPLATE_NAME);
 

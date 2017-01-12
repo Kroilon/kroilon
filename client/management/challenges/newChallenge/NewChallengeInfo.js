@@ -15,16 +15,9 @@ Template.NewChallengeInfo.helpers({
         { name: 'TP', value: 'Team Points' },
         { name: 'NP', value: 'No Points' }
       ];
-    },
-    challengeTypes: function () {
-    return [
-        { name: 'BADGE', value: 'BADGE' },
-        { name: 'CHALLENGE', value: 'CHALLENGE' }
-      ];
-    }
+    }    
     
 });
-
 
 const TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME = "TableChallengeInfo";
 const NEW_CHALLENGE_ACTIVE_TEMPLATE_NAME = "NewChallengeInfo";
@@ -38,7 +31,6 @@ Template.NewChallengeInfo.events({
     let data = {};
 
     let challengeName = $("#challengeName").val();
-    let challengeType = $("#challengeType").val();
     let challengePoints = $("#challengePoints").val();
     let pointsType = $("#pointsType").val();
     let challengeDescription = $("#challengeDescription").val();
@@ -46,14 +38,17 @@ Template.NewChallengeInfo.events({
     data =
     {
       name: challengeName,
-      type: challengeType,
     	points: challengePoints,
       pointsType: pointsType,
     	description: challengeDescription
     };
 
     //Modal.show('challengeInsertModal', this);
-    Meteor.call("insertChallenge", data);
+    Meteor.call("insertChallenge", data, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addChallenge")[0].reset(); 
     Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME);
 

@@ -58,8 +58,15 @@ Template.EditChallengeInfo.events({
       description: challengeDescription
     };
 
+    let challengeId = Session.get(ID_CHALLENGE_ACTIVE_ELEMENT_KEY).trim();
+    let challenge = Challenges.find({ "name": challengeId }).fetch();  
+
     //Modal.show('challengeInsertModal', this);
-    Meteor.call("insertChallenge", data);
+    Meteor.call("updateAcademyChallenge", challenge[0], data, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addChallenge")[0].reset(); 
     Session.set(CHALLENGE_ACTIVE_ELEMENT_KEY, TABLE_CHALLENGE_ACTIVE_TEMPLATE_NAME);
 

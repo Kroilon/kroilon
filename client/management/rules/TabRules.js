@@ -34,7 +34,7 @@ Template.TabRules.helpers({
     editRuleName(){
         return "EditRuleInfo";
     },
-    isRoomsElementActive(elementName){
+    isRulesElementActive(elementName){
         return Session.get(RULES_ACTIVE_ELEMENT_KEY) === elementName;
     }
 });

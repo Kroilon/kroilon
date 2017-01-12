@@ -123,7 +123,11 @@ Template.NewPlayerInfo.events({
 
     //Modal.show('characterInsertModal', this);
     //var characterNB = event.target.characterNB.value;
-    Meteor.call("insertAcademyPlayer", latestAcademy, user); 
+    Meteor.call("insertAcademyPlayer", latestAcademy, user, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    }); 
     //event.target.characterNB.value = "";      
     $("#addCharacter")[0].reset();  
 

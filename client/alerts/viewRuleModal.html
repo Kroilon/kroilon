@@ -1,0 +1,72 @@
+<template name="viewRuleModal">
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Rule Info</h4>
+                </div>
+                <div class="modal-body">                 
+                    <div class="container" style="width: inherit;"> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="ruleName" class="col-form-label" style="font-weight: normal">Name</label>
+                                    <input class="form-control" type="password" placeholder="{{name}}" id="ruleName" readonly>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="ruleType" class="col-form-label" style="font-weight: normal">Type</label>
+                                    <input class="form-control" type="password" placeholder="{{type}}" id="ruleType" readonly>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="idBadge" class="col-form-label" style="font-weight: normal">Badge</label>
+                                    <input class="form-control" type="password" placeholder="{{typeName}}" id="idBadge" readonly>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="idChallenge" class="col-form-label" style="font-weight: normal">Challenge</label>
+                                    <input class="form-control" type="password" placeholder="{{typeName}}" id="idChallenge" readonly>
+                                  </div>
+                                </div>  
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="ruleThreshold" class="col-form-label" style="font-weight: normal">Threshold</label>
+                                    <input class="form-control" type="password" placeholder="{{threshold}}" id="ruleThreshold" readonly>
+                                  </div>
+                                </div>   
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="rulePoints" class="col-form-label" style="font-weight: normal">Points</label>
+                                    <input class="form-control" type="password" placeholder="{{points}}" id="rulePoints" readonly>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+                                    <input class="form-control" type="password" placeholder="{{pointsType}}" id="pointsType" readonly>
+                                  </div>
+                                </div> 
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <label for="ruleDescription" class="col-form-label" style="font-weight: normal">Description</label>
+                                    <input class="form-control" type="password" placeholder="{{description}}" id="ruleDescription" readonly>
+                                  </div>
+                                </div> 
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-default btn-circle pull-right" data-dismiss="modal" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

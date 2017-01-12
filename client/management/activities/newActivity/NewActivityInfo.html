@@ -1,61 +1,69 @@
 <template name="NewActivityInfo">  
-  <div class="container">        
-    <form id ="addActivity">
-      <div class="form-group row">
-        <label for="badgeName" class="col-md-2 col-form-label">Activity Name</label>
-        <div class="col-md-9">
-          <input class="form-control" type="text" placeholder="" id="badgeName" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="player" class="col-md-2 col-form-label">Player</label>
-        <div class="col-md-9">
-          <select class="selectpicker form-control" id="player">          
-            <option selected>Team</option>
-            {{#each players}}
-              <option value="{{nb}}">{{name}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="activity" class="col-md-2 col-form-label">Challenge</label>
-        <div class="col-md-9">
-          <select class="selectpicker form-control" id="activity">          
-            <option selected>No Challenge</option>
-            {{#each challs}}
-              <option value="{{nb}}">{{name}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="points" class="col-md-2 col-form-label">Points</label>
-        <div class="col-md-9">
-          <input class="form-control" type="text" placeholder="0" id="points" required>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="pointsType" class="col-md-2 col-form-label">Point Type</label>
-        <div class="col-md-9">
-          <select class="selectpicker form-control" id="pointsType">          
-            {{#each pointTypes}}
-              <option value="{{name}}">{{value}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-11">
-          <!-- <input type="submit" class="btn btn-default" style="margin-top:2.5em;" value="Insert" /> -->
-          <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
-        </div>
-        <!--
-        <div class="col-xs-3">
-          <input type="button" id="deleteActivity" class="btn btn-default btn-sm" value="Delete">
-        </div>
-      -->
-      </div>
-    </form>
+    <div class="container" style="width: inherit;"> 
+    <div class="row">
+      <div class="col-md-12">    
+        <form id ="addActivity">          
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="activityPlayer" class="col-form-label" style="font-weight: normal">Player</label>
+              <select class="selectpicker form-control" id="activityPlayer">          
+                <option selected>Team</option>
+                {{#each players}}
+                  <option value="{{nb}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div> 
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="activityType" class="col-form-label" style="font-weight: normal">Type</label>
+              <select class="selectpicker form-control" id="activityType"> 
+                {{#each activityType}}
+                  <option value="{{nb}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="activityBase" class="col-form-label" style="font-weight: normal">Base</label>
+              <select class="selectpicker form-control" id="activityBase"> 
+                {{#each activityType}}
+                  <option value="{{nb}}">{{name}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="activityName" class="col-form-label" style="font-weight: normal">Name</label>
+              <input class="form-control" type="text" placeholder="Name" id="activityName" required>
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="activityPoints" class="col-form-label" style="font-weight: normal">Points</label>
+              <input class="form-control" type="text" placeholder="0" id="activityPoints" required>
+            </div>
+          </div>
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+              <select class="selectpicker form-control" id="pointsType">          
+                {{#each pointTypes}}
+                  <option value="{{name}}">{{value}}</option>
+                {{/each}}
+              </select> 
+            </div>
+          </div>                     
+          <div class="form-group row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
+              <button type="button" id="nopActivity" class="btn btn-default btn-circle pull-left" style="padding: 0px 0px 0px 0px;" ><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div> 
+        </form>
+      </div> 
+    </div> 
   </div> 
 </template>

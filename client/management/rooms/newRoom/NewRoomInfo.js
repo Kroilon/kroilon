@@ -7,10 +7,20 @@ import { Badges } from '/imports/api/databasedriver.js';
 import { ROOMS_ACTIVE_ELEMENT_KEY } from '/client/management/rooms/TabRooms.js';
 
 Template.NewRoomInfo.helpers({
+    
     badges(){
+      
       var badges = Badges.find({}).fetch();
       return badges;
+    },
+
+    teamBadge() {
+
+      let roomType = "Team";
+      let roomBadges = Badges.find({'type': roomType }).fetch();
+      return roomBadges;
     }
+
 });
 
 const TABLE_ROOMS_ACTIVE_TEMPLATE_NAME = "TableRoomInfo";
@@ -39,7 +49,12 @@ Template.NewRoomInfo.events({
     };
 
     //Modal.show('roomsInsertModal', this);
-    Meteor.call("insertRoom", data);
+    Meteor.call("insertRoom", data, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
+
     $("#addRoom")[0].reset(); 
     Session.set(ROOMS_ACTIVE_ELEMENT_KEY, TABLE_ROOMS_ACTIVE_TEMPLATE_NAME);
   },

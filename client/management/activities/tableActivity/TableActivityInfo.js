@@ -7,49 +7,103 @@ import { Secrets } from '/imports/api/databasedriver.js';
 
 import { ACTIVITIES_ACTIVE_ELEMENT_KEY, ID_ACTIVITY_ACTIVE_ELEMENT_KEY } from '/client/management/activities/TabActivity.js';
 
+Template.registerHelper('formatDate', function(date) {
+  return date.toDateString();
+});
+
 Template.TableActivityInfo.helpers({
 
-  academyActivity() {  
-    var rooms = Rooms.find({}).fetch();
-    return rooms;
+  academyBadges() {  
+    let badges = Badges.find({}).fetch();
+    return badges;
     
-  }   
+  },
+
+  academyChallenges() {  
+    let challenges = Challenges.find({}).fetch();
+    return challenges;
+    
+  },
+
+  playerPoints() {
+
+    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    var players = latestAcademy.users;
+    players.splice(0, 3);
+    var points = [];
+    $.each(players, function(idx_players, val_players)
+    {
+      var scores = players[idx_players].score;
+      // console.log(players);
+      // console.log(scores);
+      if (scores != undefined)
+      {
+        $.each(scores, function(idx_scores, val_scores)
+        {
+          points.push({"player":val_players.name, "name":val_scores.name, "points":val_scores.points + " " + val_scores.pointsType, "date":val_scores.date});
+        //  console.log(points_a);
+        //  console.log(points[0]);
+        });
+      }     
+    });
+
+    //var nb = players[0].score;
+    sortArrOfObjectsByParam(points, "date", false);
+    return points;
+  }
 
 });
 
-const TABLE_ROOMS_ACTIVE_TEMPLATE_NAME = "TableRoomInfo";
-const NEW_ROOM_ACTIVE_TEMPLATE_NAME = "NewRoomInfo";
-const EDIT_ROOM_ACTIVE_TEMPLATE_NAME = "EditRoomInfo";
+const TABLE_ACTIVITY_ACTIVE_TEMPLATE_NAME = "TableActivityInfo";
+const NEW_ACTIVITY_ACTIVE_TEMPLATE_NAME = "NewActivityInfo";
+const EDIT_ACTIVITY_ACTIVE_TEMPLATE_NAME = "EditActivityInfo";
 
 Template.TableActivityInfo.events({   
 
   //Act when the personal performance board icon is clicked
-  "click #addBadge" (event){
+  "click #addActivity" (event){
       event.preventDefault();
-      Session.set(ROOMS_ACTIVE_ELEMENT_KEY, NEW_ROOM_ACTIVE_TEMPLATE_NAME);
+      Session.set(ACTIVITIES_ACTIVE_ELEMENT_KEY, NEW_ACTIVITY_ACTIVE_TEMPLATE_NAME);
   },
 
+  /*
   //Act when the personal performance graph icon is clicked
-  "click #editBadge" (event){
+  "click #editActivity" (event){
       event.preventDefault();
-      Session.set(ID_ROOM_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
-      Session.set(ROOMS_ACTIVE_ELEMENT_KEY, EDIT_ROOM_ACTIVE_TEMPLATE_NAME);
+      Session.set(ID_ACTIVITY_ACTIVE_ELEMENT_KEY, _getUserNbFromLink($(event.target).parent()));
+      Session.set(ACTIVITIES_ACTIVE_ELEMENT_KEY, EDIT_ACTIVITY_ACTIVE_TEMPLATE_NAME);
 
   },
 
-  'click #viewBadge' (event){
+  'click #viewActivity' (event){
     event.preventDefault();
-    //Modal.show('viewRoomModal', this);
+    Modal.show('viewChallengeModal', this);
     
   },
+  */
 
-  'click #deleteBadge' (event){
+  'click #deleteActivity' (event){
     event.preventDefault();
-    //Modal.show('deleteRoomModal', this); 
+    Modal.show('deleteChallengeModal', this); 
   } 
 
 });
 
 function _getUserNbFromLink(target){
     return target.attr('href').slice(1);
+}
+
+function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+    if(sortAscending == undefined) sortAscending = true;  // default to true
+
+    if(sortAscending) {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+        });
+    }
+    else {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+        });
+    }
 }

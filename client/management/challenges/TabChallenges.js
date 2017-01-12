@@ -19,8 +19,8 @@ export const ID_CHALLENGE_ACTIVE_ELEMENT_KEY = "EditChallengeElement";
  */
 Template.TabChallenges.created = function(){
     //default template - Table
-    Session.setDefault(ROOMS_ACTIVE_ELEMENT_KEY, "TableChallengeInfo");
-    Session.setDefault(ID_ROOM_ACTIVE_ELEMENT_KEY, "EditChallengeElement");
+    Session.setDefault(CHALLENGE_ACTIVE_ELEMENT_KEY, "TableChallengeInfo");
+    Session.setDefault(ID_CHALLENGE_ACTIVE_ELEMENT_KEY, "EditChallengeElement");
 }
 
 

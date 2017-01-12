@@ -1,6 +1,9 @@
 import { Template } from 'meteor/templating';
 import { Academy } from '/imports/api/databasedriver.js';
 import { Challenges } from '/imports/api/databasedriver.js';
+import { Badges } from '/imports/api/databasedriver.js';
+
+import { ACTIVITIES_ACTIVE_ELEMENT_KEY, ID_ACTIVITY_ACTIVE_ELEMENT_KEY } from '/client/management/activities/TabActivity.js';
 
 Template.NewActivityInfo.helpers({
     pointTypes: function () {
@@ -12,16 +15,31 @@ Template.NewActivityInfo.helpers({
           { name: 'NP', value: 'No Points' }
         ];
     },
+
+    activityType: function () {
+      return [
+          { name: 'BADGE', value: 'BADGE' },
+          { name: 'ACTIVITY', value: 'ACTIVITY' }
+        ];
+    },
+
     challs(){
-      var latestChalls = Challenges.find();
+      let latestChalls = Challenges.find();
       return latestChalls;
     },
+
     players(){
-      var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-      return latestAcademy.users;
+      let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+      let users = latestAcademy.users;
+      users.splice(0, 3);
+      return users;
     }
 
 });
+
+const TABLE_ACTIVITY_ACTIVE_TEMPLATE_NAME = "TableActivityInfo";
+const NEW_ACTIVITY_ACTIVE_TEMPLATE_NAME = "NewActivityInfo";
+const EDIT_ACTIVITY_ACTIVE_TEMPLATE_NAME = "EditActivityInfo";
 
 Template.NewActivityInfo.events({
   'submit form' (event)  {
@@ -44,10 +62,19 @@ Template.NewActivityInfo.events({
       date: new Date()
     };
 
-    Modal.show('activityInsertModal', this);
-    Meteor.call("updateScore",latestAcademy._id,playerId,score);
+    Meteor.call("updateScore", latestAcademy._id, playerId, score, function(error, result) {
+      if (error) {
+        alert(error);
+      } 
+    });
     $("#addActivity")[0].reset(); 
+    Session.set(ACTIVITIES_ACTIVE_ELEMENT_KEY, TABLE_ACTIVITY_ACTIVE_TEMPLATE_NAME);
 
-  } 
+  },
+  
+  'click #nopActivity' (event){
+    event.preventDefault();
+    Session.set(ACTIVITIES_ACTIVE_ELEMENT_KEY, TABLE_ACTIVITY_ACTIVE_TEMPLATE_NAME);
+  }
 
 });
