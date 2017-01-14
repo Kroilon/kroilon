@@ -11,6 +11,7 @@ Template.TableCharacter.helpers({
 
       return user[0];
     },
+    /*
     score(nb) {
 
       var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -23,6 +24,7 @@ Template.TableCharacter.helpers({
 
       return user_points;
     },
+    */
     isAdmin: function (name) {
         return name !== "Admin"
     },
@@ -85,6 +87,7 @@ Template.TableCharacter.helpers({
             sortDirection: 'descending',
             hidden: false
           },          
+          /*
           {
             key: 'score',
             label: 'Score',
@@ -101,6 +104,7 @@ Template.TableCharacter.helpers({
             sortable: true,
             hidden: true
           },
+          */
           {
             key: 'counter',
             label: 'Tap my Back',
