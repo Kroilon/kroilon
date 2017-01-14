@@ -34,8 +34,27 @@ Template.BoardTable.helpers({
                 },
                 totalScore: sum
             });
+            result.sort(function (a, b) { return b.totalScore - a.totalScore });
             sum = 0;
         });
+        
+        /*
+        var latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+        var users = latestAcademy.users;
+        users.splice(0, 3);
+        var userKnowledgeScores = [];
+        var totalKnowledgePoints = 0;
+        $.each(users, function (idx_players, val_players) {
+            var scores = users[idx_players].score;
+            var nb = users[idx_players].nb;
+            if (scores != undefined) {
+                totalKnowledgePoints = calc_HP_KP_XP(nb, "KP");
+                userKnowledgeScores.push({ "name": val_players.name, "avatar": val_players.avatar, "points": totalKnowledgePoints });
+                userKnowledgeScores.sort(function (a, b) { return b.points - a.points });
+            }
+        });
+        return userKnowledgeScores;
+        */
         return result;
     },
     isLoggedInAsAdmin() {
