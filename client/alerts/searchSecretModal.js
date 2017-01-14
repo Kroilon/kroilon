@@ -51,9 +51,12 @@ Template.searchSecretModal.events({
   	  //console.log("secret1: " + secretId._id);
   	  Meteor.call('discoverSecret', secretId._id, function(error, result) {
 	    if (error) {
-	      alert(error);
-	    } 
-	  });
+  	      alert(error);
+  	    } 
+	    });
+
+      Modal.hide('searchSecretModal');
+
 
     } else {
       //console.log("NOP!!!");
@@ -65,10 +68,9 @@ Template.searchSecretModal.events({
 
       // DEDUCT CONST HP points from player1
 
-    }
+      Modal.hide('searchSecretModal');
 
-    // Hide modal
-    Modal.hide('searchSecretModal');
+    } 
 
     /*
 
@@ -81,8 +83,8 @@ Template.searchSecretModal.events({
       discovered: 0
     }
 	
-	// CALL METEOR
-	Meteor.call('activateAcademy', this._id, function(error, result) {
+	   // CALL METEOR
+	   Meteor.call('activateAcademy', this._id, function(error, result) {
       if (error) {
         alert(error);
       }
