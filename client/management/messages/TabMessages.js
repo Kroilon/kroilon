@@ -97,6 +97,10 @@ Template.TabMessages.events({
         alert(error);
       } 
     });
+
+    document.getElementById("messageHome").value = "";
+    Modal.show('messageUpdateModal', messageHome);
+
   },
   'click #unlockBadge' (event){
 
@@ -114,7 +118,9 @@ Template.TabMessages.events({
       } 
     });  
 
+    Modal.show('badgeUnlockModal', badgeName);
   },
+
   'click #lockBadge' (event){
 
     event.preventDefault();
@@ -130,11 +136,17 @@ Template.TabMessages.events({
       } 
     });   
 
+    Modal.show('badgeLockModal', badgeName);
+
   },
   'click #nextDay' (event){
 
     event.preventDefault();
 
+    var nextRoom = $('#nextRoom').val(); 
+
+    // MOVED LOGIC INSIDE END DAY MODAL
+    /*
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 
     //change currentRoom to value of nextDay
@@ -188,6 +200,10 @@ Template.TabMessages.events({
 
     //run rules and attribute points 
     // STILL TO BE IMPLEMENTED!!!
+
+    */
+
+    Modal.show('endDayModal', nextRoom);
   },
   
 });
