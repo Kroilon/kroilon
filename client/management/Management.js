@@ -51,7 +51,7 @@ Template.Management.helpers({
         { name: 'Academy', slug: 'academy' },
         // { name: 'Add Character', slug: 'characterAdd' },
         { name: 'Players', slug: 'players' },
-        { name: 'Characters List', slug: 'charactersList' },
+        { name: 'Skills', slug: 'skills' },
         { name: 'Badges', slug: 'badges' },
         { name: 'Rooms', slug: 'rooms' },
         { name: 'Challenges', slug: 'challenges' },
