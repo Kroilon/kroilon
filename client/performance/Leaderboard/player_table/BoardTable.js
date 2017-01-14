@@ -111,6 +111,10 @@ Template.Leaderboard.events({
     'click #tapMyBack' (event){
         event.preventDefault();
 
+        let votedForNb = this.user.nb;
+        //console.log("Voted for NB: " + votedForNb);
+
+        /*
         let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
         let nb = Session.get("loggedUser")[0].nb;
         let user = getUserByNB(nb);
@@ -130,6 +134,8 @@ Template.Leaderboard.events({
             alert(error);
           } 
         });
+        */
+        Modal.show('tapMyBackModal', votedForNb);
         
     }
 
