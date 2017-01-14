@@ -60,13 +60,14 @@
         {{> TabActivity}}
 
       {{/tabContent}}      
-    
+      
+      <!--
       {{#tabContent slug="rules"}}
 
         {{> TabRules}}
 
       {{/tabContent}}  
-
+      -->
 
       {{#tabContent slug="message"}}
 
@@ -84,8 +85,9 @@
     {{/basicTabs}}
 
   {{else}}
-	<!-- <h3>ACCESS DENIED</h3> -->
-	<h3>Acesso Negado por Questões Higiênicas!!!</h3>
+
+  	{{> NotFound}}
+
   {{/if}}
   
   <script type="text/javascript">
