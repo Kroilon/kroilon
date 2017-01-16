@@ -28,15 +28,9 @@
               </div>                            
             </div>  
           </div> 
-          <div class="form-group row">                
-            <div class="col-md-12">
-              <label for="roomDescription" class="col-form-label" style="font-weight: normal">Description</label>
-              <textarea class="form-control" rows="3" maxlength="450" id="roomDescription" placeholder="Insert description..." required></textarea>
-            </div>
-          </div>   
           <div class="form-group row">   
             {{#each teamBadge}} 
-              <div class="col-xs-6 col-md-4 col-lg-2">
+              <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                 <!--
                 <p class="lead" style="margin-bottom: 0.1em; margin-left: 0.6em;">
                   <h4>{{name}}</h4>
@@ -50,7 +44,7 @@
                   </p>      
                   <button  class="btn btn-default" id="addBadge" data-toggle="tooltip" data-placement="bottom" title="Add badge" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-plus"></i></button>
                 -->
-                  <button  class="btn btn-default" id="addBadge" data-toggle="tooltip" data-placement="bottom" title="Add badge" style="padding: 9px 30px 9px">ADD</button>
+                  <button type="button" class="btn btn-default addBadge" data-toggle="tooltip" data-placement="bottom" title="Add badge" style="padding: 9px 30px 9px; margin-bottom: 1.0em">ADD</button>
                 {{else}}
                 <!--
                   <p class="lead" style="margin-bottom: 0.1em; ">
@@ -58,11 +52,17 @@
                   </p>  
                   <button  class="btn btn-default btn-circle" id="removeBadge" data-toggle="tooltip" data-placement="bottom" title="Remove badge" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-minus"></i></button>
                 -->
-                  <button  class="btn btn-default" id="removeBadge" data-toggle="tooltip" data-placement="bottom" title="Add badge" style="padding: 9px 30px 9px">REMOVE</button>
+                  <button type="button" class="btn btn-default removeBadg" data-toggle="tooltip" data-placement="bottom" title="Add badge" style="padding: 9px 30px 9px; margin-bottom: 0.5em">REMOVE</button>
                 {{/if}} 
               </div>  
             {{/each}}  
-          </div>          
+          </div>  
+          <div class="form-group row">                
+            <div class="col-md-12">
+              <label for="roomDescription" class="col-form-label" style="font-weight: normal">Description</label>
+              <textarea class="form-control" rows="3" maxlength="450" id="roomDescription" placeholder="Insert description..." required></textarea>
+            </div>
+          </div>                     
           <div class="form-group row" style="margin-top: 2.5em;">
             <div class="col-md-12">
               <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
