@@ -3,7 +3,19 @@ import { Academy } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 
 Template.searchSecretModal.helpers({
-	playerWithSecret(){
+	 
+    basePoints: function () {
+        return [
+            { name: '75', value: '75' },
+            { name: '100', value: '100' },
+            { name: '125', value: '125' },
+            { name: '150', value: '150' },
+            { name: '175', value: '175' },
+            { name: '200', value: '200' }
+          ];
+    },
+
+    playerWithSecret(){
     	let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     	let onlyPlayers = latestAcademy.users;
     	onlyPlayers.splice(0, 3);
@@ -27,35 +39,104 @@ Template.searchSecretModal.events({
 
     event.preventDefault();
 
+    let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+
+    let dataSecretDiscovered = {};
+    let dataSecretInsert = {};
+    let dataPlayerThatDiscovered = {};
+
     let player1 = $("#playerPointing").val();
     //console.log("player1: " + player1);
     let player2 = $("#playerPointed").val();
     //console.log("player2: " + player2);
     let secret1 = $("#secretPointed").val();
     //console.log("secret1: " + secret1);
+    let baseValue = $("#secretBasePoints").val();
+    //console.log("secretBasePoints: " + baseValue);
+    let basePoints = parseInt(baseValue);
+    //console.log("basePoints: " + basePoints);
 
+    let insertSecretPoints = basePoints * 4;
+
+    if(document.getElementById('happyHour').checked) {
+        //console.log("IT'S HAPPY HOUR!!!");
+        basePoints = basePoints * 2;
+        //console.log("basePoints: " + basePoints);
+    } 
+    /*
+    else {
+        console.log("NO HAPPY HOUR!!!");
+    }
+    */
+    
     if (player2 === secret1) {
       //console.log("SECRET MATCH!!!");
 
       let user2 = getUserByNB(player2);
 
-      if (user2.profile === "Player") { 
+      // DEDUCT HP points from player2
+      if (user2.profile === "Player") {  
       	//console.log("Profile is PLAYER!");
-      	// DEDUCT CONST HP points from player2
+        let minusBasePoints = (-basePoints) * 4;        
+        //console.log("DEDUCT: newBasePoints: " + minusBasePoints);
+
+        dataSecretInsert = 
+        {
+          date: new Date(),
+          countType: "ACTIVITY",
+          name: "Inserir segredo",
+          points: insertSecretPoints,
+          pointsType: "HP"
+        };
+
+        Meteor.call('updateScore', latestAcademy._id, user2.nb, dataSecretInsert, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        dataSecretDiscovered = 
+        {
+          date: new Date(),
+          countType: "ACTIVITY",
+          name: "Adivinhar segredo",
+          points: minusBasePoints,
+          pointsType: "HP"
+        };
+        
+        Meteor.call('updateScore', latestAcademy._id, user2.nb, dataSecretDiscovered, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
       }
 
-      // ADD CONST HP points to player1
+      let user1 = getUserByNB(player1);
+      let plusBasePoints = (basePoints) * 4; 
+      // ADD HP points to player1
 
-  	  // Discover secret
-  	  let secretId = getSecretByNB(secret1);
-  	  //console.log("secret1: " + secretId._id);
-  	  Meteor.call('discoverSecret', secretId._id, function(error, result) {
-	    if (error) {
-  	      alert(error);
-  	    } 
-	    });
+      dataPlayerThatDiscovered = 
+      {
+        date: new Date(),
+        countType: "ACTIVITY",
+        name: "Adivinhar segredo",
+        points: plusBasePoints,
+        pointsType: "HP"
+      };
 
-      Modal.hide('searchSecretModal');
+      Meteor.call('updateScore', latestAcademy._id, user1.nb, dataPlayerThatDiscovered, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
+
+      //DISCOVER SECRET
+      Meteor.call('discoverSecret', this._id, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
 
 
     } else {
@@ -68,10 +149,9 @@ Template.searchSecretModal.events({
 
       // DEDUCT CONST HP points from player1
 
-      Modal.hide('searchSecretModal');
-
     } 
 
+    Modal.hide('searchSecretModal');
     /*
 
     var data = {

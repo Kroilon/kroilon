@@ -7,7 +7,7 @@ import { Secrets } from '/imports/api/databasedriver.js';
 import { Rules } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
-	  updateScore: function (id,playerId,score) {
+	  updateScore: function (id, playerId, score) {
       var currentUserId = Meteor.userId();
       Academy.update(
           { _id: id, 'users.nb': playerId },
