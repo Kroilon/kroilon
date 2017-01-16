@@ -44,13 +44,13 @@ Template.searchSecretModal.events({
     let dataSecretDiscovered = {};
     let dataSecretInsert = {};
     let dataPlayerThatDiscovered = {};
+    let dataSecretNotDiscovered = {};
+    let dataPlayerThatNotDiscovered = {};
 
     let player1 = $("#playerPointing").val();
     //console.log("player1: " + player1);
     let player2 = $("#playerPointed").val();
     //console.log("player2: " + player2);
-    let secret1 = $("#secretPointed").val();
-    //console.log("secret1: " + secret1);
     let baseValue = $("#secretBasePoints").val();
     //console.log("secretBasePoints: " + baseValue);
     let basePoints = parseInt(baseValue);
@@ -69,8 +69,13 @@ Template.searchSecretModal.events({
     }
     */
     
-    if (player2 === secret1) {
+    if (player2 === secretNB) {
       //console.log("SECRET MATCH!!!");
+
+      let secretDescription = $("#secretPointed").val();
+      let playerSecret = Secrets.find({'description': secretDescription }).fetch();
+      let secretNB = playerSecret[0].nb;
+      //console.log("secretNB: " + secretNB);
 
       let user2 = getUserByNB(player2);
 
@@ -78,7 +83,7 @@ Template.searchSecretModal.events({
       if (user2.profile === "Player") {  
       	//console.log("Profile is PLAYER!");
         let minusBasePoints = (-basePoints) * 4;        
-        //console.log("DEDUCT: newBasePoints: " + minusBasePoints);
+        //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
 
         dataSecretInsert = 
         {
@@ -132,7 +137,7 @@ Template.searchSecretModal.events({
       });
 
       //DISCOVER SECRET
-      Meteor.call('discoverSecret', this._id, function(error, result) {
+      Meteor.call('discoverSecret', playerSecret[0]._id, function(error, result) {
         if (error) {
           alert(error);
         } 
@@ -144,33 +149,49 @@ Template.searchSecretModal.events({
 
       if (user2.profile === "Player") { 
       	//console.log("Profile is PLAYER!");
-      	// ADD CONST HP points to player2
+      	let plusBasePoints = basePoints;        
+        //console.log("ADD: plusBasePoints: " + plusBasePoints);
+
+        dataSecretNotDiscovered = 
+        {
+          date: new Date(),
+          countType: "ACTIVITY",
+          name: "Adivinhar segredo",
+          points: plusBasePoints,
+          pointsType: "HP"
+        };
+        
+        Meteor.call('updateScore', latestAcademy._id, user2.nb, dataSecretNotDiscovered, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
       }
 
       // DEDUCT CONST HP points from player1
+      let user1 = getUserByNB(player1);
+      let minusBasePoints = basePoints; 
+      //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
+
+      dataPlayerThatNotDiscovered = 
+      {
+        date: new Date(),
+        countType: "ACTIVITY",
+        name: "Adivinhar segredo",
+        points: minusBasePoints,
+        pointsType: "HP"
+      };
+
+      Meteor.call('updateScore', latestAcademy._id, user1.nb, dataPlayerThatNotDiscovered, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
 
     } 
 
     Modal.hide('searchSecretModal');
-    /*
 
-    var data = {
-      date: new Date(),
-      nb: secretPlayerNB,
-      name: secretPlayerName,
-      description: secretValue,
-      challenge: "Submit secret",
-      discovered: 0
-    }
-	
-	   // CALL METEOR
-	   Meteor.call('activateAcademy', this._id, function(error, result) {
-      if (error) {
-        alert(error);
-      }
-    });
-	
-    */
   }
 
 });
