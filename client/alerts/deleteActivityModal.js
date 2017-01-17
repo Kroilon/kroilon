@@ -15,12 +15,25 @@ Template.deleteActivityModal.events({
     //console.log("player: " + activity.player);
     //console.log("nb: " + activity.nb);
     //console.log("date: " + activity.date);
+
+    if (activity.player === "Team") {  
+      //console.log("TEAM!");
+
+      Meteor.call("deleteTeamScore", latestAcademy._id, activity.date, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
+
+    } else {
     
-    Meteor.call('deleteScore', latestAcademy._id, activity.nb, activity.date, function(error, result) {
-      if (error) {
-        alert(error);
-      }
-    });
+      Meteor.call('deleteScore', latestAcademy._id, activity.nb, activity.date, function(error, result) {
+        if (error) {
+          alert(error);
+        }
+      });
+
+    }
 
     Modal.hide('deleteChallengeModal');
 

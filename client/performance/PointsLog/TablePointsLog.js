@@ -33,7 +33,25 @@ Template.TablePointsLog.helpers({
 		//var nb = players[0].score;
 		sortArrOfObjectsByParam(points, "date", false);
 		return points;
-	}
+	},
+
+	teamPoints() {
+
+	    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+	    var teamScore = latestAcademy.teamScore;
+	    var teamPoints = [];
+
+	    $.each(teamScore, function(idx_scores, val_scores) 
+	    {
+	        teamPoints.push({"player":"Team", "nb": "Team", "name":val_scores.name, "points":val_scores.points, "date":val_scores.date});
+	      //  console.log(points_a);
+	      //  console.log(points[0]);
+	    });
+
+	    sortArrOfObjectsByParam(teamPoints, "date", false);
+	    return teamPoints;
+	  }
+
 });
 
 function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {

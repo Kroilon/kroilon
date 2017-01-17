@@ -46,27 +46,49 @@ Template.NewActivityInfo.events({
 
     event.preventDefault();
 
-    var playerId = $("#player").val();
-    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
-    var user = $.grep(latestAcademy.users, function(e){ return e.nb == playerId; });
+    let latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+    let score = {};
 
-    var activityId = $("#activity").val();
-    var room = $("#room").val();
-    var pointType = $("#pointType").val();
-    var points = parseInt($("#points").val());
+    let activityPlayer = $("#activityPlayer").val();
+    //console.log("activityPlayer: " + activityPlayer);
+    let activityType = $("#activityType").val();
+    //console.log("activityType: " + activityType);
+    let activityName = $("#activityName").val();
+    //console.log("activityName: " + activityName);
+    let activityPoints = parseInt($("#activityPoints").val());
+    //console.log("activityPoints: " + activityPoints);
+    let activityPointsType = $("#pointsType").val();
+    //console.log("activityPointsType: " + activityPointsType);
 
-    var score = {
-      challenge : activityId,
-      category: pointType,
-      points: points,
-      date: new Date()
+    score = {
+      date : new Date(),
+      countType: activityType,
+      name: activityName,
+      points: activityPoints,
+      pointsType: activityPointsType
     };
 
-    Meteor.call("updateScore", latestAcademy._id, playerId, score, function(error, result) {
-      if (error) {
-        alert(error);
-      } 
-    });
+    if (activityPlayer === "Team") {  
+      //console.log("TEAM!");
+
+      Meteor.call("updateTeamScore", latestAcademy._id, score, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
+
+    } else {
+      //console.log("PLAYER!");
+      
+      Meteor.call("updateScore", latestAcademy._id, activityPlayer, score, function(error, result) {
+        if (error) {
+          alert(error);
+        } 
+      });
+      
+
+    }
+    
     $("#addActivity")[0].reset(); 
     Session.set(ACTIVITIES_ACTIVE_ELEMENT_KEY, TABLE_ACTIVITY_ACTIVE_TEMPLATE_NAME);
 

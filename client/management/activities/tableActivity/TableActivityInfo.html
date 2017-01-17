@@ -19,8 +19,33 @@
                   <th class="col-md-3"><span style="color:black;">Date</span></th>
                   <th class="col-md-2"><span style="color:black;">Remove</span></th>
                 </tr>
-              </thead>
+              </thead>                
               <tbody>
+                {{#each teamPoints}}
+                  <tr class="divRow">
+                    <td>{{player}}</td>
+                    <td>{{name}}</td>
+                    <td>{{points}}</td>
+                    <td>{{formatDate date}}</td>
+                    <!--
+                    <td>
+                      <a style="color: #de4f4f" href="" id="viewActivity">
+                        <span class="glyphicon glyphicon-search"></span> 
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/{{name}}" style="color: #de4f4f" id="editActivity">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                    </td>
+                  -->
+                    <td>
+                      <a style="color: #de4f4f" href="" id="deleteActivity">
+                        <span class="glyphicon glyphicon-remove"></span>
+                      </a>
+                    </td>
+                  </tr>                   
+                {{/each}}
                 {{#each playerPoints}}
                   <tr class="divRow">
                     <td>{{player}}</td>

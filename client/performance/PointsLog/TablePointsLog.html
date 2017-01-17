@@ -27,6 +27,29 @@
           </tr>
         </thead>
         <tbody>
+          {{#each teamPoints}}
+            <tr class="divRow">
+              <td>
+                <div class="col-md-12" style="text-align: left;">{{player}}</div>
+              </td>
+              <td>
+                <div class="col-md-12" style="text-align: left;">Team Challenge</div>
+              </td>
+              <td>
+                <div class="col-md-12" style="text-align: left;">{{name}}</div>
+              </td>
+              <td>
+                <div class="col-md-12" style="text-align: left;">{{points}}</div>
+              </td>
+              <td>
+                <div class="col-md-12" style="text-align: left;">TP</div>
+              </td>
+              <td>
+                <div class="col-md-12" style="text-align: left;">{{formatDate date}}</div>
+              </td>
+            </tr>                   
+          {{/each}}
+
           {{#each playerPoints}}
             <tr class="divRow">
               <td>

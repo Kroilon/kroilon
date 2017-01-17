@@ -15,7 +15,7 @@ Meteor.methods({
           {updatedBy: currentUserId}
       );
 
-    },
+    },    
 
     deleteScore: function (id, playerId, scoreDate, ) {
 
@@ -23,6 +23,26 @@ Meteor.methods({
           { _id: id, 'users.nb': playerId},
           {$pull: {'users.$.score': {date: scoreDate}}}
       );
+    },
+
+    updateTeamScore: function (id, score) {
+      var currentUserId = Meteor.userId();
+      Academy.update(
+          { _id: id },
+          {$push: {'teamScore': score}},
+          {updatedBy: currentUserId}
+      );
+
+    },
+
+    deleteTeamScore: function (id, scoreDate) {
+      var currentUserId = Meteor.userId();
+      Academy.update(
+          { _id: id },
+          {$pull: {'teamScore': {date: scoreDate}}},
+          {updatedBy: currentUserId}
+      );
+
     },
 
     updateVoted: function(id, playerId) {
