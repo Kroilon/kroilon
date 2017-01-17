@@ -40,7 +40,7 @@ Template.TableActivityInfo.helpers({
       {
         $.each(scores, function(idx_scores, val_scores)
         {
-          points.push({"player":val_players.name, "name":val_scores.name, "points":val_scores.points + " " + val_scores.pointsType, "date":val_scores.date});
+          points.push({"player":val_players.name, "nb":val_players.nb, "name":val_scores.name, "points":val_scores.points + " " + val_scores.pointsType, "date":val_scores.date});
         //  console.log(points_a);
         //  console.log(points[0]);
         });
@@ -84,7 +84,7 @@ Template.TableActivityInfo.events({
 
   'click #deleteActivity' (event){
     event.preventDefault();
-    Modal.show('deleteChallengeModal', this); 
+    Modal.show('deleteActivityModal', this); 
   } 
 
 });

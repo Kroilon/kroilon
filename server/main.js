@@ -17,6 +17,14 @@ Meteor.methods({
 
     },
 
+    deleteScore: function (id, playerId, scoreDate, ) {
+
+      Academy.update(
+          { _id: id, 'users.nb': playerId},
+          {$pull: {'users.$.score': {date: scoreDate}}}
+      );
+    },
+
     updateVoted: function(id, playerId) {
       var currentUserId = Meteor.userId();
       Academy.update(
