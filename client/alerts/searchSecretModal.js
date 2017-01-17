@@ -68,16 +68,14 @@ Template.searchSecretModal.events({
         console.log("NO HAPPY HOUR!!!");
     }
     */
-    
+    let secretDescription = $("#secretPointed").val();
+    let playerSecret = Secrets.find({'description': secretDescription }).fetch();
+    let secretNB = playerSecret[0].nb;
+    //console.log("secretNB: " + secretNB);
+    let user2 = getUserByNB(player2);
+
     if (player2 === secretNB) {
       //console.log("SECRET MATCH!!!");
-
-      let secretDescription = $("#secretPointed").val();
-      let playerSecret = Secrets.find({'description': secretDescription }).fetch();
-      let secretNB = playerSecret[0].nb;
-      //console.log("secretNB: " + secretNB);
-
-      let user2 = getUserByNB(player2);
 
       // DEDUCT HP points from player2
       if (user2.profile === "Player") {  
@@ -170,7 +168,7 @@ Template.searchSecretModal.events({
 
       // DEDUCT CONST HP points from player1
       let user1 = getUserByNB(player1);
-      let minusBasePoints = basePoints; 
+      let minusBasePoints = -basePoints; 
       //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
 
       dataPlayerThatNotDiscovered = 
