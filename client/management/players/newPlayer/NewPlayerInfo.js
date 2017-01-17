@@ -129,7 +129,7 @@ Template.NewPlayerInfo.events({
       } 
     }); 
     //event.target.characterNB.value = "";      
-    $("#addCharacter")[0].reset();  
+    $("#addNewPlayer")[0].reset();  
 
     Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
   },
