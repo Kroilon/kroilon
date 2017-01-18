@@ -17,15 +17,38 @@ Template.TeamPerformance.helpers({
        
     let academy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
 
+    let academyScore = academy.teamScore; 
+
     let totalScore = [];
 
+    var groupedDates = _.groupBy(academyScore, 'date');
 
+    console.log(groupedDates);
+
+    _.each(_.values(groupedDates), function(dates) {
+        //console.log({Date: dates[0], Total: dates.length});
+        //console.log(dates);
+        let dayScore = 0;
+
+        var arrayLength = dates.length;
+
+        for (var i = 0; i < arrayLength; i++) {
+            //console.log({Date: dates[i], Points: dates[i].points});
+            dayScore = dayScore + dates[i].points
+            //console.log("dayScore: " + dayScore);
+        }
+
+        totalScore.push(dayScore);
+
+    });
+
+    /*
     // TODO : Adicionar função para fazer somatório de pontos por cada dia
     academy.teamScore.forEach(function(element) {
         //element.date;
         totalScore.push(element.points);
     }, this);
-    debugger;
+    */
 
     return {
       colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
