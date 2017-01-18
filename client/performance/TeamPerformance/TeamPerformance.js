@@ -42,14 +42,6 @@ Template.TeamPerformance.helpers({
 
     });
 
-    /*
-    // TODO : Adicionar função para fazer somatório de pontos por cada dia
-    academy.teamScore.forEach(function(element) {
-        //element.date;
-        totalScore.push(element.points);
-    }, this);
-    */
-
     return {
       colors: ['#de4f4f', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
         '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],

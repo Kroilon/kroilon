@@ -140,14 +140,14 @@ db.academy.insert({
 					"pointsType": "HP"										
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",
+					"date": "Sat Dec 18 2016 15:55:21",
 					"countType": "BADGE",
 					"name": "WATCH",
 					"points": 30,
 					"pointsType": "HP"										
 				}, 
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",
+					"date": "Sat Dec 19 2016 15:55:21",
 					"countType": "ACTIVITY",
 					"name": "KP Challenge",					
 					"points": 320,
@@ -186,7 +186,7 @@ db.academy.insert({
 					"pointsType": "XP"					
 				},
 				{
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 18 2016 15:55:21",			
 					"countType": "ACTIVITY",
 					"name": "Wells&Cans",					
 					"points": 600,
@@ -258,7 +258,7 @@ db.academy.insert({
 					"pointsType": "HP"					
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 20 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "WATCH",
 					"points": 50,
@@ -297,14 +297,14 @@ db.academy.insert({
 					"pointsType": "HP"					
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 19 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "WATCH",
 					"points": 50,
 					"pointsType": "HP"			
 				},
 				{
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 20 2016 15:55:21",			
 					"countType": "ACTIVITY",
 					"name": "Wells&Cans",					
 					"points": 600,
@@ -357,28 +357,28 @@ db.academy.insert({
 					"pointsType": "HP"			
 				},
 				{	
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 18 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "TEAM PLAYER",					
 					"points": 50,
 					"pointsType": "XP"					
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 19 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "WATCH",
 					"points": 50,
 					"pointsType": "HP"			
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 20 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "WATCH",
 					"points": 50,
 					"pointsType": "HP"			
 				},
 				{					
-					"date": "Sat Dec 17 2016 15:55:21",			
+					"date": "Sat Dec 22 2016 15:55:21",			
 					"countType": "BADGE",
 					"name": "SONECA",
 					"points": -200,
