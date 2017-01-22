@@ -1,10 +1,27 @@
 <template name="Header">
-
-   <header class="header">
-         <h1 class="site-title"><a href="/"><img alt="Kroilon Logo" src="/logo.svg" width="150" height="50"></a></h1>
-   
-        {{> MainNav}}
-
-   </header>
-
+	<header class="header-nav">
+		<a href="/" title="Kroilon Homepage">
+			<img src="/logo.svg" alt="Kroilon Logo" >
+		</a>
+		<ul class="menu">
+             {{#if isLoggedIn}}
+                <li>
+                    <a href="/map">
+                        <img alt="Home" src="/home.svg" width="20" height="20" data-toggle="tooltip" data-placement="bottom" title="Home">
+                    </a>
+                </li>
+                <li>
+                    <a href="/" id="logout">
+                        <img alt="Logout" src="/logout.svg" width="20" height="20" data-toggle="tooltip" data-placement="bottom" title="Logout">
+                    </a>
+                </li>
+                <li>
+                    <img alt="User" src="/user.svg" width="20" height="20" data-toggle="tooltip" data-placement="bottom" title="Hi {{firstName}}!">
+                </li>
+                <li>
+                    <p stle="white-space: nowrap;">{{firstName}}</p>
+                </li>
+            {{/if}}
+        </ul>
+	</header>
 </template>

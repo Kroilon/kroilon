@@ -1,0 +1,38 @@
+header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    height: 63px;
+    display: block;
+    border-bottom: solid 1px #CCC;
+}
+
+.header-nav {
+    margin: 0 200px 0 0px;
+    width: 100%;
+}
+
+.header-nav > a {
+    float: left;
+}
+
+.header-nav > a img {
+    vertical-align: middle;
+    width: 120px;
+    margin-top: 6px;
+    margin-left: 30px;
+}
+
+.header-nav > ul {
+    float: right;
+    margin: 17px 30px 0 0;
+}
+
+.header-nav > ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 1em;
+}
+
