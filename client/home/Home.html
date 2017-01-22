@@ -1,14 +1,11 @@
 <template name="Home">
-    <div class="billboard">
+    <div class="billboard" style="padding: 60px;">
         <h2>In the Land of Kroilon!</h2>
         <h3>#MEGASHOWBIZ</h3>
         <h4>{{ficaadica}}</h4>
-        <!--<div class="btn-group">
-            <a class="btn">Login</a>
-		</div> -->
     </div>
 
-    {{#if isLoggedIn}} {{else}} {{> HomeLogin}}
-    <!-- {{> HomeFooter}}-->
+    {{#if isLoggedIn}} 
+        {{else}} {{> HomeLogin}}
     {{/if}}
 </template>
