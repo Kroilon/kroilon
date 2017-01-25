@@ -72,31 +72,32 @@ Template.NewPlayerInfo.events({
 
     //var characterAvatar = $('#characterAvatar').val();
     let characterNB = $('#formCharacterNB').val();
-    console.log("characterNB: " + characterNB);
+    //console.log("characterNB: " + characterNB);
     let characterEmail = $('#formCharacterEmail').val();
-    console.log("characterEmail: " + characterEmail);
+    //console.log("characterEmail: " + characterEmail);
     let characterMBTI = $('#formCharacterMBTI').val();
-    console.log("characterMBTI: " + characterMBTI);
+    //console.log("characterMBTI: " + characterMBTI);
     let characterName = $('#formCharacterName').val();
-    console.log("characterName: " + characterName);      
+    //console.log("characterName: " + characterName);      
     let characterPassword = $('#formCharacterPassword').val();
-    console.log("characterPassword: " + characterPassword);
+    //console.log("characterPassword: " + characterPassword);
     let characterMobile = $('#formCharacterMobile').val();
-    console.log("characterMobile: " + characterMobile);
+    //console.log("characterMobile: " + characterMobile);
     let characterDateOfBirth = $('#formCharacterDateOfBirth').val();
-    console.log("characterDateOfBirth: " + characterDateOfBirth);
+    //console.log("characterDateOfBirth: " + characterDateOfBirth);
     let characterBusinessUnit = $('#formCharacterBusinessUnit').val(); 
-    console.log("characterBusinessUnit: " + characterBusinessUnit);
-    let characterPeopleSkills = $('#formCharacterPeopleSkills').val();
-    console.log("characterPeopleSkills: " + characterPeopleSkills);
-    let characterCommunicationSkills = $('#formCharacterCommunicationSkills').val();
-    console.log("characterCommunicationSkills: " + characterCommunicationSkills);
-    let characterProblemSolvingSkills = $('#formCharacterProblemSolvingSkills').val();
-    console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
-    let characterManagementSkills = $('#formCharacterManagementSkills').val();
-    console.log("characterManagementSkills: " + characterManagementSkills);
-    let characterAndroidSkills = $('#formCharacterAndroidSkills').val();
-    console.log("characterAndroidSkills: " + characterAndroidSkills);
+    //console.log("characterBusinessUnit: " + characterBusinessUnit);
+
+    let characterPeopleSkills = Number($('#formCharacterPeopleSkills').val());
+    //console.log("characterPeopleSkills: " + characterPeopleSkills);
+    let characterCommunicationSkills = Number($('#formCharacterCommunicationSkills').val());
+    //console.log("characterCommunicationSkills: " + characterCommunicationSkills);
+    let characterProblemSolvingSkills = Number($('#formCharacterProblemSolvingSkills').val());
+    //console.log("characterProblemSolvingSkills: " + characterProblemSolvingSkills);
+    let characterManagementSkills = Number($('#formCharacterManagementSkills').val());
+    //console.log("characterManagementSkills: " + characterManagementSkills);
+    let characterAndroidSkills = Number($('#formCharacterAndroidSkills').val());
+    //console.log("characterAndroidSkills: " + characterAndroidSkills);
 
     user =  {
       nb: characterNB,
@@ -118,7 +119,8 @@ Template.NewPlayerInfo.events({
           problemSolving: characterProblemSolvingSkills,
           management: characterManagementSkills,
           android: characterAndroidSkills
-        }]
+        }],
+      score:[]
     };
 
     //Modal.show('characterInsertModal', this);
