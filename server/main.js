@@ -237,6 +237,71 @@ Meteor.methods({
 
     updateAcademyRules: function( rules, data) {
       Rules.update({_id: rules._id}, { $set: {'name': data.name, 'type': data.type, 'typeName': data.typeName, 'threshold': data.threshold, 'points': data.points, 'pointsType': data.pointsType, 'description': data.description }} );
+    },
+
+    updatePlayerName: function( academy, nb, name) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.name': name}} );
+    },
+
+    updatePlayerNB: function( academy, nb, newNB) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.nb': newNB}} );
+    },
+
+    updatePlayerEmail: function( academy, nb, email) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.email': email}} );
+    },
+
+    updatePlayerPassword: function( academy, nb, pass) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.password': pass}} );
+    },
+
+    updatePlayerMBTI: function( academy, nb, mbti) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.mbti': mbti}} );
+    },
+
+    updatePlayerMobile: function( academy, nb, mobile) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.contact': mobile}} );
+    },
+
+    updatePlayerDoB: function( academy, nb, dateOfBirth) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.dateOfBirth': dateOfBirth}} );
+    },
+
+    updatePlayerUnit: function( academy, nb, unit) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.businessUnit': unit}} );
+    },
+
+    updatePlayerSkillsPeople: function( academy, nb, people) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.people': people}} ); 
+    },
+
+    updatePlayerSkillsCommunication: function( academy, nb, communication) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.communication': communication}} ); 
+    },
+
+    updatePlayerSkillsProblemSolving: function( academy, nb, problemSolving) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.problemSolving': problemSolving}} ); 
+    },
+
+    updatePlayerSkillsManagement: function( academy, nb, management) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.management': management}} ); 
+    },
+
+    updatePlayerSkillsAndroid: function( academy, nb, android) {
+      //console.log("academyID: " + academy._id);
+      Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.android': android}} ); 
     }
 
 });

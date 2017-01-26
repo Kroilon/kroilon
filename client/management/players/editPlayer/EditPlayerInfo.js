@@ -128,34 +128,34 @@ Template.EditPlayerInfo.events({
     //var academyPlayerAvatar = $('#academyPlayerAvatar').val();
     //console.log("academyPlayerAvatar: " + academyPlayerAvatar);
     let academyPlayerNB = $('#academyPlayerNB').val();
-    console.log("academyPlayerNB: " + academyPlayerNB);
+    //console.log("academyPlayerNB: " + academyPlayerNB);
     let academyPlayerEmail = $('#academyPlayerEmail').val();
-    console.log("academyPlayerEmail: " + academyPlayerEmail);
+    //console.log("academyPlayerEmail: " + academyPlayerEmail);
     let academyPlayerName = $('#academyPlayerName').val();
-    console.log("academyPlayerName: " + academyPlayerName);      
+    //console.log("academyPlayerName: " + academyPlayerName);      
     let academyPlayerPassword = $('#academyPlayerPassword').val();
-    console.log("academyPlayerPassword: " + academyPlayerPassword);
+    //console.log("academyPlayerPassword: " + academyPlayerPassword);
 
     if (profile === "Player") { 
        
         let academyPlayerMBTI = $('#academyPlayerMBTI').val();
-        console.log("academyPlayerMBTI: " + academyPlayerMBTI);        
+        //console.log("academyPlayerMBTI: " + academyPlayerMBTI);        
         let academyPlayerMobile = $('#academyPlayerMobile').val();
-        console.log("academyPlayerMobile: " + academyPlayerMobile);
+        //console.log("academyPlayerMobile: " + academyPlayerMobile);
         let academyPlayerDateOfBirth = $('#academyPlayerDateOfBirth').val();
-        console.log("academyPlayerDateOfBirth: " + academyPlayerDateOfBirth);
+        //console.log("academyPlayerDateOfBirth: " + academyPlayerDateOfBirth);
         let academyPlayerBusinessUnit = $('#academyPlayerBusinessUnit').val(); 
-        console.log("academyPlayerBusinessUnit: " + academyPlayerBusinessUnit);
-        let academyPlayerPeopleSkills = $('#academyPlayerPeopleSkills').val();
-        console.log("academyPlayerPeopleSkills: " + academyPlayerPeopleSkills);
-        let academyPlayerCommunicationSkills = $('#academyPlayerCommunicationSkills').val();
-        console.log("academyPlayerCommunicationSkills: " + academyPlayerCommunicationSkills);
-        let academyPlayerProblemSolvingSkills = $('#academyPlayerProblemSolvingSkills').val();
-        console.log("academyPlayerProblemSolvingSkills: " + academyPlayerProblemSolvingSkills);
-        let academyPlayerManagementSkills = $('#academyPlayerManagementSkills').val();
-        console.log("academyPlayerManagementSkills: " + academyPlayerManagementSkills);
-        let academyPlayerAndroidSkills = $('#academyPlayerAndroidSkills').val();
-        console.log("academyPlayerAndroidSkills: " + academyPlayerAndroidSkills);
+        //console.log("academyPlayerBusinessUnit: " + academyPlayerBusinessUnit);
+        let academyPlayerPeopleSkills = Number($('#academyPlayerPeopleSkills').val());
+        //console.log("academyPlayerPeopleSkills: " + academyPlayerPeopleSkills);
+        let academyPlayerCommunicationSkills = Number($('#academyPlayerCommunicationSkills').val());
+        //console.log("academyPlayerCommunicationSkills: " + academyPlayerCommunicationSkills);
+        let academyPlayerProblemSolvingSkills = Number($('#academyPlayerProblemSolvingSkills').val());
+        //console.log("academyPlayerProblemSolvingSkills: " + academyPlayerProblemSolvingSkills);
+        let academyPlayerManagementSkills = Number($('#academyPlayerManagementSkills').val());
+        //console.log("academyPlayerManagementSkills: " + academyPlayerManagementSkills);
+        let academyPlayerAndroidSkills = Number($('#academyPlayerAndroidSkills').val());
+        //console.log("academyPlayerAndroidSkills: " + academyPlayerAndroidSkills);
 
         // Convert business unit value
         switch (academyPlayerBusinessUnit) {
@@ -179,28 +179,87 @@ Template.EditPlayerInfo.events({
                 break;
         } 
 
-        academyPlayer =  {
-          nb: academyPlayerNB,
-          name: academyPlayerName,  
-          avatar: "",       
-          email: academyPlayerEmail,
-          password: academyPlayerPassword,
-          profile: "Player",
-          dateOfBirth: academyPlayerDateOfBirth,
-          contact: academyPlayerMobile,          
-          businessUnit: academyPlayerBusinessUnit,
-          mbti: academyPlayerMBTI,
-          counter: 0,
-          voted: "Nobody",
-          tardiness: 0,
-          skills:[{
-              people: academyPlayerPeopleSkills,
-              communication: academyPlayerCommunicationSkills,
-              problemSolving: academyPlayerProblemSolvingSkills,
-              management: academyPlayerManagementSkills,
-              android: academyPlayerAndroidSkills
-            }]
-        };
+        let userNB = Session.get(NB_ACTIVE_ELEMENT_KEY);
+
+        Meteor.call("updatePlayerName", latestAcademy, userNB, academyPlayerName, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerEmail", latestAcademy, userNB, academyPlayerEmail, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerPassword", latestAcademy, userNB, academyPlayerPassword, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerMBTI", latestAcademy, userNB, academyPlayerMBTI, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerMobile", latestAcademy, userNB, academyPlayerMobile, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerDoB", latestAcademy, userNB, academyPlayerDateOfBirth, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerUnit", latestAcademy, userNB, academyPlayerBusinessUnit, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerSkillsPeople", latestAcademy, userNB, academyPlayerPeopleSkills, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerSkillsCommunication", latestAcademy, userNB, academyPlayerCommunicationSkills, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerSkillsProblemSolving", latestAcademy, userNB, academyPlayerProblemSolvingSkills, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });        
+
+        Meteor.call("updatePlayerSkillsManagement", latestAcademy, userNB, academyPlayerManagementSkills, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        Meteor.call("updatePlayerSkillsAndroid", latestAcademy, userNB, academyPlayerAndroidSkills, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
+        // UPDATE NB LAST
+        Meteor.call("updatePlayerNB", latestAcademy, userNB, academyPlayerNB, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+
     } 
     else if (profile === "Admin") { 
 
@@ -213,13 +272,13 @@ Template.EditPlayerInfo.events({
           profile: "Admin"          
         };
 
-    }
+        Meteor.call("updateAcademyPlayer", latestAcademy, academyPlayerNB, academyPlayer, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
 
-    Meteor.call("updateAcademyPlayer", latestAcademy, academyPlayerNB, academyPlayer, function(error, result) {
-      if (error) {
-        alert(error);
-      } 
-    });
+    }
 
     Session.set(PLAYERS_ACTIVE_ELEMENT_KEY, TABLE_PLAYERS_ACTIVE_TEMPLATE_NAME);
     Session.set(NB_ACTIVE_ELEMENT_KEY, "EditActiveElement");
