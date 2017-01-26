@@ -302,6 +302,12 @@ Meteor.methods({
     updatePlayerSkillsAndroid: function( academy, nb, android) {
       //console.log("academyID: " + academy._id);
       Academy.update( { _id: academy._id, 'users.nb': nb}, { $set: {'users.$.skills.0.android': android}} ); 
+    },
+
+    deleteAllSecrets : function() {
+      Secrets.remove(
+          {}
+      );
     }
 
 });

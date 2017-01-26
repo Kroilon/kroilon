@@ -31,6 +31,11 @@ Template.TabSecrets.events({
     Modal.show('secretInsertModal', this);
     Meteor.call("insertSecret", data);
     $("#addSecret")[0].reset(); 
+  },
+
+  'click #emptySecrets' (event){
+    event.preventDefault();
+    Modal.show('secretDeleteAllModal', this);    
   }
 
 });
