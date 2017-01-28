@@ -1,0 +1,17 @@
+<template name="TabObjective">  
+
+  {{#if isObjectivesElementActive objectiveTemplateName}}
+    
+        {{> Template.dynamic template = objectiveTemplateName }}
+    
+    {{else}}
+        
+        {{#if isObjectivesElementActive editObjectiveName}}
+
+            {{> Template.dynamic template = editObjectiveName }}
+        
+        {{/if}} 
+               
+    {{/if}}
+    
+</template>

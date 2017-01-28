@@ -5,6 +5,7 @@ import { Rooms } from '/imports/api/databasedriver.js';
 import { Badges } from '/imports/api/databasedriver.js';
 import { Secrets } from '/imports/api/databasedriver.js';
 import { Rules } from '/imports/api/databasedriver.js';
+import { KroilonHistory } from '/imports/api/databasedriver.js';
 
 Meteor.methods({
 	  updateScore: function (id, playerId, score) {
@@ -308,6 +309,10 @@ Meteor.methods({
       Secrets.remove(
           {}
       );
+    },
+
+    updateObjectiveDescription: function( objective, data) {
+      KroilonHistory.update({_id: objective._id}, { $set: {'description': data }} );
     }
 
 });

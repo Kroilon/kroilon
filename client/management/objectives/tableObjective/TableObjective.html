@@ -1,0 +1,34 @@
+<template name="TableObjective">  
+  <div class="container" style="width: inherit;">   
+    <div class="col-md-12">
+      <div class="row" style="width: inherit;">
+          <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="secretsTable">
+            <thead>
+              <tr>
+                <th class="col-md-4"><span style="color:black;">Day</span></th>
+                <th class="col-md-4"><span style="color:black;">View</span></th>
+                <th class="col-md-4"><span style="color:black;">Edit</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each missionObjective}}
+                <tr class="divRow" style="font-size: 0.9em;">
+                  <td>#{{day}}</td>
+                  <td>
+                    <a style="color: #de4f4f" href="" id="viewObjective">
+                      <span class="glyphicon glyphicon-search"></span> 
+                    </a>
+                  </td>
+                  <td>
+                    <a href="/{{day}}" style="color: #de4f4f" id="editObjective">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                  </td>
+                </tr>                   
+              {{/each}}
+            </tbody>
+          </table>
+      </div>
+    </div>   
+  </div> 
+</template>	
