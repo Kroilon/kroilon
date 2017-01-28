@@ -134,7 +134,7 @@ db.badges.insert([
 		"points": 0,
 		"pointsType": "HP",
 		"type": "Team",
-		"image": "",
+		"image": "/academyBadges/food.png",
 		"percentage": 1.0,
 		"description": "Restaura duas barras de energia"
 	},
