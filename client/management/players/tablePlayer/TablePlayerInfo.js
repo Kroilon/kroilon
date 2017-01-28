@@ -14,7 +14,19 @@ Template.TablePlayerInfo.helpers({
     var users = latestAcademy.users;
     users.splice(0, 1);
     return users;
-  }   
+  },
+
+  isAdminProfile: function (academyPlayer) {
+
+    //console.log("profile: " + academyPlayer.profile);
+    if (academyPlayer.profile === "Admin") { 
+      return true; 
+    } 
+    else { 
+      return false;
+    }
+
+  }
 
 });
 
@@ -61,4 +73,10 @@ Template.TablePlayerInfo.events({
 
 function _getUserNbFromLink(target){
     return target.attr('href').slice(1);
+}
+
+function getUserByNB(nb) {
+  let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+  let users = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+  return users[0];
 }

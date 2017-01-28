@@ -12,7 +12,7 @@
           <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="secretsTable">
             <thead>
               <tr>
-                <th class="col-md-3"><span style="color:black;">Name</span></th>
+                <th class="col-md-4"><span style="color:black;">Name</span></th>
                 <th class="col-md-2"><span style="color:black;">NB</span></th>
                 <th class="col-md-2"><span style="color:black;">View</span></th>
                 <th class="col-md-2"><span style="color:black;">Edit</span></th>
@@ -34,11 +34,17 @@
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a>
                   </td>
-                  <td>
-                    <a style="color: #de4f4f" href="" id="deletePlayer">
-                      <span class="glyphicon glyphicon-remove"></span>
-                    </a>
-                  </td>
+                  {{#if isAdminProfile this}}
+                    <td>
+                      <span class="glyphicon glyphicon-remove" style="color: #D3D3D3"></span>
+                    </td>
+                  {{else}}
+                    <td>
+                      <a style="color: #de4f4f" href="" id="deletePlayer">
+                        <span class="glyphicon glyphicon-remove"></span>
+                      </a>
+                    </td>
+                  {{/if}}
                 </tr>                   
               {{/each}}
             </tbody>
