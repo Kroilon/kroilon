@@ -1,32 +1,46 @@
+
 <template name="AppNav">
-    <div class="app-nav" style="min-width:100px;">
-        <ul class="list-group">
-            <li>
-                <a class="list-group-item" style="border: none" href="/performance"><img src="/sidebar/performance.svg" class="sidebar-icon" > <span>Performance</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/story"><img src="/sidebar/story.svg" class="sidebar-icon"> <span>Story</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/rules"><img src="/sidebar/rules.svg" class="sidebar-icon"> <span>Rules</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/map"><img src="/sidebar/map.svg" class="sidebar-icon"> <span>Map</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/characters"><img src="/sidebar/characters_icon.svg" class="sidebar-icon"> <span>Character info</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/secrets"><img src="/sidebar/secrets_icon.svg" class="sidebar-icon"> <span>Secrets</span></a>
-            </li>
-            <li>
-                <a class="list-group-item" style="border: none" href="/kahoot"><img src="/sidebar/kahoot.svg" class="sidebar-icon"> <span>Kahoot</span></a>
-            </li>
-            {{#if isLoggedInAsAdmin}}
-            <li>
-                <a class="list-group-item" style="border: none" href="/management"><img src="/sidebar/management.svg" class="sidebar-icon"> <span>Management</span></a>
-            </li>
-            {{/if}}
-        </ul>
-    </div>
+<aside>
+  <nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="nav-side-menu">
+    <div class="brand"><p>MENU</p></div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+               <li>
+                        <a class="list-group-item" style="border: none" href="/performance"><img src="/sidebar/performance.svg" class="sidebar-icon" > <span>Performance</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/story"><img src="/sidebar/story.svg" class="sidebar-icon"> <span>Story</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/rules"><img src="/sidebar/rules.svg" class="sidebar-icon"> <span>Rules</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/map"><img src="/sidebar/map.svg" class="sidebar-icon"> <span>Map</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/characters"><img src="/sidebar/characters_icon.svg" class="sidebar-icon"> <span>Character info</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/secrets"><img src="/sidebar/secrets_icon.svg" class="sidebar-icon"> <span>Secrets</span></a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/kahoot"><img src="/sidebar/kahoot.svg" class="sidebar-icon"> <span>Kahoot</span></a>
+                    </li>
+                    {{#if isLoggedInAsAdmin}}
+                    <li>
+                        <a class="list-group-item" style="border: none" href="/management"><img src="/sidebar/management.svg" class="sidebar-icon"> <span>Management</span></a>
+                    </li>
+                    {{/if}}
+            </ul>
+     </div>
+</div>
+  </nav>
+  
+</aside>
 </template>
