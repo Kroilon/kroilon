@@ -24,40 +24,65 @@
               </select> 
             </div>
           </div>
-          <!--
-          <div class="form-group row">                
-            <div class="col-md-12">
-              <label for="activityBase" class="col-form-label" style="font-weight: normal">Base</label>
-              <select class="selectpicker form-control" id="activityBase"> 
-                {{#each activityType}}
-                  <option value="{{nb}}">{{name}}</option>
-                {{/each}}
-              </select> 
+          {{#if showActivityFields}}
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="activityChallenge" class="col-form-label" style="font-weight: normal">Challenge</label>
+                <select class="selectpicker form-control" id="activityChallenge"> 
+                  <option value="" disabled selected>Select challenge</option>
+                  {{#each challenges}}
+                    <option value="{{name}}">{{name}}</option> 
+                  {{/each}}
+                </select> 
+              </div>
             </div>
-          </div>
-        -->
-          <div class="form-group row">                
-            <div class="col-md-12">
-              <label for="activityName" class="col-form-label" style="font-weight: normal">Name</label>
-              <input class="form-control" type="text" placeholder="Name" id="activityName" required>
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="activityChallengePoints" class="col-form-label" style="font-weight: normal">Points</label>
+                <input class="form-control" type="text" placeholder="0" id="activityChallengePoints" required>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">                
-            <div class="col-md-12">
-              <label for="activityPoints" class="col-form-label" style="font-weight: normal">Points</label>
-              <input class="form-control" type="text" placeholder="0" id="activityPoints" required>
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="challengePointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+                <select class="selectpicker form-control" id="challengePointsType" >     
+                  <option value="" disabled selected>Select points type</option>
+                  {{#each pointTypes}}
+                    <option value="{{name}}">{{value}}</option>
+                  {{/each}}
+                </select> 
+              </div>
+            </div> 
+          {{else}}
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="activityBadge" class="col-form-label" style="font-weight: normal">Badge</label>
+                <select class="selectpicker form-control" id="activityBadge">
+                  <option value="" disabled selected>Select badge</option>
+                  {{#each badges}}
+                    <option value="{{name}}">{{name}}</option>
+                  {{/each}}
+                </select> 
+              </div>
             </div>
-          </div>
-          <div class="form-group row">                
-            <div class="col-md-12">
-              <label for="pointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
-              <select class="selectpicker form-control" id="pointsType">          
-                {{#each pointTypes}}
-                  <option value="{{name}}">{{value}}</option>
-                {{/each}}
-              </select> 
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="activityBadgePoints" class="col-form-label" style="font-weight: normal">Points</label>
+                <input class="form-control" type="text" placeholder="0" id="activityBadgePoints" required>
+              </div>
             </div>
-          </div>                     
+            <div class="form-group row">                
+              <div class="col-md-12">
+                <label for="badgePointsType" class="col-form-label" style="font-weight: normal">Point Type</label>
+                <select class="selectpicker form-control" id="badgePointsType">     
+                  <option value="" disabled selected>Select points type</option>    
+                  {{#each pointTypes}}
+                    <option value="{{name}}">{{value}}</option>
+                  {{/each}}
+                </select> 
+              </div>
+            </div> 
+          {{/if}}                    
           <div class="form-group row">
             <div class="col-md-12">
               <button type="submit" class="btn btn-default btn-circle pull-right" style="padding: 0px 0px 0px 0px;"><i class="glyphicon glyphicon-ok"></i></button>
