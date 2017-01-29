@@ -26,6 +26,9 @@ Template.NewAcademy.events({
     //console.log("formadorOneEmail: " + formadorOneEmail);
     let formadorOnePassword = $('#formadorOnePassword').val();
     //console.log("formadorOnePassword: " + formadorOnePassword);
+    // IMAGE
+    let formadorOneAvatar = "/february2017/" + formadorOneNB + ".PNG";
+    //console.log("formadorOneAvatar: " + formadorOneAvatar);
 
     // Formador 2
     //let formadorTwoAvatar = $('#formadorTwoAvatar').val();
@@ -37,6 +40,16 @@ Template.NewAcademy.events({
     //console.log("formadorTwoEmail: " + formadorTwoEmail);
     let formadorTwoPassword = $('#formadorTwoPassword').val();
     //console.log("formadorTwoPassword: " + formadorTwoPassword);
+    // IMAGE
+    let formadorTwoAvatar = "/february2017/" + formadorTwoNB + ".PNG";
+    //console.log("formadorTwoAvatar: " + formadorTwoAvatar);
+
+    //GET LATEST ADMIN PASS
+    let adminNB = "13471";
+    let user = getUserByNB(adminNB);
+    let adminPass = user.password;
+    //console.log("adminPass: " + adminPass);
+
 
     newAcademy = {
       name: academyName,
@@ -51,15 +64,15 @@ Template.NewAcademy.events({
         {
           nb: "13471",
           name:"Pedro Crespo",
-          avatar: "",
+          avatar: "/february2017/13471.PNG",
           email: "pedro.crespo@novabase.pt",
-          password: "321",
+          password: adminPass,
           profile: "Admin"
         },
         {
           nb: formadorOneNB,
           name: formadorOneName,
-          avatar: "",
+          avatar: formadorOneAvatar,
           email: formadorOneEmail,
           password: formadorOnePassword,
           profile: "Admin"
@@ -67,7 +80,7 @@ Template.NewAcademy.events({
         {
           nb: formadorTwoNB,
           name: formadorTwoName,
-          avatar: "",
+          avatar: formadorTwoAvatar,
           email: formadorTwoEmail,
           password: formadorTwoPassword,
           profile: "Admin"
@@ -94,5 +107,10 @@ Template.NewAcademy.events({
 
 });
 
+function getUserByNB(nb) {
+  let latestAcademy = Academy.findOne({}, { sort: { date: -1, limit: 1 } });
+  let users = $.grep(latestAcademy.users, function (e) { return e.nb == nb; });
+  return users[0];
+}
 
 
