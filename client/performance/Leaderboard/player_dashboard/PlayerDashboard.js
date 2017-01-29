@@ -136,6 +136,12 @@ Template.PlayerDashboard.helpers({
 
     },
 
+    avatar() {
+        let nb = Session.get(CURRENT_PLAYER_NB);
+        let user = getUserByNB(nb);
+        return user.avatar;
+    },
+
     name() {
         let nb = Session.get(CURRENT_PLAYER_NB);
         let user = getUserByNB(nb);

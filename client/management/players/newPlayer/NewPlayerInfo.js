@@ -99,10 +99,13 @@ Template.NewPlayerInfo.events({
     let characterAndroidSkills = Number($('#formCharacterAndroidSkills').val());
     //console.log("characterAndroidSkills: " + characterAndroidSkills);
 
+    let characterAvatar = "/february2017/" + characterNB + ".PNG";
+    //console.log("formadorOneAvatar: " + formadorOneAvatar);
+
     user =  {
       nb: characterNB,
       name:characterName,
-      //avatar: characterAvatar,
+      avatar: characterAvatar,
       email: characterEmail,
       password: characterPassword,
       profile: "Player",

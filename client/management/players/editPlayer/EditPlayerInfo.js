@@ -263,10 +263,12 @@ Template.EditPlayerInfo.events({
     } 
     else if (profile === "Admin") { 
 
+        let adminAvatar = "/february2017/" + academyPlayerNB + ".PNG";
+
         academyPlayer =  {
           nb: academyPlayerNB,
           name: academyPlayerName,   
-          avatar: "",   
+          avatar: adminAvatar,   
           email: academyPlayerEmail,
           password: academyPlayerPassword,
           profile: "Admin"          
