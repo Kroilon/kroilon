@@ -117,8 +117,13 @@ Template.NewActivityInfo.events({
       let activityPointsType = $("#challengePointsType").val();
       console.log("activityPointsType: " + activityPointsType);
 
+      let newDate = new Date();
+      console.log("newDate: " + newDate);
+      let newDateFormat = newDate.toString().substring(0,15);
+      console.log("newDateFormat: " + newDateFormat);
+
       score = {
-        date : new Date(),
+        date : newDateFormat,
         countType: "ACTIVITY",
         name: activityName,
         points: activityPoints,
@@ -135,8 +140,13 @@ Template.NewActivityInfo.events({
       let badgePointsType = $("#badgePointsType").val();
       //console.log("badgePointsType: " + badgePointsType);
 
+      let newDate = new Date();
+      console.log("newDate: " + newDate);
+      let newDateFormat = newDate.toString().substring(0,15);
+      console.log("newDateFormat: " + newDateFormat);
+
       score = {
-        date : new Date(),
+        date : newDateFormat,
         countType: "BADGE",
         name: badgeName,
         points: badgePoints,

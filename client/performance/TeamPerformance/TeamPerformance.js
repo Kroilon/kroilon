@@ -23,7 +23,7 @@ Template.TeamPerformance.helpers({
 
     var groupedDates = _.groupBy(academyScore, 'date');
 
-    console.log(groupedDates);
+    //console.log(groupedDates);
 
     _.each(_.values(groupedDates), function(dates) {
         //console.log({Date: dates[0], Total: dates.length});
@@ -134,8 +134,7 @@ Template.TeamPerformance.helpers({
 
             yAxis: {
                 gridLineInterpolation: 'polygon',
-                lineWidth: 0,
-                min: 0
+                lineWidth: 0
             },
 
             tooltip: {

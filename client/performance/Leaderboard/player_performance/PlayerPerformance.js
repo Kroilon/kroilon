@@ -39,18 +39,15 @@ Template.PlayerPerformance.helpers({
   PlayerPerformanceChart() {
     let nb = Session.get(CURRENT_PLAYER_NB);
     let currentUser = getUserByNB(nb);
-    /*
-    let totalScore = [];
 
-    currentUser.score.forEach(function(element) {
-        totalScore.push(element.points);
-    }, this);
-    */
     let playerScore = currentUser.score
     let totalScore = [];
-    var groupedDates = _.groupBy(playerScore, 'date');
 
-    console.log(groupedDates);
+    //console.log("playerScore: " + playerScore);
+
+    var groupedDates = _.groupBy(playerScore, 'date');
+    
+    //console.log("groupedDates: " + groupedDates);
 
     _.each(_.values(groupedDates), function(dates) {
         //console.log({Date: dates[0], Total: dates.length});
@@ -91,8 +88,7 @@ Template.PlayerPerformance.helpers({
           formatter: function () {
             return this.value;
           }
-        },
-        min: 0
+        }
       },
       tooltip: {
         crosshair: {

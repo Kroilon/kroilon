@@ -83,9 +83,14 @@ Template.searchSecretModal.events({
         let minusBasePoints = (-basePoints) * 4;        
         //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
 
+        let newDate = new Date();
+        console.log("newDate: " + newDate);
+        let newDateFormat = newDate.toString().substring(0,15);
+        console.log("newDateFormat: " + newDateFormat);
+
         dataSecretInsert = 
         {
-          date: new Date(),
+          date: newDateFormat,
           countType: "ACTIVITY",
           name: "Inserir segredo",
           points: insertSecretPoints,
@@ -100,7 +105,7 @@ Template.searchSecretModal.events({
 
         dataSecretDiscovered = 
         {
-          date: new Date(),
+          date: newDateFormat,
           countType: "ACTIVITY",
           name: "Adivinhar segredo",
           points: minusBasePoints,
@@ -119,9 +124,14 @@ Template.searchSecretModal.events({
       let plusBasePoints = (basePoints) * 4; 
       // ADD HP points to player1
 
+      let newDate = new Date();
+      console.log("newDate: " + newDate);
+      let newDateFormat = newDate.toString().substring(0,15);
+      console.log("newDateFormat: " + newDateFormat);
+
       dataPlayerThatDiscovered = 
       {
-        date: new Date(),
+        date: newDateFormat,
         countType: "ACTIVITY",
         name: "Adivinhar segredo",
         points: plusBasePoints,
@@ -150,9 +160,14 @@ Template.searchSecretModal.events({
       	let plusBasePoints = basePoints;        
         //console.log("ADD: plusBasePoints: " + plusBasePoints);
 
+        let newDate = new Date();
+        console.log("newDate: " + newDate);
+        let newDateFormat = newDate.toString().substring(0,15);
+        console.log("newDateFormat: " + newDateFormat);
+
         dataSecretNotDiscovered = 
         {
-          date: new Date(),
+          date: newDateFormat,
           countType: "ACTIVITY",
           name: "Adivinhar segredo",
           points: plusBasePoints,
@@ -171,9 +186,14 @@ Template.searchSecretModal.events({
       let minusBasePoints = -basePoints; 
       //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
 
+      let newDate = new Date();
+      console.log("newDate: " + newDate);
+      let newDateFormat = newDate.toString().substring(0,15);
+      console.log("newDateFormat: " + newDateFormat);
+
       dataPlayerThatNotDiscovered = 
       {
-        date: new Date(),
+        date: newDateFormat,
         countType: "ACTIVITY",
         name: "Adivinhar segredo",
         points: minusBasePoints,

@@ -18,9 +18,14 @@ Template.secretDiscoverModal.events({
       } 
     });
 
+    let newDate = new Date();
+    console.log("newDate: " + newDate);
+    let newDateFormat = newDate.toString().substring(0,15);
+    console.log("newDateFormat: " + newDateFormat);
+
     dataSecretInsert = 
     {
-      date: new Date(),
+      date: newDateFormat,
       countType: "ACTIVITY",
       name: "Inserir segredo",
       points: 200,
