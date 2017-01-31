@@ -176,7 +176,7 @@ Template.Map.helpers({
 });
 
 Template.Map.events({  
-  /*
+
   'click .roomPolygon' (event){   
   	event.preventDefault();
   	//console.log("Room: " + event.currentTarget.id); 
@@ -194,7 +194,6 @@ Template.Map.events({
 
     Modal.show('showRoomInfoModal', rooms);	
   },
-  */
 
   'click .badgePolygon' (event){   
   	event.preventDefault();
