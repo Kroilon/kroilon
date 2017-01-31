@@ -155,6 +155,17 @@ Template.Map.helpers({
 
 		return decision;
 	},
+	roomDescription() {
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var currentRoom = latestAcademy.currentRoom; 
+		//console.log("CurrentRoom: " + currentRoom);
+
+		var mapRoom = Rooms.find({'name': currentRoom }).fetch();
+		var description = mapRoom[0].description;
+		//console.log("description: " + description);
+
+		return description;
+	},
 	currentDay() {
 
 		var d = new Date();
@@ -177,6 +188,7 @@ Template.Map.helpers({
 
 Template.Map.events({  
 
+  /*
   'click .roomPolygon' (event){   
   	event.preventDefault();
   	//console.log("Room: " + event.currentTarget.id); 
@@ -194,7 +206,7 @@ Template.Map.events({
 
     Modal.show('showRoomInfoModal', rooms);	
   },
-
+  */ 
   'click .badgePolygon' (event){   
   	event.preventDefault();
   	//console.log("Badge: " + event.currentTarget.id);
