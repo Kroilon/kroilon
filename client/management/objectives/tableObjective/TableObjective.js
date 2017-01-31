@@ -12,6 +12,7 @@ Template.TableObjective.helpers({
 
   missionObjective() {
     var objectives = KroilonHistory.find({}).fetch();
+    sortArrOfObjectsByParam(objectives, "day", true);
     return objectives;
   }
 
@@ -40,4 +41,19 @@ Template.TableObjective.events({
 
 function _getUserNbFromLink(target){
     return target.attr('href').slice(1);
+}
+
+function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy /* string */, sortAscending /* bool(optional, defaults to true) */) {
+    if(sortAscending == undefined) sortAscending = true;  // default to true
+
+    if(sortAscending) {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+        });
+    }
+    else {
+        arrToSort.sort(function (a, b) {
+            return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+        });
+    }
 }
