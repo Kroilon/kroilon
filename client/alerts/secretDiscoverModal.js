@@ -16,27 +16,32 @@ Template.secretDiscoverModal.events({
       if (error) {
         alert(error);
       } 
-    });
+    });    
 
-    let newDate = new Date();
-    console.log("newDate: " + newDate);
-    let newDateFormat = newDate.toString().substring(0,15);
-    console.log("newDateFormat: " + newDateFormat);
+    let playerSecret = getUserByNB(secretNB);
 
-    dataSecretInsert = 
-    {
-      date: newDateFormat,
-      countType: "ACTIVITY",
-      name: "Inserir segredo",
-      points: 200,
-      pointsType: "HP"
-    };
+    if (playerSecret.profile === "Player") {  
 
-    Meteor.call('updateScore', latestAcademy._id, secretNB, dataSecretInsert, function(error, result) {
-      if (error) {
-        alert(error);
-      } 
-    });
+        let newDate = new Date();
+        //console.log("newDate: " + newDate);
+        let newDateFormat = newDate.toString().substring(0,15);
+        //console.log("newDateFormat: " + newDateFormat);
+
+        dataSecretInsert = 
+        {
+          date: newDateFormat,
+          countType: "ACTIVITY",
+          name: "Inserir segredo",
+          points: 200,
+          pointsType: "HP"
+        };
+
+        Meteor.call('updateScore', latestAcademy._id, secretNB, dataSecretInsert, function(error, result) {
+          if (error) {
+            alert(error);
+          } 
+        });
+    }
 
     Modal.hide('secretDiscoverModal');
   }

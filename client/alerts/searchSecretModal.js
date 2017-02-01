@@ -93,7 +93,7 @@ Template.searchSecretModal.events({
           date: newDateFormat,
           countType: "ACTIVITY",
           name: "Inserir segredo",
-          points: insertSecretPoints,
+          points: 200,
           pointsType: "HP"
         };
 
@@ -125,9 +125,9 @@ Template.searchSecretModal.events({
       // ADD HP points to player1
 
       let newDate = new Date();
-      console.log("newDate: " + newDate);
+      //console.log("newDate: " + newDate);
       let newDateFormat = newDate.toString().substring(0,15);
-      console.log("newDateFormat: " + newDateFormat);
+      //console.log("newDateFormat: " + newDateFormat);
 
       dataPlayerThatDiscovered = 
       {
@@ -161,9 +161,9 @@ Template.searchSecretModal.events({
         //console.log("ADD: plusBasePoints: " + plusBasePoints);
 
         let newDate = new Date();
-        console.log("newDate: " + newDate);
+        //console.log("newDate: " + newDate);
         let newDateFormat = newDate.toString().substring(0,15);
-        console.log("newDateFormat: " + newDateFormat);
+        //console.log("newDateFormat: " + newDateFormat);
 
         dataSecretNotDiscovered = 
         {
@@ -187,9 +187,9 @@ Template.searchSecretModal.events({
       //console.log("DEDUCT: minusBasePoints: " + minusBasePoints);
 
       let newDate = new Date();
-      console.log("newDate: " + newDate);
+      //console.log("newDate: " + newDate);
       let newDateFormat = newDate.toString().substring(0,15);
-      console.log("newDateFormat: " + newDateFormat);
+      //console.log("newDateFormat: " + newDateFormat);
 
       dataPlayerThatNotDiscovered = 
       {
