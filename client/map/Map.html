@@ -193,10 +193,14 @@
             {{#with decisionExists}}   
               <div class="row">
                 <div class="col-md-12">
-                  <p class="lead" style="font-size: 18px; margin-bottom: 0.1em; margin-top: 0.5em;"><b>Decision</b></p>
+                  <p class="lead" style="font-size: 18px; margin-bottom: 0.1em; margin-top: 0.5em;">
+                    <b>Decision</b>: {{dailyDecision}}
+                  </p>
+                  <!--
                   <p class="lead" style="font-size: 18px; margin-bottom: 0.3em; font-weight: 201;">
                     {{dailyDecision}}
                   </p>
+                -->
                 </div>
               </div>
             {{/with}}
@@ -205,7 +209,7 @@
                 <!--
                 <p class="lead" style="font-size: 18px; margin-bottom: 0.0em; margin-top: 0.1em;"><b>Quests</b></p>
               -->
-                <p class="lead" style="font-size: 16px;">
+                <p class="lead" style="font-size: 13px;">
                   <span style="white-space: pre-line">
                   {{roomDescription}}
                   </span>
