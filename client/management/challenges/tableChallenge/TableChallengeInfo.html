@@ -1,5 +1,5 @@
 <template name="TableChallengeInfo">
-    
+  <div class="container" style="width: inherit;">   
     <div class="col-md-12">
       <div class="row">
         <div class="col-xs-3">
@@ -7,20 +7,20 @@
         </div>
       </div>
     </div>
-    
-      <div id="page-wrap">
-        <table class="TableChallengeInfo">
+    <div class="col-md-12">
+      <div class="row" style="width: inherit;">
+        <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="secretsTable">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>View</th>
-              <th>Edit</th>
-              <th>Remove</th>
+              <th class="col-md-4"><span style="color:black;">Name</span></th>
+              <th class="col-md-2"><span style="color:black;">View</span></th>
+              <th class="col-md-2"><span style="color:black;">Edit</span></th>
+              <th class="col-md-2"><span style="color:black;">Remove</span></th>
             </tr>
           </thead>
           <tbody>
             {{#each academyChallenges}}
-              <tr>
+              <tr class="divRow" style="font-size: 0.9em;">
                 <td>{{name}}</td>
                 <td>
                   <a style="color: #de4f4f" href="" id="viewChallenge">
@@ -42,4 +42,6 @@
           </tbody>
         </table>
       </div>
+    </div>   
+  </div> 
 </template> 

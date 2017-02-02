@@ -7,21 +7,21 @@
         </div>
       </div>
     </div>
-    
-      <div id="page-wrap">
-        <table class="TableAcademy">
+    <div class="col-md-12">
+      <div class="row" style="width: inherit;">
+        <table class="table table-hover table-striped table-bordered table-condensed" id="secretsTable" style="font-size:14px;">
             <thead>
               <tr>
-                <th>Academy</th>
-                <th>Players</th>
-                <th>Score</th>
-                <th>Activate</th>
-                <th>Remove</th>
+                <th class="col-md-4"><span style="color:black;">Academy</span></th>
+                <th class="col-md-2"><span style="color:black;">Players</span></th>
+                <th class="col-md-2"><span style="color:black;">Score</span></th>
+                <th class="col-md-2"><span style="color:black;">Activate</span></th>
+                <th class="col-md-2"><span style="color:black;">Remove</span></th>
               </tr>
             </thead>
             <tbody>
               {{#each academies}}
-                <tr>
+                <tr class="divRow" style="font-size: 0.9em;">
                   <td id="descriptionSecret">{{name}}</td>
                   <td>{{getPlayers this}}</td>
                   <td>{{getScore this}}</td>
@@ -48,5 +48,5 @@
             <!-- glyphicon glyphicon-star -->       
       </div>
     </div>   
-
+  </div> 
 </template>
