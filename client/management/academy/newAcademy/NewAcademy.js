@@ -27,7 +27,7 @@ Template.NewAcademy.events({
     let formadorOnePassword = $('#formadorOnePassword').val();
     //console.log("formadorOnePassword: " + formadorOnePassword);
     // IMAGE
-    let formadorOneAvatar = "/february2017/" + formadorOneNB + ".PNG";
+    let formadorOneAvatar = "/february2017/" + $.trim(formadorOneNB) + ".jpg";
     //console.log("formadorOneAvatar: " + formadorOneAvatar);
 
     // Formador 2
@@ -41,7 +41,7 @@ Template.NewAcademy.events({
     let formadorTwoPassword = $('#formadorTwoPassword').val();
     //console.log("formadorTwoPassword: " + formadorTwoPassword);
     // IMAGE
-    let formadorTwoAvatar = "/february2017/" + formadorTwoNB + ".PNG";
+    let formadorTwoAvatar = "/february2017/" + $.trim(formadorTwoNB) + ".jpg";
     //console.log("formadorTwoAvatar: " + formadorTwoAvatar);
 
     //GET LATEST ADMIN PASS
