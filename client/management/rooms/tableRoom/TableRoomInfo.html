@@ -1,5 +1,5 @@
 <template name="TableRoomInfo">  
-  <div class="container" style="width: inherit;">   
+   
     <div class="col-md-12">
       <div class="row">
         <div class="col-xs-3">
@@ -7,21 +7,21 @@
         </div>
       </div>
     </div>
-    <div class="col-md-12">
-      <div class="row" style="width: inherit;">
-        <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="secretsTable">
+    
+      <div id="page-wrap">
+        <table class="TableRoomInfo">
           <thead>
             <tr>
-              <th class="col-md-4"><span style="color:black;">Name</span></th>
-              <th class="col-md-2"><span style="color:black;">Badges</span></th>
-              <th class="col-md-2"><span style="color:black;">View</span></th>
-              <th class="col-md-2"><span style="color:black;">Edit</span></th>
-              <th class="col-md-2"><span style="color:black;">Remove</span></th>
+              <th>Name</th>
+              <th>Badges</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Remove</th>
             </tr>
           </thead>
           <tbody>
             {{#each academyRoom}}
-              <tr class="divRow" style="font-size: 0.9em;">
+              <tr>
                 <td>{{name}}</td>
                 <td>{{badgesCount name}}</td>
                 <td>
@@ -44,6 +44,4 @@
           </tbody>
         </table>
       </div>
-    </div>   
-  </div> 
 </template> 

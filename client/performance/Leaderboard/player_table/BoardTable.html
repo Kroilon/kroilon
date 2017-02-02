@@ -1,119 +1,119 @@
 <template name="BoardTable">
   <!-- Leaderboard main table part -->
-    <div class="container table-responsive MainBoard" style="font-size: 16px; width: inherit;">
-       <table class="table table-hover table-bordered table-condensed" id ="boardTable">
+    <div id="page-wrap">
+       <table class="boardTable" >
             <thead>
                 <tr>
-                    <th class="col-md-2 col-sm-2 col-xs-2">
-                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Name</p>
+                    <th >
+                      Name
                     </th>
-                    <th class="col-md-2 col-sm-2 col-xs-2">
-                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Score</p>
+                    <th >
+                      Score
+                    </th >
+                    <th >
+                      Tap My Back
                     </th>
-                    <th class="col-md-2 col-sm-2 col-xs-2">
-                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Tap My Back</p>
+                    <th >
+                      Dashboard
                     </th>
-                    <th class="col-md-2 col-sm-2 col-xs-2">
-                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Dashboard</p>
-                    </th>
-                    <th class="col-md-2 col-sm-2 col-xs-2">
-                      <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Performance</p>
+                    <th >
+                      Performance
                     </th>
                 </tr>
             </thead>
             <tbody>
                 {{#each users}}
                     {{#if isLoggedInAsAdmin}}
-                        <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
+                        <tr >
                             <td>
-                                <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                                {{user.name}}
                             </td>
                             <td >
-                                <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
+                                {{totalScore}}
                             </td>
-                            <td>
-                                <div class="col-md-12" style="text-align: left; margin-left: 40px;">{{user.counter}}</div>
+                            <td >
+                                {{user.counter}}
                             </td>
-                            <td>
-                                <div class="col-md-12" style="text-align: left;">
+                            <td >
+                                
                                     <a href="/{{user.nb}}" class="profile_dashboard">
-                                        <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                        <img src="/boardTable/user1.svg" height="21px" width="21px" alt="Dashboard"/>
                                     </a>
-                                </div>
+                                
                             </td>
-                            <td>
-                                <div class="col-md-12" style="text-align: left;">
+                            <td >
+                                
                                     <a href="/{{user.nb}}" class="personal_performance">
-                                        <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                        <img src="/boardTable/graph.svg" height="21px" width="21px" alt="Graph"/>
                                     </a>
-                                </div>
+                                
                             </td>
                         </tr>
                     {{else}}
                         {{#if hasVoted}}
-                            <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                            <tr >
+                                <td >
+                                    {{user.name}}
                                 </td>
                                 <td >
-                                    <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
-                                </td>
+                                    {{totalScore}}
+                                </td >
                                     {{#if hasVotedFor this.user.nb}}
-                                        <td>
-                                            <div class="col-md-12" style="text-align: left;">                                
-                                                <img src="/boardTable/like_grey.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
-                                            </div>
+                                        <td >
+                                                                            
+                                                <img src="/boardTable/like_grey.svg" height="21px" width="21px" alt="Like"/>
+                                            
                                         </td>
                                     {{else}} 
-                                        <td>
-                                            <div class="col-md-12" style="text-align: left;">                                
-                                                <img src="/boardTable/like_black.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
-                                            </div>
-                                        </td>
+                                        <td >
+                                                                            
+                                                <img src="/boardTable/like_black.svg" height="21px" width="21px"  alt="Like"/>
+                                            
+                                        </td >
                                     {{/if}}
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">
+                                <td >
+                                    
                                         <a href="/{{user.nb}}" class="profile_dashboard">
-                                            <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                            <img src="/boardTable/user1.svg" height="21px" width="21px" alt="Dashboard"/>
                                         </a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">
+                                    
+                                </td >
+                                <td >
+                                    
                                         <a href="/{{user.nb}}" class="personal_performance">
-                                            <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                            <img src="/boardTable/graph.svg" height="21px" width="21px" alt="Graph"/>
                                         </a>
-                                    </div>
+                                    
                                 </td>
                             </tr>
                         {{else}}
-                            <tr class="divRow" style="border-top-style: none; border-left-style: none; border-right-style: none; border: 1px solid #fff; background: #fff;">
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">{{user.name}}</div>
+                            <tr>
+                                <td >
+                                    {{user.name}}
                                 </td>
                                 <td >
-                                    <div class="col-md-12" style="text-align: left;">{{totalScore}}</div>
+                                    {{totalScore}}
                                 </td>
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">
+                                <td >
+                                    
                                         <a href="" class="tap_my_back" id="tapMyBack">
-                                            <img src="/boardTable/like_grey.svg" onMouseOver="this.src='/boardTable/like_black.svg'" onMouseOut="this.src='/boardTable/like_grey.svg'" height="21px" width="21px" style="margin-left: 40px;" alt="Like"/>
+                                            <img src="/boardTable/like_grey.svg" onMouseOver="this.src='/boardTable/like_black.svg'" onMouseOut="this.src='/boardTable/like_grey.svg'" height="21px" width="21px" alt="Like"/>
                                         </a>
-                                    </div>
+                                    
                                 </td>
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">
+                                <td >
+                                    
                                         <a href="/{{user.nb}}" class="profile_dashboard">
-                                            <img src="/boardTable/user1.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Dashboard"/>
+                                            <img src="/boardTable/user1.svg" height="21px" width="21px"  alt="Dashboard"/>
                                         </a>
-                                    </div>
+                                    
                                 </td>
-                                <td>
-                                    <div class="col-md-12" style="text-align: left;">
+                                <td >
+                                    
                                         <a href="/{{user.nb}}" class="personal_performance">
-                                            <img src="/boardTable/graph.svg" height="21px" width="21px" style="margin-left: 40px;" alt="Graph"/>
+                                            <img src="/boardTable/graph.svg" height="21px" width="21px"  alt="Graph"/>
                                         </a>
-                                    </div>
+                                    
                                 </td>
                             </tr>
                         {{/if}}
@@ -122,4 +122,7 @@
             </tbody>
         </table>
     </div>
+
+
+
 </template>
