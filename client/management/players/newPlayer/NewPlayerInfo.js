@@ -99,7 +99,7 @@ Template.NewPlayerInfo.events({
     let characterAndroidSkills = Number($('#formCharacterAndroidSkills').val());
     //console.log("characterAndroidSkills: " + characterAndroidSkills);
 
-    let characterAvatar = "/february2017/" + characterNB + ".PNG";
+    let characterAvatar = "/february2017/nb" + characterNB + ".jpg";
     //console.log("formadorOneAvatar: " + formadorOneAvatar);
 
     user =  {
