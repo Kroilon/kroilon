@@ -1,5 +1,5 @@
 <template name="TablePlayerInfo">  
-     
+  <div class="container" style="width: inherit;">   
     <div class="col-md-12">
       <div class="row">
         <div class="col-xs-3">
@@ -7,21 +7,21 @@
         </div>
       </div>
     </div>
-    
-      <div id="page-wrap">
-          <table class="TablePlayerInfo">
+    <div class="col-md-12">
+      <div class="row" style="width: inherit;">
+          <table class="table table-hover table-striped table-bordered table-condensed" style="font-size:14px;" id="secretsTable">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>NB</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Remove</th>
+                <th class="col-md-4"><span style="color:black;">Name</span></th>
+                <th class="col-md-2"><span style="color:black;">NB</span></th>
+                <th class="col-md-2"><span style="color:black;">View</span></th>
+                <th class="col-md-2"><span style="color:black;">Edit</span></th>
+                <th class="col-md-2"><span style="color:black;">Remove</span></th>
               </tr>
             </thead>
             <tbody>
               {{#each players}}
-                <tr>
+                <tr class="divRow" style="font-size: 0.9em;">
                   <td>{{name}}</td>
                   <td>{{nb}}</td>
                   <td>
@@ -34,14 +34,22 @@
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a>
                   </td>
-                  <td>
-                    <a style="color: #de4f4f" href="" id="deletePlayer">
-                      <span class="glyphicon glyphicon-remove"></span>
-                    </a>
-                  </td>
+                  {{#if isAdminProfile this}}
+                    <td>
+                      <span class="glyphicon glyphicon-remove" style="color: #D3D3D3"></span>
+                    </td>
+                  {{else}}
+                    <td>
+                      <a style="color: #de4f4f" href="" id="deletePlayer">
+                        <span class="glyphicon glyphicon-remove"></span>
+                      </a>
+                    </td>
+                  {{/if}}
                 </tr>                   
               {{/each}}
             </tbody>
           </table>
       </div>
-</template> 
+    </div>   
+  </div> 
+</template>	

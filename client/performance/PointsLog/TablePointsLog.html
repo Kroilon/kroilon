@@ -2,73 +2,73 @@
 
   <div class="container" style="font-size:16px; width: inherit;">
  
-    <div id="page-wrap">
-      <table class="pointsLogTable">
+    <div class="panel-body" style="padding: 0px;">
+      <table class="table table-hover table-bordered table-condensed" id="tablePointsLog">
         <thead>
           <tr>
-            <th>
-             Player
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Player</p>
             </th>
-            <th>
-             Category
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Category</p>
             </th>
-            <th>
-              Name
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Name</p>
             </th>
-            <th>
-              Points
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Points</p>
             </th>
-            <th>
-             Type
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Type</p>
             </th>
-            <th>
-              Date
+            <th class="col-md-2 col-sm-2 col-xs-2">
+              <p class="lead" style="color: black; margin-bottom: 5px; margin-left: 15px; text-transform: capitalize;">Date</p>
             </th>
           </tr>
         </thead>
         <tbody>
           {{#each teamPoints}}
-            <tr>
+            <tr class="divRow">
               <td>
-                {{player}}
+                <div class="col-md-12" style="text-align: left;">{{player}}</div>
               </td>
               <td>
-                ACTIVITY
+                <div class="col-md-12" style="text-align: left;">ACTIVITY</div>
               </td>
               <td>
-                {{name}}
+                <div class="col-md-12" style="text-align: left;">{{name}}</div>
               </td>
               <td>
-                {{points}}
+                <div class="col-md-12" style="text-align: left;">{{points}}</div>
               </td>
               <td>
-                TP
+                <div class="col-md-12" style="text-align: left;">TP</div>
               </td>
               <td>
-               {{date}}
+                <div class="col-md-12" style="text-align: left;">{{date}}</div>
               </td>
             </tr>                   
           {{/each}}
 
           {{#each playerPoints}}
-            <tr>
+            <tr class="divRow">
               <td>
-                {{player}}
+                <div class="col-md-12" style="text-align: left;">{{player}}</div>
               </td>
               <td>
-                {{category}}
+                <div class="col-md-12" style="text-align: left;">{{category}}</div>
               </td>
               <td>
-                {{name}}
+                <div class="col-md-12" style="text-align: left;">{{name}}</div>
               </td>
               <td>
-                {{points}}
+                <div class="col-md-12" style="text-align: left;">{{points}}</div>
               </td>
               <td>
-                {{type}}
+                <div class="col-md-12" style="text-align: left;">{{type}}</div>
               </td>
               <td>
-                {{date}}
+                <div class="col-md-12" style="text-align: left;">{{date}}</div>
               </td>
             </tr> 
           {{/each}}
@@ -76,6 +76,4 @@
       </table> 
     </div>
   </div>
-
-
 </template>

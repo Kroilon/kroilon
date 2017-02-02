@@ -1,8 +1,10 @@
 <template name="Characters">
   <h2>Characters</h2>
-  
-      <div id="page-wrap">
-        {{> reactiveTable class="reactive-table" class="charactersTable" collection=academyPlayers settings=tableSettings}}
+  <div class="container" style="width: inherit;"> 
+    <div class="col-md-12">
+      <div class="row">
+        {{> reactiveTable class="table table-hover table-striped table-bordered table-condensed" id="charactersTable" collection=academyPlayers settings=tableSettings}}
       </div>
-    
+    </div>  
+  </div>
 </template>
