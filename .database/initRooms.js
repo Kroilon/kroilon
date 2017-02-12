@@ -14,41 +14,41 @@ db.createCollection("rooms");
 db.rooms.insert([
 	{
 		"name": "Cockroach Entry",
-		"dailyDecision":"Cockroach Entry decision...",
-		"description": "Cockroach Entry room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{}
-			]
+	    "dailyDecision": "Move forward",
+	    "description": "Autoavaliação (-50 KP)\nAvatar + EXCEL (-50 HP)\n\nSegredos: 200 HP\nDaily kahoot: 100 / 50 / 25 KP\nPontualidade: +/-50 PE / -10 HP\nNinjamotherfucker 50 XP\nTeam balance: 200 PE\nMarshmallow challenge: 400 XP\nUnlock BOAT badge (+ 50% das equipas >30cm) \nTeam leader: 50 HP",
+	    "image": null,
+	    "badges": [
+	        {}
+	    ]
 	},
 	{
 		"name": "Project Room",
-		"dailyDecision":"Project Room decision...",
-		"description": "Project Room room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "BOAT",
-				"locked": true
-			},
-			{
-				"name": "DOUBLE",
-				"locked": true
-			},
-			{
-				"name": "MYSTERY",
-				"locked": true
-			}
-			]
+	    "dailyDecision": "South Tunnel vs. Wondering Hall vs. North Tunnel",
+	    "description": "Segredos: 200 HP / 50 HP\nDaily kahoot: 100 / 50 / 25 KP\nDaily ninja: -25 HP / 50 XP\nDaily scrum: 50 PE\nPontualidade: +/-50 PE / -10 HP\nEmpathy map: 50 PE",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "BOAT",
+	            "locked": false
+	        },
+	        {
+	            "name": "DOUBLE",
+	            "locked": true
+	        },
+	        {
+	            "name": "MYSTERY",
+	            "locked": true
+	        }
+	    ]
 	},
 	{
-		"name": "Wandering Wall",
-		"dailyDecision":"Wandering Wall decision...",
-		"description": "Wandering Wall room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{}
-			]
+		"name": "Wondering Wall",
+	    "dailyDecision": "Adolph Room vs. Death Corridor",
+	    "description": " ",
+	    "image": null,
+	    "badges": [
+	        {}
+	    ]
 	},
 	{
 		"name": "Nowayout Corridor",
@@ -70,75 +70,67 @@ db.rooms.insert([
 	},
 	{
 		"name": "Adolph Room",
-		"dailyDecision":"Adolph Room decision...",
-		"description": "Adolph Room room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "BOAT",
-				"locked": true
-			}
-			]
+	    "dailyDecision": "Move forward",
+	    "description": " ",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "BOAT",
+	            "locked": false
+	        }
+	    ]
 	},
 	{
 		"name": "Stormilor Hall",
-		"dailyDecision":"Stormilor Hall decision...",
-		"description": "Stormilor Hall room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "SWORD",
-				"locked": true
-			}
-			]
+	    "dailyDecision": "",
+	    "description": " ",
+	    "badges": [
+	        {}
+	    ]
 	},
 	{
 		"name": "Diaz Krez Arena",
-		"dailyDecision":"Diaz Krez Arena decision...",
-		"description": "Diaz Krez Arena room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "FOOD",
-				"locked": false
-			}
-			]
+	    "dailyDecision": "Diaz Krez Arena decision...",
+	    "description": " ",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "FOOD",
+	            "locked": false
+	        }
+	    ]
 	},
 	{
 		"name": "Kalu Hall",
-		"dailyDecision":"Kalu Hall decision...",
-		"description": "Kalu Hall room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "FOOD",
-				"locked": false
-			}
-			]
+	    "dailyDecision": "Stormilor Dungeon vs. Ristar Room",
+	    "description": "  ",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "FOOD",
+	            "locked": false
+	        }
+	    ]
 	},
 	{
 		"name": "Ristar Room",
-		"dailyDecision":"Ristar Room decision...",
-		"description": "Ristar Room room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "FOOD",
-				"locked": false
-			}
-			]
+	    "dailyDecision": "Normingor Room A vs. Normingor Room B vs. Stormilor Dungeon",
+	    "description": "Daily kahoot: 100/50/25 KP\nDaily ninja: -25 HP/50 XP\nDaily scrum: 2 x 25 PE\n\nTodos a horas: +50 PE\n5 ou mais atrasos: -50 PE\n1 atraso: -10 HP\n\nCrossing paths: 400 XP\n\nProtótipos (>10): 50 PE",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "FOOD",
+	            "locked": true
+	        }
+	    ]
 	},
-	{
-		"name": "Stormillor Dungeon",
-		"dailyDecision":"Stormillor Dungeon decision...",
-		"description": "Stormillor Dungeon room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "MYSTERY",
-				"locked": true
-			}
-			]
+	{		
+		"name": "Stormilor Dungeons",
+	    "dailyDecision": "Ristar Room vs. Almusther Room vs. Rerformanthor Room (tunnel)",
+	    "description": "Daily kahoot: 100/50/25 KP\nDaily ninja: -25 HP/50 XP\nDaily scrum: 2 x 25 PE\n\nTodos a horas: +50 PE\n5 ou mais atrasos: -50 PE\n1 atraso: -10 HP\n\nLunch\t400/200/0 XP\n\nWells & cans\t600/200/50/0 XP\n4 bolas/equipa » Unlock MISTERY badge",
+	    "badges": [
+	        {}
+	    ]
 	},
 	{
 		"name": "Normingor Room A",
@@ -163,32 +155,32 @@ db.rooms.insert([
 	},
 	{
 		"name": "Normingor Room B",
-		"dailyDecision":"Normingor Room B decision...",
-		"description": "Normingor Room B room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{}
-			]
+	    "dailyDecision": "Diktaur Room vs. Almusther Room vs. Performanthor Room",
+	    "description": "Daily kahoot: 100/50/25 KP\nDaily ninja: -25 HP/50 XP\nDaily scrum: 2 x 25 PE\n\nTodos a horas: +50 PE\n5 ou mais atrasos: -50 PE\n1 atraso: -10 HP\n\nDivide & conquer: 400 XP",
+	    "image": null,
+	    "badges": [
+	        {}
+	    ]
 	},
 	{
 		"name": "Almusther Room",
-		"dailyDecision":"Almusther Room decision...",
-		"description": "Almusther Room room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{
-				"name": "FOOD",
-				"locked": false
-			}
-			]
+	    "dailyDecision": "Stormilor Dungeon vs. Normingor Room B vs. Performanthor Room",
+	    "description": "Daily kahoot: 100/50/25 KP\nDaily ninja: -25 HP/25 XP\nDaily scrum: 2 x 25 PE\n\nTodos a horas: +50 PE\n5 ou mais atrasos: -50 PE\n1 atraso: -10 HP\n\nLe coq sportif: 400/100 XP\n\nSecret chambers\nMais de 75% dos soldados com votos: 100 PE\nCada voto: 50 KP",
+	    "image": null,
+	    "badges": [
+	        {
+	            "name": "FOOD",
+	            "locked": false
+	        }
+	    ]
 	},
 	{
 		"name": "Performanthor Room",
-		"dailyDecision":"Performanthor Room decision...",
-		"description": "Performanthor Room room description HERE...",
-		"image":"/roomImages/imageRoomExample.jpg",
-		"badges": [
-			{}
-			]
+	    "dailyDecision": "Fight!",
+	    "description": "Daily ninja: 100 XP\n\nLipsync: 1.000/600/300 XP\n\nApresentadores: 500 KP",
+	    "image": null,
+	    "badges": [
+	        {}
+    	]
 	}
 ]);
