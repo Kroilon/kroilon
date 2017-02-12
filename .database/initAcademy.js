@@ -13,9 +13,7 @@ db.academy.drop();
 db.createCollection("academy");
 db.academy.insert({
 	"name": "2016 Fevereiro",
-    "date": {
-        "$date": "2017-02-03T11:51:25.593Z"
-    },
+    "date": "2017-02-03T11:51:25.593Z",
     "energyLevel": 0,
     "dailyMessage": "Bem Vindos a Kroilon",
     "homeMessage": "Quarta-feira temos caminhada e não piscina.  Começamos as 8h na porta do hotel ",
