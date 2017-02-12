@@ -81,10 +81,10 @@ Template.Map.helpers({
 
         });
 
-        let average_team_points = (total_team_points / total_team_score);
-        //console.log("average_team_points: " + average_team_points);
+        //let average_team_points = (total_team_points / total_team_score);
+  		//console.log("average_team_points: " + average_team_points);
 
-        return parseInt(average_points + average_team_points);
+        return parseInt(average_points + total_team_points);
 
     },
 	currentRoomBadges() {
