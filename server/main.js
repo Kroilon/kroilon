@@ -18,11 +18,11 @@ Meteor.methods({
 
     },    
 
-    deleteScore: function (id, playerId, scoreDate, ) {
+    deleteScore: function (id, playerId, activity ) {
 
       Academy.update(
           { _id: id, 'users.nb': playerId},
-          {$pull: {'users.$.score': {date: scoreDate}}}
+          {$pull: {'users.$.score': activity}}
       );
     },
 
@@ -36,11 +36,11 @@ Meteor.methods({
 
     },
 
-    deleteTeamScore: function (id, scoreDate) {
+    deleteTeamScore: function (id, activity) {
       var currentUserId = Meteor.userId();
       Academy.update(
           { _id: id },
-          {$pull: {'teamScore': {date: scoreDate}}},
+          {$pull: {'teamScore': activity}},
           {updatedBy: currentUserId}
       );
 

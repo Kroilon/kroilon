@@ -30,18 +30,18 @@ Template.TableActivityInfo.helpers({
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
     var teamScore = latestAcademy.teamScore;
     var teamPoints = [];
-
+    /*
     $.each(teamScore, function(idx_scores, val_scores) 
     {
         teamPoints.push({"player":"Team", "nb": "Team", "name":val_scores.name, "points":val_scores.points + " ", "date":val_scores.date});
       //  console.log(points_a);
       //  console.log(points[0]);
     });
-
+    */
     //sortArrOfObjectsByParam(teamPoints, "date", false);
-    return teamPoints;
+    return teamScore;
   },
-
+  
   playerPoints() {
 
     var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
@@ -57,7 +57,7 @@ Template.TableActivityInfo.helpers({
       {
         $.each(scores, function(idx_scores, val_scores)
         {
-          points.push({"player":val_players.name, "nb":val_players.nb, "type":val_scores.countType, "name":val_scores.name, "points":val_scores.points + " " + val_scores.pointsType, "date":val_scores.date});
+          points.push({"player":val_players.name, "nb":val_players.nb, "type":val_scores.countType, "name":val_scores.name, "points":val_scores.points, "pointsType":val_scores.pointsType, "date":val_scores.date});
         //  console.log(points_a);
         //  console.log(points[0]);
         });

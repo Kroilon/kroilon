@@ -39,6 +39,7 @@ Template.TablePointsLog.helpers({
 
 	    var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 	    var teamScore = latestAcademy.teamScore;
+	    /*
 	    var teamPoints = [];
 
 	    $.each(teamScore, function(idx_scores, val_scores) 
@@ -47,9 +48,9 @@ Template.TablePointsLog.helpers({
 	      //  console.log(points_a);
 	      //  console.log(points[0]);
 	    });
-
+		*/
 	    //sortArrOfObjectsByParam(teamPoints, "date", false);
-	    return teamPoints;
+	    return teamScore;
 	  }
 
 });
