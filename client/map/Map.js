@@ -155,6 +155,13 @@ Template.Map.helpers({
 
 		return decision;
 	},
+	currentRoom() {
+		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
+		var currentRoom = latestAcademy.currentRoom; 
+		//console.log("CurrentRoom: " + currentRoom);
+
+		return currentRoom;
+	},
 	roomDescription() {
 		var latestAcademy = Academy.findOne({}, {sort: {date: -1, limit: 1}});
 		var currentRoom = latestAcademy.currentRoom; 
