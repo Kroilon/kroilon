@@ -31,7 +31,7 @@ Template.TablePointsLog.helpers({
 		});
 
 		//var nb = players[0].score;
-		sortArrOfObjectsByParam(points, "date", false);
+		sortArrOfObjectsByParam(points, "player", true);
 		return points;
 	},
 
@@ -48,7 +48,7 @@ Template.TablePointsLog.helpers({
 	      //  console.log(points[0]);
 	    });
 
-	    sortArrOfObjectsByParam(teamPoints, "date", false);
+	    //sortArrOfObjectsByParam(teamPoints, "date", false);
 	    return teamPoints;
 	  }
 
