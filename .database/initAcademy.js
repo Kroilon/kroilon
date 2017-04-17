@@ -105,7 +105,7 @@ db.academy.insert({
             "name": "Diogo Carril Alves",
             "avatar": "/february2017/21725.PNG",
             "email": "diogo.carril.alves@novabase.pt",
-            "password": "sara",
+            "password": "pass123",
             "profile": "Admin"
         },
         {
@@ -113,7 +113,7 @@ db.academy.insert({
             "name": "Raquel Jimenez",
             "avatar": "/february2017/20150.PNG",
             "email": "raquel.jimenez@novabase.pt",
-            "password": "paniagua",
+            "password": "pass123",
             "profile": "Admin"
         },
         {
