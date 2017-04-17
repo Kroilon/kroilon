@@ -97,7 +97,7 @@ db.academy.insert({
             "name": "Pedro Crespo",
             "avatar": "/february2017/13471.PNG",
             "email": "pedro.crespo@novabase.pt",
-            "password": "patricia_",
+            "password": "megashowbiz03",
             "profile": "Admin"
         },
         {
